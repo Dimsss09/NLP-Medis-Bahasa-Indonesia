@@ -106,8 +106,8 @@ resolution, dan evaluasi gold dapat dianggap valid.
 streamlit run app/demo.py
 ```
 
-Untuk saat ini demo masih berupa shell awal. Inferensi akan diaktifkan setelah
-fase training selesai.
+Demo memuat model lokal dari `models/indobert-medical-ner-id`, menerima input
+teks medis, menyorot entitas berwarna, dan menampilkan tabel token serta span.
 
 ## Status Roadmap
 
@@ -116,5 +116,5 @@ fase training selesai.
 - [x] Fase 2 - Anotasi data format BIO
 - [x] Fase 3 - Fine-tuning model
 - [x] Fase 4 - Evaluasi
-- [ ] Fase 5 - Demo interaktif
+- [x] Fase 5 - Demo interaktif
 - [ ] Fase 6 - Dokumentasi dan finalisasi

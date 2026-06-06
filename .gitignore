@@ -7,6 +7,11 @@ __pycache__/
 .env
 .env.*
 
+.streamlit.pid
+.streamlit.port
+streamlit.out.log
+streamlit.err.log
+
 .ipynb_checkpoints/
 .pytest_cache/
 .mypy_cache/
