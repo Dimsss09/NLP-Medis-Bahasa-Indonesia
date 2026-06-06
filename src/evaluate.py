@@ -222,7 +222,7 @@ def json_default(value):
     raise TypeError(f"Object of type {value.__class__.__name__} is not JSON serializable")
 
 
-def write_markdown_report(summary: dict, model_dir: str, path: Path) -> None:
+def write_markdown_report(summary: dict, model_dir: str, test_file: str, report_prefix: str, path: Path) -> None:
     """Write human-readable Phase 4 report."""
     path.parent.mkdir(parents=True, exist_ok=True)
     report = summary["seqeval_report"]
@@ -248,7 +248,7 @@ Generated at: {datetime.now(timezone.utc).isoformat()}
 ## Model
 
 - Model directory: {model_dir}
-- Test file: data/annotated/test.conll
+- Test file: {test_file}
 
 ## Overall Metrics
 
@@ -268,9 +268,9 @@ Generated at: {datetime.now(timezone.utc).isoformat()}
 
 ## Artifacts
 
-- Full metrics JSON: reports/evaluation_metrics.json
-- Token-level confusion matrix: reports/confusion_matrix.csv
-- Correct and incorrect examples: reports/prediction_examples.jsonl
+- Full metrics JSON: reports/{report_prefix}_metrics.json
+- Token-level confusion matrix: reports/{report_prefix}_confusion_matrix.csv
+- Correct and incorrect examples: reports/{report_prefix}_prediction_examples.jsonl
 
 ## Caveat
 
@@ -281,23 +281,24 @@ need manually reviewed labels.
     path.write_text(content, encoding="utf-8")
 
 
-def evaluate_from_config(config: dict) -> dict:
+def evaluate_from_config(config: dict, test_file: Path | None = None, report_prefix: str = "evaluation") -> dict:
     """Load model and test data, then run evaluation."""
     data_config = config["data"]
     model_dir = config["model"]["output_dir"]
     batch_size = int(config["training"]["per_device_eval_batch_size"])
     max_length = int(config["training"].get("max_length", 128))
+    test_path = test_file or Path(data_config["test_file"])
 
-    sentences = read_conll(Path(data_config["test_file"]))
+    sentences = read_conll(test_path)
     tokenizer = AutoTokenizer.from_pretrained(model_dir)
     model = AutoModelForTokenClassification.from_pretrained(model_dir)
     records = predict_dataset(model, tokenizer, sentences, batch_size, max_length)
     summary = summarize_predictions(records)
 
-    write_json_report(summary, Path("reports/evaluation_metrics.json"))
-    write_confusion_matrix(records, config["labels"], Path("reports/confusion_matrix.csv"))
-    write_examples(records, Path("reports/prediction_examples.jsonl"))
-    write_markdown_report(summary, model_dir, Path("reports/evaluation_report.md"))
+    write_json_report(summary, Path(f"reports/{report_prefix}_metrics.json"))
+    write_confusion_matrix(records, config["labels"], Path(f"reports/{report_prefix}_confusion_matrix.csv"))
+    write_examples(records, Path(f"reports/{report_prefix}_prediction_examples.jsonl"))
+    write_markdown_report(summary, model_dir, str(test_path), report_prefix, Path(f"reports/{report_prefix}_report.md"))
     return summary
 
 
@@ -305,9 +306,11 @@ def main() -> None:
     """CLI entry point."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG, help="Path to config.yaml")
+    parser.add_argument("--test-file", type=Path, default=None, help="Optional CoNLL test file override")
+    parser.add_argument("--report-prefix", default="evaluation", help="Prefix for report artifact filenames")
     args = parser.parse_args()
 
-    summary = evaluate_from_config(load_config(args.config))
+    summary = evaluate_from_config(load_config(args.config), args.test_file, args.report_prefix)
     print(f"Micro F1: {summary['micro_f1']:.4f}")
     print("Saved evaluation artifacts to reports/")
 

@@ -75,6 +75,20 @@ python src/evaluate.py
 Perintah ini menghitung precision, recall, dan F1 per entitas dengan `seqeval`,
 menyimpan confusion matrix, dan menulis contoh prediksi ke folder `reports/`.
 
+## Validasi Manual Mendekati Industri
+
+```powershell
+python src/prepare_manual_gold.py
+python src/annotation_agreement.py
+python src/resolve_gold.py
+python src/evaluate.py --test-file data/manual_gold/gold_resolved.conll --report-prefix gold
+python src/error_analysis.py
+```
+
+`prepare_manual_gold.py` menyiapkan 400 kalimat untuk dua annotator. File
+annotator harus diisi manusia secara independen sebelum agreement, gold
+resolution, dan evaluasi gold dapat dianggap valid.
+
 ## Menjalankan Demo
 
 ```powershell

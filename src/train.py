@@ -318,8 +318,9 @@ Generated at: {summary["generated_at"]}
 
 ## Notes
 
-This is the first bootstrap training run on semi-automatic Phase 2 labels. Use
-Phase 4 evaluation before making any performance claims.
+This is a bootstrap training run on semi-automatic Phase 2 labels. Use Phase 4
+evaluation and a manually resolved gold test set before making any performance
+claims.
 """
     path.write_text(content, encoding="utf-8")
 

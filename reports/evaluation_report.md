@@ -1,37 +1,37 @@
 # Phase 4 Evaluation Report
 
-Generated at: 2026-06-06T18:09:05.035248+00:00
+Generated at: 2026-06-06T18:38:57.858728+00:00
 
 ## Model
 
 - Model directory: models/indobert-medical-ner-id
-- Test file: data/annotated/test.conll
+- Test file: data\annotated\test.conll
 
 ## Overall Metrics
 
 - Sentences: 1306
 - Tokens: 10337
-- Token accuracy: 0.9510
-- Sentence exact match: 0.7351
-- Micro precision: 0.7917
-- Micro recall: 0.7524
-- Micro F1: 0.7716
+- Token accuracy: 0.9931
+- Sentence exact match: 0.9609
+- Micro precision: 0.9556
+- Micro recall: 0.9765
+- Micro F1: 0.9659
 
 ## Metrics per Entity
 
 | Entity | Precision | Recall | F1 | Support |
 | --- | ---: | ---: | ---: | ---: |
-| ANATOMI | 0.8184 | 0.8800 | 0.8481 | 425 |
-| DIAGNOSIS | 1.0000 | 0.2769 | 0.4337 | 65 |
-| DOSIS | 0.0000 | 0.0000 | 0.0000 | 45 |
-| GEJALA | 0.7640 | 0.8527 | 0.8059 | 543 |
-| OBAT | 1.0000 | 0.1159 | 0.2078 | 69 |
+| ANATOMI | 0.9615 | 1.0000 | 0.9804 | 425 |
+| DIAGNOSIS | 0.9836 | 0.9231 | 0.9524 | 65 |
+| DOSIS | 0.8627 | 0.9778 | 0.9167 | 45 |
+| GEJALA | 0.9527 | 0.9650 | 0.9588 | 543 |
+| OBAT | 0.9853 | 0.9710 | 0.9781 | 69 |
 
 ## Artifacts
 
 - Full metrics JSON: reports/evaluation_metrics.json
-- Token-level confusion matrix: reports/confusion_matrix.csv
-- Correct and incorrect examples: reports/prediction_examples.jsonl
+- Token-level confusion matrix: reports/evaluation_confusion_matrix.csv
+- Correct and incorrect examples: reports/evaluation_prediction_examples.jsonl
 
 ## Caveat
 

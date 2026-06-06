@@ -1,6 +1,6 @@
 # Phase 3 Training Summary
 
-Generated at: 2026-06-06T17:53:01.864685+00:00
+Generated at: 2026-06-06T18:37:33.872146+00:00
 
 ## Model
 
@@ -10,17 +10,18 @@ Generated at: 2026-06-06T17:53:01.864685+00:00
 
 ## Data
 
-- Train sentences used: 512
-- Validation sentences used: 128
+- Train sentences used: 2048
+- Validation sentences used: 512
 - Labels: O, B-GEJALA, I-GEJALA, B-OBAT, I-OBAT, B-DOSIS, I-DOSIS, B-DIAGNOSIS, I-DIAGNOSIS, B-ANATOMI, I-ANATOMI
 
 ## Last Epoch
 
-- Train loss: 0.4110
-- Validation loss: 0.1651
-- Validation token accuracy: 0.9468
+- Train loss: 0.1795
+- Validation loss: 0.0213
+- Validation token accuracy: 0.9953
 
 ## Notes
 
-This is the first bootstrap training run on semi-automatic Phase 2 labels. Use
-Phase 4 evaluation before making any performance claims.
+This is a bootstrap training run on semi-automatic Phase 2 labels. Use Phase 4
+evaluation and a manually resolved gold test set before making any performance
+claims.

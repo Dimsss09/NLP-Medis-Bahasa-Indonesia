@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-06-06T18:26:48.230318+00:00",
+  "status": "not_ready",
+  "errors": [],
+  "incomplete_template_detected": true,
+  "sentence_count": 400,
+  "token_count": 3194,
+  "token_agreement": 1.0,
+  "cohen_kappa": 0.0,
+  "entity_f1_between_annotators": 0.0,
+  "conflict_count": 0,
+  "annotator_1_label_counts": {
+    "O": 3194
+  },
+  "annotator_2_label_counts": {
+    "O": 3194
+  }
+}
