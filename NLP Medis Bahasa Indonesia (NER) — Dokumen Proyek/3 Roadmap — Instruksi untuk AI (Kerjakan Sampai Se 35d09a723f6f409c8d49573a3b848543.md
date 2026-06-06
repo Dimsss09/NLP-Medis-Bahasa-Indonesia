@@ -55,7 +55,7 @@ DEFINISI SELESAI (Definition of Done):
 
 ### Fase 3 — Fine-tuning model
 
-- Muat **IndoBERT** dari Hugging Face.
+- Muat **IndoBERT(indobenchmark/indobert-base-p1)** dari Hugging Face.
 - Latih token classification (NER) pada data train.
 - Simpan model & tokenizer ke `models/`.
 - **Selesai jika:** model terlatih tersimpan.
