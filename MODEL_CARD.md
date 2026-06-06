@@ -51,3 +51,11 @@ Current larger-bootstrap test metrics against semi-automatic labels:
 - Resolve conflicts into a gold test set.
 - Evaluate the model only against that gold set for any public claims.
 - Add a domain expert review for medical safety-sensitive labels.
+
+## Public Dataset Search Note
+
+A relevant DetikHealth medical NER corpus is described in the JAIC paper
+`Medical Named Entity Recognition from Indonesian Health-News using BiLSTM-CRF
+with Static and Contextual Embeddings`, but the article page indicates that the
+download data is not yet available. This project therefore keeps a local manual
+gold workflow and treats any rules or LLM-generated expansion as silver labels.
