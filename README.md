@@ -33,6 +33,16 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
+## Menyiapkan Data
+
+```powershell
+python src/data_prep.py
+```
+
+Perintah ini mengambil dataset publik `iqbalpurba26/health-topic-dataset`,
+menyimpan salinan JSONL ke `data/raw/`, lalu membuat korpus bersih siap anotasi
+di `data/clean/medical_text_corpus.txt`.
+
 ## Menjalankan Demo
 
 ```powershell
@@ -45,7 +55,7 @@ fase training selesai.
 ## Status Roadmap
 
 - [x] Fase 0 - Inisialisasi proyek
-- [ ] Fase 1 - Pengumpulan dan pembersihan data
+- [x] Fase 1 - Pengumpulan dan pembersihan data
 - [ ] Fase 2 - Anotasi data format BIO
 - [ ] Fase 3 - Fine-tuning model
 - [ ] Fase 4 - Evaluasi

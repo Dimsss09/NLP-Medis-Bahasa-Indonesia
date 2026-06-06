@@ -7,6 +7,11 @@ data:
   raw_dir: data/raw
   clean_dir: data/clean
   annotated_dir: data/annotated
+  source_dataset: iqbalpurba26/health-topic-dataset
+  text_column: topic
+  raw_file: data/raw/health_topic_dataset.jsonl
+  clean_file: data/clean/medical_text_corpus.txt
+  metadata_file: data/clean/medical_text_corpus_metadata.csv
   train_file: data/annotated/train.conll
   validation_file: data/annotated/val.conll
   test_file: data/annotated/test.conll
