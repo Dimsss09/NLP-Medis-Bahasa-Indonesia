@@ -1,11 +1,338 @@
-"""Fine-tuning entry point for IndoBERT medical NER."""
+"""Fine-tune IndoBERT for Indonesian medical NER token classification."""
 
 from __future__ import annotations
 
+import argparse
+import json
+import random
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Iterable
+
+import numpy as np
+import torch
+import yaml
+from torch.utils.data import DataLoader
+from tqdm.auto import tqdm
+from transformers import AutoConfig, AutoModelForTokenClassification, AutoTokenizer, get_linear_schedule_with_warmup
+
+
+DEFAULT_CONFIG = Path("config.yaml")
+IGNORE_INDEX = -100
+
+
+@dataclass(frozen=True)
+class NerSentence:
+    """A tokenized NER sentence from a CoNLL file."""
+
+    tokens: list[str]
+    labels: list[str]
+
+
+def load_config(path: Path) -> dict:
+    """Load YAML project configuration."""
+    with path.open("r", encoding="utf-8") as file:
+        return yaml.safe_load(file)
+
+
+def set_seed(seed: int) -> None:
+    """Set random seeds for reproducible training."""
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+
+
+def read_conll(path: Path) -> list[NerSentence]:
+    """Read CoNLL token-label sentences."""
+    sentences: list[NerSentence] = []
+    tokens: list[str] = []
+    labels: list[str] = []
+
+    with path.open("r", encoding="utf-8") as file:
+        for raw_line in file:
+            line = raw_line.strip()
+            if not line:
+                if tokens:
+                    sentences.append(NerSentence(tokens=tokens, labels=labels))
+                    tokens = []
+                    labels = []
+                continue
+
+            token, label = line.rsplit(" ", 1)
+            tokens.append(token)
+            labels.append(label)
+
+    if tokens:
+        sentences.append(NerSentence(tokens=tokens, labels=labels))
+
+    return sentences
+
+
+def limit_samples(sentences: list[NerSentence], max_samples: int | None) -> list[NerSentence]:
+    """Return at most max_samples sentences when a limit is configured."""
+    if max_samples is None or max_samples <= 0:
+        return sentences
+    return sentences[:max_samples]
+
+
+def align_labels(
+    sentence: NerSentence,
+    tokenizer,
+    label_to_id: dict[str, int],
+    max_length: int,
+) -> dict[str, list[int]]:
+    """Tokenize a sentence and align word-level labels to first subtokens."""
+    encoded = tokenizer(
+        sentence.tokens,
+        is_split_into_words=True,
+        truncation=True,
+        max_length=max_length,
+    )
+    word_ids = encoded.word_ids()
+
+    labels: list[int] = []
+    previous_word_id: int | None = None
+    for word_id in word_ids:
+        if word_id is None:
+            labels.append(IGNORE_INDEX)
+        elif word_id != previous_word_id:
+            labels.append(label_to_id[sentence.labels[word_id]])
+        else:
+            labels.append(IGNORE_INDEX)
+        previous_word_id = word_id
+
+    encoded["labels"] = labels
+    return encoded
+
+
+def encode_dataset(
+    sentences: Iterable[NerSentence],
+    tokenizer,
+    label_to_id: dict[str, int],
+    max_length: int,
+) -> list[dict[str, list[int]]]:
+    """Encode all sentences into transformer features."""
+    return [align_labels(sentence, tokenizer, label_to_id, max_length) for sentence in sentences]
+
+
+def make_collate_fn(tokenizer):
+    """Create a collate function that pads model inputs and labels together."""
+
+    def collate(features: list[dict[str, list[int]]]) -> dict[str, torch.Tensor]:
+        labels = [feature["labels"] for feature in features]
+        inputs = [
+            {key: value for key, value in feature.items() if key != "labels"}
+            for feature in features
+        ]
+        batch = tokenizer.pad(inputs, padding=True, return_tensors="pt")
+        max_length = batch["input_ids"].shape[1]
+        padded_labels = [
+            label + [IGNORE_INDEX] * (max_length - len(label))
+            for label in labels
+        ]
+        batch["labels"] = torch.tensor(padded_labels, dtype=torch.long)
+        return batch
+
+    return collate
+
+
+def evaluate(model, dataloader: DataLoader, device: torch.device) -> dict[str, float]:
+    """Evaluate token-level loss and accuracy on non-ignored labels."""
+    model.eval()
+    total_loss = 0.0
+    total_batches = 0
+    correct = 0
+    total = 0
+
+    with torch.no_grad():
+        for batch in dataloader:
+            batch = {key: value.to(device) for key, value in batch.items()}
+            outputs = model(**batch)
+            total_loss += float(outputs.loss.item())
+            total_batches += 1
+
+            predictions = outputs.logits.argmax(dim=-1)
+            mask = batch["labels"] != IGNORE_INDEX
+            correct += int((predictions[mask] == batch["labels"][mask]).sum().item())
+            total += int(mask.sum().item())
+
+    return {
+        "loss": total_loss / max(total_batches, 1),
+        "token_accuracy": correct / max(total, 1),
+    }
+
+
+def train(config: dict) -> dict:
+    """Run fine-tuning and save model artifacts."""
+    data_config = config["data"]
+    model_config = config["model"]
+    train_config = config["training"]
+
+    seed = int(train_config["seed"])
+    set_seed(seed)
+
+    labels = config["labels"]
+    label_to_id = {label: index for index, label in enumerate(labels)}
+    id_to_label = {index: label for label, index in label_to_id.items()}
+
+    tokenizer = AutoTokenizer.from_pretrained(model_config["base_model"])
+    model_hf_config = AutoConfig.from_pretrained(model_config["base_model"])
+    model_hf_config.id2label = id_to_label
+    model_hf_config.label2id = label_to_id
+    model_hf_config.num_labels = len(labels)
+    model = AutoModelForTokenClassification.from_pretrained(
+        model_config["base_model"],
+        config=model_hf_config,
+    )
+    model.config.id2label = id_to_label
+    model.config.label2id = label_to_id
+    model.config.num_labels = len(labels)
+
+    train_sentences = limit_samples(
+        read_conll(Path(data_config["train_file"])),
+        train_config.get("max_train_samples"),
+    )
+    validation_sentences = limit_samples(
+        read_conll(Path(data_config["validation_file"])),
+        train_config.get("max_eval_samples"),
+    )
+
+    max_length = int(train_config.get("max_length", 128))
+    train_features = encode_dataset(train_sentences, tokenizer, label_to_id, max_length)
+    validation_features = encode_dataset(validation_sentences, tokenizer, label_to_id, max_length)
+
+    collate_fn = make_collate_fn(tokenizer)
+    train_loader = DataLoader(
+        train_features,
+        batch_size=int(train_config["per_device_train_batch_size"]),
+        shuffle=True,
+        collate_fn=collate_fn,
+    )
+    validation_loader = DataLoader(
+        validation_features,
+        batch_size=int(train_config["per_device_eval_batch_size"]),
+        shuffle=False,
+        collate_fn=collate_fn,
+    )
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model.to(device)
+
+    optimizer = torch.optim.AdamW(
+        model.parameters(),
+        lr=float(train_config["learning_rate"]),
+        weight_decay=float(train_config["weight_decay"]),
+    )
+    epochs = int(train_config["num_train_epochs"])
+    total_steps = max(len(train_loader) * epochs, 1)
+    scheduler = get_linear_schedule_with_warmup(
+        optimizer,
+        num_warmup_steps=int(total_steps * float(train_config.get("warmup_ratio", 0.0))),
+        num_training_steps=total_steps,
+    )
+
+    history: list[dict[str, float | int]] = []
+    for epoch in range(epochs):
+        model.train()
+        running_loss = 0.0
+        progress = tqdm(train_loader, desc=f"epoch {epoch + 1}/{epochs}", leave=False)
+
+        for batch in progress:
+            batch = {key: value.to(device) for key, value in batch.items()}
+            outputs = model(**batch)
+            loss = outputs.loss
+            loss.backward()
+
+            torch.nn.utils.clip_grad_norm_(model.parameters(), float(train_config.get("max_grad_norm", 1.0)))
+            optimizer.step()
+            scheduler.step()
+            optimizer.zero_grad(set_to_none=True)
+
+            running_loss += float(loss.item())
+            progress.set_postfix(loss=f"{loss.item():.4f}")
+
+        validation_metrics = evaluate(model, validation_loader, device)
+        history.append(
+            {
+                "epoch": epoch + 1,
+                "train_loss": running_loss / max(len(train_loader), 1),
+                "validation_loss": validation_metrics["loss"],
+                "validation_token_accuracy": validation_metrics["token_accuracy"],
+            }
+        )
+
+    output_dir = Path(model_config["output_dir"])
+    output_dir.mkdir(parents=True, exist_ok=True)
+    model.save_pretrained(output_dir)
+    tokenizer.save_pretrained(output_dir)
+    normalize_saved_model_config(output_dir, len(labels))
+
+    summary = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "base_model": model_config["base_model"],
+        "output_dir": str(output_dir),
+        "device": str(device),
+        "train_sentences": len(train_sentences),
+        "validation_sentences": len(validation_sentences),
+        "labels": labels,
+        "history": history,
+    }
+    (output_dir / "training_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    return summary
+
+
+def normalize_saved_model_config(output_dir: Path, num_labels: int) -> None:
+    """Normalize saved config fields used by this Transformers version."""
+    config_path = output_dir / "config.json"
+    saved_config = json.loads(config_path.read_text(encoding="utf-8"))
+    saved_config["_num_labels"] = num_labels
+    config_path.write_text(json.dumps(saved_config, indent=2, sort_keys=True), encoding="utf-8")
+
+
+def write_report(summary: dict, path: Path) -> None:
+    """Write a Markdown report for Phase 3."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    last_epoch = summary["history"][-1] if summary["history"] else {}
+    content = f"""# Phase 3 Training Summary
+
+Generated at: {summary["generated_at"]}
+
+## Model
+
+- Base model: {summary["base_model"]}
+- Output directory: {summary["output_dir"]}
+- Device: {summary["device"]}
+
+## Data
+
+- Train sentences used: {summary["train_sentences"]}
+- Validation sentences used: {summary["validation_sentences"]}
+- Labels: {", ".join(summary["labels"])}
+
+## Last Epoch
+
+- Train loss: {last_epoch.get("train_loss", 0):.4f}
+- Validation loss: {last_epoch.get("validation_loss", 0):.4f}
+- Validation token accuracy: {last_epoch.get("validation_token_accuracy", 0):.4f}
+
+## Notes
+
+This is the first bootstrap training run on semi-automatic Phase 2 labels. Use
+Phase 4 evaluation before making any performance claims.
+"""
+    path.write_text(content, encoding="utf-8")
+
 
 def main() -> None:
-    """Entry point for future token-classification training."""
-    raise NotImplementedError("Model training will be implemented in Phase 3.")
+    """CLI entry point."""
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG, help="Path to config.yaml")
+    args = parser.parse_args()
+
+    summary = train(load_config(args.config))
+    write_report(summary, Path("reports/model_phase3_training_summary.md"))
+    print(f"Saved model to {summary['output_dir']}")
 
 
 if __name__ == "__main__":

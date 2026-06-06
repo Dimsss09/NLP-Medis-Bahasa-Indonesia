@@ -56,6 +56,16 @@ menyimpan split CoNLL/BIO ke `data/annotated/train.conll`,
 Catatan: label Fase 2 bersifat semi-otomatis dan perlu ditinjau manual sebelum
 dipakai untuk klaim performa final.
 
+## Melatih Model
+
+```powershell
+python src/train.py
+```
+
+Perintah ini melakukan fine-tuning `indobenchmark/indobert-base-p1` untuk token
+classification dan menyimpan model ke `models/indobert-medical-ner-id`.
+Konfigurasi awal memakai subset bootstrap agar training tetap realistis di CPU.
+
 ## Menjalankan Demo
 
 ```powershell
@@ -70,7 +80,7 @@ fase training selesai.
 - [x] Fase 0 - Inisialisasi proyek
 - [x] Fase 1 - Pengumpulan dan pembersihan data
 - [x] Fase 2 - Anotasi data format BIO
-- [ ] Fase 3 - Fine-tuning model
+- [x] Fase 3 - Fine-tuning model
 - [ ] Fase 4 - Evaluasi
 - [ ] Fase 5 - Demo interaktif
 - [ ] Fase 6 - Dokumentasi dan finalisasi
