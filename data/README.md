@@ -18,3 +18,16 @@ Generated data files:
 
 The generated raw and clean data files are intentionally ignored by Git because
 they are reproducible from `src/data_prep.py` and may contain public forum text.
+
+## Phase 2 Annotation
+
+The Phase 2 bootstrap annotation uses `resources/medical_lexicon.yaml` and
+`src/annotate_bio.py` to generate CoNLL/BIO files:
+
+- `data/annotated/train.conll`
+- `data/annotated/val.conll`
+- `data/annotated/test.conll`
+
+These files are committed because they are the training input for the first
+modeling iteration. They remain semi-automatic labels and should be reviewed
+before final reporting.

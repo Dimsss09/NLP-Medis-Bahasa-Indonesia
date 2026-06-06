@@ -18,6 +18,8 @@ data/clean/*
 !data/clean/.gitkeep
 data/annotated/*
 !data/annotated/.gitkeep
+!data/annotated/*.conll
+!data/annotated/*.md
 
 models/*
 !models/.gitkeep
