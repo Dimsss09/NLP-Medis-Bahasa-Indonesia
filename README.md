@@ -66,6 +66,15 @@ Perintah ini melakukan fine-tuning `indobenchmark/indobert-base-p1` untuk token
 classification dan menyimpan model ke `models/indobert-medical-ner-id`.
 Konfigurasi awal memakai subset bootstrap agar training tetap realistis di CPU.
 
+## Evaluasi Model
+
+```powershell
+python src/evaluate.py
+```
+
+Perintah ini menghitung precision, recall, dan F1 per entitas dengan `seqeval`,
+menyimpan confusion matrix, dan menulis contoh prediksi ke folder `reports/`.
+
 ## Menjalankan Demo
 
 ```powershell
@@ -81,6 +90,6 @@ fase training selesai.
 - [x] Fase 1 - Pengumpulan dan pembersihan data
 - [x] Fase 2 - Anotasi data format BIO
 - [x] Fase 3 - Fine-tuning model
-- [ ] Fase 4 - Evaluasi
+- [x] Fase 4 - Evaluasi
 - [ ] Fase 5 - Demo interaktif
 - [ ] Fase 6 - Dokumentasi dan finalisasi

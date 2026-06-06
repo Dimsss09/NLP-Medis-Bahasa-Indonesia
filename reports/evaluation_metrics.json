@@ -1,0 +1,82 @@
+{
+  "sentence_count": 1306,
+  "token_count": 10337,
+  "token_mismatches": 506,
+  "token_accuracy": 0.951049627551514,
+  "sentence_exact_match": 0.7350689127105666,
+  "micro_precision": 0.791743119266055,
+  "micro_recall": 0.7523975588491717,
+  "micro_f1": 0.7715690657130084,
+  "seqeval_report": {
+    "ANATOMI": {
+      "precision": 0.8183807439824945,
+      "recall": 0.88,
+      "f1-score": 0.8480725623582767,
+      "support": 425
+    },
+    "DIAGNOSIS": {
+      "precision": 1.0,
+      "recall": 0.27692307692307694,
+      "f1-score": 0.4337349397590362,
+      "support": 65
+    },
+    "DOSIS": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 45
+    },
+    "GEJALA": {
+      "precision": 0.764026402640264,
+      "recall": 0.852670349907919,
+      "f1-score": 0.8059181897302002,
+      "support": 543
+    },
+    "OBAT": {
+      "precision": 1.0,
+      "recall": 0.11594202898550725,
+      "f1-score": 0.20779220779220778,
+      "support": 69
+    },
+    "micro avg": {
+      "precision": 0.791743119266055,
+      "recall": 0.7523975588491717,
+      "f1-score": 0.7715690657130084,
+      "support": 1147
+    },
+    "macro avg": {
+      "precision": 0.7164814293245517,
+      "recall": 0.4251070911633007,
+      "f1-score": 0.45910357992794415,
+      "support": 1147
+    },
+    "weighted avg": {
+      "precision": 0.7817595055154521,
+      "recall": 0.7523975588491717,
+      "f1-score": 0.7328464249762563,
+      "support": 1147
+    }
+  },
+  "gold_label_counts": {
+    "O": 9056,
+    "B-GEJALA": 543,
+    "B-OBAT": 69,
+    "B-ANATOMI": 425,
+    "B-DIAGNOSIS": 65,
+    "B-DOSIS": 45,
+    "I-DOSIS": 45,
+    "I-GEJALA": 67,
+    "I-DIAGNOSIS": 6,
+    "I-ANATOMI": 7,
+    "I-OBAT": 9
+  },
+  "predicted_label_counts": {
+    "O": 9240,
+    "B-GEJALA": 598,
+    "B-OBAT": 8,
+    "B-ANATOMI": 457,
+    "B-DIAGNOSIS": 18,
+    "I-GEJALA": 15,
+    "I-DOSIS": 1
+  }
+}
