@@ -15,6 +15,12 @@ data:
   train_file: data/annotated/train.conll
   validation_file: data/annotated/val.conll
   test_file: data/annotated/test.conll
+  silver_dir: data/silver
+  silver_train_file: data/silver/train.conll
+  silver_validation_file: data/silver/val.conll
+  silver_test_file: data/silver/test.conll
+  manual_gold_dir: data/manual_gold
+  manual_gold_file: data/manual_gold/gold_resolved.conll
 
 labels:
   - O
@@ -34,6 +40,7 @@ model:
   output_dir: models/indobert-medical-ner-id
 
 training:
+  train_data_source: silver
   learning_rate: 0.00002
   num_train_epochs: 1
   per_device_train_batch_size: 4

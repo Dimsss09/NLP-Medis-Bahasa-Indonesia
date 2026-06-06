@@ -7,6 +7,9 @@ Generated at: 2026-06-06T18:37:33.872146+00:00
 - Base model: indobenchmark/indobert-base-p1
 - Output directory: models\indobert-medical-ner-id
 - Device: cpu
+- Training data source: silver
+- Training file: data/silver/train.conll
+- Validation file: data/silver/val.conll
 
 ## Data
 
@@ -22,6 +25,5 @@ Generated at: 2026-06-06T18:37:33.872146+00:00
 
 ## Notes
 
-This is a bootstrap training run on semi-automatic Phase 2 labels. Use Phase 4
-evaluation and a manually resolved gold test set before making any performance
-claims.
+This is a bootstrap training run on silver labels. Use Phase 4 evaluation and a
+manually resolved gold test set before making any performance claims.

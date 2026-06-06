@@ -189,12 +189,19 @@ def train(config: dict) -> dict:
     model.config.label2id = label_to_id
     model.config.num_labels = len(labels)
 
+    train_file = data_config["silver_train_file"] if train_config.get("train_data_source") == "silver" else data_config["train_file"]
+    validation_file = (
+        data_config["silver_validation_file"]
+        if train_config.get("train_data_source") == "silver"
+        else data_config["validation_file"]
+    )
+
     train_sentences = limit_samples(
-        read_conll(Path(data_config["train_file"])),
+        read_conll(Path(train_file)),
         train_config.get("max_train_samples"),
     )
     validation_sentences = limit_samples(
-        read_conll(Path(data_config["validation_file"])),
+        read_conll(Path(validation_file)),
         train_config.get("max_eval_samples"),
     )
 
@@ -273,6 +280,9 @@ def train(config: dict) -> dict:
         "base_model": model_config["base_model"],
         "output_dir": str(output_dir),
         "device": str(device),
+        "train_data_source": train_config.get("train_data_source", "annotated"),
+        "train_file": train_file,
+        "validation_file": validation_file,
         "train_sentences": len(train_sentences),
         "validation_sentences": len(validation_sentences),
         "labels": labels,
@@ -303,6 +313,9 @@ Generated at: {summary["generated_at"]}
 - Base model: {summary["base_model"]}
 - Output directory: {summary["output_dir"]}
 - Device: {summary["device"]}
+- Training data source: {summary.get("train_data_source", "annotated")}
+- Training file: {summary.get("train_file", "unknown")}
+- Validation file: {summary.get("validation_file", "unknown")}
 
 ## Data
 
@@ -318,9 +331,8 @@ Generated at: {summary["generated_at"]}
 
 ## Notes
 
-This is a bootstrap training run on semi-automatic Phase 2 labels. Use Phase 4
-evaluation and a manually resolved gold test set before making any performance
-claims.
+This is a bootstrap training run on silver labels. Use Phase 4 evaluation and a
+manually resolved gold test set before making any performance claims.
 """
     path.write_text(content, encoding="utf-8")
 

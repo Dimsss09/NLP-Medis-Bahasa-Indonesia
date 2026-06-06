@@ -56,6 +56,16 @@ menyimpan split CoNLL/BIO ke `data/annotated/train.conll`,
 Catatan: label Fase 2 bersifat semi-otomatis dan perlu ditinjau manual sebelum
 dipakai untuk klaim performa final.
 
+## Membuat Silver Dataset
+
+```powershell
+python src/build_silver_dataset.py
+```
+
+Perintah ini membuat dataset `data/silver/` dari rules dan lexicon. Silver data
+boleh dipakai untuk memperbesar training, tetapi tidak boleh dilaporkan sebagai
+human gold atau bukti agreement annotator.
+
 ## Melatih Model
 
 ```powershell
@@ -64,7 +74,8 @@ python src/train.py
 
 Perintah ini melakukan fine-tuning `indobenchmark/indobert-base-p1` untuk token
 classification dan menyimpan model ke `models/indobert-medical-ner-id`.
-Konfigurasi awal memakai subset bootstrap agar training tetap realistis di CPU.
+Konfigurasi awal memakai `training.train_data_source: silver` dan subset agar
+training tetap realistis di CPU.
 
 ## Evaluasi Model
 
