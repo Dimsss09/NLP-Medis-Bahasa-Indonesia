@@ -1,7 +1,7 @@
 # Ekstraksi Informasi Otomatis dari Teks Medis Bahasa Indonesia
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
-![Model](https://img.shields.io/badge/Model-IndoBERT-teal)
+![Model](https://img.shields.io/badge/Models-IndoBERT%20%2B%20XLM--R-teal)
 ![Demo](https://img.shields.io/badge/Demo-Streamlit-ff4b4b)
 ![Micro F1](https://img.shields.io/badge/Silver%20Micro%20F1-0.9659-brightgreen)
 ![Status](https://img.shields.io/badge/Phase%206-Finalized-success)
@@ -14,8 +14,9 @@ Output utama proyek:
 
 - pipeline data dari korpus mentah ke format BIO/CoNLL;
 - dataset silver berbasis rules dan lexicon;
-- fine-tuned IndoBERT untuk token classification;
-- laporan evaluasi, error analysis, dan model card;
+- fine-tuned IndoBERT sebagai model utama;
+- fine-tuned XLM-RoBERTa sebagai model pembanding multibahasa;
+- laporan evaluasi, perbandingan F1 per entitas, error analysis, dan model card;
 - demo lokal Streamlit dengan highlight entitas berwarna.
 
 ## Hasil Singkat
@@ -24,18 +25,24 @@ Evaluasi engineering terbaru dijalankan pada test set semi-otomatis/silver, jadi
 angka ini berguna untuk melihat progres model tetapi belum boleh dianggap
 sebagai klaim performa klinis final.
 
-| Metrik | Nilai |
-| --- | ---: |
-| Sentences | 1,306 |
-| Tokens | 10,337 |
-| Token accuracy | 0.9931 |
-| Sentence exact match | 0.9609 |
-| Micro precision | 0.9556 |
-| Micro recall | 0.9765 |
-| Micro F1 | 0.9659 |
+| Model | Role | Micro precision | Micro recall | Micro F1 |
+| --- | --- | ---: | ---: | ---: |
+| `indobert` | utama | 0.9556 | 0.9765 | 0.9659 |
+| `xlm_roberta` | pembanding | 0.7144 | 0.7001 | 0.7072 |
 
-Detail lengkap tersedia di `reports/evaluation_report.md`,
-`reports/evaluation_metrics.json`, dan `reports/error_analysis.md`.
+Perbandingan F1 per entitas:
+
+| Entity | IndoBERT F1 | XLM-R F1 |
+| --- | ---: | ---: |
+| ANATOMI | 0.9804 | 0.8745 |
+| DIAGNOSIS | 0.9524 | 0.0000 |
+| DOSIS | 0.9167 | 0.0000 |
+| GEJALA | 0.9588 | 0.6832 |
+| OBAT | 0.9781 | 0.0000 |
+
+Detail lengkap tersedia di `reports/model_comparison.md`,
+`reports/model_comparison.csv`, `reports/evaluation_indobert_report.md`,
+`reports/evaluation_xlm_roberta_report.md`, dan `reports/error_analysis.md`.
 
 ## Screenshot Evidence
 
@@ -52,9 +59,9 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-Model hasil training disimpan secara lokal di
-`models/indobert-medical-ner-id`. Folder `models/` tidak dikomit karena berisi
-file bobot besar.
+Model hasil training disimpan secara lokal di `models/indobert-medical-ner-id`
+dan `models/xlm-roberta-medical-ner-id`. Folder `models/` tidak dikomit karena
+berisi file bobot besar.
 
 ## Cara Jalankan Demo
 
@@ -71,7 +78,7 @@ http://localhost:8501
 Cara pakai demo:
 
 1. Buka halaman Streamlit.
-2. Pastikan `Model directory` mengarah ke `models/indobert-medical-ner-id`.
+2. Pilih model utama IndoBERT atau model pembanding XLM-R di sidebar.
 3. Masukkan teks medis Bahasa Indonesia.
 4. Klik `Ekstrak Entitas`.
 5. Lihat hasil sorotan, tabel entitas, dan tabel token.
@@ -105,11 +112,12 @@ token dan span entitas yang terdeteksi.
 
 ## Model
 
-Model dasar yang digunakan adalah `indobenchmark/indobert-base-p1`, lalu
-di-fine-tune sebagai token classification model. Pipeline training membaca data
-BIO/CoNLL, menyelaraskan token label dengan subword tokenizer IndoBERT, lalu
-menyimpan tokenizer, konfigurasi label, dan bobot model ke
-`models/indobert-medical-ner-id`.
+Model utama yang digunakan adalah `indobenchmark/indobert-base-p1`, lalu
+dibandingkan dengan model multibahasa `xlm-roberta-base`. Keduanya di-fine-tune
+sebagai token classification model dengan data, split, dan hyperparameter yang
+sama. Pipeline training membaca data BIO/CoNLL, menyelaraskan token label dengan
+subword tokenizer masing-masing model, lalu menyimpan tokenizer, konfigurasi
+label, dan bobot model ke folder `models/`.
 
 Label NER:
 
@@ -136,7 +144,7 @@ Komponen teknis:
 - Streamlit untuk UI lokal, text area, tombol inference, sidebar model path, dan
   tabel hasil.
 - PyTorch dan Hugging Face Transformers untuk memuat tokenizer serta model
-  IndoBERT token classification.
+  IndoBERT atau XLM-R token classification.
 - CSS custom untuk background medical NLP, logo animasi, panel hasil, dan badge
   highlight entitas.
 - Asset visual lokal di `assets/medical-ner-background.png`, di-embed sebagai
@@ -180,9 +188,16 @@ gold atau bukti agreement annotator.
 python src/train.py
 ```
 
-Melakukan fine-tuning IndoBERT dan menyimpan output ke
-`models/indobert-medical-ner-id`. Konfigurasi training berada di `config.yaml`;
-saat ini `training.train_data_source` disetel ke `silver`.
+Melakukan fine-tuning semua model yang terdaftar di `config.yaml`: `indobert`
+dan `xlm_roberta`. Untuk melatih satu model saja:
+
+```powershell
+python src/train.py --model-key indobert
+python src/train.py --model-key xlm_roberta
+```
+
+Konfigurasi training berada di `config.yaml`; saat ini
+`training.train_data_source` disetel ke `silver`.
 
 ### 5. Evaluasi Model
 
@@ -190,8 +205,9 @@ saat ini `training.train_data_source` disetel ke `silver`.
 python src/evaluate.py
 ```
 
-Menghitung precision, recall, F1 dengan `seqeval`, menyimpan confusion matrix,
-dan menulis contoh prediksi ke folder `reports/`.
+Menghitung precision, recall, F1 dengan `seqeval` untuk kedua model, menyimpan
+confusion matrix, menulis contoh prediksi, dan membuat tabel perbandingan
+berdampingan di `reports/model_comparison.md`.
 
 ### 6. Validasi Manual Mendekati Industri
 

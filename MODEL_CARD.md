@@ -2,10 +2,12 @@
 
 ## Model Details
 
-- Base model: `indobenchmark/indobert-base-p1`
+- Primary base model: `indobenchmark/indobert-base-p1`
+- Comparator base model: `xlm-roberta-base`
 - Task: token classification / named entity recognition
 - Labels: `GEJALA`, `OBAT`, `DOSIS`, `DIAGNOSIS`, `ANATOMI`
-- Current model path: `models/indobert-medical-ner-id`
+- Primary model path: `models/indobert-medical-ner-id`
+- Comparator model path: `models/xlm-roberta-medical-ner-id`
 
 ## Intended Use
 
@@ -32,16 +34,28 @@ semi-automatic labels. It is not an industry-grade or clinical validation.
 
 Current larger-bootstrap test metrics against semi-automatic labels:
 
-- Micro precision: 0.9556
-- Micro recall: 0.9765
-- Micro F1: 0.9659
-- Token accuracy: 0.9931
+| Model | Micro precision | Micro recall | Micro F1 |
+| --- | ---: | ---: | ---: |
+| IndoBERT | 0.9556 | 0.9765 | 0.9659 |
+| XLM-RoBERTa | 0.7144 | 0.7001 | 0.7072 |
+
+F1 per entity:
+
+| Entity | IndoBERT F1 | XLM-R F1 |
+| --- | ---: | ---: |
+| ANATOMI | 0.9804 | 0.8745 |
+| DIAGNOSIS | 0.9524 | 0.0000 |
+| DOSIS | 0.9167 | 0.0000 |
+| GEJALA | 0.9588 | 0.6832 |
+| OBAT | 0.9781 | 0.0000 |
 
 ## Limitations
 
 - The gold labels are not yet manually adjudicated.
-- `DOSIS` recall is currently poor.
-- `OBAT` recall is currently low.
+- XLM-R underperformed IndoBERT on this small silver benchmark, especially for
+  less frequent entity types.
+- `DOSIS`, `DIAGNOSIS`, and `OBAT` are sensitive to low support and silver-label
+  noise.
 - Performance on long clinical notes, abbreviations, typos, and real hospital
   records is unknown.
 

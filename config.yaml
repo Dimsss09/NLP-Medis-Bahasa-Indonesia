@@ -39,6 +39,18 @@ model:
   base_model: indobenchmark/indobert-base-p1
   output_dir: models/indobert-medical-ner-id
 
+models:
+  indobert:
+    display_name: IndoBERT base p1
+    role: utama
+    base_model: indobenchmark/indobert-base-p1
+    output_dir: models/indobert-medical-ner-id
+  xlm_roberta:
+    display_name: XLM-RoBERTa base
+    role: pembanding
+    base_model: xlm-roberta-base
+    output_dir: models/xlm-roberta-medical-ner-id
+
 training:
   train_data_source: silver
   learning_rate: 0.00002

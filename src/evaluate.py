@@ -1,4 +1,4 @@
-"""Evaluate the trained Indonesian medical NER model."""
+"""Evaluate trained Indonesian medical NER models and compare them."""
 
 from __future__ import annotations
 
@@ -42,6 +42,28 @@ def load_config(path: Path) -> dict:
     """Load project configuration."""
     with path.open("r", encoding="utf-8") as file:
         return yaml.safe_load(file)
+
+
+def get_model_entries(config: dict, model_key: str | None = None) -> dict[str, dict]:
+    """Return configured model entries, with backward compatibility for old config."""
+    if "models" in config:
+        models = config["models"]
+    else:
+        models = {
+            "default": {
+                "display_name": config["model"]["base_model"],
+                "role": "utama",
+                "base_model": config["model"]["base_model"],
+                "output_dir": config["model"]["output_dir"],
+            }
+        }
+
+    if model_key:
+        if model_key not in models:
+            valid = ", ".join(sorted(models))
+            raise KeyError(f"Unknown model key '{model_key}'. Valid options: {valid}")
+        return {model_key: models[model_key]}
+    return models
 
 
 def read_conll(path: Path) -> list[NerSentence]:
@@ -222,7 +244,14 @@ def json_default(value):
     raise TypeError(f"Object of type {value.__class__.__name__} is not JSON serializable")
 
 
-def write_markdown_report(summary: dict, model_dir: str, test_file: str, report_prefix: str, path: Path) -> None:
+def write_markdown_report(
+    summary: dict,
+    model_dir: str,
+    test_file: str,
+    report_prefix: str,
+    path: Path,
+    model_name: str = "",
+) -> None:
     """Write human-readable Phase 4 report."""
     path.parent.mkdir(parents=True, exist_ok=True)
     report = summary["seqeval_report"]
@@ -247,6 +276,7 @@ Generated at: {datetime.now(timezone.utc).isoformat()}
 
 ## Model
 
+- Model name: {model_name or model_dir}
 - Model directory: {model_dir}
 - Test file: {test_file}
 
@@ -281,25 +311,155 @@ need manually reviewed labels.
     path.write_text(content, encoding="utf-8")
 
 
-def evaluate_from_config(config: dict, test_file: Path | None = None, report_prefix: str = "evaluation") -> dict:
-    """Load model and test data, then run evaluation."""
+def evaluate_model(
+    config: dict,
+    model_key: str,
+    model_config: dict,
+    test_file: Path | None = None,
+    report_prefix: str | None = None,
+) -> dict:
+    """Load one model and test data, then run evaluation."""
     data_config = config["data"]
-    model_dir = config["model"]["output_dir"]
+    model_dir = model_config["output_dir"]
     batch_size = int(config["training"]["per_device_eval_batch_size"])
     max_length = int(config["training"].get("max_length", 128))
     test_path = test_file or Path(data_config["test_file"])
+    prefix = report_prefix or f"evaluation_{model_key}"
 
     sentences = read_conll(test_path)
     tokenizer = AutoTokenizer.from_pretrained(model_dir)
     model = AutoModelForTokenClassification.from_pretrained(model_dir)
     records = predict_dataset(model, tokenizer, sentences, batch_size, max_length)
     summary = summarize_predictions(records)
+    summary["model_key"] = model_key
+    summary["model_name"] = model_config.get("display_name", model_config["base_model"])
+    summary["role"] = model_config.get("role", "")
+    summary["base_model"] = model_config["base_model"]
+    summary["model_dir"] = model_dir
+    summary["test_file"] = str(test_path)
 
-    write_json_report(summary, Path(f"reports/{report_prefix}_metrics.json"))
-    write_confusion_matrix(records, config["labels"], Path(f"reports/{report_prefix}_confusion_matrix.csv"))
-    write_examples(records, Path(f"reports/{report_prefix}_prediction_examples.jsonl"))
-    write_markdown_report(summary, model_dir, str(test_path), report_prefix, Path(f"reports/{report_prefix}_report.md"))
+    write_json_report(summary, Path(f"reports/{prefix}_metrics.json"))
+    write_confusion_matrix(records, config["labels"], Path(f"reports/{prefix}_confusion_matrix.csv"))
+    write_examples(records, Path(f"reports/{prefix}_prediction_examples.jsonl"))
+    write_markdown_report(
+        summary,
+        model_dir,
+        str(test_path),
+        prefix,
+        Path(f"reports/{prefix}_report.md"),
+        summary["model_name"],
+    )
     return summary
+
+
+def entity_f1(summary: dict, entity: str) -> float | None:
+    """Return seqeval F1 for one entity if present."""
+    metrics = summary["seqeval_report"].get(entity)
+    if not metrics:
+        return None
+    return float(metrics["f1-score"])
+
+
+def f1_bar(value: float | None, width: int = 20) -> str:
+    """Render a compact text bar for Markdown reports."""
+    if value is None:
+        return ""
+    filled = round(value * width)
+    return "#" * filled + "-" * (width - filled)
+
+
+def write_comparison_reports(summaries: list[dict], labels: list[str], path: Path) -> None:
+    """Write side-by-side model comparison artifacts."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    entity_names = sorted({label.split("-", 1)[1] for label in labels if label != "O" and "-" in label})
+
+    csv_path = path.with_suffix(".csv")
+    with csv_path.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(["entity", *[summary["model_key"] for summary in summaries]])
+        for entity in entity_names:
+            writer.writerow([entity, *[entity_f1(summary, entity) for summary in summaries]])
+
+    header = "| Entity | " + " | ".join(f"{summary['model_key']} F1" for summary in summaries) + " |"
+    divider = "| --- | " + " | ".join("---:" for _ in summaries) + " |"
+    rows = []
+    graph_rows = []
+    for entity in entity_names:
+        values = [entity_f1(summary, entity) for summary in summaries]
+        rows.append(
+            "| {entity} | {values} |".format(
+                entity=entity,
+                values=" | ".join("" if value is None else f"{value:.4f}" for value in values),
+            )
+        )
+        graph_rows.extend(
+            f"- {entity} / {summary['model_key']}: `{f1_bar(value)}` {value:.4f}"
+            for summary, value in zip(summaries, values, strict=True)
+            if value is not None
+        )
+
+    overall_rows = [
+        "| {model_key} | {role} | {base_model} | {model_dir} | {precision:.4f} | {recall:.4f} | {f1:.4f} |".format(
+            model_key=summary["model_key"],
+            role=summary.get("role", ""),
+            base_model=summary["base_model"],
+            model_dir=summary["model_dir"],
+            precision=summary["micro_precision"],
+            recall=summary["micro_recall"],
+            f1=summary["micro_f1"],
+        )
+        for summary in summaries
+    ]
+
+    content = f"""# Phase 4 Model Comparison
+
+Generated at: {datetime.now(timezone.utc).isoformat()}
+
+## Overall Metrics
+
+| Model key | Role | Base model | Model dir | Micro precision | Micro recall | Micro F1 |
+| --- | --- | --- | --- | ---: | ---: | ---: |
+{chr(10).join(overall_rows)}
+
+## F1 per Entity
+
+{header}
+{divider}
+{chr(10).join(rows)}
+
+## Compact F1 Chart
+
+{chr(10).join(graph_rows)}
+
+## Trade-off Notes
+
+- `indobert` is the primary Indonesian model and is expected to be lighter for this Bahasa Indonesia-only task.
+- `xlm_roberta` is the multilingual comparator. It is larger and can need a smaller batch size on limited GPU memory.
+- Use the same data split and hyperparameters for both runs before making the comparison table final.
+
+## Artifacts
+
+- CSV comparison table: `{csv_path.as_posix()}`
+- Per-model JSON, confusion matrix, examples, and Markdown reports are stored with `reports/evaluation_<model_key>_*` names.
+"""
+    path.write_text(content, encoding="utf-8")
+
+
+def evaluate_from_config(
+    config: dict,
+    test_file: Path | None = None,
+    report_prefix: str = "evaluation",
+    model_key: str | None = None,
+) -> list[dict]:
+    """Evaluate one or all configured models."""
+    summaries = []
+    for key, model_config in get_model_entries(config, model_key).items():
+        prefix = report_prefix if model_key else f"{report_prefix}_{key}"
+        summaries.append(evaluate_model(config, key, model_config, test_file, prefix))
+
+    if len(summaries) > 1:
+        write_comparison_reports(summaries, config["labels"], Path("reports/model_comparison.md"))
+    return summaries
 
 
 def main() -> None:
@@ -308,10 +468,12 @@ def main() -> None:
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG, help="Path to config.yaml")
     parser.add_argument("--test-file", type=Path, default=None, help="Optional CoNLL test file override")
     parser.add_argument("--report-prefix", default="evaluation", help="Prefix for report artifact filenames")
+    parser.add_argument("--model-key", default=None, help="Evaluate only one configured model key, e.g. indobert or xlm_roberta")
     args = parser.parse_args()
 
-    summary = evaluate_from_config(load_config(args.config), args.test_file, args.report_prefix)
-    print(f"Micro F1: {summary['micro_f1']:.4f}")
+    summaries = evaluate_from_config(load_config(args.config), args.test_file, args.report_prefix, args.model_key)
+    for summary in summaries:
+        print(f"{summary['model_key']} Micro F1: {summary['micro_f1']:.4f}")
     print("Saved evaluation artifacts to reports/")
 
 

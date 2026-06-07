@@ -8,6 +8,7 @@ from base64 import b64encode
 from pathlib import Path
 
 import streamlit as st
+import yaml
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 if str(ROOT_DIR) not in sys.path:
@@ -17,6 +18,7 @@ from src.predict import DEFAULT_MODEL_DIR, EntitySpan, load_model, predict_entit
 
 
 BACKGROUND_IMAGE = ROOT_DIR / "assets" / "medical-ner-background.png"
+CONFIG_FILE = ROOT_DIR / "config.yaml"
 
 LABEL_COLORS = {
     "GEJALA": ("#fff1f2", "#be123c"),
@@ -193,6 +195,7 @@ def render_brand_header() -> None:
             </div>
             <div class="metric-strip">
                 <span class="metric-pill">IndoBERT token classification</span>
+                <span class="metric-pill">XLM-R comparator ready</span>
                 <span class="metric-pill">Streamlit local demo</span>
                 <span class="metric-pill">Micro F1 silver test: 0.9659</span>
                 <span class="metric-pill">Label: GEJALA, OBAT, DOSIS, DIAGNOSIS, ANATOMI</span>
@@ -201,6 +204,22 @@ def render_brand_header() -> None:
         """,
         unsafe_allow_html=True,
     )
+
+
+def load_model_options() -> dict[str, str]:
+    """Load model display labels and local directories from config.yaml."""
+    if not CONFIG_FILE.exists():
+        return {"IndoBERT": str(DEFAULT_MODEL_DIR)}
+
+    config = yaml.safe_load(CONFIG_FILE.read_text(encoding="utf-8"))
+    configured_models = config.get("models")
+    if not configured_models:
+        return {"IndoBERT": str(config.get("model", {}).get("output_dir", DEFAULT_MODEL_DIR))}
+
+    return {
+        f"{item.get('display_name', key)} ({key})": str(item["output_dir"])
+        for key, item in configured_models.items()
+    }
 
 
 @st.cache_resource(show_spinner="Memuat model NER...")
@@ -253,8 +272,10 @@ def main() -> None:
     inject_page_style()
     render_brand_header()
 
-    model_dir = st.sidebar.text_input("Model directory", str(DEFAULT_MODEL_DIR))
-    st.sidebar.caption("Model lokal hasil fine-tuning Fase 3. Default diarahkan ke output IndoBERT proyek ini.")
+    model_options = load_model_options()
+    selected_model = st.sidebar.selectbox("Model", list(model_options))
+    model_dir = st.sidebar.text_input("Model directory", model_options[selected_model])
+    st.sidebar.caption("Pilih IndoBERT sebagai model utama atau XLM-R sebagai model pembanding setelah training selesai.")
 
     sample_text = "Pasien mengalami demam tinggi, nyeri dada, dan minum paracetamol 500 mg sesudah makan."
     st.markdown("### Input Teks")

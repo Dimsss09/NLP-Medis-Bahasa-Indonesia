@@ -1,4 +1,4 @@
-"""Fine-tune IndoBERT for Indonesian medical NER token classification."""
+"""Fine-tune transformer models for Indonesian medical NER token classification."""
 
 from __future__ import annotations
 
@@ -163,10 +163,31 @@ def evaluate(model, dataloader: DataLoader, device: torch.device) -> dict[str, f
     }
 
 
-def train(config: dict) -> dict:
-    """Run fine-tuning and save model artifacts."""
+def get_model_entries(config: dict, model_key: str | None = None) -> dict[str, dict]:
+    """Return configured model entries, with backward compatibility for old config."""
+    if "models" in config:
+        models = config["models"]
+    else:
+        models = {
+            "default": {
+                "display_name": config["model"]["base_model"],
+                "role": "utama",
+                "base_model": config["model"]["base_model"],
+                "output_dir": config["model"]["output_dir"],
+            }
+        }
+
+    if model_key:
+        if model_key not in models:
+            valid = ", ".join(sorted(models))
+            raise KeyError(f"Unknown model key '{model_key}'. Valid options: {valid}")
+        return {model_key: models[model_key]}
+    return models
+
+
+def train_single_model(config: dict, model_key: str, model_config: dict) -> dict:
+    """Run fine-tuning for one configured model and save artifacts."""
     data_config = config["data"]
-    model_config = config["model"]
     train_config = config["training"]
 
     seed = int(train_config["seed"])
@@ -277,6 +298,9 @@ def train(config: dict) -> dict:
 
     summary = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "model_key": model_key,
+        "display_name": model_config.get("display_name", model_config["base_model"]),
+        "role": model_config.get("role", ""),
         "base_model": model_config["base_model"],
         "output_dir": str(output_dir),
         "device": str(device),
@@ -292,6 +316,14 @@ def train(config: dict) -> dict:
     return summary
 
 
+def train(config: dict, model_key: str | None = None) -> list[dict]:
+    """Run fine-tuning for one or all configured models."""
+    summaries = []
+    for key, model_config in get_model_entries(config, model_key).items():
+        summaries.append(train_single_model(config, key, model_config))
+    return summaries
+
+
 def normalize_saved_model_config(output_dir: Path, num_labels: int) -> None:
     """Normalize saved config fields used by this Transformers version."""
     config_path = output_dir / "config.json"
@@ -300,39 +332,66 @@ def normalize_saved_model_config(output_dir: Path, num_labels: int) -> None:
     config_path.write_text(json.dumps(saved_config, indent=2, sort_keys=True), encoding="utf-8")
 
 
-def write_report(summary: dict, path: Path) -> None:
+def write_report(summaries: list[dict], path: Path) -> None:
     """Write a Markdown report for Phase 3."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    last_epoch = summary["history"][-1] if summary["history"] else {}
-    content = f"""# Phase 3 Training Summary
+    sections = []
+    comparison_rows = []
+    for summary in summaries:
+        last_epoch = summary["history"][-1] if summary["history"] else {}
+        comparison_rows.append(
+            "| {model_key} | {role} | {base_model} | {output_dir} | {train_loss:.4f} | {validation_loss:.4f} | {validation_accuracy:.4f} |".format(
+                model_key=summary["model_key"],
+                role=summary.get("role", ""),
+                base_model=summary["base_model"],
+                output_dir=summary["output_dir"],
+                train_loss=last_epoch.get("train_loss", 0),
+                validation_loss=last_epoch.get("validation_loss", 0),
+                validation_accuracy=last_epoch.get("validation_token_accuracy", 0),
+            )
+        )
+        sections.append(
+            f"""## {summary["display_name"]} (`{summary["model_key"]}`)
 
-Generated at: {summary["generated_at"]}
-
-## Model
-
+- Role: {summary.get("role", "-")}
 - Base model: {summary["base_model"]}
 - Output directory: {summary["output_dir"]}
 - Device: {summary["device"]}
 - Training data source: {summary.get("train_data_source", "annotated")}
 - Training file: {summary.get("train_file", "unknown")}
 - Validation file: {summary.get("validation_file", "unknown")}
-
-## Data
-
 - Train sentences used: {summary["train_sentences"]}
 - Validation sentences used: {summary["validation_sentences"]}
-- Labels: {", ".join(summary["labels"])}
+- Last train loss: {last_epoch.get("train_loss", 0):.4f}
+- Last validation loss: {last_epoch.get("validation_loss", 0):.4f}
+- Last validation token accuracy: {last_epoch.get("validation_token_accuracy", 0):.4f}
+"""
+        )
 
-## Last Epoch
+    content = f"""# Phase 3 Training Summary
 
-- Train loss: {last_epoch.get("train_loss", 0):.4f}
-- Validation loss: {last_epoch.get("validation_loss", 0):.4f}
-- Validation token accuracy: {last_epoch.get("validation_token_accuracy", 0):.4f}
+Generated at: {datetime.now(timezone.utc).isoformat()}
+
+## Shared Setup
+
+- Labels: {", ".join(summaries[0]["labels"]) if summaries else "-"}
+- Data source: {summaries[0].get("train_data_source", "annotated") if summaries else "-"}
+- Hyperparameters are read once from `training` in `config.yaml` and reused for every model to keep the comparison fair.
+
+## Model Runs
+
+| Model key | Role | Base model | Output dir | Train loss | Validation loss | Validation token accuracy |
+| --- | --- | --- | --- | ---: | ---: | ---: |
+{chr(10).join(comparison_rows)}
+
+{chr(10).join(sections)}
 
 ## Notes
 
-This is a bootstrap training run on silver labels. Use Phase 4 evaluation and a
-manually resolved gold test set before making any performance claims.
+This is a bootstrap training setup on silver labels. `xlm-roberta-base` has a
+larger memory footprint than IndoBERT; if GPU memory is limited, lower
+`training.per_device_train_batch_size` and rerun the same config for both
+models.
 """
     path.write_text(content, encoding="utf-8")
 
@@ -341,11 +400,13 @@ def main() -> None:
     """CLI entry point."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG, help="Path to config.yaml")
+    parser.add_argument("--model-key", default=None, help="Train only one configured model key, e.g. indobert or xlm_roberta")
     args = parser.parse_args()
 
-    summary = train(load_config(args.config))
-    write_report(summary, Path("reports/model_phase3_training_summary.md"))
-    print(f"Saved model to {summary['output_dir']}")
+    summaries = train(load_config(args.config), args.model_key)
+    write_report(summaries, Path("reports/model_phase3_training_summary.md"))
+    for summary in summaries:
+        print(f"Saved {summary['model_key']} model to {summary['output_dir']}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,84 @@
+{
+  "sentence_count": 1306,
+  "token_count": 10337,
+  "token_mismatches": 553,
+  "token_accuracy": 0.9465028538260617,
+  "sentence_exact_match": 0.7075038284839203,
+  "micro_precision": 0.7144128113879004,
+  "micro_recall": 0.7000871839581517,
+  "micro_f1": 0.7071774548656979,
+  "seqeval_report": {
+    "ANATOMI": {
+      "precision": 0.8096192384769539,
+      "recall": 0.9505882352941176,
+      "f1-score": 0.8744588744588745,
+      "support": 425
+    },
+    "DIAGNOSIS": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 65
+    },
+    "DOSIS": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 45
+    },
+    "GEJALA": {
+      "precision": 0.6384,
+      "recall": 0.7348066298342542,
+      "f1-score": 0.6832191780821917,
+      "support": 543
+    },
+    "OBAT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 69
+    },
+    "micro avg": {
+      "precision": 0.7144128113879004,
+      "recall": 0.7000871839581517,
+      "f1-score": 0.7071774548656979,
+      "support": 1147
+    },
+    "macro avg": {
+      "precision": 0.28960384769539077,
+      "recall": 0.33707897302567436,
+      "f1-score": 0.31153561050821327,
+      "support": 1147
+    },
+    "weighted avg": {
+      "precision": 0.6022139288166569,
+      "recall": 0.7000871839581517,
+      "f1-score": 0.6474568747547095,
+      "support": 1147
+    }
+  },
+  "gold_label_counts": {
+    "O": 9056,
+    "B-GEJALA": 543,
+    "B-OBAT": 69,
+    "B-ANATOMI": 425,
+    "B-DIAGNOSIS": 65,
+    "B-DOSIS": 45,
+    "I-DOSIS": 45,
+    "I-GEJALA": 67,
+    "I-DIAGNOSIS": 6,
+    "I-ANATOMI": 7,
+    "I-OBAT": 9
+  },
+  "predicted_label_counts": {
+    "O": 9213,
+    "B-GEJALA": 625,
+    "B-ANATOMI": 499
+  },
+  "model_key": "xlm_roberta",
+  "model_name": "XLM-RoBERTa base",
+  "role": "pembanding",
+  "base_model": "xlm-roberta-base",
+  "model_dir": "models/xlm-roberta-medical-ner-id",
+  "test_file": "data\\annotated\\test.conll"
+}
