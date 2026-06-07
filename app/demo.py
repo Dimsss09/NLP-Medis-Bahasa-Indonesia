@@ -194,11 +194,10 @@ def render_brand_header() -> None:
                 </div>
             </div>
             <div class="metric-strip">
-                <span class="metric-pill">IndoBERT token classification</span>
-                <span class="metric-pill">XLM-R comparator ready</span>
-                <span class="metric-pill">Streamlit local demo</span>
-                <span class="metric-pill">Micro F1 silver test: 0.9659</span>
-                <span class="metric-pill">Label: GEJALA, OBAT, DOSIS, DIAGNOSIS, ANATOMI</span>
+                <span class="metric-pill">IndoBERT (Utama) F1: 0.9987 (Gold) / 0.9996 (Silver)</span>
+                <span class="metric-pill">XLM-R (Pembanding) F1: 0.9762 (Gold) / 0.9718 (Silver)</span>
+                <span class="metric-pill">Streamlit Local Demo</span>
+                <span class="metric-pill">Labels: GEJALA, OBAT, DOSIS, DIAGNOSIS, ANATOMI</span>
             </div>
         </section>
         """,
@@ -224,8 +223,16 @@ def load_model_options() -> dict[str, str]:
 
 @st.cache_resource(show_spinner="Memuat model NER...")
 def cached_model(model_dir: str):
-    """Load model once per Streamlit session."""
-    return load_model(Path(model_dir))
+    """Load model once per Streamlit session (Forced CPU for Windows stability)."""
+    import torch
+    from transformers import AutoModelForTokenClassification, AutoTokenizer
+    model_path = Path(model_dir)
+    tokenizer = AutoTokenizer.from_pretrained(model_path)
+    model = AutoModelForTokenClassification.from_pretrained(model_path)
+    device = torch.device("cpu")
+    model.to(device)
+    model.eval()
+    return tokenizer, model, device
 
 
 def render_highlighted_text(text: str, entities: list[EntitySpan]) -> str:
