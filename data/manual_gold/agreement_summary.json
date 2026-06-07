@@ -1,18 +1,38 @@
 {
-  "generated_at": "2026-06-06T18:26:48.230318+00:00",
-  "status": "not_ready",
+  "generated_at": "2026-06-07T23:28:03.574078+00:00",
+  "status": "ready_for_resolution",
   "errors": [],
-  "incomplete_template_detected": true,
+  "incomplete_template_detected": false,
   "sentence_count": 400,
   "token_count": 3194,
-  "token_agreement": 1.0,
-  "cohen_kappa": 0.0,
-  "entity_f1_between_annotators": 0.0,
-  "conflict_count": 0,
+  "token_agreement": 0.9837194740137758,
+  "cohen_kappa": 0.9308296954870716,
+  "entity_f1_between_annotators": 0.9006802721088436,
+  "conflict_count": 52,
   "annotator_1_label_counts": {
-    "O": 3194
+    "O": 2772,
+    "B-GEJALA": 184,
+    "B-ANATOMI": 140,
+    "I-ANATOMI": 2,
+    "I-GEJALA": 22,
+    "B-DIAGNOSIS": 18,
+    "B-DOSIS": 14,
+    "I-DOSIS": 14,
+    "B-OBAT": 22,
+    "I-OBAT": 5,
+    "I-DIAGNOSIS": 1
   },
   "annotator_2_label_counts": {
-    "O": 3194
+    "O": 2796,
+    "B-ANATOMI": 135,
+    "I-ANATOMI": 2,
+    "B-GEJALA": 159,
+    "B-OBAT": 22,
+    "I-GEJALA": 21,
+    "B-DIAGNOSIS": 26,
+    "B-DOSIS": 15,
+    "I-DOSIS": 12,
+    "I-DIAGNOSIS": 1,
+    "I-OBAT": 5
   }
 }

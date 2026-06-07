@@ -1,4 +1,3 @@
-# text = apakah menstruasi berpengaruh pada rendahnya kadar hemoglobin
 apakah O
 menstruasi O
 berpengaruh O
@@ -7,14 +6,12 @@ rendahnya O
 kadar O
 hemoglobin O
 
-# text = apakah batuk berkepanjangan dapat disembuhkan
 apakah O
-batuk O
+batuk B-GEJALA
 berkepanjangan O
 dapat O
 disembuhkan O
 
-# text = cara mengatasi siku hingga telapak tangan bruntusan kecil dan terasa gatal
 cara O
 mengatasi O
 siku O
@@ -27,7 +24,6 @@ dan O
 terasa O
 gatal B-GEJALA
 
-# text = keluar bercak coklat dan keputihan sebelum haid
 keluar O
 bercak O
 coklat O
@@ -36,7 +32,6 @@ keputihan O
 sebelum O
 haid O
 
-# text = tetes mata belekan di pagi hari yang bagus di apotek
 tetes O
 mata B-ANATOMI
 belekan O
@@ -48,13 +43,11 @@ bagus O
 di O
 apotek O
 
-# text = mengatasi alergi air mata
 mengatasi O
 alergi B-GEJALA
 air O
 mata B-ANATOMI
 
-# text = kulit wajah memerah terasa kaku seperti plastik dan perih tetapi tidak gatal
 kulit B-ANATOMI
 wajah B-ANATOMI
 memerah O
@@ -68,10 +61,9 @@ tetapi O
 tidak O
 gatal B-GEJALA
 
-# text = cara mengatasi bengkak dan bentol di tubuh anak usia tahun
 cara O
 mengatasi O
-bengkak B-ANATOMI
+bengkak B-GEJALA
 dan O
 bentol B-GEJALA
 di O
@@ -80,7 +72,6 @@ anak O
 usia O
 tahun O
 
-# text = kemungkinan keguguran saat vagina keluar darah menggumpal
 kemungkinan O
 keguguran O
 saat O
@@ -89,7 +80,6 @@ keluar O
 darah O
 menggumpal O
 
-# text = apakah kandungan benzalkonium chloride efektif untuk hand sanitizer
 apakah O
 kandungan O
 benzalkonium O
@@ -99,7 +89,6 @@ untuk O
 hand O
 sanitizer O
 
-# text = penyebab belum kunjung haid meski pil kb sudah habis
 penyebab O
 belum O
 kunjung O
@@ -110,7 +99,6 @@ kb O
 sudah O
 habis O
 
-# text = penyebab telat haid selama bulan namun hasil testpack negatif
 penyebab O
 telat O
 haid O
@@ -121,7 +109,6 @@ hasil O
 testpack O
 negatif O
 
-# text = sudah minum obat herbal tapi belum haid juga
 sudah O
 minum O
 obat O
@@ -131,16 +118,14 @@ belum O
 haid O
 juga O
 
-# text = keluar cairan dari sebelah hidung saat minum
 keluar O
 cairan O
 dari O
 sebelah O
-hidung B-OBAT
+hidung B-ANATOMI
 saat O
 minum O
 
-# text = bagaimana cara mengatasi siklus menstruasi yang tidak teratur
 bagaimana O
 cara O
 mengatasi O
@@ -150,7 +135,6 @@ yang O
 tidak O
 teratur O
 
-# text = penyebab keringat berlebih setelah konsumsi obat
 penyebab O
 keringat O
 berlebih O
@@ -158,7 +142,6 @@ setelah O
 konsumsi O
 obat O
 
-# text = timbul ruam seperti biduran saat kulit bayi digaruk
 timbul O
 ruam B-GEJALA
 seperti O
@@ -168,7 +151,6 @@ kulit B-ANATOMI
 bayi O
 digaruk O
 
-# text = penanganan tangan bengkak berisi cairan akibat suntik kontras
 penanganan O
 tangan B-ANATOMI
 bengkak B-GEJALA
@@ -178,7 +160,6 @@ akibat O
 suntik O
 kontras O
 
-# text = bagaimana caranya mengatasi sakit pada tulang pipi dan hidung tersumbat
 bagaimana O
 caranya O
 mengatasi O
@@ -190,7 +171,6 @@ dan O
 hidung B-GEJALA
 tersumbat I-GEJALA
 
-# text = bintik putih berair disertai gatal pada sela jari tangan
 bintik O
 putih O
 berair O
@@ -201,7 +181,6 @@ sela O
 jari O
 tangan B-ANATOMI
 
-# text = penyebab dan cara menangani kulit gatal dan berbintik putih
 penyebab O
 dan O
 cara O
@@ -212,7 +191,6 @@ dan O
 berbintik O
 putih O
 
-# text = obat flu yang aman untuk penderita hipertensi
 obat O
 flu B-DIAGNOSIS
 yang O
@@ -221,7 +199,6 @@ untuk O
 penderita O
 hipertensi B-DIAGNOSIS
 
-# text = cara meredakan nyeri haid tidak tertahankan saat hari pertama
 cara O
 meredakan O
 nyeri B-GEJALA
@@ -232,7 +209,6 @@ saat O
 hari O
 pertama O
 
-# text = gatal bentol muncul ruam kemerahan di tubuh hingga muntah dan pusing
 gatal B-GEJALA
 bentol B-GEJALA
 muncul O
@@ -245,7 +221,6 @@ muntah B-GEJALA
 dan O
 pusing B-GEJALA
 
-# text = cara agar darah haid keluar deras secara alami
 cara O
 agar O
 darah O
@@ -255,8 +230,7 @@ deras O
 secara O
 alami O
 
-# text = kepala terasa pusing mual muntah buihbusa dan sesak napas setelah makan daging sapi
-kepala B-DIAGNOSIS
+kepala B-ANATOMI
 terasa O
 pusing B-GEJALA
 mual B-GEJALA
@@ -270,7 +244,6 @@ makan I-DOSIS
 daging O
 sapi O
 
-# text = keluar darah banyak lebih dari minggu saat haid dan sebelumnya mengalami telat haid
 keluar O
 darah O
 banyak O
@@ -285,7 +258,6 @@ mengalami O
 telat O
 haid O
 
-# text = perut terasa kram disertai siklus haid berubah
 perut B-ANATOMI
 terasa O
 kram O
@@ -294,7 +266,6 @@ siklus O
 haid O
 berubah O
 
-# text = tidak merasakan tandatanda menjelang haid apakah normal
 tidak O
 merasakan O
 tandatanda O
@@ -303,7 +274,6 @@ haid O
 apakah O
 normal O
 
-# text = telat haid disebabkan karena faktor stress
 telat O
 haid O
 disebabkan O
@@ -311,7 +281,6 @@ karena O
 faktor O
 stress O
 
-# text = apakah boleh kembali minum obat yang sama saat nyeri kambuh pada penderita kista ovarium
 apakah O
 boleh O
 kembali O
@@ -320,14 +289,13 @@ obat O
 yang O
 sama O
 saat O
-nyeri B-DOSIS
+nyeri B-GEJALA
 kambuh O
 pada O
 penderita O
 kista O
 ovarium O
 
-# text = kulit wajah mengelupas dan terasa tidak nyaman setelah menggunakan sabun wajah
 kulit B-ANATOMI
 wajah B-ANATOMI
 mengelupas O
@@ -340,7 +308,6 @@ menggunakan O
 sabun O
 wajah B-ANATOMI
 
-# text = aturan konsumsi obat tbc untuk tahap lanjutan
 aturan O
 konsumsi O
 obat O
@@ -349,7 +316,6 @@ untuk O
 tahap O
 lanjutan O
 
-# text = haid kali dalam sebulan apakah pertanda subur
 haid O
 kali O
 dalam O
@@ -358,7 +324,6 @@ apakah O
 pertanda O
 subur O
 
-# text = obat kutu rambut di apotek yang paling ampuh
 obat O
 kutu O
 rambut O
@@ -368,7 +333,6 @@ yang O
 paling O
 ampuh O
 
-# text = kenapa habis cukur bulu kaki jadi merah dan gatal
 kenapa O
 habis O
 cukur O
@@ -379,10 +343,9 @@ merah O
 dan O
 gatal B-GEJALA
 
-# text = muntah setelah minum obat asam mefenamat untuk mengatasi nyeri haid apakah perlu minum lagi
 muntah B-GEJALA
-setelah B-DIAGNOSIS
-minum I-DIAGNOSIS
+setelah B-DOSIS
+minum I-DOSIS
 obat O
 asam O
 mefenamat O
@@ -395,7 +358,6 @@ perlu O
 minum O
 lagi O
 
-# text = wajah alergi kambuh lagi setelah berhenti minum obat
 wajah B-ANATOMI
 alergi B-GEJALA
 kambuh O
@@ -405,7 +367,6 @@ berhenti O
 minum O
 obat O
 
-# text = penyebab keluar darah setelah haid berhenti
 penyebab O
 keluar O
 darah O
@@ -413,7 +374,6 @@ setelah O
 haid O
 berhenti O
 
-# text = bolehkan minum obat batuk setelah vaksin covid
 bolehkan O
 minum O
 obat B-OBAT
@@ -422,7 +382,6 @@ setelah O
 vaksin O
 covid O
 
-# text = dosis obat pilek untuk anak usia bulan
 dosis O
 obat O
 pilek O
@@ -431,7 +390,6 @@ anak O
 usia O
 bulan O
 
-# text = rekomendasi obat asma yang ampuh supaya tidak sering kambuh
 rekomendasi O
 obat O
 asma B-DIAGNOSIS
@@ -442,14 +400,12 @@ tidak O
 sering O
 kambuh O
 
-# text = penyebab pilek tidak kunjung sembuh
 penyebab O
 pilek O
 tidak O
 kunjung O
 sembuh O
 
-# text = muncul benjolan gatal berair setelah digit nyamuk
 muncul O
 benjolan O
 gatal B-GEJALA
@@ -458,7 +414,6 @@ setelah O
 digit O
 nyamuk O
 
-# text = belum pernah haid pada penderita hymen imperforata hingga usia tahun
 belum O
 pernah O
 haid O
@@ -470,7 +425,6 @@ hingga O
 usia O
 tahun O
 
-# text = tetap menggunakan obat telinga saat gejala infeksi telinga mulai membaik
 tetap O
 menggunakan O
 obat O
@@ -482,23 +436,20 @@ telinga O
 mulai O
 membaik O
 
-# text = gatal pasca penggunaan exfoliating toner
 gatal B-GEJALA
 pasca O
 penggunaan O
 exfoliating O
 toner O
 
-# text = bekas operasi caesar terasa perih dan gatal
 bekas O
 operasi O
 caesar O
 terasa O
 perih O
 dan O
-gatal B-DIAGNOSIS
+gatal B-GEJALA
 
-# text = interaksi obatobatan dari dokter penyakit dalam psikiater dan dokter umum
 interaksi O
 obatobatan O
 dari O
@@ -510,7 +461,6 @@ dan O
 dokter O
 umum O
 
-# text = cara mengobati urtikaria yang tak kunjung sembuh
 cara O
 mengobati O
 urtikaria O
@@ -519,7 +469,6 @@ tak O
 kunjung O
 sembuh O
 
-# text = bagaimana solusi jika susah menelan obat pada ibu hamil
 bagaimana O
 solusi O
 jika O
@@ -530,7 +479,6 @@ pada O
 ibu O
 hamil O
 
-# text = keamanan obat asma untuk ibu hamil
 keamanan O
 obat O
 asma B-DIAGNOSIS
@@ -538,21 +486,18 @@ untuk O
 ibu O
 hamil O
 
-# text = cara alami untuk menunda menstruasi
 cara O
 alami O
 untuk O
 menunda O
 menstruasi O
 
-# text = tubuh gatal setelah minum jamu
 tubuh O
 gatal B-GEJALA
 setelah B-DOSIS
 minum I-DOSIS
 jamu O
 
-# text = bolehkah melakukan vaksin covid saat sering pilek dan bersin di pagi hari
 bolehkah O
 melakukan O
 vaksin O
@@ -566,14 +511,12 @@ di O
 pagi O
 hari O
 
-# text = apakah miom memengaruhi siklus menstruasi
 apakah O
 miom O
 memengaruhi O
 siklus O
 menstruasi O
 
-# text = bolehkah konsumsi obat untuk mengatasi sakit gigi sebelum ke dokter gigi
 bolehkah O
 konsumsi O
 obat O
@@ -586,7 +529,6 @@ ke O
 dokter O
 gigi O
 
-# text = mengatasi kaki bengkak akibat keseleo yang tidak kunjung sembuh
 mengatasi O
 kaki O
 bengkak B-GEJALA
@@ -597,7 +539,6 @@ tidak O
 kunjung O
 sembuh O
 
-# text = cara membedakan purging atau breakout saat menggunakan produk perawatan kulit
 cara O
 membedakan O
 purging O
@@ -609,7 +550,6 @@ produk O
 perawatan O
 kulit B-ANATOMI
 
-# text = bolehkah vaksin covid saat pengobatan tenofovir
 bolehkah O
 vaksin O
 covid O
@@ -617,13 +557,11 @@ saat O
 pengobatan O
 tenofovir O
 
-# text = penyebab bruntusan disekitar mulut
 penyebab O
 bruntusan B-GEJALA
 disekitar O
 mulut O
 
-# text = cara mengolah jahe yang bisa digunakan untuk menghentikan haid
 cara O
 mengolah O
 jahe O
@@ -634,7 +572,6 @@ untuk O
 menghentikan O
 haid O
 
-# text = bagaimana aturan konsumsi obat simvastatin mg
 bagaimana O
 aturan O
 konsumsi O
@@ -642,13 +579,11 @@ obat O
 simvastatin O
 mg O
 
-# text = penyebab siklus haid berubahubah
 penyebab O
 siklus O
 haid O
 berubahubah O
 
-# text = kapan waktu yang tepat untuk periksa kandungan saat telat haid
 kapan O
 waktu O
 yang O
@@ -660,12 +595,10 @@ saat O
 telat O
 haid O
 
-# text = konsumsi obat bersamaan
 konsumsi O
 obat O
 bersamaan O
 
-# text = bisakah langsung terjadi kehamilan setelah haid baru selesai
 bisakah O
 langsung O
 terjadi O
@@ -675,14 +608,12 @@ haid O
 baru O
 selesai O
 
-# text = sakit mata akibat kelilipan serangga
 sakit O
 mata B-ANATOMI
 akibat O
 kelilipan O
 serangga O
 
-# text = keluar gumpalan darah disertai serat saat haid setelah keguguran bulan yang lalu
 keluar O
 gumpalan O
 darah O
@@ -696,7 +627,6 @@ bulan O
 yang O
 lalu O
 
-# text = penyebab batuk saat bangun tidur dan gusi berdarah
 penyebab O
 batuk B-GEJALA
 saat O
@@ -706,7 +636,6 @@ dan O
 gusi O
 berdarah O
 
-# text = penyebab rasa gatal dan perih di ketiak setelah menggunakan krim perontok bulu
 penyebab O
 rasa O
 gatal B-GEJALA
@@ -720,14 +649,13 @@ krim O
 perontok O
 bulu O
 
-# text = menjelang haid payudara tidak lagi terasa nyeri dan siklus haid menjadi tidak teratur
 menjelang O
 haid O
 payudara O
 tidak O
 lagi O
 terasa O
-nyeri O
+nyeri B-GEJALA
 dan O
 siklus O
 haid O
@@ -735,7 +663,6 @@ menjadi O
 tidak O
 teratur O
 
-# text = penanganan pipi merah setelah ditempeli es batu
 penanganan O
 pipi O
 merah O
@@ -744,7 +671,6 @@ ditempeli O
 es O
 batu O
 
-# text = apakah kiranti untuk wanita haid bisa diminum oleh wanita berumur tahun
 apakah O
 kiranti O
 untuk O
@@ -757,7 +683,6 @@ wanita O
 berumur O
 tahun O
 
-# text = obat yang bagus untuk mengatasi bronkitis yang kambuh kembali
 obat O
 yang O
 bagus O
@@ -768,7 +693,6 @@ yang O
 kambuh O
 kembali O
 
-# text = penyebab muncul bintik merah pada wajah setelah bangun tidur
 penyebab O
 muncul O
 bintik B-GEJALA
@@ -779,17 +703,15 @@ setelah O
 bangun O
 tidur O
 
-# text = timbulnya ruam kulit berbentuk bentol atau bintik merah
 timbulnya O
 ruam B-GEJALA
 kulit B-ANATOMI
 berbentuk O
-bentol B-DIAGNOSIS
+bentol B-GEJALA
 atau O
 bintik B-GEJALA
 merah I-GEJALA
 
-# text = keluar lendir kuning kehijauan dari hidung selama bertahuntahun pada anak usia tahun
 keluar O
 lendir O
 kuning O
@@ -803,13 +725,11 @@ anak O
 usia O
 tahun O
 
-# text = fungsi obat imunosupresan
 fungsi O
 obat O
 imunosupresan O
 
-# text = salep untuk menghilangkan bekas gatal yang menghitam di bokong
-salep B-ANATOMI
+salep B-OBAT
 untuk O
 menghilangkan O
 bekas O
@@ -819,7 +739,6 @@ menghitam O
 di O
 bokong O
 
-# text = penyebab cegukan setelah konsumsi obat penggemuk badan
 penyebab O
 cegukan O
 setelah O
@@ -828,7 +747,6 @@ obat O
 penggemuk O
 badan B-ANATOMI
 
-# text = apakah bisa langsung melakukan test pack saat haid terlambat
 apakah O
 bisa O
 langsung O
@@ -839,7 +757,6 @@ saat O
 haid O
 terlambat O
 
-# text = penyebab nyeri dan ada benjolan di bekas lokasi penyuntikan obat
 penyebab O
 nyeri B-GEJALA
 dan O
@@ -851,14 +768,12 @@ lokasi O
 penyuntikan O
 obat O
 
-# text = ruam gatal disekitar puting payudara
 ruam B-GEJALA
 gatal B-GEJALA
 disekitar O
 puting O
 payudara O
 
-# text = obat yang baik untuk mengatasi asam urat
 obat O
 yang O
 baik O
@@ -867,14 +782,12 @@ mengatasi O
 asam O
 urat O
 
-# text = obat batuk karena alergi makanan
-obat O
-batuk O
+obat B-OBAT
+batuk I-OBAT
 karena O
 alergi B-GEJALA
 makanan O
 
-# text = gatal pada area tangan setelah mandi
 gatal B-GEJALA
 pada O
 area O
@@ -882,7 +795,6 @@ tangan B-ANATOMI
 setelah O
 mandi O
 
-# text = apakah obat methylprednisolone bisa memengaruhi siklus haid
 apakah O
 obat O
 methylprednisolone O
@@ -891,7 +803,6 @@ memengaruhi O
 siklus O
 haid O
 
-# text = muka yang memerah di bagian dahi pipi kiri mata dan hidung setelah memakai obat jerawat
 muka O
 yang O
 memerah O
@@ -908,7 +819,6 @@ memakai O
 obat O
 jerawat O
 
-# text = hubungan telat haid dengan konsumsi teh jati cina
 hubungan O
 telat O
 haid O
@@ -918,7 +828,6 @@ teh O
 jati O
 cina O
 
-# text = perbedaan usia kehamilan berdasarkan usg dan hpht
 perbedaan O
 usia O
 kehamilan O
@@ -927,7 +836,6 @@ usg O
 dan O
 hpht O
 
-# text = apakah normal haid selama hari setelah nifas bulan
 apakah O
 normal O
 haid O
@@ -937,7 +845,6 @@ setelah O
 nifas O
 bulan O
 
-# text = batuk pada malam hari disertai dahak berwarna putih dan hidung berair
 batuk B-GEJALA
 pada O
 malam O
@@ -950,7 +857,6 @@ dan O
 hidung B-ANATOMI
 berair O
 
-# text = penyebab telat haid hingga berbulanbulan di usia tahun
 penyebab O
 telat O
 haid O
@@ -960,7 +866,6 @@ di O
 usia O
 tahun O
 
-# text = bolehkan minum larutan penyegar saat haid
 bolehkan O
 minum O
 larutan O
@@ -968,10 +873,9 @@ penyegar O
 saat O
 haid O
 
-# text = cara mengatasi alergi udara kotor agar tidak kambuh lagi
 cara O
 mengatasi O
-alergi B-ANATOMI
+alergi B-GEJALA
 udara O
 kotor O
 agar O
@@ -979,7 +883,6 @@ tidak O
 kambuh O
 lagi O
 
-# text = aturan konsumsi obat acyclovir saat sembuh dari herpes
 aturan O
 konsumsi O
 obat O
@@ -989,9 +892,8 @@ sembuh O
 dari O
 herpes O
 
-# text = penyebab vagina keluar darah disertai mual pusing dan sakit perut
 penyebab O
-vagina O
+vagina B-ANATOMI
 keluar O
 darah O
 disertai O
@@ -1001,13 +903,11 @@ dan O
 sakit B-GEJALA
 perut I-GEJALA
 
-# text = penyebab dan mengatasi alergi
 penyebab O
 dan O
 mengatasi O
 alergi B-GEJALA
 
-# text = penyebab dan pengobatan pada luka di wajah bayi seperti eksim
 penyebab O
 dan O
 pengobatan O
@@ -1019,7 +919,6 @@ bayi O
 seperti O
 eksim O
 
-# text = efek samping sering minum obat cetirizine saat alergi makan daging
 efek O
 samping O
 sering O
@@ -1031,7 +930,6 @@ alergi B-GEJALA
 makan O
 daging O
 
-# text = obat untuk nyeri pada gigi setelah pemasangan crown
 obat O
 untuk O
 nyeri B-GEJALA
@@ -1041,14 +939,12 @@ setelah O
 pemasangan O
 crown O
 
-# text = rekomendasi obat malaria paling ampuh
 rekomendasi O
 obat O
 malaria O
 paling O
 ampuh O
 
-# text = telat menstruasi bulan disertai sakit pinggang dan perut bawah
 telat O
 menstruasi O
 bulan O
@@ -1059,7 +955,6 @@ dan O
 perut B-ANATOMI
 bawah O
 
-# text = apakah berhubungan intim saat tanggal prediksi haid bisa menyebabkan telat haid
 apakah O
 berhubungan O
 intim O
@@ -1072,7 +967,6 @@ menyebabkan O
 telat O
 haid O
 
-# text = bolehkah konsumsi jamu pelancar haid untuk mengatasi telat haid
 bolehkah O
 konsumsi O
 jamu O
@@ -1083,7 +977,6 @@ mengatasi O
 telat O
 haid O
 
-# text = gatal di tangan dan kaki secara tibatiba
 gatal B-GEJALA
 di O
 tangan B-ANATOMI
@@ -1092,7 +985,6 @@ kaki O
 secara O
 tibatiba O
 
-# text = hasil ovutest positif saat hari terakhir siklus haid
 hasil O
 ovutest O
 positif O
@@ -1102,7 +994,6 @@ terakhir O
 siklus O
 haid O
 
-# text = penggunaan obat salep dengan merk yang berbeda
 penggunaan O
 obat O
 salep B-OBAT
@@ -1111,7 +1002,6 @@ merk O
 yang O
 berbeda O
 
-# text = keamanan sering konsumsi asam mefenamat saat haid
 keamanan O
 sering O
 konsumsi O
@@ -1120,23 +1010,20 @@ mefenamat O
 saat O
 haid O
 
-# text = belum haid setelah suntik kb
 belum O
 haid O
 setelah O
 suntik O
 kb O
 
-# text = bintik berair pada kulit dan terasa gatal
 bintik O
 berair O
 pada O
 kulit B-ANATOMI
 dan O
 terasa O
-gatal B-DIAGNOSIS
+gatal B-GEJALA
 
-# text = gatal disertai bentol berisi air di area bibir
 gatal B-GEJALA
 disertai O
 bentol B-GEJALA
@@ -1146,7 +1033,6 @@ di O
 area O
 bibir B-ANATOMI
 
-# text = penyebab hidung berwarna merah sudah tahun tetapi sedang tidak flu
 penyebab O
 hidung B-ANATOMI
 berwarna O
@@ -1158,7 +1044,6 @@ sedang O
 tidak O
 flu B-DIAGNOSIS
 
-# text = salep penghilang bekas luka bisul yang menghitam
 salep B-OBAT
 penghilang O
 bekas O
@@ -1167,7 +1052,6 @@ bisul O
 yang O
 menghitam O
 
-# text = obat sakit gigi yang aman untuk ibu hamil
 obat O
 sakit O
 gigi O
@@ -1177,13 +1061,11 @@ untuk O
 ibu O
 hamil O
 
-# text = pembengkakan pada kulit kelamin
 pembengkakan O
 pada O
 kulit B-ANATOMI
 kelamin O
 
-# text = batuk lebih dari bulan tidak kunjung sembuh
 batuk B-GEJALA
 lebih O
 dari O
@@ -1192,13 +1074,11 @@ tidak O
 kunjung O
 sembuh O
 
-# text = pembengkakan muka sebelah kanan
 pembengkakan O
 muka O
 sebelah O
 kanan O
 
-# text = keluar gumpalan putih seperti lemak saat haid apakah normal
 keluar O
 gumpalan O
 putih O
@@ -1209,10 +1089,9 @@ haid O
 apakah O
 normal O
 
-# text = telat haid mual dan perut bagian bawah kram sampai panggul
 telat O
 haid O
-mual O
+mual B-GEJALA
 dan O
 perut B-ANATOMI
 bagian O
@@ -1221,7 +1100,6 @@ kram O
 sampai O
 panggul O
 
-# text = obat untuk mengatasi sakit gigi karena panas dalam
 obat O
 untuk O
 mengatasi O
@@ -1231,8 +1109,7 @@ karena O
 panas O
 dalam O
 
-# text = kulit wajah merah panas dan perih setelah menggunakan krim untuk flek
-kulit B-DOSIS
+kulit B-ANATOMI
 wajah B-ANATOMI
 merah O
 panas O
@@ -1244,7 +1121,6 @@ krim O
 untuk O
 flek O
 
-# text = mengenai penggunaan suplemen asam folat untuk melancarkan haid
 mengenai O
 penggunaan O
 suplemen O
@@ -1254,21 +1130,18 @@ untuk O
 melancarkan O
 haid O
 
-# text = obat untuk penyakit kencing nanah
 obat O
 untuk O
 penyakit O
 kencing O
 nanah O
 
-# text = obat untuk mengurangi nyeri sariawan
 obat O
 untuk O
 mengurangi O
 nyeri B-GEJALA
 sariawan O
 
-# text = kaitan memasukkan jari ke vagina dengan telat menstruasi pada remaja
 kaitan O
 memasukkan O
 jari O
@@ -1280,7 +1153,6 @@ menstruasi O
 pada O
 remaja O
 
-# text = efek samping selalu konsumsi obat yang mengandung paracetamol dan kafein saat mengelas
 efek O
 samping O
 selalu O
@@ -1294,7 +1166,6 @@ kafein O
 saat O
 mengelas O
 
-# text = bintik merah pada kulit dan wajah
 bintik B-GEJALA
 merah I-GEJALA
 pada O
@@ -1302,12 +1173,10 @@ kulit B-ANATOMI
 dan O
 wajah B-ANATOMI
 
-# text = alergi produk kulit
 alergi B-GEJALA
 produk O
 kulit B-ANATOMI
 
-# text = apakah kemerahan yang hilang timbul di pipi bayi usia bulan dapat hilang
 apakah O
 kemerahan O
 yang O
@@ -1321,7 +1190,6 @@ bulan O
 dapat O
 hilang O
 
-# text = garis kulit yang menghitam dan gatal
 garis O
 kulit B-ANATOMI
 yang O
@@ -1329,7 +1197,6 @@ menghitam O
 dan O
 gatal B-GEJALA
 
-# text = keluar flek coklat kemerahan sebelum masa haid
 keluar O
 flek O
 coklat O
@@ -1338,7 +1205,6 @@ sebelum O
 masa O
 haid O
 
-# text = haid lebih dari minggu tapi sedikitsedikit apa penyebabnya
 haid O
 lebih O
 dari O
@@ -1348,7 +1214,6 @@ sedikitsedikit O
 apa O
 penyebabnya O
 
-# text = telat haid hari keluar darah apakah keguguran
 telat O
 haid O
 hari O
@@ -1357,7 +1222,6 @@ darah O
 apakah O
 keguguran O
 
-# text = selalu berdahak tetapi tidak sedang batuk
 selalu O
 berdahak O
 tetapi O
@@ -1365,7 +1229,6 @@ tidak O
 sedang O
 batuk B-GEJALA
 
-# text = panggul dan pinggang terasa pegal hingga ke payudara saat sedang menstruasi
 panggul O
 dan O
 pinggang O
@@ -1378,7 +1241,6 @@ saat O
 sedang O
 menstruasi O
 
-# text = bagaimana cara haid cepat selesai secara alami
 bagaimana O
 cara O
 haid O
@@ -1387,7 +1249,6 @@ selesai O
 secara O
 alami O
 
-# text = efek samping tidak sengaja meminum obat amoxicilin butir
 efek O
 samping O
 tidak O
@@ -1397,7 +1258,6 @@ obat O
 amoxicilin O
 butir O
 
-# text = sudah merasakan tandatanda hamil sebelum telat haid
 sudah O
 merasakan O
 tandatanda O
@@ -1406,7 +1266,6 @@ sebelum O
 telat O
 haid O
 
-# text = penggunaan salep mata untuk bayi usia bulan
 penggunaan O
 salep B-OBAT
 mata B-ANATOMI
@@ -1415,7 +1274,6 @@ bayi O
 usia O
 bulan O
 
-# text = cara menggunakan salep antijamur pada telinga
 cara O
 menggunakan O
 salep B-OBAT
@@ -1423,7 +1281,6 @@ antijamur O
 pada O
 telinga O
 
-# text = munculnya gatal dan bentolbentol di kulit usai kontak dengan tanaman tertentu
 munculnya O
 gatal B-GEJALA
 dan O
@@ -1436,7 +1293,6 @@ dengan O
 tanaman O
 tertentu O
 
-# text = anak usia bulan mengeluarkan air mata saat berusaha mengelurakan suara
 anak O
 usia O
 bulan O
@@ -1448,7 +1304,6 @@ berusaha O
 mengelurakan O
 suara O
 
-# text = apakah obat dexketoprofen aman untuk ibu hamil yang sakit punggung
 apakah O
 obat O
 dexketoprofen O
@@ -1460,7 +1315,6 @@ yang O
 sakit O
 punggung B-ANATOMI
 
-# text = dampak konsumsi obat penambah darah yang telah kadaluarsa saat hamil
 dampak O
 konsumsi O
 obat O
@@ -1472,7 +1326,6 @@ kadaluarsa O
 saat O
 hamil O
 
-# text = kulit tangan mengelupas setelah mandi atau mencuci
 kulit B-ANATOMI
 tangan B-ANATOMI
 mengelupas O
@@ -1481,7 +1334,6 @@ mandi O
 atau O
 mencuci O
 
-# text = napas pendek jantung berdebar dan pandangan gelap saat menstruasi
 napas O
 pendek O
 jantung B-ANATOMI
@@ -1492,17 +1344,15 @@ gelap O
 saat O
 menstruasi O
 
-# text = leher terasa gatal dan batuk setelah konsumsi snack
 leher O
 terasa O
-gatal B-DIAGNOSIS
+gatal B-GEJALA
 dan O
 batuk B-GEJALA
 setelah O
 konsumsi O
 snack O
 
-# text = penyebab bruntusan di sekitar hidung saat pilek
 penyebab O
 bruntusan B-GEJALA
 di O
@@ -1511,7 +1361,6 @@ hidung B-ANATOMI
 saat O
 pilek O
 
-# text = cara mengatasi dan obat untuk jamur pada bibir
 cara O
 mengatasi O
 dan O
@@ -1521,7 +1370,6 @@ jamur O
 pada O
 bibir B-ANATOMI
 
-# text = perut bagian atas terasa nyeri setiap menstruasi setelah menikah
 perut B-ANATOMI
 bagian O
 atas O
@@ -1532,7 +1380,6 @@ menstruasi O
 setelah O
 menikah O
 
-# text = gatal dan bintik hitam pada payudara
 gatal B-GEJALA
 dan O
 bintik O
@@ -1540,7 +1387,6 @@ hitam O
 pada O
 payudara O
 
-# text = telat menstruasi beberapa bulan apakah hamil
 telat O
 menstruasi O
 beberapa O
@@ -1548,7 +1394,6 @@ bulan O
 apakah O
 hamil O
 
-# text = bolehkah konsumsi kembali obat hormon yang sempat terhenti
 bolehkah O
 konsumsi O
 kembali O
@@ -1558,7 +1403,6 @@ yang O
 sempat O
 terhenti O
 
-# text = apakah wanita hamil boleh mengkonsumsi domperidone untuk melancarkan asi
 apakah O
 wanita O
 hamil O
@@ -1569,7 +1413,6 @@ untuk O
 melancarkan O
 asi O
 
-# text = keluar bercak darah dan sakit pinggang pada ibu menyusui apakah tandatanda menstruasi
 keluar O
 bercak O
 darah O
@@ -1583,7 +1426,6 @@ apakah O
 tandatanda O
 menstruasi O
 
-# text = penyebab hidung gatal setelah minum manis
 penyebab O
 hidung B-ANATOMI
 gatal B-GEJALA
@@ -1591,17 +1433,15 @@ setelah B-DOSIS
 minum I-DOSIS
 manis O
 
-# text = bisakah mengganti dosis antibiotik tanpa konsultasi ke dokter
 bisakah O
 mengganti O
 dosis O
-antibiotik O
+antibiotik B-OBAT
 tanpa O
 konsultasi O
 ke O
 dokter O
 
-# text = aturan konsumsi obat yang mengandung aluminium hidroksida dan magnesium trisilikat
 aturan O
 konsumsi O
 obat O
@@ -1613,7 +1453,6 @@ dan O
 magnesium O
 trisilikat O
 
-# text = penyebab kram perut sebelah kiri saat haid
 penyebab O
 kram O
 perut B-ANATOMI
@@ -1622,24 +1461,21 @@ kiri O
 saat O
 haid O
 
-# text = obat gemuk badan aman dikonsumsi
 obat O
 gemuk O
-badan B-DIAGNOSIS
+badan B-ANATOMI
 aman O
 dikonsumsi O
 
-# text = tenggorokan terasa ada yang mengganjal setelah minum obat
 tenggorokan B-ANATOMI
 terasa O
 ada O
 yang O
 mengganjal O
-setelah B-OBAT
-minum I-OBAT
+setelah B-DOSIS
+minum I-DOSIS
 obat O
 
-# text = penyebab kulit disekitar payudara gatal dan bentol
 penyebab O
 kulit B-ANATOMI
 disekitar O
@@ -1648,7 +1484,6 @@ gatal B-GEJALA
 dan O
 bentol B-GEJALA
 
-# text = penyebab dan cara mengatasi telat haid bulan tapi tidak hamil
 penyebab O
 dan O
 cara O
@@ -1660,7 +1495,6 @@ tapi O
 tidak O
 hamil O
 
-# text = penyebab muncul bintik merah di wajah dan terasa gatal
 penyebab O
 muncul O
 bintik B-GEJALA
@@ -1671,7 +1505,6 @@ dan O
 terasa O
 gatal B-GEJALA
 
-# text = terlambat menstruasi sulit bab sering bak dan panas dalam
 terlambat O
 menstruasi O
 sulit O
@@ -1682,14 +1515,12 @@ dan O
 panas O
 dalam O
 
-# text = penyebab buang air kecil berdarah
 penyebab O
 buang O
 air O
 kecil O
 berdarah O
 
-# text = penyebab tibatiba di kulit di samping ketiak timbul lecet
 penyebab O
 tibatiba O
 di O
@@ -1700,7 +1531,6 @@ ketiak O
 timbul O
 lecet O
 
-# text = apakah infeksi trikomoniasis dapat mempengaruhi telat haid
 apakah O
 infeksi B-DIAGNOSIS
 trikomoniasis O
@@ -1709,7 +1539,6 @@ mempengaruhi O
 telat O
 haid O
 
-# text = obat untuk memutihkan mata yang tampak kusam
 obat O
 untuk O
 memutihkan O
@@ -1718,7 +1547,6 @@ yang O
 tampak O
 kusam O
 
-# text = mengonsumsi suplemen saat menstruasi karena kelelahan dan kolesterol tinggi
 mengonsumsi O
 suplemen O
 saat O
@@ -1729,13 +1557,11 @@ dan O
 kolesterol O
 tinggi O
 
-# text = penyebab mata kanan berair
 penyebab O
 mata B-ANATOMI
 kanan O
 berair O
 
-# text = dubur tulang ekor dan pinggang sakit karena menstruasi
 dubur O
 tulang O
 ekor O
@@ -1745,7 +1571,6 @@ sakit O
 karena O
 menstruasi O
 
-# text = menstruasi tidak teratur setelah konsumsi pil kb
 menstruasi O
 tidak O
 teratur O
@@ -1754,7 +1579,6 @@ konsumsi O
 pil O
 kb O
 
-# text = jangka waktu penggunaan obat tetes mata yang telah dibuka untuk mengatasi floaters
 jangka O
 waktu O
 penggunaan O
@@ -1768,7 +1592,6 @@ untuk O
 mengatasi O
 floaters O
 
-# text = penyebab jerawat yang tibatiba muncul di dahi saat mencoba produk perawatan wajah
 penyebab O
 jerawat O
 yang O
@@ -1782,7 +1605,6 @@ produk O
 perawatan O
 wajah B-ANATOMI
 
-# text = apa salep yang ampuh untuk mengatasi folikulitis
 apa O
 salep B-OBAT
 yang O
@@ -1791,7 +1613,6 @@ untuk O
 mengatasi O
 folikulitis O
 
-# text = bolehkah konsumsi jenis bronkodilator secara bersamaan
 bolehkah O
 konsumsi O
 jenis O
@@ -1799,7 +1620,6 @@ bronkodilator O
 secara O
 bersamaan O
 
-# text = telinga sakit dan berdengung terkadang terdengar bergemuruh
 telinga O
 sakit O
 dan O
@@ -1808,7 +1628,6 @@ terkadang O
 terdengar O
 bergemuruh O
 
-# text = bagaimana cara minum air alkali dengan obat diabetes
 bagaimana O
 cara O
 minum O
@@ -1818,7 +1637,6 @@ dengan O
 obat O
 diabetes B-DIAGNOSIS
 
-# text = penyebab dan cara mengatasi selangkangan kering dan bersisik
 penyebab O
 dan O
 cara O
@@ -1828,8 +1646,7 @@ kering O
 dan O
 bersisik O
 
-# text = nyeri berlebihan saat menstruasi dan ukuran uterus retrofleksi membesar
-nyeri B-DOSIS
+nyeri B-GEJALA
 berlebihan O
 saat O
 menstruasi O
@@ -1839,7 +1656,6 @@ uterus O
 retrofleksi O
 membesar O
 
-# text = keluar darah berwarna merah gelap di malam hari apakah menstruasi
 keluar O
 darah O
 berwarna O
@@ -1851,7 +1667,6 @@ hari O
 apakah O
 menstruasi O
 
-# text = apa obat untuk mengatasi wajah mengelupas
 apa O
 obat O
 untuk O
@@ -1859,7 +1674,6 @@ mengatasi O
 wajah B-ANATOMI
 mengelupas O
 
-# text = obat untuk mengatasi sinus preaurikuler lubang kecil di depan telinga
 obat O
 untuk O
 mengatasi O
@@ -1871,7 +1685,6 @@ di O
 depan O
 telinga O
 
-# text = tidak haid ketika minum pil kb plasebo
 tidak O
 haid O
 ketika O
@@ -1880,7 +1693,6 @@ pil O
 kb O
 plasebo O
 
-# text = alergi terhadap sandal jepit yang tak kunjung sembuh
 alergi B-GEJALA
 terhadap O
 sandal O
@@ -1890,7 +1702,6 @@ tak O
 kunjung O
 sembuh O
 
-# text = dampak jika mencampur obat anti mabuk dengan susu untuk anak usia tahun
 dampak O
 jika O
 mencampur O
@@ -1904,7 +1715,6 @@ anak O
 usia O
 tahun O
 
-# text = muncul bisul di kaki setelah terkena ulat bulu
 muncul O
 bisul O
 di O
@@ -1914,7 +1724,6 @@ terkena O
 ulat O
 bulu O
 
-# text = perubahan siklus menstruasi setelah menggunakan kb
 perubahan O
 siklus O
 menstruasi O
@@ -1922,7 +1731,6 @@ setelah O
 menggunakan O
 kb O
 
-# text = rekomendasi salep untuk mengatasi korengan bernanah di kaki
 rekomendasi O
 salep B-OBAT
 untuk O
@@ -1932,7 +1740,6 @@ bernanah O
 di O
 kaki O
 
-# text = penyebab dan cara mengatasi keputihan berbau saat akhir masa haid
 penyebab O
 dan O
 cara O
@@ -1944,7 +1751,6 @@ akhir O
 masa O
 haid O
 
-# text = keluar flek setelah hubungan intim tanda kehamilan atau menstruasi
 keluar O
 flek O
 setelah O
@@ -1955,7 +1761,6 @@ kehamilan O
 atau O
 menstruasi O
 
-# text = keluar bentol seperti gigitan nyamuk dan muntah setelah minum jamu kunyit asam
 keluar O
 bentol B-GEJALA
 seperti O
@@ -1969,14 +1774,12 @@ jamu O
 kunyit O
 asam O
 
-# text = apakah captopril dapat mengatasi hipertensi
 apakah O
 captopril O
 dapat O
 mengatasi O
 hipertensi B-DIAGNOSIS
 
-# text = penyebab dan cara mengatasi haid berkepanjangan
 penyebab O
 dan O
 cara O
@@ -1984,7 +1787,6 @@ mengatasi O
 haid O
 berkepanjangan O
 
-# text = penyebab dan penanganan pada pernapasan tersumbat
 penyebab O
 dan O
 penanganan O
@@ -1992,7 +1794,6 @@ pada O
 pernapasan O
 tersumbat O
 
-# text = penyebab haid tidak teratur pada usia tahun
 penyebab O
 haid O
 tidak O
@@ -2001,7 +1802,6 @@ pada O
 usia O
 tahun O
 
-# text = penyebab buang air kecil terus menerus saat menstruasi
 penyebab O
 buang O
 air O
@@ -2011,7 +1811,6 @@ menerus O
 saat O
 menstruasi O
 
-# text = efek samping berhenti minum obat hormonal untuk penderita kanker
 efek O
 samping O
 berhenti O
@@ -2022,7 +1821,6 @@ untuk O
 penderita O
 kanker O
 
-# text = wajah gatal dan merah apa penyebab dan solusinya
 wajah B-ANATOMI
 gatal B-GEJALA
 dan O
@@ -2032,7 +1830,6 @@ penyebab O
 dan O
 solusinya O
 
-# text = apakah telat haid hari dan testpack positif sudah bisa dikatakan hamil
 apakah O
 telat O
 haid O
@@ -2045,7 +1842,6 @@ bisa O
 dikatakan O
 hamil O
 
-# text = minum obat flu dan pereda nyeri bersamaan
 minum O
 obat O
 flu B-DIAGNOSIS
@@ -2054,23 +1850,20 @@ pereda O
 nyeri B-GEJALA
 bersamaan O
 
-# text = penggolongan obat untuk pengobatan copd
 penggolongan O
 obat O
 untuk O
 pengobatan O
 copd O
 
-# text = penyebab dan cara mengatasi kulit hidung gatal
 penyebab O
 dan O
 cara O
 mengatasi O
 kulit B-ANATOMI
-hidung O
+hidung B-ANATOMI
 gatal B-GEJALA
 
-# text = penyebab napas mendadak sesak pandangan gelap tubuh gemetar seperti ingin pingsan setelah minum kopi dingin
 penyebab O
 napas O
 mendadak O
@@ -2087,7 +1880,6 @@ minum I-DOSIS
 kopi O
 dingin O
 
-# text = apakah ada obat pengganti yang lebih murah untuk gangguan bipolar
 apakah O
 ada O
 obat O
@@ -2099,7 +1891,6 @@ untuk O
 gangguan O
 bipolar O
 
-# text = pemberian obat penurun panas pada bayi berusia tahun
 pemberian O
 obat O
 penurun O
@@ -2109,7 +1900,6 @@ bayi O
 berusia O
 tahun O
 
-# text = muncul bengkak merah pada puncak hidung sdah minggu
 muncul O
 bengkak B-GEJALA
 merah O
@@ -2119,12 +1909,11 @@ hidung B-ANATOMI
 sdah O
 minggu O
 
-# text = mata sulit dibuka terasa nyeri dan muncul kemerahan pada kelopak mata
 mata B-ANATOMI
 sulit O
 dibuka O
 terasa O
-nyeri O
+nyeri B-GEJALA
 dan O
 muncul O
 kemerahan O
@@ -2132,7 +1921,6 @@ pada O
 kelopak O
 mata B-ANATOMI
 
-# text = penyebab gatal hingga bentolbentol di punggung
 penyebab O
 gatal B-GEJALA
 hingga O
@@ -2140,7 +1928,6 @@ bentolbentol O
 di O
 punggung B-ANATOMI
 
-# text = keputihan dan telat haid apa solusi mengatasinya
 keputihan O
 dan O
 telat O
@@ -2149,22 +1936,20 @@ apa O
 solusi O
 mengatasinya O
 
-# text = wajah leher dan badan bentol kemerahan serta gatal setelah bulan lalu transfusi darah
-wajah O
+wajah B-ANATOMI
 leher O
 dan O
 badan B-ANATOMI
 bentol B-GEJALA
 kemerahan O
 serta O
-gatal O
+gatal B-GEJALA
 setelah O
 bulan O
 lalu O
 transfusi O
 darah O
 
-# text = penyebab bentolbentol merah yang terasa gatal dan hilang timbul di kulit
 penyebab O
 bentolbentol O
 merah O
@@ -2177,7 +1962,6 @@ timbul O
 di O
 kulit B-ANATOMI
 
-# text = tidak haid saat minum pil kb yang berwarna putih
 tidak O
 haid O
 saat O
@@ -2188,7 +1972,6 @@ yang O
 berwarna O
 putih O
 
-# text = apakah suplemen yang mengandung coenzim q berbeda merk memiliki kualitas sama
 apakah O
 suplemen O
 yang O
@@ -2201,8 +1984,7 @@ memiliki O
 kualitas O
 sama O
 
-# text = bentol dikulit tangan terasa gatal hingga luka
-bentol O
+bentol B-GEJALA
 dikulit O
 tangan B-ANATOMI
 terasa O
@@ -2210,7 +1992,6 @@ gatal B-GEJALA
 hingga O
 luka O
 
-# text = haid sedikit dan siklus haid tidak teratur
 haid O
 sedikit O
 dan O
@@ -2219,14 +2000,12 @@ haid O
 tidak O
 teratur O
 
-# text = gatal pasca konsumsi obat nyeri
 gatal B-GEJALA
 pasca O
 konsumsi O
 obat O
 nyeri B-GEJALA
 
-# text = terlambat haid hari dan darah berwarna coklat gelap kehitaman
 terlambat O
 haid O
 hari O
@@ -2237,7 +2016,6 @@ coklat O
 gelap O
 kehitaman O
 
-# text = penyebab tenggorokan sakit disertai mata bengkak pada anak usia tahun
 penyebab O
 tenggorokan B-ANATOMI
 sakit O
@@ -2249,28 +2027,24 @@ anak O
 usia O
 tahun O
 
-# text = ruam merah dan gatal berkepanjangan
 ruam B-GEJALA
 merah I-GEJALA
 dan O
 gatal B-GEJALA
 berkepanjangan O
 
-# text = menstruasi selama bulan tidak berhenti
 menstruasi O
 selama O
 bulan O
 tidak O
 berhenti O
 
-# text = aturan dosis penggunaan obat epilepsi
 aturan O
 dosis O
 penggunaan O
 obat O
 epilepsi O
 
-# text = bagaimana cara minum pil kb microgynon saat sedang haid
 bagaimana O
 cara O
 minum O
@@ -2281,7 +2055,6 @@ saat O
 sedang O
 haid O
 
-# text = kulit di area mulut bayi tibatiba berwarna belang
 kulit B-ANATOMI
 di O
 area O
@@ -2291,13 +2064,11 @@ tibatiba O
 berwarna O
 belang O
 
-# text = penyebab biduran terus menerus
 penyebab O
 biduran O
 terus O
 menerus O
 
-# text = pengobatan flek paru tidak tuntas sejak usia tahun
 pengobatan O
 flek O
 paru B-ANATOMI
@@ -2307,14 +2078,12 @@ sejak O
 usia O
 tahun O
 
-# text = penyebab siklus haid tidak teratur
 penyebab O
 siklus O
 haid O
 tidak O
 teratur O
 
-# text = apakah harus menghabiskan sisa obat jika sudah jarang mual dan muntah saat hamil
 apakah O
 harus O
 menghabiskan O
@@ -2329,7 +2098,6 @@ muntah B-GEJALA
 saat O
 hamil O
 
-# text = muncul kulit seperti sisik di sekitar luka bekas jerawat setelah menggunakan masker lidah buaya
 muncul O
 kulit B-ANATOMI
 seperti O
@@ -2345,7 +2113,6 @@ masker O
 lidah O
 buaya O
 
-# text = darah haid seperti jelly apakah normal
 darah O
 haid O
 seperti O
@@ -2353,7 +2120,6 @@ jelly O
 apakah O
 normal O
 
-# text = keluar serabut menyerupai darah saat buang air kecil
 keluar O
 serabut O
 menyerupai O
@@ -2363,7 +2129,6 @@ buang O
 air O
 kecil O
 
-# text = penyebab telat haid setelah berhenti olahraga
 penyebab O
 telat O
 haid O
@@ -2371,7 +2136,6 @@ setelah O
 berhenti O
 olahraga O
 
-# text = telat haid tetapi gejala pms sudah dirasakan
 telat O
 haid O
 tetapi O
@@ -2380,7 +2144,6 @@ pms O
 sudah O
 dirasakan O
 
-# text = hidung tersumbat disertai dengan pusing oyong panas dingin lemas dan mudah mengantuk
 hidung B-GEJALA
 tersumbat I-GEJALA
 disertai O
@@ -2389,12 +2152,11 @@ pusing B-GEJALA
 oyong O
 panas O
 dingin O
-lemas O
+lemas B-GEJALA
 dan O
 mudah O
 mengantuk O
 
-# text = normalkah haid saat masa menyusui dan kb
 normalkah O
 haid O
 saat O
@@ -2403,7 +2165,6 @@ menyusui O
 dan O
 kb O
 
-# text = minum obat cacing sebaiknya malam atau pagi hari
 minum O
 obat O
 cacing O
@@ -2413,7 +2174,6 @@ atau O
 pagi O
 hari O
 
-# text = aturan konsumsi obat dengan benar pada ibu hamil
 aturan O
 konsumsi O
 obat O
@@ -2423,7 +2183,6 @@ pada O
 ibu O
 hamil O
 
-# text = masih belum haid setelah konsumsi obat kista sampai habis
 masih O
 belum O
 haid O
@@ -2434,7 +2193,6 @@ kista O
 sampai O
 habis O
 
-# text = tenggorokan gatal setelah minum obat batuk sirup
 tenggorokan B-GEJALA
 gatal I-GEJALA
 setelah B-DOSIS
@@ -2443,7 +2201,6 @@ obat B-OBAT
 batuk I-OBAT
 sirup O
 
-# text = pemberian obat untuk anak usia tahun yang pilek
 pemberian O
 obat O
 untuk O
@@ -2453,14 +2210,12 @@ tahun O
 yang O
 pilek O
 
-# text = perbedaan obat aminofilin dan teofilin
 perbedaan O
 obat O
 aminofilin O
 dan O
 teofilin O
 
-# text = hidung berdarah setelah minum obat yang mengandung paracetamol dan kafein
 hidung B-ANATOMI
 berdarah O
 setelah B-DOSIS
@@ -2468,11 +2223,10 @@ minum I-DOSIS
 obat O
 yang O
 mengandung O
-paracetamol B-ANATOMI
+paracetamol B-OBAT
 dan O
 kafein O
 
-# text = bolehkah menyentuh bayi saat kulit sedang alergi
 bolehkah O
 menyentuh O
 bayi O
@@ -2481,7 +2235,6 @@ kulit B-ANATOMI
 sedang O
 alergi B-GEJALA
 
-# text = gatal hingga bentol seperti digigit nyamuk
 gatal B-GEJALA
 hingga O
 bentol B-GEJALA
@@ -2489,14 +2242,12 @@ seperti O
 digigit O
 nyamuk O
 
-# text = mata bengkak setelah menggunakan softlens
 mata B-ANATOMI
 bengkak B-GEJALA
 setelah O
 menggunakan O
 softlens O
 
-# text = bibir bengkak dan gatal setelah menggunakan skincare
 bibir B-ANATOMI
 bengkak B-GEJALA
 dan O
@@ -2505,7 +2256,6 @@ setelah O
 menggunakan O
 skincare O
 
-# text = penggunaan asam mefenamat untuk mengatasi nyeri
 penggunaan O
 asam O
 mefenamat O
@@ -2513,7 +2263,6 @@ untuk O
 mengatasi O
 nyeri B-GEJALA
 
-# text = penyebab wajah terasa panas saat menggunakan masker
 penyebab O
 wajah B-ANATOMI
 terasa O
@@ -2522,7 +2271,6 @@ saat O
 menggunakan O
 masker O
 
-# text = penyebab hanya keluar flek coklat namun haid tidak kunjung muncul
 penyebab O
 hanya O
 keluar O
@@ -2534,7 +2282,6 @@ tidak O
 kunjung O
 muncul O
 
-# text = apakah jamu pelancar haid bisa menggugurkan kandungan
 apakah O
 jamu O
 pelancar O
@@ -2543,7 +2290,6 @@ bisa O
 menggugurkan O
 kandungan O
 
-# text = mengatasi gatal disertai bintik setelah penggunaan handbody
 mengatasi O
 gatal B-GEJALA
 disertai O
@@ -2552,7 +2298,6 @@ setelah O
 penggunaan O
 handbody O
 
-# text = penyebab darah haid masih berwarna hitam di hari kedua
 penyebab O
 darah O
 haid O
@@ -2563,7 +2308,6 @@ di O
 hari O
 kedua O
 
-# text = obat untuk mengatasi wajah yang iritasi karena masker kopi
 obat O
 untuk O
 mengatasi O
@@ -2574,7 +2318,6 @@ karena O
 masker O
 kopi O
 
-# text = cara yang efektif untuk mengatasi hidung tersumbat karena alergi debu
 cara O
 yang O
 efektif O
@@ -2586,7 +2329,6 @@ karena O
 alergi B-GEJALA
 debu O
 
-# text = penyebab bruntusan berair di sekitar mulut disertai rasa gatal
 penyebab O
 bruntusan B-GEJALA
 berair O
@@ -2597,7 +2339,6 @@ disertai O
 rasa O
 gatal B-GEJALA
 
-# text = nyeri perut seperti akan haid dan hasil testpack positif
 nyeri B-GEJALA
 perut B-ANATOMI
 seperti O
@@ -2608,23 +2349,20 @@ hasil O
 testpack O
 positif O
 
-# text = telat menstruasi setelah hubungan intim
 telat O
 menstruasi O
 setelah O
 hubungan O
 intim O
 
-# text = bolehkah penderita tb memelihara kucing
 bolehkah O
 penderita O
 tb O
 memelihara O
 kucing O
 
-# text = sesak napas disertai pandangan kabur dan mudah lelah
-sesak O
-napas O
+sesak B-GEJALA
+napas I-GEJALA
 disertai O
 pandangan O
 kabur O
@@ -2632,7 +2370,6 @@ dan O
 mudah O
 lelah O
 
-# text = mata perih dan berair terus setelah menggunakan masker sulfur pada wajah
 mata B-ANATOMI
 perih O
 dan O
@@ -2645,7 +2382,6 @@ sulfur O
 pada O
 wajah B-ANATOMI
 
-# text = badan lemas dan pinggul pegal setelah minum obat alergi
 badan B-GEJALA
 lemas I-GEJALA
 dan O
@@ -2656,7 +2392,6 @@ minum I-DOSIS
 obat O
 alergi B-GEJALA
 
-# text = penggunaan obat kapsul dan krim salep secara bersamaan
 penggunaan O
 obat O
 kapsul O
@@ -2666,14 +2401,12 @@ salep B-OBAT
 secara O
 bersamaan O
 
-# text = pengobatan untuk asma akibat alergi
 pengobatan O
 untuk O
 asma B-DIAGNOSIS
 akibat O
 alergi B-GEJALA
 
-# text = konsumsi obat sakit kepala tablet sekaligus
 konsumsi O
 obat O
 sakit B-GEJALA
@@ -2681,8 +2414,7 @@ kepala I-GEJALA
 tablet O
 sekaligus O
 
-# text = hidung mudah pilek ketika terpapar debu walaupun sedikit
-hidung B-GEJALA
+hidung B-ANATOMI
 mudah O
 pilek O
 ketika O
@@ -2691,7 +2423,6 @@ debu O
 walaupun O
 sedikit O
 
-# text = pantangan makan dan minum setelah konsumsi obat simvastatin
 pantangan O
 makan O
 dan O
@@ -2701,18 +2432,16 @@ konsumsi O
 obat O
 simvastatin O
 
-# text = sakit perut lemas dan mual setelah bab saat haid
 sakit B-GEJALA
 perut I-GEJALA
 lemas B-GEJALA
 dan O
-mual B-ANATOMI
+mual B-GEJALA
 setelah O
 bab O
 saat O
 haid O
 
-# text = obat untuk mengatasi sakit gigi bengkak
 obat O
 untuk O
 mengatasi O
@@ -2720,7 +2449,6 @@ sakit O
 gigi O
 bengkak B-GEJALA
 
-# text = cara mengeluarkan benda asing yang masuk kedalam mata
 cara O
 mengeluarkan O
 benda O
@@ -2730,7 +2458,6 @@ masuk O
 kedalam O
 mata B-ANATOMI
 
-# text = ciriciri kista keluar dengan darah haid
 ciriciri O
 kista O
 keluar O
@@ -2738,7 +2465,6 @@ dengan O
 darah O
 haid O
 
-# text = badan menjadi alergi setelah menghentikan suntik putih
 badan B-ANATOMI
 menjadi O
 alergi B-GEJALA
@@ -2747,7 +2473,6 @@ menghentikan O
 suntik O
 putih O
 
-# text = belum pernah menstruasi lagi setelah menstruasi pertama kali
 belum O
 pernah O
 menstruasi O
@@ -2757,7 +2482,6 @@ menstruasi O
 pertama O
 kali O
 
-# text = apakah darah haid hanya keluar hari merupakan tanda hamil
 apakah O
 darah O
 haid O
@@ -2768,7 +2492,6 @@ merupakan O
 tanda O
 hamil O
 
-# text = bisakah hamil tanpa haid selepas suntik kb bulan
 bisakah O
 hamil O
 tanpa O
@@ -2778,7 +2501,6 @@ suntik O
 kb O
 bulan O
 
-# text = bercak darah dan tidak haid saat sedang terapi pasca operasi endometriosis
 bercak O
 darah O
 dan O
@@ -2791,14 +2513,12 @@ pasca O
 operasi O
 endometriosis O
 
-# text = pengobatan alergi pada saluran napas
 pengobatan O
 alergi B-GEJALA
 pada O
 saluran O
 napas O
 
-# text = kemungkinan hamil saat telat haid pasca nifas
 kemungkinan O
 hamil O
 saat O
@@ -2807,7 +2527,6 @@ haid O
 pasca O
 nifas O
 
-# text = perbedaan kegunaan dan kandungan jenisjenis obat maag
 perbedaan O
 kegunaan O
 dan O
@@ -2816,7 +2535,6 @@ jenisjenis O
 obat O
 maag B-DIAGNOSIS
 
-# text = aturan konsumsi obat secara bersamaan saat hamil
 aturan O
 konsumsi O
 obat O
@@ -2825,7 +2543,6 @@ bersamaan O
 saat O
 hamil O
 
-# text = kepala pusing disertai mual muntah setelah konsumsi antibiotik
 kepala B-ANATOMI
 pusing B-GEJALA
 disertai O
@@ -2835,7 +2552,6 @@ setelah O
 konsumsi O
 antibiotik B-OBAT
 
-# text = penyebab sering pilek pusing dada sesak dan mata gatal hebat
 penyebab O
 sering O
 pilek O
@@ -2847,7 +2563,6 @@ mata B-ANATOMI
 gatal B-GEJALA
 hebat O
 
-# text = obat untuk mengatasi batuk hingga bulan seperti cegukan
 obat O
 untuk O
 mengatasi O
@@ -2857,7 +2572,6 @@ bulan O
 seperti O
 cegukan O
 
-# text = penyebab haid kali dalam bulan disertai sakit perut
 penyebab O
 haid O
 kali O
@@ -2867,7 +2581,6 @@ disertai O
 sakit B-GEJALA
 perut I-GEJALA
 
-# text = konsumsi obat penambah nafsu makan saat sedang pengobatan tb
 konsumsi O
 obat O
 penambah O
@@ -2878,7 +2591,6 @@ sedang O
 pengobatan O
 tb O
 
-# text = haid hanya hari setelah minum obat hormon
 haid O
 hanya O
 hari O
@@ -2887,14 +2599,12 @@ minum I-DOSIS
 obat O
 hormon O
 
-# text = keamanan penggunaan obat tetes mata
 keamanan O
 penggunaan O
 obat O
 tetes O
 mata B-ANATOMI
 
-# text = bagaimana interaksi obat diuretik dengan makanan
 bagaimana O
 interaksi O
 obat O
@@ -2902,7 +2612,6 @@ diuretik O
 dengan O
 makanan O
 
-# text = obat untuk memperbesar ukuran sel telur pada penderita pco
 obat O
 untuk O
 memperbesar O
@@ -2913,14 +2622,12 @@ pada O
 penderita O
 pco O
 
-# text = ciriciri siklus haid yang normal
 ciriciri O
 siklus O
 haid O
 yang O
 normal O
 
-# text = perlukah mandi dengan sabun setelah berendam epsom salt
 perlukah O
 mandi O
 dengan O
@@ -2930,7 +2637,6 @@ berendam O
 epsom O
 salt O
 
-# text = kapan hormon kembali normal setelah lepas kb suntik
 kapan O
 hormon O
 kembali O
@@ -2940,8 +2646,7 @@ lepas O
 kb O
 suntik O
 
-# text = vagina keluar darah di luar siklus haid
-vagina O
+vagina B-ANATOMI
 keluar O
 darah O
 di O
@@ -2949,13 +2654,11 @@ luar O
 siklus O
 haid O
 
-# text = amankah penggunaan menstruai cup
 amankah O
 penggunaan O
 menstruai O
 cup O
 
-# text = mata terasa gatal setelah menggunakan kacamata baru
 mata B-ANATOMI
 terasa O
 gatal B-GEJALA
@@ -2964,7 +2667,6 @@ menggunakan O
 kacamata O
 baru O
 
-# text = muncul reaksi gatal di kulit saat merasa sejuk atau dingin
 muncul O
 reaksi O
 gatal B-GEJALA
@@ -2976,7 +2678,6 @@ sejuk O
 atau O
 dingin O
 
-# text = dosis dan tata cara konsumsi obat sirup
 dosis O
 dan O
 tata O
@@ -2985,7 +2686,6 @@ konsumsi O
 obat O
 sirup O
 
-# text = nyeri di panggul hingga terasa ke paha dan perut bawah disertai menstruasi tidak lancar
 nyeri B-GEJALA
 di O
 panggul O
@@ -3001,7 +2701,6 @@ menstruasi O
 tidak O
 lancar O
 
-# text = bolehkah konsumsi obat flu sampai habis setelah sembuh
 bolehkah O
 konsumsi O
 obat O
@@ -3011,7 +2710,6 @@ habis O
 setelah O
 sembuh O
 
-# text = kepala yang terasa berat disertai batuk kering apakah corona
 kepala B-ANATOMI
 yang O
 terasa O
@@ -3022,7 +2720,6 @@ kering I-GEJALA
 apakah O
 corona O
 
-# text = kulit wajah terasa kasar dan gatal
 kulit B-ANATOMI
 wajah B-ANATOMI
 terasa O
@@ -3030,15 +2727,13 @@ kasar O
 dan O
 gatal B-GEJALA
 
-# text = mengatasi alergi akibat pengobatan asam lambung
 mengatasi O
 alergi B-GEJALA
 akibat O
 pengobatan O
-asam O
-lambung O
+asam B-DIAGNOSIS
+lambung I-DIAGNOSIS
 
-# text = gatal gatal dan menimbulkan bekas luka seperti terbakar saat hamil bulan
 gatal B-GEJALA
 gatal B-GEJALA
 dan O
@@ -3051,7 +2746,6 @@ saat O
 hamil O
 bulan O
 
-# text = penyebab nyeri perut setelah konsumsi suplemen pemutih kulit
 penyebab O
 nyeri B-GEJALA
 perut B-ANATOMI
@@ -3061,7 +2755,6 @@ suplemen O
 pemutih O
 kulit B-ANATOMI
 
-# text = efek samping obat mata pada kesuburan pria
 efek O
 samping O
 obat O
@@ -3070,7 +2763,6 @@ pada O
 kesuburan O
 pria O
 
-# text = penyebab mata berair saat menggunakan obat nyamuk bakar
 penyebab O
 mata B-ANATOMI
 berair O
@@ -3080,7 +2772,6 @@ obat O
 nyamuk O
 bakar O
 
-# text = obatobatan yang dapat digunakan untuk mengatasi gatal alergi
 obatobatan O
 yang O
 dapat O
@@ -3090,7 +2781,6 @@ mengatasi O
 gatal B-GEJALA
 alergi B-GEJALA
 
-# text = rekomendasi obat untuk sakit maag yang ampuh di apotek
 rekomendasi O
 obat O
 untuk O
@@ -3101,7 +2791,6 @@ ampuh O
 di O
 apotek O
 
-# text = gigi terasa terjepit dan sakit kepala setelah minum obat nyeri
 gigi O
 terasa O
 terjepit O
@@ -3111,27 +2800,24 @@ kepala I-GEJALA
 setelah B-DOSIS
 minum I-DOSIS
 obat O
-nyeri B-DIAGNOSIS
+nyeri B-GEJALA
 
-# text = perih dan panas saat memakai masker wajah
 perih O
 dan O
 panas O
 saat O
 memakai O
 masker O
-wajah B-DIAGNOSIS
+wajah B-ANATOMI
 
-# text = penyebab muncul gatalgatal dan agak timbul bengkak
 penyebab O
 muncul O
 gatalgatal B-GEJALA
 dan O
 agak O
 timbul O
-bengkak B-OBAT
+bengkak B-GEJALA
 
-# text = usia berapa anak sudah bisa diberi obat cacing
 usia O
 berapa O
 anak O
@@ -3141,7 +2827,6 @@ diberi O
 obat O
 cacing O
 
-# text = apakah ada minuman alami yang bisa mempercepat haid
 apakah O
 ada O
 minuman O
@@ -3151,7 +2836,6 @@ bisa O
 mempercepat O
 haid O
 
-# text = biduran disertai mata dan lidah yang membengkak besar
 biduran O
 disertai O
 mata B-ANATOMI
@@ -3161,7 +2845,6 @@ yang O
 membengkak O
 besar O
 
-# text = paha terasa gatal setelah operasi cangkoj tulang betis
 paha O
 terasa O
 gatal B-GEJALA
@@ -3171,16 +2854,14 @@ cangkoj O
 tulang O
 betis O
 
-# text = telat haid demam dan hasil testpack negatif
 telat O
 haid O
-demam B-ANATOMI
+demam B-GEJALA
 dan O
 hasil O
 testpack O
 negatif O
 
-# text = cara perhitungan siklus haid yang normal
 cara O
 perhitungan O
 siklus O
@@ -3188,7 +2869,6 @@ haid O
 yang O
 normal O
 
-# text = berapa lama alergi di wajah akibat make up bisa hilang
 berapa O
 lama O
 alergi B-GEJALA
@@ -3200,7 +2880,6 @@ up O
 bisa O
 hilang O
 
-# text = mata sebelah kanan bengkak setelah bangun tidur
 mata B-ANATOMI
 sebelah O
 kanan O
@@ -3209,7 +2888,6 @@ setelah O
 bangun O
 tidur O
 
-# text = minum pil kb saat berhubungan intim lalu haid
 minum O
 pil O
 kb O
@@ -3219,7 +2897,6 @@ intim O
 lalu O
 haid O
 
-# text = hubungan antara stres dengan terjadinya gatal
 hubungan O
 antara O
 stres O
@@ -3227,16 +2904,14 @@ dengan O
 terjadinya O
 gatal B-GEJALA
 
-# text = penyebab alergi di seluruh tubuh
 penyebab O
 alergi B-GEJALA
 di O
 seluruh O
 tubuh O
 
-# text = perlukah bruntusan merah di wajah yang abru muncul diberikan salep untuk kudis
 perlukah O
-bruntusan B-OBAT
+bruntusan B-GEJALA
 merah O
 di O
 wajah B-ANATOMI
@@ -3248,14 +2923,12 @@ salep B-OBAT
 untuk O
 kudis O
 
-# text = apakah methylprednisolone dapat mengatasi nyeri
 apakah O
 methylprednisolone O
 dapat O
 mengatasi O
-nyeri O
+nyeri B-GEJALA
 
-# text = keamanan cairan pembersih vagina yang berbentuk spray
 keamanan O
 cairan O
 pembersih O
@@ -3264,7 +2937,6 @@ yang O
 berbentuk O
 spray O
 
-# text = kemerahan pada wajah dan selangkangan anak usia tahun
 kemerahan O
 pada O
 wajah B-ANATOMI
@@ -3274,7 +2946,6 @@ anak O
 usia O
 tahun O
 
-# text = cara berhenti dari kecanduan minum obat batuk
 cara O
 berhenti O
 dari O
@@ -3283,7 +2954,6 @@ minum O
 obat B-OBAT
 batuk I-OBAT
 
-# text = muncul bentolbentol merah di telapak tangan dan kaki
 muncul O
 bentolbentol O
 merah O
@@ -3293,7 +2963,6 @@ tangan I-ANATOMI
 dan O
 kaki O
 
-# text = cara mengatasi kulit kering karena krim pemutih
 cara O
 mengatasi O
 kulit B-ANATOMI
@@ -3302,14 +2971,12 @@ karena O
 krim O
 pemutih O
 
-# text = jantung berdebar setelah minum obat
-jantung O
+jantung B-ANATOMI
 berdebar O
 setelah B-DOSIS
 minum I-DOSIS
 obat O
 
-# text = wajah gatal dan beruntusan setelah pakai skincare
 wajah B-ANATOMI
 gatal B-GEJALA
 dan O
@@ -3318,7 +2985,6 @@ setelah O
 pakai O
 skincare O
 
-# text = obat untuk mengatasi cacar air pada ibu menyusui
 obat O
 untuk O
 mengatasi O
@@ -3328,7 +2994,6 @@ pada O
 ibu O
 menyusui O
 
-# text = bentol di tangan terasa gatal dan panas
 bentol B-GEJALA
 di O
 tangan B-ANATOMI
@@ -3337,7 +3002,6 @@ gatal B-GEJALA
 dan O
 panas O
 
-# text = konsumsi obat pasca operasi usus buntu saat haid
 konsumsi O
 obat O
 pasca O
@@ -3347,7 +3011,6 @@ buntu O
 saat O
 haid O
 
-# text = ingin program hamil setelah pakai kb suntik bulan
 ingin O
 program O
 hamil O
@@ -3357,17 +3020,15 @@ kb O
 suntik O
 bulan O
 
-# text = aturan penggunaan obat mata saat mata sudah sembuh
 aturan O
 penggunaan O
 obat O
-mata O
+mata B-ANATOMI
 saat O
 mata B-ANATOMI
 sudah O
 sembuh O
 
-# text = obat telat datang bulan yang ada di apotek
 obat O
 telat O
 datang O
@@ -3377,7 +3038,6 @@ ada O
 di O
 apotek O
 
-# text = bolehkah konsumsi obat darah tinggi bersamaan dengan obat pengencer darah
 bolehkah O
 konsumsi O
 obat O
@@ -3389,7 +3049,6 @@ obat O
 pengencer O
 darah O
 
-# text = keluar flek saat menggunakan kb iud
 keluar O
 flek O
 saat O
@@ -3397,7 +3056,6 @@ menggunakan O
 kb O
 iud O
 
-# text = mengapa usg mammae harus setelah menstruasi
 mengapa O
 usg O
 mammae O
@@ -3405,7 +3063,6 @@ harus O
 setelah O
 menstruasi O
 
-# text = cara membedakan darah haid dan darah implantasi
 cara O
 membedakan O
 darah O
@@ -3414,7 +3071,6 @@ dan O
 darah O
 implantasi O
 
-# text = efek samping minum kopi saat haid apa saja
 efek O
 samping O
 minum O
@@ -3424,7 +3080,6 @@ haid O
 apa O
 saja O
 
-# text = penyebab haid tidak teratur dengan riwayat operasi kista ovarium
 penyebab O
 haid O
 tidak O
@@ -3435,7 +3090,6 @@ operasi O
 kista O
 ovarium O
 
-# text = siklus menstruasi selalu lebih cepat dan pengaruh pada kualitas sel telur
 siklus O
 menstruasi O
 selalu O
@@ -3448,7 +3102,6 @@ kualitas O
 sel O
 telur O
 
-# text = aturan konsumsi obat diabetes dan penyumbatan otak
 aturan O
 konsumsi O
 obat O
@@ -3457,7 +3110,6 @@ dan O
 penyumbatan O
 otak O
 
-# text = mata berkaca kaca pada bayi usia bulan
 mata B-ANATOMI
 berkaca O
 kaca O
@@ -3466,17 +3118,15 @@ bayi O
 usia O
 bulan O
 
-# text = bentol melepuh kecil dan gatal pada bibir bawah
 bentol B-GEJALA
 melepuh O
 kecil O
 dan O
-gatal B-ANATOMI
+gatal B-GEJALA
 pada O
-bibir O
+bibir B-ANATOMI
 bawah O
 
-# text = apakah sebenarnya perbedaan antara narkotika dan psikotropika itu
 apakah O
 sebenarnya O
 perbedaan O
@@ -3486,7 +3136,6 @@ dan O
 psikotropika O
 itu O
 
-# text = tubuh bisa mengeluarkan kotoran dengan sendirinya
 tubuh O
 bisa O
 mengeluarkan O
@@ -3494,7 +3143,6 @@ kotoran O
 dengan O
 sendirinya O
 
-# text = gatal di seluruh badan secara tibatiba
 gatal B-GEJALA
 di O
 seluruh O
@@ -3502,7 +3150,6 @@ badan B-ANATOMI
 secara O
 tibatiba O
 
-# text = jika menstruasi kali dalam sebulan apakah normal
 jika O
 menstruasi O
 kali O
@@ -3511,7 +3158,6 @@ sebulan O
 apakah O
 normal O
 
-# text = efek samping konsumsi jamu untuk mengatasi telat menstruasi
 efek O
 samping O
 konsumsi O
@@ -3521,7 +3167,6 @@ mengatasi O
 telat O
 menstruasi O
 
-# text = hal yang tidak boleh dilakukan saat haid
 hal O
 yang O
 tidak O
@@ -3530,7 +3175,6 @@ dilakukan O
 saat O
 haid O
 
-# text = cara mengatasi vagina dan anus terasa gatal
 cara O
 mengatasi O
 vagina B-ANATOMI
@@ -3539,7 +3183,6 @@ anus O
 terasa O
 gatal B-GEJALA
 
-# text = haid hampir bulan dan keluar gumpalan darah
 haid O
 hampir O
 bulan O
@@ -3548,7 +3191,6 @@ keluar O
 gumpalan O
 darah O
 
-# text = obat untuk pelancar haid setelah berhubungan intim
 obat O
 untuk O
 pelancar O
@@ -3557,7 +3199,6 @@ setelah O
 berhubungan O
 intim O
 
-# text = telinga nyeri dan bernanah setelah menggunakan anting tusuk
 telinga O
 nyeri B-GEJALA
 dan O
@@ -3567,7 +3208,6 @@ menggunakan O
 anting O
 tusuk O
 
-# text = kulit muncul bercak merah setelah pijat menggunakan putih telur
 kulit B-ANATOMI
 muncul O
 bercak O
@@ -3578,7 +3218,6 @@ menggunakan O
 putih O
 telur O
 
-# text = siklus menstruasi tidak teratur pada ibu menyusui
 siklus O
 menstruasi O
 tidak O
@@ -3587,7 +3226,6 @@ pada O
 ibu O
 menyusui O
 
-# text = konsumsi obat pengencer darah pada pasien riwayat stroke hemoragik
 konsumsi O
 obat O
 pengencer O
@@ -3598,8 +3236,7 @@ riwayat O
 stroke O
 hemoragik O
 
-# text = pusing dan meriang setelah terapi obat tb kelenjar
-pusing B-ANATOMI
+pusing B-GEJALA
 dan O
 meriang O
 setelah O
@@ -3608,15 +3245,13 @@ obat O
 tb O
 kelenjar O
 
-# text = antibiotik yang direkomendasikan untuk kencing nanah
-antibiotik O
+antibiotik B-OBAT
 yang O
 direkomendasikan O
 untuk O
 kencing O
 nanah O
 
-# text = mengantuk dan lemas setelah konsumsi obat anti alergi
 mengantuk O
 dan O
 lemas B-GEJALA
@@ -3626,7 +3261,6 @@ obat O
 anti O
 alergi B-GEJALA
 
-# text = cara mengatasi kulit kulit kering disertai gatal
 cara O
 mengatasi O
 kulit B-ANATOMI
@@ -3635,7 +3269,6 @@ kering O
 disertai O
 gatal B-GEJALA
 
-# text = menghilangkan tahi lalat dan kutil menggunakan lotion apakah ada efek samping
 menghilangkan O
 tahi O
 lalat O
@@ -3648,7 +3281,6 @@ ada O
 efek O
 samping O
 
-# text = penyebab sesak napas setiap konsumsi makanan atau minuman yang mengandung vitamin c
 penyebab O
 sesak B-GEJALA
 napas I-GEJALA
@@ -3662,13 +3294,12 @@ mengandung O
 vitamin B-OBAT
 c I-OBAT
 
-# text = sering sakit tenggorokan sesak napas batuk dan hidung tersumbat apakah mungkin karena alergi
 sering O
 sakit O
 tenggorokan B-ANATOMI
 sesak B-GEJALA
 napas I-GEJALA
-batuk O
+batuk B-GEJALA
 dan O
 hidung B-GEJALA
 tersumbat I-GEJALA
@@ -3677,7 +3308,6 @@ mungkin O
 karena O
 alergi B-GEJALA
 
-# text = bagaimana cara mengatasi alergi yang berkepanjangan
 bagaimana O
 cara O
 mengatasi O
@@ -3685,7 +3315,6 @@ alergi B-GEJALA
 yang O
 berkepanjangan O
 
-# text = bolehkah berhubungan intim saat mengalami flek coklat setelah haid
 bolehkah O
 berhubungan O
 intim O
@@ -3696,7 +3325,6 @@ coklat O
 setelah O
 haid O
 
-# text = penyebab batuk di tengah malam hingga tidur terganggu
 penyebab O
 batuk B-GEJALA
 di O
@@ -3706,7 +3334,6 @@ hingga O
 tidur O
 terganggu O
 
-# text = apakah infeksi saluran kemih dapat mempengaruhi haid
 apakah O
 infeksi B-DIAGNOSIS
 saluran O
@@ -3715,7 +3342,6 @@ dapat O
 mempengaruhi O
 haid O
 
-# text = kulit bokong terkelupas setelah menggunakan jeruk nipis
 kulit B-ANATOMI
 bokong O
 terkelupas O
@@ -3724,7 +3350,6 @@ menggunakan O
 jeruk O
 nipis O
 
-# text = penyebab mata seperti berasap dan melihat pelangi setelah menggunakan obat
 penyebab O
 mata B-ANATOMI
 seperti O
@@ -3736,7 +3361,6 @@ setelah O
 menggunakan O
 obat O
 
-# text = muncul banyak bintik di tangan tidak berair
 muncul O
 banyak O
 bintik O
@@ -3745,7 +3369,6 @@ tangan B-ANATOMI
 tidak O
 berair O
 
-# text = bagaimana cara menguruskan badan dalam waktu seminggu
 bagaimana O
 cara O
 menguruskan O
@@ -3754,7 +3377,6 @@ dalam O
 waktu O
 seminggu O
 
-# text = penyebab pusing berputar pandangan buram dan mata terasa gatal
 penyebab O
 pusing B-GEJALA
 berputar O
@@ -3765,7 +3387,6 @@ mata B-ANATOMI
 terasa O
 gatal B-GEJALA
 
-# text = penyebab darah haid keluar banyak sudah hari
 penyebab O
 darah O
 haid O
@@ -3774,7 +3395,6 @@ banyak O
 sudah O
 hari O
 
-# text = waktu yang tepat untuk berhubungan intim setelah haid agar tidak terjadi kehamilan
 waktu O
 yang O
 tepat O
@@ -3788,7 +3408,6 @@ tidak O
 terjadi O
 kehamilan O
 
-# text = efek samping yang mungkin muncul setelah menyentuh resin epoksi
 efek O
 samping O
 yang O
@@ -3799,14 +3418,12 @@ menyentuh O
 resin O
 epoksi O
 
-# text = penyebab siklus haid sering berubahubah
 penyebab O
 siklus O
 haid O
 sering O
 berubahubah O
 
-# text = gatal yang muncul setiap seusai mandi terutama di leher perut paha dan kaki
 gatal B-GEJALA
 yang O
 muncul O
@@ -3821,7 +3438,6 @@ paha O
 dan O
 kaki O
 
-# text = apakah boleh minum obat pereda nyeri saat haid
 apakah O
 boleh O
 minum O
@@ -3831,7 +3447,6 @@ nyeri B-GEJALA
 saat O
 haid O
 
-# text = normalkah jika perut bagian bawah pusar membuncit dan telat haid bulan
 normalkah O
 jika O
 perut B-ANATOMI
@@ -3844,7 +3459,6 @@ telat O
 haid O
 bulan O
 
-# text = satu minggu setelah selesai haid keluar flek coklat
 satu O
 minggu O
 setelah O
@@ -3854,7 +3468,6 @@ keluar O
 flek O
 coklat O
 
-# text = hasil testpack positif tetapi keluar darah haid
 hasil O
 testpack O
 positif O
@@ -3863,14 +3476,12 @@ keluar O
 darah O
 haid O
 
-# text = bolehkah menyusui setelah konsumsi antibiotik
 bolehkah O
 menyusui O
 setelah O
 konsumsi O
 antibiotik B-OBAT
 
-# text = obat untuk penghilang bekas luka bakar akibat knalpot
 obat O
 untuk O
 penghilang O
@@ -3880,7 +3491,6 @@ bakar O
 akibat O
 knalpot O
 
-# text = wajah bengkak dan keras setelah penggunaan krim wajah
 wajah B-ANATOMI
 bengkak B-GEJALA
 dan O
@@ -3890,7 +3500,6 @@ penggunaan O
 krim O
 wajah B-ANATOMI
 
-# text = cara mengatasi gatal pada kaki hingga meninggalkan bekas luka
 cara O
 mengatasi O
 gatal B-GEJALA
@@ -3901,7 +3510,6 @@ meninggalkan O
 bekas O
 luka O
 
-# text = darah mulai kembali deras setelah mengalami keguguran
 darah O
 mulai O
 kembali O
@@ -3910,14 +3518,12 @@ setelah O
 mengalami O
 keguguran O
 
-# text = penyebab darah keluar setelah bak
 penyebab O
 darah O
 keluar O
 setelah O
 bak O
 
-# text = apa salep yang ampuh untuk mengatasi eksim kering
 apa O
 salep B-OBAT
 yang O
@@ -3927,7 +3533,6 @@ mengatasi O
 eksim O
 kering O
 
-# text = wajah bruntusan setelah menggunakan cuka apel
 wajah B-ANATOMI
 bruntusan B-GEJALA
 setelah O
@@ -3935,16 +3540,14 @@ menggunakan O
 cuka O
 apel O
 
-# text = ruam merah dan gatal di seluruh tubuh
 ruam B-GEJALA
 merah I-GEJALA
 dan O
-gatal B-OBAT
+gatal B-GEJALA
 di O
 seluruh O
 tubuh O
 
-# text = apakah bahaya minum meloxicam dengan dosis mg sehari
 apakah O
 bahaya O
 minum O
@@ -3954,7 +3557,6 @@ dosis O
 mg O
 sehari O
 
-# text = tidak ada bekas suntikan imunisasi bcg namun kemerahan di seluruh tubuh bayi usia bulan
 tidak O
 ada O
 bekas O
@@ -3970,7 +3572,6 @@ bayi O
 usia O
 bulan O
 
-# text = keluar flek seminggu setelah berhubungan intim kemudian keluar darah haid
 keluar O
 flek O
 seminggu O
@@ -3982,7 +3583,6 @@ keluar O
 darah O
 haid O
 
-# text = rekomendasi obat untuk mengatasi leher tegang karena kolesterol
 rekomendasi O
 obat O
 untuk O
