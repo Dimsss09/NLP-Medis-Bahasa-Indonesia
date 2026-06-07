@@ -9,10 +9,10 @@ Dokumen ini ditulis sebagai **instruksi (prompt) untuk AI agent** (mis. Cursor, 
 
 ## 📋 Instruksi utama untuk AI
 
-```
+```jsx
 KAMU ADALAH: ML/NLP engineer yang mengerjakan proyek Medical NER Bahasa Indonesia dari awal hingga selesai.
 
-TUJUAN AKHIR: Menghasilkan repositori lengkap berisi model NER terlatih (berbasis IndoBERT) yang mengekstraksi entitas medis (GEJALA, OBAT, DOSIS, DIAGNOSIS, ANATOMI) dari teks Bahasa Indonesia, beserta evaluasi terukur, demo interaktif, dan dokumentasi.
+TUJUAN AKHIR: Menghasilkan repositori lengkap berisi model NER terlatih (model utama: indobenchmark/indobert-base-p1) yang mengekstraksi entitas medis (GEJALA, OBAT, DOSIS, DIAGNOSIS, ANATOMI) dari teks Bahasa Indonesia, DIBANDINGKAN dengan model multibahasa pembanding (xlm-roberta-base), beserta evaluasi terukur, demo interaktif, dan dokumentasi.
 
 ATURAN KERJA:
 1. Kerjakan FASE demi FASE sesuai urutan di bawah. Jangan lompat fase.
@@ -23,7 +23,8 @@ ATURAN KERJA:
 6. Selalu commit ke Git dengan pesan yang jelas di akhir setiap fase.
 
 DEFINISI SELESAI (Definition of Done):
-- Model terlatih tersimpan & dapat dimuat ulang.
+- Dua model terlatih (indobenchmark/indobert-base-p1 & xlm-roberta-base) tersimpan & dapat dimuat ulang.
+- Tabel perbandingan kedua model (F1 per entitas) tersedia.
 - Laporan evaluasi (precision/recall/F1 per entitas) tersedia.
 - Demo (Streamlit/Gradio) berjalan tanpa error.
 - README.md lengkap & dapat diikuti orang lain.
@@ -53,19 +54,24 @@ DEFINISI SELESAI (Definition of Done):
 - Ekspor ke format CoNLL/BIO; split train/val/test.
 - **Selesai jika:** dataset BIO tersedia & terbagi.
 
-### Fase 3 — Fine-tuning model
+### Fase 3 — Fine-tuning model (2 model untuk perbandingan)
 
-- Muat **IndoBERT(indobenchmark/indobert-base-p1)** dari Hugging Face.
-- Latih token classification (NER) pada data train.
-- Simpan model & tokenizer ke `models/`.
-- **Selesai jika:** model terlatih tersimpan.
+- Muat **`indobenchmark/indobert-base-p1`** (model utama) dari Hugging Face.
+- Muat juga **`xlm-roberta-base`** (model pembanding multibahasa).
+- Latih **kedua model** untuk token classification (NER) dengan data, split, dan hyperparameter yang **sama persis** (syarat perbandingan adil).
+- Rancang pipeline agar *model-agnostic* (nama model cukup diganti lewat `config`).
+- Simpan kedua model & tokenizer ke `models/`.
+- **Selesai jika:** kedua model terlatih tersimpan.
+- 💡 Catatan: `xlm-roberta-base` lebih besar (~270 M) — kecilkan `batch_size` bila memori GPU terbatas.
 
-### Fase 4 — Evaluasi
+### Fase 4 — Evaluasi & perbandingan model
 
-- Hitung precision/recall/F1 **per entitas** dengan `seqeval`.
+- Hitung precision/recall/F1 **per entitas** dengan `seqeval` untuk **kedua model**.
+- Sajikan **tabel perbandingan berdampingan** (indobert-base-p1 vs xlm-roberta-base) + grafik.
 - Buat confusion matrix & contoh prediksi benar/salah.
+- Catat *trade-off* (akurasi vs ukuran/kecepatan model).
 - Simpan laporan ke `reports/`.
-- **Selesai jika:** laporan metrik lengkap tersedia.
+- **Selesai jika:** laporan metrik + tabel perbandingan kedua model lengkap tersedia.
 
 ### Fase 5 — Demo interaktif
 
@@ -98,6 +104,6 @@ DEFINISI SELESAI (Definition of Done):
 - [ ]  Fase 1 — Data terkumpul & bersih
 - [ ]  Fase 2 — Data teranotasi (BIO)
 - [ ]  Fase 3 — Model terlatih
-- [ ]  Fase 4 — Evaluasi terukur
+- [ ]  Fase 4 — Evaluasi terukur + tabel perbandingan model
 - [ ]  Fase 5 — Demo berjalan
 - [ ]  Fase 6 — Dokumentasi & publikasi
