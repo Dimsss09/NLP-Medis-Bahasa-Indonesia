@@ -1,0 +1,92 @@
+{
+  "sentence_count": 400,
+  "token_count": 3194,
+  "token_mismatches": 2,
+  "token_accuracy": 0.9993738259236068,
+  "sentence_exact_match": 0.9975,
+  "micro_precision": 1.0,
+  "micro_recall": 0.9973544973544973,
+  "micro_f1": 0.9986754966887418,
+  "seqeval_report": {
+    "ANATOMI": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 140
+    },
+    "DIAGNOSIS": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 18
+    },
+    "DOSIS": {
+      "precision": 1.0,
+      "recall": 0.9285714285714286,
+      "f1-score": 0.962962962962963,
+      "support": 14
+    },
+    "GEJALA": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 184
+    },
+    "OBAT": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 22
+    },
+    "micro avg": {
+      "precision": 1.0,
+      "recall": 0.9973544973544973,
+      "f1-score": 0.9986754966887418,
+      "support": 378
+    },
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 0.9857142857142858,
+      "f1-score": 0.9925925925925926,
+      "support": 378
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 0.9973544973544973,
+      "f1-score": 0.9986282578875173,
+      "support": 378
+    }
+  },
+  "gold_label_counts": {
+    "O": 2772,
+    "B-GEJALA": 184,
+    "B-ANATOMI": 140,
+    "I-ANATOMI": 2,
+    "I-GEJALA": 22,
+    "B-DIAGNOSIS": 18,
+    "B-DOSIS": 14,
+    "I-DOSIS": 14,
+    "B-OBAT": 22,
+    "I-OBAT": 5,
+    "I-DIAGNOSIS": 1
+  },
+  "predicted_label_counts": {
+    "O": 2774,
+    "B-GEJALA": 184,
+    "B-ANATOMI": 140,
+    "I-ANATOMI": 2,
+    "I-GEJALA": 22,
+    "B-DIAGNOSIS": 18,
+    "B-DOSIS": 13,
+    "I-DOSIS": 13,
+    "B-OBAT": 22,
+    "I-OBAT": 5,
+    "I-DIAGNOSIS": 1
+  },
+  "model_key": "indobert",
+  "model_name": "IndoBERT base p1",
+  "role": "utama",
+  "base_model": "indobenchmark/indobert-base-p1",
+  "model_dir": "models/indobert-medical-ner-id",
+  "test_file": "data\\manual_gold\\gold_resolved.conll"
+}

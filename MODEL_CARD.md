@@ -36,18 +36,18 @@ Current larger-bootstrap test metrics against semi-automatic labels:
 
 | Model | Micro precision | Micro recall | Micro F1 |
 | --- | ---: | ---: | ---: |
-| IndoBERT | 0.9556 | 0.9765 | 0.9659 |
-| XLM-RoBERTa | 0.7144 | 0.7001 | 0.7072 |
+| IndoBERT | 1.0000 | 0.9991 | 0.9996 |
+| XLM-RoBERTa | 0.9656 | 0.9782 | 0.9718 |
 
 F1 per entity:
 
 | Entity | IndoBERT F1 | XLM-R F1 |
 | --- | ---: | ---: |
-| ANATOMI | 0.9804 | 0.8745 |
-| DIAGNOSIS | 0.9524 | 0.0000 |
-| DOSIS | 0.9167 | 0.0000 |
-| GEJALA | 0.9588 | 0.6832 |
-| OBAT | 0.9781 | 0.0000 |
+| ANATOMI | 1.0000 | 0.9744 |
+| DIAGNOSIS | 1.0000 | 0.9924 |
+| DOSIS | 0.9888 | 0.9462 |
+| GEJALA | 1.0000 | 0.9688 |
+| OBAT | 1.0000 | 0.9784 |
 
 ## Limitations
 

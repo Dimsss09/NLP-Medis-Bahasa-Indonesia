@@ -1,59 +1,59 @@
 {
   "sentence_count": 1306,
   "token_count": 10337,
-  "token_mismatches": 553,
-  "token_accuracy": 0.9465028538260617,
-  "sentence_exact_match": 0.7075038284839203,
-  "micro_precision": 0.7144128113879004,
-  "micro_recall": 0.7000871839581517,
-  "micro_f1": 0.7071774548656979,
+  "token_mismatches": 36,
+  "token_accuracy": 0.9965173648060366,
+  "sentence_exact_match": 0.9762633996937213,
+  "micro_precision": 0.9655765920826161,
+  "micro_recall": 0.978204010462075,
+  "micro_f1": 0.9718492854049372,
   "seqeval_report": {
     "ANATOMI": {
-      "precision": 0.8096192384769539,
-      "recall": 0.9505882352941176,
-      "f1-score": 0.8744588744588745,
+      "precision": 0.9653579676674365,
+      "recall": 0.9835294117647059,
+      "f1-score": 0.9743589743589743,
       "support": 425
     },
     "DIAGNOSIS": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
+      "precision": 0.9848484848484849,
+      "recall": 1.0,
+      "f1-score": 0.9923664122137404,
       "support": 65
     },
     "DOSIS": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
+      "precision": 0.9166666666666666,
+      "recall": 0.9777777777777777,
+      "f1-score": 0.946236559139785,
       "support": 45
     },
     "GEJALA": {
-      "precision": 0.6384,
-      "recall": 0.7348066298342542,
-      "f1-score": 0.6832191780821917,
+      "precision": 0.9669724770642202,
+      "recall": 0.9705340699815838,
+      "f1-score": 0.96875,
       "support": 543
     },
     "OBAT": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1-score": 0.0,
+      "precision": 0.9714285714285714,
+      "recall": 0.9855072463768116,
+      "f1-score": 0.9784172661870504,
       "support": 69
     },
     "micro avg": {
-      "precision": 0.7144128113879004,
-      "recall": 0.7000871839581517,
-      "f1-score": 0.7071774548656979,
+      "precision": 0.9655765920826161,
+      "recall": 0.978204010462075,
+      "f1-score": 0.9718492854049372,
       "support": 1147
     },
     "macro avg": {
-      "precision": 0.28960384769539077,
-      "recall": 0.33707897302567436,
-      "f1-score": 0.31153561050821327,
+      "precision": 0.9610548335350758,
+      "recall": 0.9834697011801758,
+      "f1-score": 0.97202584237991,
       "support": 1147
     },
     "weighted avg": {
-      "precision": 0.6022139288166569,
-      "recall": 0.7000871839581517,
-      "f1-score": 0.6474568747547095,
+      "precision": 0.9656817037909807,
+      "recall": 0.978204010462075,
+      "f1-score": 0.971864923648347,
       "support": 1147
     }
   },
@@ -71,9 +71,17 @@
     "I-OBAT": 9
   },
   "predicted_label_counts": {
-    "O": 9213,
-    "B-GEJALA": 625,
-    "B-ANATOMI": 499
+    "O": 9047,
+    "B-GEJALA": 543,
+    "B-OBAT": 69,
+    "B-ANATOMI": 433,
+    "I-OBAT": 11,
+    "B-DIAGNOSIS": 66,
+    "B-DOSIS": 47,
+    "I-DOSIS": 47,
+    "I-GEJALA": 63,
+    "I-DIAGNOSIS": 6,
+    "I-ANATOMI": 5
   },
   "model_key": "xlm_roberta",
   "model_name": "XLM-RoBERTa base",

@@ -1,6 +1,6 @@
 # Phase 4 Evaluation Report
 
-Generated at: 2026-06-07T09:03:09.283178+00:00
+Generated at: 2026-06-07T23:27:30.661084+00:00
 
 ## Model
 
@@ -12,21 +12,21 @@ Generated at: 2026-06-07T09:03:09.283178+00:00
 
 - Sentences: 1306
 - Tokens: 10337
-- Token accuracy: 0.9931
-- Sentence exact match: 0.9609
-- Micro precision: 0.9556
-- Micro recall: 0.9765
-- Micro F1: 0.9659
+- Token accuracy: 0.9998
+- Sentence exact match: 0.9992
+- Micro precision: 1.0000
+- Micro recall: 0.9991
+- Micro F1: 0.9996
 
 ## Metrics per Entity
 
 | Entity | Precision | Recall | F1 | Support |
 | --- | ---: | ---: | ---: | ---: |
-| ANATOMI | 0.9615 | 1.0000 | 0.9804 | 425 |
-| DIAGNOSIS | 0.9836 | 0.9231 | 0.9524 | 65 |
-| DOSIS | 0.8627 | 0.9778 | 0.9167 | 45 |
-| GEJALA | 0.9527 | 0.9650 | 0.9588 | 543 |
-| OBAT | 0.9853 | 0.9710 | 0.9781 | 69 |
+| ANATOMI | 1.0000 | 1.0000 | 1.0000 | 425 |
+| DIAGNOSIS | 1.0000 | 1.0000 | 1.0000 | 65 |
+| DOSIS | 1.0000 | 0.9778 | 0.9888 | 45 |
+| GEJALA | 1.0000 | 1.0000 | 1.0000 | 543 |
+| OBAT | 1.0000 | 1.0000 | 1.0000 | 69 |
 
 ## Artifacts
 

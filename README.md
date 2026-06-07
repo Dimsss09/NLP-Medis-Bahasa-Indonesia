@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![Model](https://img.shields.io/badge/Models-IndoBERT%20%2B%20XLM--R-teal)
 ![Demo](https://img.shields.io/badge/Demo-Streamlit-ff4b4b)
-![Micro F1](https://img.shields.io/badge/Silver%20Micro%20F1-0.9659-brightgreen)
+![Micro F1](https://img.shields.io/badge/Silver%20Micro%20F1-0.9996-brightgreen)
 ![Status](https://img.shields.io/badge/Phase%206-Finalized-success)
 
 Proyek ini membangun sistem Named Entity Recognition (NER) untuk mengekstraksi
@@ -27,18 +27,18 @@ sebagai klaim performa klinis final.
 
 | Model | Role | Micro precision | Micro recall | Micro F1 |
 | --- | --- | ---: | ---: | ---: |
-| `indobert` | utama | 0.9556 | 0.9765 | 0.9659 |
-| `xlm_roberta` | pembanding | 0.7144 | 0.7001 | 0.7072 |
+| `indobert` | utama | 1.0000 | 0.9991 | 0.9996 |
+| `xlm_roberta` | pembanding | 0.9656 | 0.9782 | 0.9718 |
 
 Perbandingan F1 per entitas:
 
 | Entity | IndoBERT F1 | XLM-R F1 |
 | --- | ---: | ---: |
-| ANATOMI | 0.9804 | 0.8745 |
-| DIAGNOSIS | 0.9524 | 0.0000 |
-| DOSIS | 0.9167 | 0.0000 |
-| GEJALA | 0.9588 | 0.6832 |
-| OBAT | 0.9781 | 0.0000 |
+| ANATOMI | 1.0000 | 0.9744 |
+| DIAGNOSIS | 1.0000 | 0.9924 |
+| DOSIS | 0.9888 | 0.9462 |
+| GEJALA | 1.0000 | 0.9688 |
+| OBAT | 1.0000 | 0.9784 |
 
 Detail lengkap tersedia di `reports/model_comparison.md`,
 `reports/model_comparison.csv`, `reports/evaluation_indobert_report.md`,

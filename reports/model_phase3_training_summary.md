@@ -1,34 +1,54 @@
 # Phase 3 Training Summary
 
-Generated at: 2026-06-07T09:04:00+00:00
+Generated at: 2026-06-07T23:26:42.518513+00:00
 
 ## Shared Setup
 
-- Task: Indonesian medical NER token classification
-- Training data source: silver
-- Training file: data/silver/train.conll
-- Validation file: data/silver/val.conll
-- Train sentences used per model: 2048
-- Validation sentences used per model: 512
-- Epochs: 1
-- Train batch size: 4
-- Eval batch size: 4
-- Max length: 128
-- Learning rate: 0.00002
-- Seed: 42
-
-The same split and training hyperparameters were used for both models so Phase 4
-can compare them fairly.
+- Labels: O, B-GEJALA, I-GEJALA, B-OBAT, I-OBAT, B-DOSIS, I-DOSIS, B-DIAGNOSIS, I-DIAGNOSIS, B-ANATOMI, I-ANATOMI
+- Data source: silver
+- Hyperparameters are read once from `training` in `config.yaml` and reused for every model to keep the comparison fair.
 
 ## Model Runs
 
-| Model key | Role | Base model | Output dir | Device | Train loss | Validation loss | Validation token accuracy |
-| --- | --- | --- | --- | --- | ---: | ---: | ---: |
-| indobert | utama | indobenchmark/indobert-base-p1 | models/indobert-medical-ner-id | cpu | 0.1795 | 0.0213 | 0.9953 |
-| xlm_roberta | pembanding | xlm-roberta-base | models/xlm-roberta-medical-ner-id | cpu | 0.3969 | 0.1597 | 0.9532 |
+| Model key | Role | Base model | Output dir | Train loss | Validation loss | Validation token accuracy |
+| --- | --- | --- | --- | ---: | ---: | ---: |
+| indobert | utama | indobenchmark/indobert-base-p1 | models\indobert-medical-ner-id | 0.0010 | 0.0000 | 1.0000 |
+| xlm_roberta | pembanding | xlm-roberta-base | models\xlm-roberta-medical-ner-id | 0.0311 | 0.0098 | 0.9978 |
+
+## IndoBERT base p1 (`indobert`)
+
+- Role: utama
+- Base model: indobenchmark/indobert-base-p1
+- Output directory: models\indobert-medical-ner-id
+- Device: cuda
+- Training data source: silver
+- Training file: data/silver/train.conll
+- Validation file: data/silver/val.conll
+- Train sentences used: 10441
+- Validation sentences used: 512
+- Last train loss: 0.0010
+- Last validation loss: 0.0000
+- Last validation token accuracy: 1.0000
+
+## XLM-RoBERTa base (`xlm_roberta`)
+
+- Role: pembanding
+- Base model: xlm-roberta-base
+- Output directory: models\xlm-roberta-medical-ner-id
+- Device: cuda
+- Training data source: silver
+- Training file: data/silver/train.conll
+- Validation file: data/silver/val.conll
+- Train sentences used: 10441
+- Validation sentences used: 512
+- Last train loss: 0.0311
+- Last validation loss: 0.0098
+- Last validation token accuracy: 0.9978
+
 
 ## Notes
 
-`xlm-roberta-base` is larger than IndoBERT and took longer to train on CPU. If
-GPU memory is limited in future runs, lower `training.per_device_train_batch_size`
-and rerun both model keys with the same value before updating comparison claims.
+This is a bootstrap training setup on silver labels. `xlm-roberta-base` has a
+larger memory footprint than IndoBERT; if GPU memory is limited, lower
+`training.per_device_train_batch_size` and rerun the same config for both
+models.
