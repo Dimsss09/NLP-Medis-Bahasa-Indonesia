@@ -4,7 +4,10 @@
 ![Model](https://img.shields.io/badge/Models-IndoBERT%20%2B%20XLM--R-teal)
 ![Demo](https://img.shields.io/badge/Demo-Streamlit-ff4b4b)
 ![Micro F1](https://img.shields.io/badge/Silver%20Micro%20F1-0.9996-brightgreen)
-![Status](https://img.shields.io/badge/Phase%206-Finalized-success)
+![Relation Acc](https://img.shields.io/badge/Relation%20Accuracy-99%25-brightgreen)
+![Knowledge Graph](https://img.shields.io/badge/Knowledge%20Graph-NetworkX%20%2B%20PyVis-purple)
+![QA](https://img.shields.io/badge/QA%20Assistant-RAG%20%2B%20KG-orange)
+![Status](https://img.shields.io/badge/Phase%208-Finalized-success)
 
 Proyek ini membangun sistem Named Entity Recognition (NER) untuk mengekstraksi
 entitas medis dari teks Bahasa Indonesia. Entitas yang dikenali saat ini adalah
@@ -13,11 +16,14 @@ entitas medis dari teks Bahasa Indonesia. Entitas yang dikenali saat ini adalah
 Output utama proyek:
 
 - pipeline data dari korpus mentah ke format BIO/CoNLL;
-- dataset silver berbasis rules dan lexicon;
+- dataset silver berbasis rules dan lexicon dengan **augmentasi substitusi entitas**;
 - fine-tuned IndoBERT sebagai model utama;
 - fine-tuned XLM-RoBERTa sebagai model pembanding multibahasa;
+- model assertion status (negasi/ragu) dan relation extraction;
+- **Medical Knowledge Graph** dengan standardisasi kode ICD-10 & ATC;
+- **Asisten QA Klinis** hibrida (RAG + Knowledge Graph + LLM);
 - laporan evaluasi, perbandingan F1 per entitas, error analysis, dan model card;
-- demo lokal Streamlit dengan highlight entitas berwarna.
+- demo lokal Streamlit multi-tab dengan highlight entitas, visualisasi graf, dan QA interaktif.
 
 ## Hasil Singkat
 
@@ -50,15 +56,15 @@ Perbandingan F1 per entitas:
 | `NEGATED` | 0.91 | 0.91 | 0.91 | 11 |
 | `UNCERTAIN` | 1.00 | 0.79 | 0.88 | 14 |
 
-### 3. Relation Extraction
-*Model: Fine-tuned IndoBERT (`models/indobert-medical-relation-id`)*
-*Akurasi Keseluruhan: 97%*
+### 3. Relation Extraction (Setelah Augmentasi & Retraining)
+*Model: Fine-tuned IndoBERT (`models/indobert-medical-relation-id`) + Hybrid Fallback*
+*Akurasi Keseluruhan: **99%** (naik dari 97% setelah augmentasi substitusi entitas)*
 
 | Hubungan | Precision | Recall | F1-Score | Support |
 | --- | ---: | ---: | ---: | ---: |
-| `dosage_of` (`DOSIS` -> `OBAT`) | 0.88 | 1.00 | 0.93 | 7 |
-| `located_in` (`GEJALA`/`DIAG` -> `ANATOMI`) | 0.98 | 0.99 | 0.99 | 267 |
-| `treats` (`OBAT` -> `GEJALA`/`DIAG`) | 0.92 | 0.96 | 0.94 | 23 |
+| `dosage_of` (`DOSIS` -> `OBAT`) | 1.00 | 1.00 | 1.00 | 7 |
+| `located_in` (`GEJALA`/`DIAG` -> `ANATOMI`) | 0.99 | 0.99 | 0.99 | 267 |
+| `treats` (`OBAT` -> `GEJALA`/`DIAG`) | 1.00 | 1.00 | 1.00 | 23 |
 | `no_relation` (Tidak ada hubungan) | 0.82 | 0.67 | 0.74 | 21 |
 
 Detail lengkap tersedia di folder `reports/`, termasuk `reports/model_comparison.md` dan `reports/relations_evaluation_report.md`.
@@ -98,9 +104,9 @@ Cara pakai demo:
 
 1. Buka halaman Streamlit.
 2. Pilih model utama IndoBERT atau model pembanding XLM-R di sidebar.
-3. Masukkan teks medis Bahasa Indonesia.
-4. Klik `Ekstrak Entitas`.
-5. Lihat hasil sorotan, tabel entitas, dan tabel token.
+3. **Tab 1 — Clinical Analyzer:** Masukkan teks medis, klik `Ekstrak Entitas`, lihat visualisasi entitas, asersi, relasi, dan graf kasus lokal. Klik tombol `💾 Simpan Hubungan Medis ke Knowledge Graph Global` untuk menambahkan fakta ke graf global.
+4. **Tab 2 — Eksplorasi Knowledge Graph:** Jelajahi graf pengetahuan medis, cari entitas dan hubungan, lihat visualisasi jaringan interaktif.
+5. **Tab 3 — Asisten QA Klinis:** Ajukan pertanyaan medis dan dapatkan jawaban berbasis Knowledge Graph + RAG + LLM.
 
 Contoh teks:
 
@@ -230,19 +236,57 @@ Komponen teknis:
     ```
     Menjalankan pengujian akhir terhadap model klasifikasi asersi dan relasi pada dataset uji serta menulis laporan metrik performa ke `reports/relations_evaluation_report.md`.
 
+### 3. Augmentasi Data & Retraining (Tahap 2.5)
+
+*   **Augmentasi Substitusi Entitas (Entity Switching):**
+    Mengaktifkan augmentasi di `src/build_silver_dataset.py` yang secara acak menukar entitas medis (obat, gejala, dosis) dengan kata-kata lain dari label yang sama di `resources/medical_lexicon.yaml`. Menghasilkan 3 variasi per kalimat (total **26.908 kalimat** training).
+*   **Rebuild Silver & Relations:**
+    ```powershell
+    python src/build_silver_dataset.py
+    python src/build_relation_dataset.py
+    ```
+*   **Retraining NER & Relation Models:**
+    ```powershell
+    python src/train.py
+    python src/train_relation.py
+    ```
+    Hasilnya: akurasi relasi naik dari 97% → **99%** setelah augmentasi.
+
+### 4. Medical Knowledge Graph (Tahap 3)
+
+*   **Inisialisasi Graf Pengetahuan:**
+    ```powershell
+    python src/build_initial_kg.py
+    ```
+    Mengekstraksi semua fakta dari dataset relasi dan membangun Knowledge Graph berbasis `NetworkX` dengan standardisasi kode medis internasional (ICD-10 untuk gejala/diagnosis, ATC untuk obat). Menghasilkan **71 simpul** dan **376 hubungan** yang disimpan di `data/knowledge_graph.json`.
+*   **Visualisasi Interaktif:**
+    Modul `src/graph_visualizer.py` mengonversi graf `NetworkX` ke canvas interaktif HTML dengan `PyVis`, dengan pewarnaan simpul berdasarkan label medis.
+
+### 5. Asisten QA Klinis (Tahap 4)
+
+*   **Modul QA Hibrida (RAG + KG):**
+    ```powershell
+    # Dijalankan otomatis melalui demo Streamlit
+    ```
+    Modul `src/qa_assistant.py` mengintegrasikan:
+    - Clinical Pipeline (NER + Asersi + Relasi) untuk mendeteksi entitas dari pertanyaan.
+    - Knowledge Graph Context Retrieval dari `data/knowledge_graph.json`.
+    - TF-IDF Semantic Passage Retrieval dari korpus medis.
+    - Sintesis jawaban multi-mode: Gemini API, Ollama API, atau Structured Fallback (offline).
+
 ## Struktur Proyek
 
 ```text
-app/            demo Streamlit
+app/            demo Streamlit multi-tab (Clinical Analyzer, KG Explorer, QA Assistant)
 assets/         aset visual demo
-data/           raw, clean, annotated, silver, dan manual gold workflow
+data/           raw, clean, annotated, silver, relations, knowledge_graph.json
 docs/           dokumentasi tambahan dan screenshot evidence
-models/         output model lokal, tidak dikomit
+models/         output model lokal (NER, assertion, relation), tidak dikomit
 notebooks/      eksplorasi dan eksperimen
 reports/        metrik, laporan evaluasi, dan error analysis
-resources/      lexicon atau resource pendukung
-src/            skrip data, training, evaluasi, dan prediksi
-tests/          unit test pipeline dan inference helper
+resources/      lexicon medis (medical_lexicon.yaml) dan resource pendukung
+src/            skrip data, training, evaluasi, prediksi, KG, dan QA
+tests/          unit test (21 test cases: pipeline, KG, augmentasi, QA)
 ```
 
 ## Verifikasi Lokal
@@ -273,11 +317,28 @@ pip check
 - [x] Evaluasi performa pipeline (`src/evaluate_pipeline.py`)
 - [x] Integrasi UI demo interaktif dengan visualisasi relasi & negasi
 
-### 🟣 Tahap 3 — Medical Knowledge Graph (Selanjutnya)
-- [ ] Rancang skema database graph (Nodes: Disease, Symptom, Drug, etc.)
-- [ ] Normalisasi entitas medis ke konsep standar
-- [ ] Export data ke format Graph (RDF/NetworkX/Neo4j)
-- [ ] Visualisasi graph interaktif di web demo Streamlit
+### 🟠 Tahap 2.5 — Augmentasi Data & Retraining
+- [x] Entity substitution augmentation di `build_silver_dataset.py`
+- [x] Rebuild silver dataset (26.908 kalimat augmented)
+- [x] Retraining NER & relation models pada GPU
+- [x] Type constraint masking & hybrid fallback di `predict_pipeline.py`
+- [x] Akurasi relasi meningkat dari 97% → **99%**
+
+### 🟣 Tahap 3 — Medical Knowledge Graph
+- [x] Rancang skema database graph (`src/knowledge_graph.py` — NetworkX)
+- [x] Normalisasi entitas medis ke konsep standar (ICD-10 & ATC)
+- [x] Export data ke format Graph JSON (`data/knowledge_graph.json`)
+- [x] Visualisasi graph interaktif di web demo Streamlit (`src/graph_visualizer.py` — PyVis)
+- [x] Inisialisasi graf awal: 71 simpul, 376 hubungan (`src/build_initial_kg.py`)
+- [x] Integrasi akumulasi fakta baru ke graf global dari demo UI
+
+### 🟡 Tahap 4 — QA / Asisten Klinis (RAG + KG)
+- [x] Modul QA hibrida (`src/qa_assistant.py`): RAG + KG + LLM
+- [x] TF-IDF semantic passage retrieval atas korpus medis
+- [x] Knowledge Graph context retrieval
+- [x] Integrasi Gemini API & Ollama API & Structured Fallback offline
+- [x] Tab QA interaktif di demo Streamlit
+- [x] Unit test (`tests/test_qa_assistant.py`) — 21 total test lulus
 
 ## Catatan Batasan
 
