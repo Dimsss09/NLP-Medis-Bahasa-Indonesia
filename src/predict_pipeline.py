@@ -74,12 +74,16 @@ def run_hybrid_fallback(text: str, entities: list[dict], lexicon_path: Path) -> 
                 occupied_ranges.append((start, end))
                 entity_id_counter += 1
 
-    # 2. Match regex dosage patterns (e.g. number + unit, frequencies)
-    dosage_units = r"(?:mg|mcg|g|gram|ml|cc|iu|tablet|kapsul|sendok|tetes|unit|puff|drops|ampul|vial|botol|keping|sachet|caps|tab)"
+    # 2. Match regex dosage patterns (e.g. number + unit, frequencies, duration)
+    dosage_units = r"(?:mg|mcg|g|gram|ml|cc|iu|tablet|kapsul|sendok|tetes|unit|puff|drops|ampul|vial|botol|keping|sachet|caps|tab|semprotan)"
     dosage_pattern1 = re.compile(r'\b\d+(?:[,.]\d+)?\s*' + dosage_units + r'\b', re.IGNORECASE)
     dosage_pattern2 = re.compile(r'\b\d+\s*[xX]\s*(?:sehari|hari|jam|minggu)?\b', re.IGNORECASE)
+    # Pattern 3: verbal numbers e.g. 'tiga kali sehari', 'dua kali sehari'
+    dosage_pattern3 = re.compile(r'\b(?:satu|dua|tiga|empat|lima|enam)\s+kali\s+(?:sehari|hari|jam|minggu)?\b', re.IGNORECASE)
+    # Pattern 4: duration e.g. 'selama 5 hari', 'selama satu minggu'
+    dosage_pattern4 = re.compile(r'\bselama\s+(?:\d+|satu|dua|tiga|empat|lima|enam)\s+(?:hari|minggu|bulan)\b', re.IGNORECASE)
 
-    for pattern in [dosage_pattern1, dosage_pattern2]:
+    for pattern in [dosage_pattern1, dosage_pattern2, dosage_pattern3, dosage_pattern4]:
         for match in pattern.finditer(text):
             start, end = match.start(), match.end()
             if not is_overlap(start, end):
@@ -101,6 +105,106 @@ def run_hybrid_fallback(text: str, entities: list[dict], lexicon_path: Path) -> 
         ent["id"] = f"e{idx+1}"
 
     return new_entities
+
+
+def run_hybrid_relations(text: str, entities: list[dict], existing_relations: list[dict]) -> list[dict]:
+    """Fallback rule-based relation extraction to handle high class imbalance."""
+    relations = list(existing_relations)
+    
+    # Track existing pairs to avoid duplicates
+    existing_pairs = {(r["head"], r["tail"]) for r in relations}
+    
+    # Tokenize text lowercased for token distances
+    lowered_tokens = text.lower().split()
+    
+    # Map character start position to token index
+    def get_token_index(char_start: int) -> int:
+        return len(text[:char_start].split())
+        
+    # Inject token_start and token_end helper properties
+    temp_entities = []
+    for ent in entities:
+        ent_copy = dict(ent)
+        ent_copy["token_start"] = get_token_index(ent["start"])
+        ent_copy["token_end"] = get_token_index(ent["end"])
+        temp_entities.append(ent_copy)
+        
+    # Heuristic 1: dosage_of (DOSIS -> OBAT)
+    dosages = [e for e in temp_entities if e["label"] == "DOSIS"]
+    drugs = [e for e in temp_entities if e["label"] == "OBAT"]
+    
+    for dos in dosages:
+        nearest_drug = None
+        min_dist = 999
+        for drug in drugs:
+            dist = min(
+                abs(dos["token_start"] - drug["token_end"]),
+                abs(drug["token_start"] - dos["token_end"])
+            )
+            if dist < min_dist:
+                min_dist = dist
+                nearest_drug = drug
+        if nearest_drug and min_dist <= 8:
+            pair = (dos["id"], nearest_drug["id"])
+            if pair not in existing_pairs:
+                relations.append({
+                    "head": dos["id"],
+                    "tail": nearest_drug["id"],
+                    "type": "dosage_of"
+                })
+                existing_pairs.add(pair)
+                
+    # Heuristic 2: treats (OBAT -> GEJALA/DIAGNOSIS)
+    symptoms_diag = [e for e in temp_entities if e["label"] in {"GEJALA", "DIAGNOSIS"}]
+    TREATS_LINKS = {"untuk", "obat", "meredakan", "mengobati", "atasi", "mengatasi", "sembuh", "penyembuh", "buat", "bagi", "reda"}
+    
+    for drug in drugs:
+        for sd in symptoms_diag:
+            dist = min(
+                abs(drug["token_start"] - sd["token_end"]),
+                abs(sd["token_start"] - drug["token_end"])
+            )
+            
+            is_treats = False
+            if dist <= 5:
+                is_treats = True
+            elif dist <= 10:
+                # Check for linking words between entities
+                start_search = min(drug["token_end"], sd["token_end"])
+                end_search = max(drug["token_start"], sd["token_start"])
+                middle_tokens = lowered_tokens[start_search:end_search]
+                if any(t in TREATS_LINKS for t in middle_tokens):
+                    is_treats = True
+                    
+            if is_treats:
+                pair = (drug["id"], sd["id"])
+                if pair not in existing_pairs:
+                    relations.append({
+                        "head": drug["id"],
+                        "tail": sd["id"],
+                        "type": "treats"
+                    })
+                    existing_pairs.add(pair)
+                    
+    # Heuristic 3: located_in (GEJALA/DIAGNOSIS -> ANATOMI)
+    anatomy = [e for e in temp_entities if e["label"] == "ANATOMI"]
+    for sd in symptoms_diag:
+        for anat in anatomy:
+            dist = min(
+                abs(sd["token_start"] - anat["token_end"]),
+                abs(anat["token_start"] - sd["token_end"])
+            )
+            if dist <= 6:
+                pair = (sd["id"], anat["id"])
+                if pair not in existing_pairs:
+                    relations.append({
+                        "head": sd["id"],
+                        "tail": anat["id"],
+                        "type": "located_in"
+                    })
+                    existing_pairs.add(pair)
+                    
+    return relations
 
 
 class ClinicalPipeline:
@@ -217,7 +321,23 @@ class ClinicalPipeline:
             inputs = {k: v.to(self.device) for k, v in inputs.items()}
             
             with torch.no_grad():
-                logits = self.rel_model(**inputs).logits
+                logits = self.rel_model(**inputs).logits.clone()
+                
+                # Apply type constraint masking on logits
+                # RELATION_LABELS = ["no_relation", "dosage_of", "treats", "located_in"]
+                allowed_indices = [0]  # "no_relation" is always allowed
+                if head["label"] == "DOSIS" and tail["label"] == "OBAT":
+                    allowed_indices.append(1)  # dosage_of
+                elif head["label"] == "OBAT" and tail["label"] in {"GEJALA", "DIAGNOSIS"}:
+                    allowed_indices.append(2)  # treats
+                elif head["label"] in {"GEJALA", "DIAGNOSIS"} and tail["label"] == "ANATOMI":
+                    allowed_indices.append(3)  # located_in
+                
+                # Set unallowed relation types to negative infinity
+                for idx in range(logits.shape[-1]):
+                    if idx not in allowed_indices:
+                        logits[0, idx] = -1e9
+                        
                 pred_id = logits.argmax(dim=-1).item()
                 rel_type = self.rel_model.config.id2label[pred_id]
                 
@@ -227,6 +347,9 @@ class ClinicalPipeline:
                         "tail": tail["id"],
                         "type": rel_type
                     })
+                    
+        # Apply hybrid fallback relation extraction
+        relations = run_hybrid_relations(text, entities, relations)
                     
         return {
             "text": text,
