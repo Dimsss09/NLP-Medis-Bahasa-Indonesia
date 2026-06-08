@@ -319,65 +319,250 @@ def render_relations_table(relations: list[dict], entities: list[dict]) -> None:
     st.dataframe(rows, hide_index=True, width="stretch")
 
 
+def render_pyvis_graph(G, height: str = "450px") -> None:
+    """Render a NetworkX graph inside Streamlit using PyVis."""
+    from src.graph_visualizer import generate_graph_html
+    import streamlit.components.v1 as components
+    
+    html_content = generate_graph_html(G, height=height)
+    height_int = int(height.replace("px", ""))
+    components.html(html_content, height=height_int + 20, scrolling=True)
+
+
 def main() -> None:
-    """Render the interactive demo."""
-    st.set_page_config(page_title="Medical NLP ID (NER + Relations)", layout="wide")
+    """Render the interactive demo with tabbed layout."""
+    st.set_page_config(page_title="Medical NLP ID (NER + Relations + KG)", layout="wide")
     inject_page_style()
     render_brand_header()
 
     model_options = load_model_options()
     selected_model = st.sidebar.selectbox("Model NER", list(model_options))
     model_dir = st.sidebar.text_input("Model directory", model_options[selected_model])
-    st.sidebar.caption("Pilih IndoBERT atau XLM-R. Untuk klasifikasi asersi dan relasi, model akan menggunakan ekstensi IndoBERT secara otomatis.")
+    st.sidebar.caption("Pilih IndoBERT atau XLM-R. Klasifikasi asersi, relasi, dan Knowledge Graph akan menggunakan ekstensi IndoBERT secara otomatis.")
 
-    # Paths for assertion and relation models
+    # Paths for models and global KG
     assertion_dir = ROOT_DIR / "models" / "indobert-medical-assertion-id"
     relation_dir = ROOT_DIR / "models" / "indobert-medical-relation-id"
-
-    # Default text example showing negation and relation
-    sample_text = "Pasien mengeluhkan demam tinggi dan sesak napas. Diberi paracetamol 500 mg untuk atasi demam, namun tidak batuk."
-    st.markdown("### Input Teks")
-    text = st.text_area("Teks medis", sample_text, height=140)
+    kg_path = ROOT_DIR / "data" / "knowledge_graph.json"
 
     # Initialize clinical pipeline
     pipeline = cached_pipeline(model_dir, str(assertion_dir), str(relation_dir))
 
-    if st.button("Ekstrak Informasi Terstruktur", type="primary") or text:
-        # Run pipeline predictions
-        result = pipeline.predict(text)
-        entities = result["entities"]
-        relations = result["relations"]
-        
-        # Get token-level predictions for NER debugging panel
-        token_predictions, _ = predict_entities(text, pipeline.ner_tok, pipeline.ner_model, pipeline.device)
-        
-        highlighted = render_highlighted_text(text, entities)
+    # Tab navigation
+    tab_analyzer, tab_kg = st.tabs(["🩺 Clinical Analyzer", "🕸️ Eksplorasi Knowledge Graph"])
 
-        st.subheader("Hasil Sorotan & Asersi")
-        st.markdown(
-            f"<div class='result-panel'>{highlighted}</div>",
-            unsafe_allow_html=True,
-        )
+    with tab_analyzer:
+        # Default text example showing negation and relation
+        sample_text = "Pasien mengeluhkan demam tinggi dan sesak napas. Diberi paracetamol 500 mg untuk atasi demam, namun tidak batuk."
+        st.markdown("### Analisis Rekam Medis (Single Note)")
+        text = st.text_area("Teks Medis Bahasa Indonesia", sample_text, height=120)
 
-        st.markdown("---")
-        
-        col_rel, col_ent = st.columns([1.1, 0.9])
-        
-        with col_rel:
-            st.subheader("Hubungan Medis (Relations)")
-            render_relations_table(relations, entities)
+        if st.button("Ekstrak Informasi Terstruktur", type="primary") or text:
+            # Run pipeline predictions
+            result = pipeline.predict(text)
+            entities = result["entities"]
+            relations = result["relations"]
             
-        with col_ent:
-            st.subheader("Entitas & Asersi")
-            render_entity_table(entities)
+            # Get token-level predictions for NER debugging panel
+            token_predictions, _ = predict_entities(text, pipeline.ner_tok, pipeline.ner_model, pipeline.device)
+            highlighted = render_highlighted_text(text, entities)
 
+            st.subheader("Hasil Sorotan & Asersi")
+            st.markdown(
+                f"<div class='result-panel'>{highlighted}</div>",
+                unsafe_allow_html=True,
+            )
+
+            st.markdown("---")
+            
+            col_rel, col_ent = st.columns([1.1, 0.9])
+            
+            with col_rel:
+                st.subheader("Hubungan Medis (Relations)")
+                render_relations_table(relations, entities)
+                
+            with col_ent:
+                st.subheader("Entitas & Asersi")
+                render_entity_table(entities)
+
+            st.markdown("---")
+            
+            # Local PyVis Graph Visualization
+            st.subheader("Visualisasi Hubungan Kasus (Local Graph)")
+            if relations:
+                import networkx as nx
+                from src.knowledge_graph import MedicalKnowledgeGraph
+                temp_kg = MedicalKnowledgeGraph()
+                
+                case_G = nx.DiGraph()
+                ent_map = {ent["id"]: ent for ent in entities}
+                for rel in relations:
+                    h_ent = ent_map.get(rel["head"])
+                    t_ent = ent_map.get(rel["tail"])
+                    if h_ent and t_ent:
+                        h_key, h_label, h_code, h_std_name = temp_kg.normalize_node(h_ent["text"], h_ent["label"])
+                        t_key, t_label, t_code, t_std_name = temp_kg.normalize_node(t_ent["text"], t_ent["label"])
+                        
+                        if h_key not in case_G:
+                            case_G.add_node(h_key, label=h_label, standard_code=h_code, standard_name=h_std_name)
+                        if t_key not in case_G:
+                            case_G.add_node(t_key, label=t_label, standard_code=t_code, standard_name=t_std_name)
+                        case_G.add_edge(h_key, t_key, type=rel["type"])
+                
+                render_pyvis_graph(case_G, height="400px")
+                
+                # Option to save to Global Knowledge Graph
+                col_btn, _ = st.columns([1, 2])
+                with col_btn:
+                    if st.button("💾 Simpan Hubungan Medis ke Knowledge Graph Global", type="secondary"):
+                        pipeline.add_to_graph(result, kg_path)
+                        st.success("Fakta medis dari kalimat ini berhasil digabung ke Knowledge Graph global!")
+            else:
+                st.info("Tidak ada relasi untuk divisualisasikan dalam kalimat ini.")
+
+            st.markdown("---")
+            st.subheader("Detail Token NER (Debugging)")
+            st.dataframe(
+                [{"Token": item.token, "Label": item.label, "Start": item.start, "End": item.end} for item in token_predictions],
+                hide_index=True,
+                width="stretch",
+            )
+
+    with tab_kg:
+        st.markdown("### Eksplorasi Global Knowledge Graph")
+        
+        # Load global KG
+        from src.knowledge_graph import MedicalKnowledgeGraph
+        global_kg = MedicalKnowledgeGraph()
+        global_kg.load_graph(kg_path)
+        
+        # Stats
+        num_nodes = len(global_kg.graph.nodes)
+        num_edges = len(global_kg.graph.edges)
+        
+        col_s1, col_s2, col_s3 = st.columns(3)
+        with col_s1:
+            st.metric("Total Entitas (Nodes)", num_nodes)
+        with col_s2:
+            st.metric("Total Hubungan (Edges)", num_edges)
+        with col_s3:
+            st.metric("Penyimpanan", "Portable JSON File")
+            
         st.markdown("---")
-        st.subheader("Detail Token NER")
-        st.dataframe(
-            [{"Token": item.token, "Label": item.label, "Start": item.start, "End": item.end} for item in token_predictions],
-            hide_index=True,
-            width="stretch",
-        )
+        
+        col_query, col_viz = st.columns([0.4, 0.6])
+        
+        with col_query:
+            st.subheader("Kueri Medis Terstruktur")
+            query_mode = st.radio(
+                "Jenis Pencarian",
+                [
+                    "Cari Obat Berdasarkan Gejala",
+                    "Cari Gejala Berdasarkan Obat",
+                    "Eksplorasi Detail Simpul Medis"
+                ]
+            )
+            
+            if query_mode == "Cari Obat Berdasarkan Gejala":
+                # Get symptoms from graph
+                symptom_list = sorted(list({
+                    data.get("standard_name", node)
+                    for node, data in global_kg.graph.nodes(data=True)
+                    if data.get("label") in {"GEJALA", "DIAGNOSIS"}
+                }))
+                
+                if symptom_list:
+                    selected_symptom = st.selectbox("Pilih Gejala / Keluhan", symptom_list)
+                    if st.button("Cari Obat Terkait"):
+                        drugs = global_kg.query_drugs_for_symptom(selected_symptom)
+                        if drugs:
+                            st.success(f"Ditemukan {len(drugs)} obat terkait:")
+                            rows = []
+                            for d in drugs:
+                                rows.append({
+                                    "Nama Obat": d["name"],
+                                    "Standardisasi Code": d["code"] if d["code"] else "-"
+                                })
+                            st.dataframe(rows, hide_index=True, width="stretch")
+                            
+                            # Subgraph visualization
+                            st.session_state["kg_explore_node"] = selected_symptom
+                        else:
+                            st.warning("Tidak ditemukan rekomendasi obat dalam basis data graf.")
+                else:
+                    st.info("Belum ada gejala medis yang terdaftar di basis data graf.")
+                    
+            elif query_mode == "Cari Gejala Berdasarkan Obat":
+                # Get drugs from graph
+                drug_list = sorted(list({
+                    data.get("standard_name", node)
+                    for node, data in global_kg.graph.nodes(data=True)
+                    if data.get("label") == "OBAT"
+                }))
+                
+                if drug_list:
+                    selected_drug = st.selectbox("Pilih Obat", drug_list)
+                    if st.button("Cari Gejala yang Diobati"):
+                        symptoms = global_kg.query_symptoms_for_drug(selected_drug)
+                        if symptoms:
+                            st.success(f"Obat {selected_drug} mengobati {len(symptoms)} gejala/diagnosis:")
+                            rows = []
+                            for s in symptoms:
+                                rows.append({
+                                    "Gejala / Diagnosis": s["name"],
+                                    "Kategori": s["label"],
+                                    "Standardisasi Code": s["code"] if s["code"] else "-"
+                                })
+                            st.dataframe(rows, hide_index=True, width="stretch")
+                            
+                            # Subgraph visualization
+                            st.session_state["kg_explore_node"] = selected_drug
+                        else:
+                            st.warning("Tidak ada relasi gejala medis yang diobati oleh obat ini dalam basis data graf.")
+                else:
+                    st.info("Belum ada obat yang terdaftar di basis data graf.")
+                    
+            elif query_mode == "Eksplorasi Detail Simpul Medis":
+                # All concepts list
+                node_list = sorted(list({
+                    data.get("standard_name", node)
+                    for node, data in global_kg.graph.nodes(data=True)
+                }))
+                
+                if node_list:
+                    selected_node = st.selectbox("Pilih Simpul Medis", node_list)
+                    depth = st.slider("Kedalaman Relasi (Depth/Hop)", min_value=1, max_value=3, value=1)
+                    if st.button("Visualisasikan Jaringan"):
+                        st.session_state["kg_explore_node"] = selected_node
+                        st.session_state["kg_explore_depth"] = depth
+                else:
+                    st.info("Belum ada simpul terdaftar.")
+                    
+        with col_viz:
+            st.subheader("Visualisasi Jaringan Relasi Medis")
+            
+            # Determine which node to display
+            explore_node = st.session_state.get("kg_explore_node")
+            explore_depth = st.session_state.get("kg_explore_depth", 1)
+            
+            if explore_node:
+                st.markdown(f"Menampilkan sub-jaringan medis di sekitar: **{explore_node}** (kedalaman: {explore_depth})")
+                sub_G = global_kg.query_subgraph(explore_node, depth=explore_depth)
+                render_pyvis_graph(sub_G, height="450px")
+            else:
+                # Fallback to visualizing a small random subgraph or the first drug in the graph
+                drug_list = sorted(list({
+                    data.get("standard_name", node)
+                    for node, data in global_kg.graph.nodes(data=True)
+                    if data.get("label") == "OBAT"
+                }))
+                if drug_list:
+                    default_node = drug_list[0]
+                    st.markdown(f"Menampilkan sub-jaringan default di sekitar: **{default_node}**")
+                    sub_G = global_kg.query_subgraph(default_node, depth=1)
+                    render_pyvis_graph(sub_G, height="450px")
+                else:
+                    st.info("Tambahkan data hubungan di tab Clinical Analyzer untuk mulai melihat visualisasi graf.")
 
 
 if __name__ == "__main__":

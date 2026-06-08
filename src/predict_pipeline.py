@@ -153,6 +153,29 @@ class ClinicalPipeline:
             "relations": relations
         }
 
+    def add_to_graph(self, result: dict, kg_path: Path) -> None:
+        """Add facts extracted from prediction into the global Knowledge Graph."""
+        from src.knowledge_graph import MedicalKnowledgeGraph
+        kg = MedicalKnowledgeGraph()
+        kg.load_graph(kg_path)
+        
+        entities = result.get("entities", [])
+        relations = result.get("relations", [])
+        ent_map = {e["id"]: e for e in entities}
+        
+        for rel in relations:
+            head_ent = ent_map.get(rel["head"])
+            tail_ent = ent_map.get(rel["tail"])
+            if head_ent and tail_ent:
+                kg.add_fact(
+                    head_name=head_ent["text"],
+                    head_label=head_ent["label"],
+                    relation=rel["type"],
+                    tail_name=tail_ent["text"],
+                    tail_label=tail_ent["label"]
+                )
+        kg.save_graph(kg_path)
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)

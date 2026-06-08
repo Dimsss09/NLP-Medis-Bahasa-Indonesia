@@ -1,0 +1,2315 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Bengkak",
+      "id": "bengkak"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Mata",
+      "id": "mata"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Gatal",
+      "id": "gatal"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Kulit",
+      "id": "kulit"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Hidung",
+      "id": "hidung"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Nyeri",
+      "id": "nyeri"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Tangan",
+      "id": "tangan"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Ruam",
+      "id": "ruam"
+    },
+    {
+      "label": "DIAGNOSIS",
+      "standard_code": null,
+      "standard_name": "Iritasi",
+      "id": "iritasi"
+    },
+    {
+      "label": "OBAT",
+      "standard_code": null,
+      "standard_name": "Salep",
+      "id": "salep"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Alergi",
+      "id": "alergi"
+    },
+    {
+      "label": "DOSIS",
+      "standard_code": null,
+      "standard_name": "Setelah Minum",
+      "id": "setelah minum"
+    },
+    {
+      "label": "OBAT",
+      "standard_code": "ATC: M01AE01",
+      "standard_name": "Ibuprofen",
+      "id": "ibuprofen"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Badan",
+      "id": "badan"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Perut",
+      "id": "perut"
+    },
+    {
+      "label": "OBAT",
+      "standard_code": null,
+      "standard_name": "Obat Batuk",
+      "id": "obat batuk"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Kepala",
+      "id": "kepala"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Bruntusan",
+      "id": "bruntusan"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Wajah",
+      "id": "wajah"
+    },
+    {
+      "label": "OBAT",
+      "standard_code": null,
+      "standard_name": "Insulin",
+      "id": "insulin"
+    },
+    {
+      "label": "DIAGNOSIS",
+      "standard_code": "ICD-10: E11",
+      "standard_name": "Type 2 diabetes mellitus",
+      "id": "type 2 diabetes mellitus"
+    },
+    {
+      "label": "OBAT",
+      "standard_code": null,
+      "standard_name": "Vitamin C",
+      "id": "vitamin c"
+    },
+    {
+      "label": "DIAGNOSIS",
+      "standard_code": "ICD-10: J45",
+      "standard_name": "Asthma",
+      "id": "asthma"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Kulit Merah",
+      "id": "kulit merah"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": "ICD-10: R50.9",
+      "standard_name": "Fever, unspecified",
+      "id": "fever, unspecified"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Gatalgatal",
+      "id": "gatalgatal"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Bentol",
+      "id": "bentol"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Bibir",
+      "id": "bibir"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Vagina",
+      "id": "vagina"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Bintik Merah",
+      "id": "bintik merah"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": "ICD-10: R51",
+      "standard_name": "Headache",
+      "id": "headache"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Lambung",
+      "id": "lambung"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Tenggorokan",
+      "id": "tenggorokan"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Dada",
+      "id": "dada"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Mual",
+      "id": "mual"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Jantung",
+      "id": "jantung"
+    },
+    {
+      "label": "OBAT",
+      "standard_code": "ATC: N02BE01",
+      "standard_name": "Paracetamol",
+      "id": "paracetamol"
+    },
+    {
+      "label": "DIAGNOSIS",
+      "standard_code": "ICD-10: J11",
+      "standard_name": "Influenza, virus not identified",
+      "id": "influenza, virus not identified"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": "ICD-10: R05",
+      "standard_name": "Cough",
+      "id": "cough"
+    },
+    {
+      "label": "DIAGNOSIS",
+      "standard_code": null,
+      "standard_name": "Dbd",
+      "id": "dbd"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Ruam Merah",
+      "id": "ruam merah"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Telapak Tangan",
+      "id": "telapak tangan"
+    },
+    {
+      "label": "OBAT",
+      "standard_code": null,
+      "standard_name": "Vitamin",
+      "id": "vitamin"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Paru",
+      "id": "paru"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Badan Lemas",
+      "id": "badan lemas"
+    },
+    {
+      "label": "OBAT",
+      "standard_code": null,
+      "standard_name": "Antibiotik",
+      "id": "antibiotik"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Muntah",
+      "id": "muntah"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Lemas",
+      "id": "lemas"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": "ICD-10: R07.9",
+      "standard_name": "Chest pain, unspecified",
+      "id": "chest pain, unspecified"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Punggung",
+      "id": "punggung"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Diare",
+      "id": "diare"
+    },
+    {
+      "label": "DIAGNOSIS",
+      "standard_code": "ICD-10: I10",
+      "standard_name": "Essential hypertension",
+      "id": "essential hypertension"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": "ICD-10: R06.0",
+      "standard_name": "Dyspnea",
+      "id": "dyspnea"
+    },
+    {
+      "label": "DIAGNOSIS",
+      "standard_code": null,
+      "standard_name": "Maag",
+      "id": "maag"
+    },
+    {
+      "label": "DIAGNOSIS",
+      "standard_code": null,
+      "standard_name": "Infeksi",
+      "id": "infeksi"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Sakit Perut",
+      "id": "sakit perut"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Hidung Tersumbat",
+      "id": "hidung tersumbat"
+    },
+    {
+      "label": "ANATOMI",
+      "standard_code": null,
+      "standard_name": "Puting Susu",
+      "id": "puting susu"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Tenggorokan Gatal",
+      "id": "tenggorokan gatal"
+    },
+    {
+      "label": "OBAT",
+      "standard_code": null,
+      "standard_name": "Cetirizine",
+      "id": "cetirizine"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Nyeri Ulu Hati",
+      "id": "nyeri ulu hati"
+    },
+    {
+      "label": "DIAGNOSIS",
+      "standard_code": null,
+      "standard_name": "Sinusitis",
+      "id": "sinusitis"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Batuk Berdahak",
+      "id": "batuk berdahak"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Nyeri Dada Sebelah Kiri",
+      "id": "nyeri dada sebelah kiri"
+    },
+    {
+      "label": "OBAT",
+      "standard_code": null,
+      "standard_name": "Oralit",
+      "id": "oralit"
+    },
+    {
+      "label": "OBAT",
+      "standard_code": "ATC: J01CA04",
+      "standard_name": "Amoxicillin",
+      "id": "amoxicillin"
+    },
+    {
+      "label": "DOSIS",
+      "standard_code": null,
+      "standard_name": "Setelah Makan",
+      "id": "setelah makan"
+    },
+    {
+      "label": "DIAGNOSIS",
+      "standard_code": null,
+      "standard_name": "Asam Lambung",
+      "id": "asam lambung"
+    },
+    {
+      "label": "DOSIS",
+      "standard_code": null,
+      "standard_name": "Sebelum Minum",
+      "id": "sebelum minum"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Nyeri Tenggorokan",
+      "id": "nyeri tenggorokan"
+    },
+    {
+      "label": "GEJALA",
+      "standard_code": null,
+      "standard_name": "Batuk Kering",
+      "id": "batuk kering"
+    }
+  ],
+  "edges": [
+    {
+      "type": "located_in",
+      "source": "bengkak",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "bengkak",
+      "target": "bibir"
+    },
+    {
+      "type": "located_in",
+      "source": "bengkak",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "bengkak",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "bengkak",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "bengkak",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "bengkak",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "bengkak",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "bengkak",
+      "target": "telapak tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "bengkak",
+      "target": "vagina"
+    },
+    {
+      "type": "located_in",
+      "source": "bengkak",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "bengkak",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "bengkak",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "bengkak",
+      "target": "lambung"
+    },
+    {
+      "type": "located_in",
+      "source": "bengkak",
+      "target": "hidung"
+    },
+    {
+      "type": "located_in",
+      "source": "bengkak",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "gatal",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "gatal",
+      "target": "hidung"
+    },
+    {
+      "type": "located_in",
+      "source": "gatal",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "gatal",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "gatal",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "gatal",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "gatal",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "gatal",
+      "target": "vagina"
+    },
+    {
+      "type": "located_in",
+      "source": "gatal",
+      "target": "telapak tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "gatal",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "gatal",
+      "target": "bibir"
+    },
+    {
+      "type": "located_in",
+      "source": "gatal",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "gatal",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "gatal",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "gatal",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri",
+      "target": "vagina"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri",
+      "target": "puting susu"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri",
+      "target": "bibir"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri",
+      "target": "lambung"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri",
+      "target": "hidung"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam",
+      "target": "hidung"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "iritasi",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "iritasi",
+      "target": "vagina"
+    },
+    {
+      "type": "located_in",
+      "source": "iritasi",
+      "target": "bibir"
+    },
+    {
+      "type": "located_in",
+      "source": "iritasi",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "iritasi",
+      "target": "hidung"
+    },
+    {
+      "type": "located_in",
+      "source": "iritasi",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "iritasi",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "iritasi",
+      "target": "kepala"
+    },
+    {
+      "type": "treats",
+      "source": "salep",
+      "target": "alergi"
+    },
+    {
+      "type": "treats",
+      "source": "salep",
+      "target": "gatal"
+    },
+    {
+      "type": "treats",
+      "source": "salep",
+      "target": "bengkak"
+    },
+    {
+      "type": "treats",
+      "source": "salep",
+      "target": "kulit merah"
+    },
+    {
+      "type": "treats",
+      "source": "salep",
+      "target": "asthma"
+    },
+    {
+      "type": "treats",
+      "source": "salep",
+      "target": "ruam"
+    },
+    {
+      "type": "treats",
+      "source": "salep",
+      "target": "iritasi"
+    },
+    {
+      "type": "treats",
+      "source": "salep",
+      "target": "gatalgatal"
+    },
+    {
+      "type": "treats",
+      "source": "salep",
+      "target": "infeksi"
+    },
+    {
+      "type": "treats",
+      "source": "salep",
+      "target": "nyeri"
+    },
+    {
+      "type": "treats",
+      "source": "salep",
+      "target": "bruntusan"
+    },
+    {
+      "type": "located_in",
+      "source": "alergi",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "alergi",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "alergi",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "alergi",
+      "target": "bibir"
+    },
+    {
+      "type": "located_in",
+      "source": "alergi",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "alergi",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "alergi",
+      "target": "hidung"
+    },
+    {
+      "type": "located_in",
+      "source": "alergi",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "alergi",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "alergi",
+      "target": "telapak tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "alergi",
+      "target": "vagina"
+    },
+    {
+      "type": "located_in",
+      "source": "alergi",
+      "target": "lambung"
+    },
+    {
+      "type": "located_in",
+      "source": "alergi",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "alergi",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "alergi",
+      "target": "dada"
+    },
+    {
+      "type": "dosage_of",
+      "source": "setelah minum",
+      "target": "ibuprofen"
+    },
+    {
+      "type": "dosage_of",
+      "source": "setelah minum",
+      "target": "obat batuk"
+    },
+    {
+      "type": "dosage_of",
+      "source": "setelah minum",
+      "target": "vitamin c"
+    },
+    {
+      "type": "dosage_of",
+      "source": "setelah minum",
+      "target": "paracetamol"
+    },
+    {
+      "type": "dosage_of",
+      "source": "setelah minum",
+      "target": "antibiotik"
+    },
+    {
+      "type": "dosage_of",
+      "source": "setelah minum",
+      "target": "salep"
+    },
+    {
+      "type": "dosage_of",
+      "source": "setelah minum",
+      "target": "vitamin"
+    },
+    {
+      "type": "treats",
+      "source": "ibuprofen",
+      "target": "influenza, virus not identified"
+    },
+    {
+      "type": "treats",
+      "source": "obat batuk",
+      "target": "asthma"
+    },
+    {
+      "type": "treats",
+      "source": "obat batuk",
+      "target": "cough"
+    },
+    {
+      "type": "treats",
+      "source": "obat batuk",
+      "target": "essential hypertension"
+    },
+    {
+      "type": "treats",
+      "source": "obat batuk",
+      "target": "type 2 diabetes mellitus"
+    },
+    {
+      "type": "treats",
+      "source": "obat batuk",
+      "target": "alergi"
+    },
+    {
+      "type": "treats",
+      "source": "obat batuk",
+      "target": "tenggorokan gatal"
+    },
+    {
+      "type": "treats",
+      "source": "obat batuk",
+      "target": "influenza, virus not identified"
+    },
+    {
+      "type": "treats",
+      "source": "obat batuk",
+      "target": "fever, unspecified"
+    },
+    {
+      "type": "treats",
+      "source": "obat batuk",
+      "target": "nyeri"
+    },
+    {
+      "type": "treats",
+      "source": "obat batuk",
+      "target": "dyspnea"
+    },
+    {
+      "type": "treats",
+      "source": "obat batuk",
+      "target": "gatal"
+    },
+    {
+      "type": "treats",
+      "source": "obat batuk",
+      "target": "sakit perut"
+    },
+    {
+      "type": "treats",
+      "source": "obat batuk",
+      "target": "batuk berdahak"
+    },
+    {
+      "type": "treats",
+      "source": "obat batuk",
+      "target": "muntah"
+    },
+    {
+      "type": "located_in",
+      "source": "bruntusan",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "bruntusan",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "bruntusan",
+      "target": "telapak tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "bruntusan",
+      "target": "vagina"
+    },
+    {
+      "type": "located_in",
+      "source": "bruntusan",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "bruntusan",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "bruntusan",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "bruntusan",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "bruntusan",
+      "target": "mata"
+    },
+    {
+      "type": "treats",
+      "source": "insulin",
+      "target": "type 2 diabetes mellitus"
+    },
+    {
+      "type": "located_in",
+      "source": "type 2 diabetes mellitus",
+      "target": "hidung"
+    },
+    {
+      "type": "located_in",
+      "source": "type 2 diabetes mellitus",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "type 2 diabetes mellitus",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "type 2 diabetes mellitus",
+      "target": "kepala"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin c",
+      "target": "alergi"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin c",
+      "target": "asthma"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin c",
+      "target": "influenza, virus not identified"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin c",
+      "target": "gatal"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin c",
+      "target": "bengkak"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin c",
+      "target": "dyspnea"
+    },
+    {
+      "type": "located_in",
+      "source": "asthma",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "asthma",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "kulit merah",
+      "target": "hidung"
+    },
+    {
+      "type": "located_in",
+      "source": "kulit merah",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "kulit merah",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "fever, unspecified",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "fever, unspecified",
+      "target": "bibir"
+    },
+    {
+      "type": "located_in",
+      "source": "fever, unspecified",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "fever, unspecified",
+      "target": "telapak tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "fever, unspecified",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "fever, unspecified",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "fever, unspecified",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "fever, unspecified",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "fever, unspecified",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "fever, unspecified",
+      "target": "hidung"
+    },
+    {
+      "type": "located_in",
+      "source": "fever, unspecified",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "fever, unspecified",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "fever, unspecified",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "fever, unspecified",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "gatalgatal",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "gatalgatal",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "gatalgatal",
+      "target": "telapak tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "gatalgatal",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "gatalgatal",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "gatalgatal",
+      "target": "vagina"
+    },
+    {
+      "type": "located_in",
+      "source": "gatalgatal",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "gatalgatal",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "gatalgatal",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "gatalgatal",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "bentol",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "bentol",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "bentol",
+      "target": "bibir"
+    },
+    {
+      "type": "located_in",
+      "source": "bentol",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "bentol",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "bentol",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "bentol",
+      "target": "vagina"
+    },
+    {
+      "type": "located_in",
+      "source": "bentol",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "bentol",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "bentol",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "bentol",
+      "target": "telapak tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "bintik merah",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "bintik merah",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "bintik merah",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "bintik merah",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "bintik merah",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "bintik merah",
+      "target": "bibir"
+    },
+    {
+      "type": "located_in",
+      "source": "bintik merah",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "bintik merah",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "bintik merah",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "bintik merah",
+      "target": "telapak tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "bintik merah",
+      "target": "vagina"
+    },
+    {
+      "type": "located_in",
+      "source": "bintik merah",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "headache",
+      "target": "lambung"
+    },
+    {
+      "type": "located_in",
+      "source": "headache",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "headache",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "headache",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "headache",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "headache",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "headache",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "headache",
+      "target": "hidung"
+    },
+    {
+      "type": "located_in",
+      "source": "headache",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "headache",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "headache",
+      "target": "vagina"
+    },
+    {
+      "type": "located_in",
+      "source": "headache",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "headache",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "mual",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "mual",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "mual",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "mual",
+      "target": "paru"
+    },
+    {
+      "type": "located_in",
+      "source": "mual",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "mual",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "mual",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "mual",
+      "target": "vagina"
+    },
+    {
+      "type": "located_in",
+      "source": "mual",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "mual",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "mual",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "mual",
+      "target": "mata"
+    },
+    {
+      "type": "treats",
+      "source": "paracetamol",
+      "target": "influenza, virus not identified"
+    },
+    {
+      "type": "treats",
+      "source": "paracetamol",
+      "target": "cough"
+    },
+    {
+      "type": "treats",
+      "source": "paracetamol",
+      "target": "maag"
+    },
+    {
+      "type": "treats",
+      "source": "paracetamol",
+      "target": "alergi"
+    },
+    {
+      "type": "treats",
+      "source": "paracetamol",
+      "target": "type 2 diabetes mellitus"
+    },
+    {
+      "type": "treats",
+      "source": "paracetamol",
+      "target": "tenggorokan gatal"
+    },
+    {
+      "type": "treats",
+      "source": "paracetamol",
+      "target": "fever, unspecified"
+    },
+    {
+      "type": "treats",
+      "source": "paracetamol",
+      "target": "gatalgatal"
+    },
+    {
+      "type": "treats",
+      "source": "paracetamol",
+      "target": "diare"
+    },
+    {
+      "type": "treats",
+      "source": "paracetamol",
+      "target": "headache"
+    },
+    {
+      "type": "treats",
+      "source": "paracetamol",
+      "target": "nyeri"
+    },
+    {
+      "type": "located_in",
+      "source": "influenza, virus not identified",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "influenza, virus not identified",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "influenza, virus not identified",
+      "target": "hidung"
+    },
+    {
+      "type": "located_in",
+      "source": "influenza, virus not identified",
+      "target": "bibir"
+    },
+    {
+      "type": "located_in",
+      "source": "influenza, virus not identified",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "influenza, virus not identified",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "influenza, virus not identified",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "influenza, virus not identified",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "influenza, virus not identified",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "influenza, virus not identified",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "influenza, virus not identified",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "cough",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "cough",
+      "target": "paru"
+    },
+    {
+      "type": "located_in",
+      "source": "cough",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "cough",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "cough",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "cough",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "cough",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "cough",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "cough",
+      "target": "bibir"
+    },
+    {
+      "type": "located_in",
+      "source": "cough",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "cough",
+      "target": "hidung"
+    },
+    {
+      "type": "located_in",
+      "source": "cough",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "cough",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "dbd",
+      "target": "lambung"
+    },
+    {
+      "type": "located_in",
+      "source": "dbd",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam merah",
+      "target": "telapak tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam merah",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam merah",
+      "target": "bibir"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam merah",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam merah",
+      "target": "hidung"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam merah",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam merah",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam merah",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam merah",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam merah",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam merah",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam merah",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "ruam merah",
+      "target": "punggung"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin",
+      "target": "alergi"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin",
+      "target": "maag"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin",
+      "target": "bengkak"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin",
+      "target": "fever, unspecified"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin",
+      "target": "nyeri"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin",
+      "target": "influenza, virus not identified"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin",
+      "target": "asam lambung"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin",
+      "target": "gatal"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin",
+      "target": "kulit merah"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin",
+      "target": "diare"
+    },
+    {
+      "type": "treats",
+      "source": "vitamin",
+      "target": "cough"
+    },
+    {
+      "type": "located_in",
+      "source": "badan lemas",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "badan lemas",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "badan lemas",
+      "target": "jantung"
+    },
+    {
+      "type": "treats",
+      "source": "antibiotik",
+      "target": "alergi"
+    },
+    {
+      "type": "treats",
+      "source": "antibiotik",
+      "target": "infeksi"
+    },
+    {
+      "type": "treats",
+      "source": "antibiotik",
+      "target": "cough"
+    },
+    {
+      "type": "treats",
+      "source": "antibiotik",
+      "target": "influenza, virus not identified"
+    },
+    {
+      "type": "treats",
+      "source": "antibiotik",
+      "target": "type 2 diabetes mellitus"
+    },
+    {
+      "type": "treats",
+      "source": "antibiotik",
+      "target": "bengkak"
+    },
+    {
+      "type": "treats",
+      "source": "antibiotik",
+      "target": "maag"
+    },
+    {
+      "type": "treats",
+      "source": "antibiotik",
+      "target": "gatalgatal"
+    },
+    {
+      "type": "treats",
+      "source": "antibiotik",
+      "target": "gatal"
+    },
+    {
+      "type": "treats",
+      "source": "antibiotik",
+      "target": "nyeri"
+    },
+    {
+      "type": "treats",
+      "source": "antibiotik",
+      "target": "hidung tersumbat"
+    },
+    {
+      "type": "treats",
+      "source": "antibiotik",
+      "target": "fever, unspecified"
+    },
+    {
+      "type": "treats",
+      "source": "antibiotik",
+      "target": "diare"
+    },
+    {
+      "type": "treats",
+      "source": "antibiotik",
+      "target": "muntah"
+    },
+    {
+      "type": "treats",
+      "source": "antibiotik",
+      "target": "dyspnea"
+    },
+    {
+      "type": "located_in",
+      "source": "muntah",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "muntah",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "muntah",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "muntah",
+      "target": "vagina"
+    },
+    {
+      "type": "located_in",
+      "source": "muntah",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "muntah",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "lemas",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "lemas",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "lemas",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "lemas",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "lemas",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "lemas",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "lemas",
+      "target": "telapak tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "lemas",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "chest pain, unspecified",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "chest pain, unspecified",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "chest pain, unspecified",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "diare",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "diare",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "diare",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "diare",
+      "target": "lambung"
+    },
+    {
+      "type": "located_in",
+      "source": "diare",
+      "target": "vagina"
+    },
+    {
+      "type": "located_in",
+      "source": "essential hypertension",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "essential hypertension",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "dyspnea",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "dyspnea",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "dyspnea",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "dyspnea",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "dyspnea",
+      "target": "wajah"
+    },
+    {
+      "type": "located_in",
+      "source": "dyspnea",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "dyspnea",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "dyspnea",
+      "target": "lambung"
+    },
+    {
+      "type": "located_in",
+      "source": "dyspnea",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "dyspnea",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "dyspnea",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "maag",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "maag",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "maag",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "infeksi",
+      "target": "lambung"
+    },
+    {
+      "type": "located_in",
+      "source": "infeksi",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "infeksi",
+      "target": "vagina"
+    },
+    {
+      "type": "located_in",
+      "source": "infeksi",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "infeksi",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "infeksi",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "infeksi",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "infeksi",
+      "target": "hidung"
+    },
+    {
+      "type": "located_in",
+      "source": "infeksi",
+      "target": "tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "sakit perut",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "sakit perut",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "sakit perut",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "sakit perut",
+      "target": "vagina"
+    },
+    {
+      "type": "located_in",
+      "source": "sakit perut",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "sakit perut",
+      "target": "telapak tangan"
+    },
+    {
+      "type": "located_in",
+      "source": "hidung tersumbat",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "hidung tersumbat",
+      "target": "hidung"
+    },
+    {
+      "type": "located_in",
+      "source": "hidung tersumbat",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "tenggorokan gatal",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "tenggorokan gatal",
+      "target": "mata"
+    },
+    {
+      "type": "located_in",
+      "source": "tenggorokan gatal",
+      "target": "hidung"
+    },
+    {
+      "type": "treats",
+      "source": "cetirizine",
+      "target": "gatal"
+    },
+    {
+      "type": "treats",
+      "source": "cetirizine",
+      "target": "alergi"
+    },
+    {
+      "type": "treats",
+      "source": "cetirizine",
+      "target": "headache"
+    },
+    {
+      "type": "treats",
+      "source": "cetirizine",
+      "target": "bentol"
+    },
+    {
+      "type": "treats",
+      "source": "cetirizine",
+      "target": "influenza, virus not identified"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri ulu hati",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri ulu hati",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri ulu hati",
+      "target": "jantung"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri ulu hati",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "sinusitis",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "sinusitis",
+      "target": "hidung"
+    },
+    {
+      "type": "located_in",
+      "source": "batuk berdahak",
+      "target": "badan"
+    },
+    {
+      "type": "located_in",
+      "source": "batuk berdahak",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "batuk berdahak",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri dada sebelah kiri",
+      "target": "punggung"
+    },
+    {
+      "type": "treats",
+      "source": "oralit",
+      "target": "diare"
+    },
+    {
+      "type": "treats",
+      "source": "amoxicillin",
+      "target": "maag"
+    },
+    {
+      "type": "dosage_of",
+      "source": "setelah makan",
+      "target": "paracetamol"
+    },
+    {
+      "type": "dosage_of",
+      "source": "setelah makan",
+      "target": "amoxicillin"
+    },
+    {
+      "type": "located_in",
+      "source": "asam lambung",
+      "target": "dada"
+    },
+    {
+      "type": "located_in",
+      "source": "asam lambung",
+      "target": "punggung"
+    },
+    {
+      "type": "located_in",
+      "source": "asam lambung",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "asam lambung",
+      "target": "tenggorokan"
+    },
+    {
+      "type": "located_in",
+      "source": "asam lambung",
+      "target": "telapak tangan"
+    },
+    {
+      "type": "dosage_of",
+      "source": "sebelum minum",
+      "target": "obat batuk"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri tenggorokan",
+      "target": "kepala"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri tenggorokan",
+      "target": "perut"
+    },
+    {
+      "type": "located_in",
+      "source": "nyeri tenggorokan",
+      "target": "kulit"
+    },
+    {
+      "type": "located_in",
+      "source": "batuk kering",
+      "target": "bibir"
+    },
+    {
+      "type": "located_in",
+      "source": "batuk kering",
+      "target": "paru"
+    }
+  ]
+}
