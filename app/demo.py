@@ -221,95 +221,163 @@ def load_model_options() -> dict[str, str]:
     }
 
 
-@st.cache_resource(show_spinner="Memuat model NER...")
-def cached_model(model_dir: str):
-    """Load model once per Streamlit session (Forced CPU for Windows stability)."""
-    import torch
-    from transformers import AutoModelForTokenClassification, AutoTokenizer
-    model_path = Path(model_dir)
-    tokenizer = AutoTokenizer.from_pretrained(model_path)
-    model = AutoModelForTokenClassification.from_pretrained(model_path)
-    device = torch.device("cpu")
-    model.to(device)
-    model.eval()
-    return tokenizer, model, device
+@st.cache_resource(show_spinner="Memuat Clinical Pipeline (NER + Relasi + Negasi)...")
+def cached_pipeline(ner_dir: str, assertion_dir: str, relation_dir: str):
+    """Load the integrated clinical pipeline on CPU for Windows stability."""
+    from src.predict_pipeline import ClinicalPipeline
+    return ClinicalPipeline(Path(ner_dir), Path(assertion_dir), Path(relation_dir), device="cpu")
 
 
-def render_highlighted_text(text: str, entities: list[EntitySpan]) -> str:
-    """Render text with entity highlights as safe HTML."""
+def render_highlighted_text(text: str, entities: list[dict]) -> str:
+    """Render text with entity highlights and assertion cues as safe HTML."""
     if not text:
         return ""
 
     html_parts: list[str] = []
     cursor = 0
-    for entity in sorted(entities, key=lambda item: item.start):
-        if entity.start < cursor:
+    for entity in sorted(entities, key=lambda item: item["start"]):
+        start = entity["start"]
+        end = entity["end"]
+        label = entity["label"]
+        ent_text = text[start:end]
+        assertion = entity.get("assertion", "AFFIRMED")
+        
+        if start < cursor:
             continue
-        html_parts.append(html.escape(text[cursor:entity.start]))
-        background, color = LABEL_COLORS.get(entity.label, ("#f3f4f6", "#374151"))
+            
+        html_parts.append(html.escape(text[cursor:start]))
+        
+        background, color = LABEL_COLORS.get(label, ("#f3f4f6", "#374151"))
+        
+        text_style = ""
+        badge_suffix = f" ({label})"
+        
+        if assertion == "NEGATED":
+            text_style = "text-decoration: line-through; opacity: 0.55;"
+            badge_suffix = f" ({label} - NEGATED)"
+            background = "#e2e8f0"
+            color = "#475569"
+        elif assertion == "UNCERTAIN":
+            text_style = "border-bottom: 2px dotted #ca8a04; font-style: italic;"
+            badge_suffix = f" ({label} - UNCERTAIN ❓)"
+            
         html_parts.append(
-            "<mark class=\"entity-mark\" style=\""
-            f"background:{background}; color:{color}; "
-            "\">"
-            f"{html.escape(text[entity.start:entity.end])}"
-            f"<span>{html.escape(entity.label)}</span>"
-            "</mark>"
+            f"<mark class=\"entity-mark\" style=\"background:{background}; color:{color};\">"
+            f"<span style=\"{text_style}\">{html.escape(ent_text)}</span>"
+            f"<span>{html.escape(badge_suffix)}</span>"
+            f"</mark>"
         )
-        cursor = entity.end
+        cursor = end
+        
     html_parts.append(html.escape(text[cursor:]))
     return "".join(html_parts)
 
 
-def render_entity_table(entities: list[EntitySpan]) -> None:
-    """Render extracted entities as a compact table."""
+def render_entity_table(entities: list[dict]) -> None:
+    """Render extracted entities and assertions as a compact table."""
     if not entities:
         st.info("Tidak ada entitas medis yang terdeteksi.")
         return
 
     rows = [
-        {"Entitas": entity.text, "Label": entity.label, "Start": entity.start, "End": entity.end}
+        {
+            "Entitas": entity["text"],
+            "Label": entity["label"],
+            "Asersi": entity.get("assertion", "-"),
+            "Start": entity["start"],
+            "End": entity["end"]
+        }
         for entity in entities
     ]
     st.dataframe(rows, hide_index=True, width="stretch")
 
 
+def render_relations_table(relations: list[dict], entities: list[dict]) -> None:
+    """Render relations list using a user-friendly layout."""
+    if not relations:
+        st.info("Tidak ada hubungan medis terstruktur yang terdeteksi di dalam kalimat.")
+        return
+
+    ent_map = {ent["id"]: ent for ent in entities}
+    rel_type_map = {
+        "dosage_of": "Dosis dari 💊",
+        "treats": "Mengobati / Meredakan 🩺",
+        "located_in": "Lokasi anatomi di 📍"
+    }
+
+    rows = []
+    for rel in relations:
+        head_ent = ent_map.get(rel["head"])
+        tail_ent = ent_map.get(rel["tail"])
+        if head_ent and tail_ent:
+            rows.append({
+                "Entitas Asal": f"{head_ent['text']} ({head_ent['label']})",
+                "Hubungan": rel_type_map.get(rel["type"], rel["type"]),
+                "Entitas Tujuan": f"{tail_ent['text']} ({tail_ent['label']})"
+            })
+
+    st.dataframe(rows, hide_index=True, width="stretch")
+
+
 def main() -> None:
     """Render the interactive demo."""
-    st.set_page_config(page_title="Medical NER ID", layout="wide")
+    st.set_page_config(page_title="Medical NLP ID (NER + Relations)", layout="wide")
     inject_page_style()
     render_brand_header()
 
     model_options = load_model_options()
-    selected_model = st.sidebar.selectbox("Model", list(model_options))
+    selected_model = st.sidebar.selectbox("Model NER", list(model_options))
     model_dir = st.sidebar.text_input("Model directory", model_options[selected_model])
-    st.sidebar.caption("Pilih IndoBERT sebagai model utama atau XLM-R sebagai model pembanding setelah training selesai.")
+    st.sidebar.caption("Pilih IndoBERT atau XLM-R. Untuk klasifikasi asersi dan relasi, model akan menggunakan ekstensi IndoBERT secara otomatis.")
 
-    sample_text = "Pasien mengalami demam tinggi, nyeri dada, dan minum paracetamol 500 mg sesudah makan."
+    # Paths for assertion and relation models
+    assertion_dir = ROOT_DIR / "models" / "indobert-medical-assertion-id"
+    relation_dir = ROOT_DIR / "models" / "indobert-medical-relation-id"
+
+    # Default text example showing negation and relation
+    sample_text = "Pasien mengeluhkan demam tinggi dan sesak napas. Diberi paracetamol 500 mg untuk atasi demam, namun tidak batuk."
     st.markdown("### Input Teks")
     text = st.text_area("Teks medis", sample_text, height=140)
 
-    tokenizer, model, device = cached_model(model_dir)
-    if st.button("Ekstrak Entitas", type="primary") or text:
-        token_predictions, entities = predict_entities(text, tokenizer, model, device)
+    # Initialize clinical pipeline
+    pipeline = cached_pipeline(model_dir, str(assertion_dir), str(relation_dir))
+
+    if st.button("Ekstrak Informasi Terstruktur", type="primary") or text:
+        # Run pipeline predictions
+        result = pipeline.predict(text)
+        entities = result["entities"]
+        relations = result["relations"]
+        
+        # Get token-level predictions for NER debugging panel
+        token_predictions, _ = predict_entities(text, pipeline.ner_tok, pipeline.ner_model, pipeline.device)
+        
         highlighted = render_highlighted_text(text, entities)
 
-        st.subheader("Hasil Sorotan")
+        st.subheader("Hasil Sorotan & Asersi")
         st.markdown(
             f"<div class='result-panel'>{highlighted}</div>",
             unsafe_allow_html=True,
         )
 
-        left, right = st.columns([1, 1])
-        with left:
-            st.subheader("Entitas")
+        st.markdown("---")
+        
+        col_rel, col_ent = st.columns([1.1, 0.9])
+        
+        with col_rel:
+            st.subheader("Hubungan Medis (Relations)")
+            render_relations_table(relations, entities)
+            
+        with col_ent:
+            st.subheader("Entitas & Asersi")
             render_entity_table(entities)
-        with right:
-            st.subheader("Token")
-            st.dataframe(
-                [{"Token": item.token, "Label": item.label, "Start": item.start, "End": item.end} for item in token_predictions],
-                hide_index=True,
-                width="stretch",
-            )
+
+        st.markdown("---")
+        st.subheader("Detail Token NER")
+        st.dataframe(
+            [{"Token": item.token, "Label": item.label, "Start": item.start, "End": item.end} for item in token_predictions],
+            hide_index=True,
+            width="stretch",
+        )
 
 
 if __name__ == "__main__":
