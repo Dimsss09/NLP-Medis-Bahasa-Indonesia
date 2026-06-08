@@ -100,10 +100,10 @@ DEFINISI SELESAI (Definition of Done):
 
 ## ✅ Checklist penyelesaian global
 
-- [ ]  Fase 0 — Inisialisasi proyek
-- [ ]  Fase 1 — Data terkumpul & bersih
-- [ ]  Fase 2 — Data teranotasi (BIO)
-- [ ]  Fase 3 — Model terlatih
-- [ ]  Fase 4 — Evaluasi terukur + tabel perbandingan model
-- [ ]  Fase 5 — Demo berjalan
-- [ ]  Fase 6 — Dokumentasi & publikasi
+- [x]  Fase 0 — Inisialisasi proyek
+- [x]  Fase 1 — Data terkumpul & bersih
+- [x]  Fase 2 — Data teranotasi (BIO)
+- [x]  Fase 3 — Model terlatih
+- [x]  Fase 4 — Evaluasi terukur + tabel perbandingan model
+- [x]  Fase 5 — Demo berjalan
+- [x]  Fase 6 — Dokumentasi & publikasi

@@ -21,9 +21,9 @@ Output utama proyek:
 
 ## Hasil Singkat
 
-Evaluasi engineering terbaru dijalankan pada test set semi-otomatis/silver, jadi
-angka ini berguna untuk melihat progres model tetapi belum boleh dianggap
-sebagai klaim performa klinis final.
+Evaluasi engineering terbaru dijalankan pada test set semi-otomatis/silver (untuk melihat progres model tetapi belum sebagai klaim klinis final).
+
+### 1. Named Entity Recognition (NER)
 
 | Model | Role | Micro precision | Micro recall | Micro F1 |
 | --- | --- | ---: | ---: | ---: |
@@ -40,9 +40,28 @@ Perbandingan F1 per entitas:
 | GEJALA | 1.0000 | 0.9688 |
 | OBAT | 1.0000 | 0.9784 |
 
-Detail lengkap tersedia di `reports/model_comparison.md`,
-`reports/model_comparison.csv`, `reports/evaluation_indobert_report.md`,
-`reports/evaluation_xlm_roberta_report.md`, dan `reports/error_analysis.md`.
+### 2. Assertion Status (Negation & Uncertainty)
+*Model: Fine-tuned IndoBERT (`models/indobert-medical-assertion-id`)*
+*Akurasi Keseluruhan: 99%*
+
+| Kelas | Precision | Recall | F1-Score | Support |
+| --- | ---: | ---: | ---: | ---: |
+| `AFFIRMED` | 0.99 | 1.00 | 1.00 | 583 |
+| `NEGATED` | 0.91 | 0.91 | 0.91 | 11 |
+| `UNCERTAIN` | 1.00 | 0.79 | 0.88 | 14 |
+
+### 3. Relation Extraction
+*Model: Fine-tuned IndoBERT (`models/indobert-medical-relation-id`)*
+*Akurasi Keseluruhan: 97%*
+
+| Hubungan | Precision | Recall | F1-Score | Support |
+| --- | ---: | ---: | ---: | ---: |
+| `dosage_of` (`DOSIS` -> `OBAT`) | 0.88 | 1.00 | 0.93 | 7 |
+| `located_in` (`GEJALA`/`DIAG` -> `ANATOMI`) | 0.98 | 0.99 | 0.99 | 267 |
+| `treats` (`OBAT` -> `GEJALA`/`DIAG`) | 0.92 | 0.96 | 0.94 | 23 |
+| `no_relation` (Tidak ada hubungan) | 0.82 | 0.67 | 0.74 | 21 |
+
+Detail lengkap tersedia di folder `reports/`, termasuk `reports/model_comparison.md` dan `reports/relations_evaluation_report.md`.
 
 ## Screenshot Evidence
 
@@ -152,76 +171,64 @@ Komponen teknis:
 
 ## Pipeline Proyek
 
-### 1. Menyiapkan Data
+### 1. Menyiapkan Data & NER (Tahap 1)
 
-```powershell
-python src/data_prep.py
-```
+*   **Menyiapkan Data:**
+    ```powershell
+    python src/data_prep.py
+    ```
+    Mengambil dataset publik `iqbalpurba26/health-topic-dataset`, menyimpan salinan JSONL ke `data/raw/`, lalu membuat korpus bersih di `data/clean/medical_text_corpus.txt`.
+*   **Membuat Anotasi BIO:**
+    ```powershell
+    python src/annotate_bio.py
+    ```
+    Membuat anotasi awal berbasis lexicon dan aturan dosis ke `data/annotated/train.conll`, `data/annotated/val.conll`, dan `data/annotated/test.conll`.
+*   **Membuat Silver Dataset:**
+    ```powershell
+    python src/build_silver_dataset.py
+    ```
+    Membuat dataset `data/silver/` dari rules dan lexicon.
+*   **Melatih Model NER:**
+    ```powershell
+    python src/train.py
+    ```
+    Melakukan fine-tuning semua model yang terdaftar di `config.yaml` (`indobert` dan `xlm_roberta`).
+*   **Evaluasi Model NER:**
+    ```powershell
+    python src/evaluate.py
+    ```
+    Menghitung precision, recall, F1 dengan `seqeval` untuk kedua model NER.
+*   **Validasi Manual Mendekati Industri:**
+    ```powershell
+    python src/prepare_manual_gold.py
+    python src/annotation_agreement.py
+    python src/resolve_gold.py
+    python src/evaluate.py --test-file data/manual_gold/gold_resolved.conll --report-prefix gold
+    python src/error_analysis.py
+    ```
 
-Mengambil dataset publik `iqbalpurba26/health-topic-dataset`, menyimpan salinan
-JSONL ke `data/raw/`, lalu membuat korpus bersih di
-`data/clean/medical_text_corpus.txt`.
+### 2. Hubungan Relasi & Negasi (Tahap 2)
 
-### 2. Membuat Anotasi BIO
-
-```powershell
-python src/annotate_bio.py
-```
-
-Membuat anotasi awal berbasis lexicon dan aturan dosis ke
-`data/annotated/train.conll`, `data/annotated/val.conll`, dan
-`data/annotated/test.conll`.
-
-### 3. Membuat Silver Dataset
-
-```powershell
-python src/build_silver_dataset.py
-```
-
-Membuat dataset `data/silver/` dari rules dan lexicon. Silver data boleh
-dipakai untuk memperbesar training, tetapi tidak boleh dilaporkan sebagai human
-gold atau bukti agreement annotator.
-
-### 4. Melatih Model
-
-```powershell
-python src/train.py
-```
-
-Melakukan fine-tuning semua model yang terdaftar di `config.yaml`: `indobert`
-dan `xlm_roberta`. Untuk melatih satu model saja:
-
-```powershell
-python src/train.py --model-key indobert
-python src/train.py --model-key xlm_roberta
-```
-
-Konfigurasi training berada di `config.yaml`; saat ini
-`training.train_data_source` disetel ke `silver`.
-
-### 5. Evaluasi Model
-
-```powershell
-python src/evaluate.py
-```
-
-Menghitung precision, recall, F1 dengan `seqeval` untuk kedua model, menyimpan
-confusion matrix, menulis contoh prediksi, dan membuat tabel perbandingan
-berdampingan di `reports/model_comparison.md`.
-
-### 6. Validasi Manual Mendekati Industri
-
-```powershell
-python src/prepare_manual_gold.py
-python src/annotation_agreement.py
-python src/resolve_gold.py
-python src/evaluate.py --test-file data/manual_gold/gold_resolved.conll --report-prefix gold
-python src/error_analysis.py
-```
-
-`prepare_manual_gold.py` menyiapkan 400 kalimat untuk dua annotator. File
-annotator harus diisi manusia secara independen sebelum agreement, gold
-resolution, dan evaluasi gold dapat dianggap valid.
+*   **Membangun Dataset Relasi & Asersi:**
+    ```powershell
+    python src/build_relation_dataset.py
+    ```
+    Mengekstraksi entitas dari berkas CoNLL, mendeteksi penanda negasi/ketidakpastian untuk melabeli status asersi (`AFFIRMED`, `NEGATED`, `UNCERTAIN`), dan memasangkan kandidat entitas (mis. `DOSIS` terdekat ke `OBAT`) menggunakan aturan berbasis jarak untuk menghasilkan split data JSON di `data/relations/`.
+*   **Melatih Model Assertion Status:**
+    ```powershell
+    python src/train_assertion.py
+    ```
+    Melatih classifier asersi 3-kelas menggunakan IndoBERT dengan menyematkan penanda `[START_ENT]` dan `[END_ENT]` di sekitar entitas target. Output disimpan di `models/indobert-medical-assertion-id`.
+*   **Melatih Model Relation Extraction:**
+    ```powershell
+    python src/train_relation.py
+    ```
+    Melatih classifier hubungan 4-kelas (`dosage_of`, `treats`, `located_in`, `no_relation`) menggunakan IndoBERT dengan menyematkan penanda `[START_HEAD]`, `[END_HEAD]`, `[START_TAIL]`, dan `[END_TAIL]` di sekitar entitas yang dihubungkan. Output disimpan di `models/indobert-medical-relation-id`.
+*   **Pipeline Evaluasi Relasi & Asersi:**
+    ```powershell
+    python src/evaluate_pipeline.py
+    ```
+    Menjalankan pengujian akhir terhadap model klasifikasi asersi dan relasi pada dataset uji serta menulis laporan metrik performa ke `reports/relations_evaluation_report.md`.
 
 ## Struktur Proyek
 
@@ -248,6 +255,7 @@ pip check
 
 ## Status Roadmap
 
+### 🟢 Tahap 1 — Fondasi NER
 - [x] Fase 0 - Inisialisasi proyek
 - [x] Fase 1 - Pengumpulan dan pembersihan data
 - [x] Fase 2 - Anotasi data format BIO
@@ -255,6 +263,21 @@ pip check
 - [x] Fase 4 - Evaluasi
 - [x] Fase 5 - Demo interaktif
 - [x] Fase 6 - Dokumentasi dan finalisasi
+
+### 🔵 Tahap 2 — Relation & Negation Extraction
+- [x] Skema data hubungan & negasi (`data/relations/`)
+- [x] Skrip dataset generator (`src/build_relation_dataset.py`)
+- [x] Model assertion (negasi/ragu) fine-tuned (`train_assertion.py`)
+- [x] Model relation extraction fine-tuned (`train_relation.py`)
+- [x] Integrated prediction pipeline (`src/predict_pipeline.py`)
+- [x] Evaluasi performa pipeline (`src/evaluate_pipeline.py`)
+- [x] Integrasi UI demo interaktif dengan visualisasi relasi & negasi
+
+### 🟣 Tahap 3 — Medical Knowledge Graph (Selanjutnya)
+- [ ] Rancang skema database graph (Nodes: Disease, Symptom, Drug, etc.)
+- [ ] Normalisasi entitas medis ke konsep standar
+- [ ] Export data ke format Graph (RDF/NetworkX/Neo4j)
+- [ ] Visualisasi graph interaktif di web demo Streamlit
 
 ## Catatan Batasan
 

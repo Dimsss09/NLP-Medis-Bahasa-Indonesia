@@ -82,8 +82,8 @@ flowchart TD
 
 ## ✅ Checklist milestone besar
 
-- [ ]  Tahap 1 — Fondasi NER selesai (model + dataset + demo + dokumentasi)
-- [ ]  Tahap 2 — Relation & negation extraction berjalan & terukur
+- [x]  Tahap 1 — Fondasi NER selesai (model + dataset + demo + dokumentasi)
+- [x]  Tahap 2 — Relation & negation extraction berjalan & terukur
 - [ ]  Tahap 3 — Knowledge graph dapat di-query
 - [ ]  Tahap 4 — Asisten klinis QA berjalan dengan rujukan sumber
 - [ ]  Tahap 5 — Dataset/benchmark publik dirilis
