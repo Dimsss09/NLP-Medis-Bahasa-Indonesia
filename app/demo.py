@@ -228,6 +228,13 @@ def cached_pipeline(ner_dir: str, assertion_dir: str, relation_dir: str):
     return ClinicalPipeline(Path(ner_dir), Path(assertion_dir), Path(relation_dir), device="cpu")
 
 
+@st.cache_resource(show_spinner="Memuat Asisten QA Klinis (RAG + KG)...")
+def cached_qa_assistant(ner_dir: str, assertion_dir: str, relation_dir: str, kg_path: str, corpus_path: str):
+    """Load the Clinical QA Assistant combining NER, relations, KG, and TF-IDF."""
+    from src.qa_assistant import ClinicalQAAssistant
+    return ClinicalQAAssistant(Path(ner_dir), Path(assertion_dir), Path(relation_dir), Path(kg_path), Path(corpus_path))
+
+
 def render_highlighted_text(text: str, entities: list[dict]) -> str:
     """Render text with entity highlights and assertion cues as safe HTML."""
     if not text:
@@ -340,16 +347,29 @@ def main() -> None:
     model_dir = st.sidebar.text_input("Model directory", model_options[selected_model])
     st.sidebar.caption("Pilih IndoBERT atau XLM-R. Klasifikasi asersi, relasi, dan Knowledge Graph akan menggunakan ekstensi IndoBERT secara otomatis.")
 
+    st.sidebar.markdown("---")
+    st.sidebar.subheader("🔑 Konfigurasi QA Assistant")
+    gemini_key = st.sidebar.text_input("Gemini API Key", type="password", help="Masukkan API Key Gemini Anda untuk sintesis RAG tingkat lanjut.")
+    st.sidebar.markdown("**Atau gunakan Local LLM (Ollama):**")
+    ollama_url = st.sidebar.text_input("Ollama URL (Opsional)", "", help="Kosongkan jika ingin menggunakan mode Fallback offline.")
+    ollama_model = st.sidebar.text_input("Nama Model Ollama", "llama3", help="Contoh: llama3, mistral, gemma")
+
     # Paths for models and global KG
     assertion_dir = ROOT_DIR / "models" / "indobert-medical-assertion-id"
     relation_dir = ROOT_DIR / "models" / "indobert-medical-relation-id"
     kg_path = ROOT_DIR / "data" / "knowledge_graph.json"
+    corpus_path = ROOT_DIR / "data" / "clean" / "medical_text_corpus.txt"
 
-    # Initialize clinical pipeline
+    # Initialize clinical pipeline & QA assistant
     pipeline = cached_pipeline(model_dir, str(assertion_dir), str(relation_dir))
+    qa_assistant = cached_qa_assistant(model_dir, str(assertion_dir), str(relation_dir), str(kg_path), str(corpus_path))
 
     # Tab navigation
-    tab_analyzer, tab_kg = st.tabs(["🩺 Clinical Analyzer", "🕸️ Eksplorasi Knowledge Graph"])
+    tab_analyzer, tab_kg, tab_qa = st.tabs([
+        "🩺 Clinical Analyzer", 
+        "🕸️ Eksplorasi Knowledge Graph", 
+        "💬 Asisten QA Klinis (RAG + KG)"
+    ])
 
     with tab_analyzer:
         # Default text example showing negation and relation
@@ -563,6 +583,83 @@ def main() -> None:
                     render_pyvis_graph(sub_G, height="450px")
                 else:
                     st.info("Tambahkan data hubungan di tab Clinical Analyzer untuk mulai melihat visualisasi graf.")
+
+    with tab_qa:
+        st.markdown("### 💬 Asisten QA Klinis (RAG + Graf Pengetahuan)")
+        st.write("Tanyakan pertanyaan medis untuk mendapatkan jawaban berdasarkan Graf Pengetahuan lokal dan korpus medis.")
+
+        user_query = st.text_input(
+            "Masukkan Pertanyaan Anda",
+            "Bagaimana cara mengobati sesak napas?",
+            key="qa_input_query"
+        )
+        
+        if st.button("Tanyakan Asisten", type="primary") or user_query:
+            with st.spinner("Asisten sedang memikirkan jawaban Anda..."):
+                # Run QA assistant
+                qa_result = qa_assistant.answer_query(
+                    query=user_query,
+                    api_key=gemini_key if gemini_key else None,
+                    ollama_url=ollama_url if ollama_url else None,
+                    ollama_model=ollama_model
+                )
+                
+                # Render clinical answer
+                st.markdown("---")
+                st.markdown("### 🤖 Jawaban Asisten Klinis")
+                st.markdown(qa_result["response"])
+                st.caption(f"Sumber Sintesis: **{qa_result['source_type'].upper()}**")
+                
+                st.markdown("---")
+                
+                # Expanders for reasoning steps
+                col_exp_1, col_exp_2 = st.columns([1, 1])
+                
+                with col_exp_1:
+                    st.subheader("🔍 Pemahaman Kueri & Referensi")
+                    with st.expander("Entitas Medis yang Terdeteksi"):
+                        render_entity_table(qa_result["entities"])
+                        
+                    with st.expander("Catatan Referensi Korpus Terkait"):
+                        if qa_result["passages"]:
+                            for idx, p in enumerate(qa_result["passages"]):
+                                st.markdown(f"**{idx+1}.** *{p.capitalize()}*")
+                        else:
+                            st.info("Tidak ada referensi dokumen yang cocok.")
+                            
+                with col_exp_2:
+                    st.subheader("🕸️ Graf Fakta yang Direferensikan")
+                    with st.expander("Tabel Fakta Relasional"):
+                        if qa_result["kg_facts"]:
+                            fact_rows = []
+                            for f in qa_result["kg_facts"]:
+                                fact_rows.append({
+                                    "Entitas Asal": f"{f['head']} ({f['head_label']})",
+                                    "Hubungan": f['relation'],
+                                    "Entitas Tujuan": f"{f['tail']} ({f['tail_label']})"
+                                })
+                            st.dataframe(fact_rows, hide_index=True, width="stretch")
+                        else:
+                            st.info("Tidak ada hubungan relasional yang ditemukan dalam Graf.")
+                            
+                    # Local network visualization of retrieved facts
+                    if qa_result["kg_facts"]:
+                        import networkx as nx
+                        from src.knowledge_graph import MedicalKnowledgeGraph
+                        temp_kg = MedicalKnowledgeGraph()
+                        
+                        retrieved_G = nx.DiGraph()
+                        for f in qa_result["kg_facts"]:
+                            h_key, h_label, h_code, h_std_name = temp_kg.normalize_node(f["head"], f["head_label"])
+                            t_key, t_label, t_code, t_std_name = temp_kg.normalize_node(f["tail"], f["tail_label"])
+                            
+                            if h_key not in retrieved_G:
+                                retrieved_G.add_node(h_key, label=h_label, standard_code=h_code, standard_name=h_std_name)
+                            if t_key not in retrieved_G:
+                                retrieved_G.add_node(t_key, label=t_label, standard_code=t_code, standard_name=t_std_name)
+                            retrieved_G.add_edge(h_key, t_key, type=f["relation"])
+                            
+                        render_pyvis_graph(retrieved_G, height="300px")
 
 
 if __name__ == "__main__":
