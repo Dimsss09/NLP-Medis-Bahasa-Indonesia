@@ -71,10 +71,19 @@ Detail lengkap tersedia di folder `reports/`, termasuk `reports/model_comparison
 
 ## Screenshot Evidence
 
-Screenshot berikut diambil dari demo Streamlit lokal setelah model berhasil
-memuat dan mengekstraksi entitas dari contoh teks medis.
+Berikut adalah cuplikan layar antarmuka demo interaktif Streamlit lokal yang memiliki 3 tab utama:
 
-![Demo Streamlit Medical NER](docs/screenshots/demo_phase6_streamlit.png)
+### 1. Tab 1 — Clinical Analyzer (NER, Asersi, Relasi & Graf Kasus Lokal)
+Mengekstraksi entitas medis dari catatan klinis secara real-time, mendeteksi status asersi (negasi/ragu), memetakan relasi, dan menampilkan visualisasi graf hubungan lokal (Local Graph).
+![Demo Streamlit Clinical Analyzer](docs/screenshots/demo_phase6_streamlit.png)
+
+### 2. Tab 2 — Eksplorasi Knowledge Graph
+Menampilkan statistik graf medis global secara visual dan terstruktur, memungkinkan pencarian fakta relasional antar obat, gejala, dan diagnosis.
+![Demo Streamlit Knowledge Graph Explorer](docs/screenshots/demo_kg_explorer.png)
+
+### 3. Tab 3 — Asisten QA Klinis (RAG + KG)
+Asisten tanya-jawab medis hibrida yang memadukan ekstraksi Clinical Pipeline, pencarian dokumen semantik korpus (RAG), fakta Graf Pengetahuan, dan generator jawaban berbasis model bahasa (LLM).
+![Demo Streamlit Clinical QA Assistant](docs/screenshots/demo_qa_assistant.png)
 
 ## Cara Instal
 
