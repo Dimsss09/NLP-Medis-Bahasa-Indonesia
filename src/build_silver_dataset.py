@@ -10,9 +10,102 @@ from __future__ import annotations
 import argparse
 import json
 from datetime import datetime, timezone
+import sys
 from pathlib import Path
 
-from annotate_bio import build_annotations, count_entities, load_yaml, split_records, write_conll
+ROOT_DIR = Path(__file__).resolve().parents[1]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
+from src.annotate_bio import build_annotations, count_entities, load_yaml, split_records, write_conll, Token, load_lexicon
+import random
+
+def substitute_entities(
+    tokens: list[Token], 
+    labels: list[str], 
+    lexicon: dict[str, list[tuple[str, ...]]], 
+    num_augmentations: int = 3
+) -> list[tuple[list[Token], list[str]]]:
+    """Parse entity spans and randomly swap token text with matching lexicon entries."""
+    spans = []
+    i = 0
+    while i < len(labels):
+        if labels[i].startswith("B-"):
+            label = labels[i][2:]
+            start = i
+            i += 1
+            while i < len(labels) and labels[i] == f"I-{label}":
+                i += 1
+            spans.append((start, i, label))
+        else:
+            i += 1
+            
+    if not spans:
+        return []
+        
+    augmented_records = []
+    
+    for _ in range(num_augmentations):
+        new_tokens = []
+        new_labels = []
+        last_idx = 0
+        
+        for start, end, label in spans:
+            # Add non-entity tokens before this span
+            for idx in range(last_idx, start):
+                new_tokens.append(tokens[idx])
+                new_labels.append(labels[idx])
+                
+            # Pick replacement from lexicon
+            phrases = lexicon.get(label, [])
+            if label == "DOSIS":
+                dosis_phrases = [
+                    ("500", "mg"), ("100", "mcg"), ("250", "mg"), ("10", "unit"),
+                    ("2", "tablet"), ("3", "x", "sehari"), ("tiga", "kali", "sehari"),
+                    ("selama", "5", "hari"), ("dua", "semprotan"), ("150", "mg")
+                ]
+                replacement_phrase_tokens = random.choice(dosis_phrases)
+            elif phrases:
+                replacement_phrase_tokens = random.choice(phrases)
+            else:
+                replacement_phrase_tokens = tuple(t.text.casefold() for t in tokens[start:end])
+                
+            current_offset = new_tokens[-1].end + 1 if new_tokens else 0
+            for idx_rep, word in enumerate(replacement_phrase_tokens):
+                t_word = Token(text=word, start=current_offset, end=current_offset + len(word))
+                new_tokens.append(t_word)
+                if idx_rep == 0:
+                    new_labels.append(f"B-{label}")
+                else:
+                    new_labels.append(f"I-{label}")
+                current_offset += len(word) + 1
+                
+            last_idx = end
+            
+        # Add trailing non-entity tokens
+        for idx in range(last_idx, len(tokens)):
+            new_tokens.append(tokens[idx])
+            new_labels.append(labels[idx])
+            
+        augmented_records.append((new_tokens, new_labels))
+        
+    return augmented_records
+
+
+def augment_dataset(
+    train_records: list[tuple[list[Token], list[str]]], 
+    lexicon: dict[str, list[tuple[str, ...]]], 
+    num_augmentations: int = 3
+) -> list[tuple[list[Token], list[str]]]:
+    """Augment the training records by generating augmented versions of each sentence."""
+    augmented_train = []
+    for tokens, labels in train_records:
+        # Keep original record
+        augmented_train.append((tokens, labels))
+        # Add augmented records
+        augmented = substitute_entities(tokens, labels, lexicon, num_augmentations)
+        augmented_train.extend(augmented)
+    return augmented_train
 
 
 DEFAULT_CONFIG = Path("config.yaml")
@@ -87,6 +180,10 @@ def main() -> None:
 
     annotated = build_annotations(Path(data_config["clean_file"]), args.lexicon)
     splits = split_records(annotated, seed)
+
+    # Augment ONLY the train split
+    lexicon = load_lexicon(args.lexicon)
+    splits["train"] = augment_dataset(splits["train"], lexicon, num_augmentations=3)
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
     write_conll(splits["train"], args.output_dir / "train.conll")
