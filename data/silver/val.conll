@@ -1567,7 +1567,7 @@ vaksinasi O
 
 bersin O
 dan O
-pilek O
+pilek B-GEJALA
 yang O
 berulang O
 setelah O
@@ -2053,7 +2053,7 @@ sekitar O
 mata B-ANATOMI
 
 batuk B-GEJALA
-pilek O
+pilek B-GEJALA
 bersin O
 mata B-ANATOMI
 merah O
@@ -2129,7 +2129,7 @@ obat O
 tradisional O
 untuk O
 mengatasi O
-pilek O
+pilek B-GEJALA
 karena O
 alergi B-GEJALA
 
@@ -3437,7 +3437,7 @@ pengobatan O
 
 obat B-OBAT
 batuk I-OBAT
-pilek O
+pilek B-GEJALA
 untuk O
 bayi O
 usia O
@@ -3563,7 +3563,7 @@ penyebab O
 sakit O
 tulang O
 sendi O
-bahu O
+bahu B-ANATOMI
 dan O
 terasa O
 kebas O
@@ -4614,7 +4614,7 @@ tengah O
 punggung B-ANATOMI
 dada B-ANATOMI
 dan O
-bahu O
+bahu B-ANATOMI
 terasa O
 gatal B-GEJALA
 saat O
@@ -4755,7 +4755,7 @@ jerawat O
 pengobatan O
 saat O
 mengalami O
-pilek O
+pilek B-GEJALA
 dan O
 hidung B-GEJALA
 tersumbat I-GEJALA
@@ -5113,7 +5113,7 @@ wajah B-ANATOMI
 selalu O
 bersin O
 dan O
-pilek O
+pilek B-GEJALA
 tibatiba O
 
 penyebab O
@@ -5613,7 +5613,7 @@ mengatasi O
 demam B-GEJALA
 batuk B-GEJALA
 dan O
-pilek O
+pilek B-GEJALA
 
 demam B-GEJALA
 dan O
@@ -5877,7 +5877,7 @@ bulan O
 yang O
 mengalami O
 batuk B-GEJALA
-pilek O
+pilek B-GEJALA
 
 kemungkinan O
 hamil O
@@ -7322,7 +7322,7 @@ kanker O
 bolehkah O
 minum O
 obat O
-pilek O
+pilek B-GEJALA
 saat O
 masa O
 penyembuhan O
@@ -7348,7 +7348,7 @@ bolehkah O
 konsumsi O
 obat B-OBAT
 batuk I-OBAT
-pilek O
+pilek B-GEJALA
 dan O
 antibiotik B-OBAT
 untuk O
@@ -7621,7 +7621,7 @@ dada I-GEJALA
 kanan O
 mual B-GEJALA
 batuk B-GEJALA
-pilek O
+pilek B-GEJALA
 
 apakah O
 volume O
@@ -9345,7 +9345,7 @@ hidung B-ANATOMI
 mudah O
 merah O
 saat O
-pilek O
+pilek B-GEJALA
 
 kandungan O
 alkohol O
@@ -9361,7 +9361,7 @@ antipsikotik O
 secara O
 bersamaan O
 
-pilek O
+pilek B-GEJALA
 setelah O
 menghirup O
 debu O
@@ -10375,7 +10375,7 @@ hingga O
 sulit O
 dibuka O
 disertai O
-pilek O
+pilek B-GEJALA
 dan O
 bersin O
 
@@ -11325,7 +11325,7 @@ aman O
 konsumsi O
 obat B-OBAT
 batuk I-OBAT
-pilek O
+pilek B-GEJALA
 
 efek O
 konsumsi O

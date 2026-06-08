@@ -1,6 +1,6 @@
 # Phase 3 Training Summary
 
-Generated at: 2026-06-07T23:26:42.518513+00:00
+Generated at: 2026-06-08T01:14:38.635288+00:00
 
 ## Shared Setup
 
@@ -12,8 +12,7 @@ Generated at: 2026-06-07T23:26:42.518513+00:00
 
 | Model key | Role | Base model | Output dir | Train loss | Validation loss | Validation token accuracy |
 | --- | --- | --- | --- | ---: | ---: | ---: |
-| indobert | utama | indobenchmark/indobert-base-p1 | models\indobert-medical-ner-id | 0.0010 | 0.0000 | 1.0000 |
-| xlm_roberta | pembanding | xlm-roberta-base | models\xlm-roberta-medical-ner-id | 0.0311 | 0.0098 | 0.9978 |
+| indobert | utama | indobenchmark/indobert-base-p1 | models\indobert-medical-ner-id | 0.0022 | 0.0003 | 1.0000 |
 
 ## IndoBERT base p1 (`indobert`)
 
@@ -24,26 +23,11 @@ Generated at: 2026-06-07T23:26:42.518513+00:00
 - Training data source: silver
 - Training file: data/silver/train.conll
 - Validation file: data/silver/val.conll
-- Train sentences used: 10441
+- Train sentences used: 26908
 - Validation sentences used: 512
-- Last train loss: 0.0010
-- Last validation loss: 0.0000
+- Last train loss: 0.0022
+- Last validation loss: 0.0003
 - Last validation token accuracy: 1.0000
-
-## XLM-RoBERTa base (`xlm_roberta`)
-
-- Role: pembanding
-- Base model: xlm-roberta-base
-- Output directory: models\xlm-roberta-medical-ner-id
-- Device: cuda
-- Training data source: silver
-- Training file: data/silver/train.conll
-- Validation file: data/silver/val.conll
-- Train sentences used: 10441
-- Validation sentences used: 512
-- Last train loss: 0.0311
-- Last validation loss: 0.0098
-- Last validation token accuracy: 0.9978
 
 
 ## Notes

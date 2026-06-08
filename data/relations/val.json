@@ -2018,7 +2018,16 @@
   },
   {
     "text": "bersin dan pilek yang berulang setelah bangun tidur dan makan makanan tertentu",
-    "entities": [],
+    "entities": [
+      {
+        "id": "e1",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 11,
+        "end": 16,
+        "assertion": "AFFIRMED"
+      }
+    ],
     "relations": []
   },
   {
@@ -2783,13 +2792,21 @@
       },
       {
         "id": "e2",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 6,
+        "end": 11,
+        "assertion": "AFFIRMED"
+      },
+      {
+        "id": "e3",
         "text": "mata",
         "label": "ANATOMI",
         "start": 19,
         "end": 23
       },
       {
-        "id": "e3",
+        "id": "e4",
         "text": "gatal",
         "label": "GEJALA",
         "start": 34,
@@ -2800,12 +2817,17 @@
     "relations": [
       {
         "head": "e1",
-        "tail": "e2",
+        "tail": "e3",
         "type": "located_in"
       },
       {
-        "head": "e3",
-        "tail": "e2",
+        "head": "e2",
+        "tail": "e3",
+        "type": "located_in"
+      },
+      {
+        "head": "e4",
+        "tail": "e3",
         "type": "located_in"
       }
     ]
@@ -2859,6 +2881,14 @@
     "entities": [
       {
         "id": "e1",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 33,
+        "end": 38,
+        "assertion": "AFFIRMED"
+      },
+      {
+        "id": "e2",
         "text": "alergi",
         "label": "GEJALA",
         "start": 46,
@@ -4636,9 +4666,23 @@
         "label": "OBAT",
         "start": 0,
         "end": 10
+      },
+      {
+        "id": "e2",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 11,
+        "end": 16,
+        "assertion": "AFFIRMED"
       }
     ],
-    "relations": []
+    "relations": [
+      {
+        "head": "e1",
+        "tail": "e2",
+        "type": "treats"
+      }
+    ]
   },
   {
     "text": "penyebab alergi susu semenjak lahir",
@@ -4800,7 +4844,15 @@
   },
   {
     "text": "penyebab sakit tulang sendi bahu dan terasa kebas",
-    "entities": [],
+    "entities": [
+      {
+        "id": "e1",
+        "text": "bahu",
+        "label": "ANATOMI",
+        "start": 28,
+        "end": 32
+      }
+    ],
     "relations": []
   },
   {
@@ -6214,6 +6266,13 @@
       },
       {
         "id": "e3",
+        "text": "bahu",
+        "label": "ANATOMI",
+        "start": 50,
+        "end": 54
+      },
+      {
+        "id": "e4",
         "text": "gatal",
         "label": "GEJALA",
         "start": 62,
@@ -6223,13 +6282,18 @@
     ],
     "relations": [
       {
-        "head": "e3",
+        "head": "e4",
         "tail": "e1",
         "type": "located_in"
       },
       {
-        "head": "e3",
+        "head": "e4",
         "tail": "e2",
+        "type": "located_in"
+      },
+      {
+        "head": "e4",
+        "tail": "e3",
         "type": "located_in"
       }
     ]
@@ -6392,6 +6456,14 @@
     "entities": [
       {
         "id": "e1",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 26,
+        "end": 31,
+        "assertion": "AFFIRMED"
+      },
+      {
+        "id": "e2",
         "text": "hidung tersumbat",
         "label": "GEJALA",
         "start": 36,
@@ -6976,7 +7048,16 @@
   },
   {
     "text": "selalu bersin dan pilek tibatiba",
-    "entities": [],
+    "entities": [
+      {
+        "id": "e1",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 18,
+        "end": 23,
+        "assertion": "AFFIRMED"
+      }
+    ],
     "relations": []
   },
   {
@@ -7675,6 +7756,14 @@
         "start": 27,
         "end": 32,
         "assertion": "AFFIRMED"
+      },
+      {
+        "id": "e3",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 37,
+        "end": 42,
+        "assertion": "AFFIRMED"
       }
     ],
     "relations": []
@@ -8087,6 +8176,14 @@
         "label": "GEJALA",
         "start": 77,
         "end": 82,
+        "assertion": "AFFIRMED"
+      },
+      {
+        "id": "e2",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 83,
+        "end": 88,
         "assertion": "AFFIRMED"
       }
     ],
@@ -10276,7 +10373,16 @@
   },
   {
     "text": "bolehkah minum obat pilek saat masa penyembuhan pasca operasi usus buntu",
-    "entities": [],
+    "entities": [
+      {
+        "id": "e1",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 20,
+        "end": 25,
+        "assertion": "AFFIRMED"
+      }
+    ],
     "relations": []
   },
   {
@@ -10345,13 +10451,32 @@
       },
       {
         "id": "e2",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 29,
+        "end": 34,
+        "assertion": "AFFIRMED"
+      },
+      {
+        "id": "e3",
         "text": "antibiotik",
         "label": "OBAT",
         "start": 39,
         "end": 49
       }
     ],
-    "relations": []
+    "relations": [
+      {
+        "head": "e1",
+        "tail": "e2",
+        "type": "treats"
+      },
+      {
+        "head": "e3",
+        "tail": "e2",
+        "type": "treats"
+      }
+    ]
   },
   {
     "text": "bolehkah hubungan intim saat mengalami haid berkepanjangan",
@@ -10680,6 +10805,14 @@
         "label": "GEJALA",
         "start": 54,
         "end": 59,
+        "assertion": "AFFIRMED"
+      },
+      {
+        "id": "e5",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 60,
+        "end": 65,
         "assertion": "AFFIRMED"
       }
     ],
@@ -13235,9 +13368,23 @@
         "label": "ANATOMI",
         "start": 0,
         "end": 6
+      },
+      {
+        "id": "e2",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 24,
+        "end": 29,
+        "assertion": "AFFIRMED"
       }
     ],
-    "relations": []
+    "relations": [
+      {
+        "head": "e2",
+        "tail": "e1",
+        "type": "located_in"
+      }
+    ]
   },
   {
     "text": "kandungan alkohol dalam obat",
@@ -13251,7 +13398,16 @@
   },
   {
     "text": "pilek setelah menghirup debu cuaca dingin dan saat lelah",
-    "entities": [],
+    "entities": [
+      {
+        "id": "e1",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 0,
+        "end": 5,
+        "assertion": "AFFIRMED"
+      }
+    ],
     "relations": []
   },
   {
@@ -14709,6 +14865,14 @@
         "label": "ANATOMI",
         "start": 0,
         "end": 4
+      },
+      {
+        "id": "e2",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 65,
+        "end": 70,
+        "assertion": "AFFIRMED"
       }
     ],
     "relations": []
@@ -16201,9 +16365,23 @@
         "label": "OBAT",
         "start": 20,
         "end": 30
+      },
+      {
+        "id": "e2",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 31,
+        "end": 36,
+        "assertion": "AFFIRMED"
       }
     ],
-    "relations": []
+    "relations": [
+      {
+        "head": "e1",
+        "tail": "e2",
+        "type": "treats"
+      }
+    ]
   },
   {
     "text": "efek konsumsi minyak ikan saat alergi ikan laut",

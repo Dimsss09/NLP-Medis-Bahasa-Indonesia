@@ -124,6 +124,14 @@
         "start": 73,
         "end": 78,
         "assertion": "AFFIRMED"
+      },
+      {
+        "id": "e2",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 79,
+        "end": 84,
+        "assertion": "AFFIRMED"
       }
     ],
     "relations": []
@@ -2065,6 +2073,14 @@
       },
       {
         "id": "e3",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 30,
+        "end": 35,
+        "assertion": "AFFIRMED"
+      },
+      {
+        "id": "e4",
         "text": "badan",
         "label": "ANATOMI",
         "start": 40,
@@ -2079,7 +2095,17 @@
       },
       {
         "head": "e1",
-        "tail": "e3",
+        "tail": "e4",
+        "type": "located_in"
+      },
+      {
+        "head": "e3",
+        "tail": "e2",
+        "type": "located_in"
+      },
+      {
+        "head": "e3",
+        "tail": "e4",
         "type": "located_in"
       }
     ]
@@ -3600,13 +3626,21 @@
       },
       {
         "id": "e2",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 19,
+        "end": 24,
+        "assertion": "AFFIRMED"
+      },
+      {
+        "id": "e3",
         "text": "tenggorokan",
         "label": "ANATOMI",
         "start": 25,
         "end": 36
       },
       {
-        "id": "e3",
+        "id": "e4",
         "text": "hidung",
         "label": "ANATOMI",
         "start": 52,
@@ -3616,12 +3650,22 @@
     "relations": [
       {
         "head": "e1",
-        "tail": "e2",
+        "tail": "e3",
         "type": "located_in"
       },
       {
         "head": "e1",
+        "tail": "e4",
+        "type": "located_in"
+      },
+      {
+        "head": "e2",
         "tail": "e3",
+        "type": "located_in"
+      },
+      {
+        "head": "e2",
+        "tail": "e4",
         "type": "located_in"
       }
     ]
@@ -4801,6 +4845,14 @@
         "label": "GEJALA",
         "start": 20,
         "end": 34,
+        "assertion": "AFFIRMED"
+      },
+      {
+        "id": "e2",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 39,
+        "end": 44,
         "assertion": "AFFIRMED"
       }
     ],
@@ -6364,6 +6416,14 @@
         "label": "GEJALA",
         "start": 26,
         "end": 31,
+        "assertion": "AFFIRMED"
+      },
+      {
+        "id": "e2",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 36,
+        "end": 41,
         "assertion": "AFFIRMED"
       }
     ],
@@ -13529,6 +13589,14 @@
     "entities": [
       {
         "id": "e1",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 16,
+        "end": 21,
+        "assertion": "AFFIRMED"
+      },
+      {
+        "id": "e2",
         "text": "pusing",
         "label": "GEJALA",
         "start": 22,
@@ -13536,21 +13604,21 @@
         "assertion": "AFFIRMED"
       },
       {
-        "id": "e2",
+        "id": "e3",
         "text": "dada",
         "label": "ANATOMI",
         "start": 29,
         "end": 33
       },
       {
-        "id": "e3",
+        "id": "e4",
         "text": "mata",
         "label": "ANATOMI",
         "start": 44,
         "end": 48
       },
       {
-        "id": "e4",
+        "id": "e5",
         "text": "gatal",
         "label": "GEJALA",
         "start": 49,
@@ -13561,22 +13629,32 @@
     "relations": [
       {
         "head": "e1",
-        "tail": "e2",
+        "tail": "e3",
         "type": "located_in"
       },
       {
         "head": "e1",
+        "tail": "e4",
+        "type": "located_in"
+      },
+      {
+        "head": "e2",
         "tail": "e3",
         "type": "located_in"
       },
       {
-        "head": "e4",
-        "tail": "e2",
+        "head": "e2",
+        "tail": "e4",
         "type": "located_in"
       },
       {
-        "head": "e4",
+        "head": "e5",
         "tail": "e3",
+        "type": "located_in"
+      },
+      {
+        "head": "e5",
+        "tail": "e4",
         "type": "located_in"
       }
     ]
@@ -13820,9 +13898,23 @@
         "label": "ANATOMI",
         "start": 0,
         "end": 6
+      },
+      {
+        "id": "e2",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 13,
+        "end": 18,
+        "assertion": "AFFIRMED"
       }
     ],
-    "relations": []
+    "relations": [
+      {
+        "head": "e2",
+        "tail": "e1",
+        "type": "located_in"
+      }
+    ]
   },
   {
     "text": "konsumsi obat sakit kepala tablet sekaligus",
@@ -14256,7 +14348,16 @@
   },
   {
     "text": "pemberian obat untuk anak usia tahun yang pilek",
-    "entities": [],
+    "entities": [
+      {
+        "id": "e1",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 42,
+        "end": 47,
+        "assertion": "AFFIRMED"
+      }
+    ],
     "relations": []
   },
   {
@@ -15492,11 +15593,24 @@
         "label": "ANATOMI",
         "start": 30,
         "end": 36
+      },
+      {
+        "id": "e3",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 42,
+        "end": 47,
+        "assertion": "AFFIRMED"
       }
     ],
     "relations": [
       {
         "head": "e1",
+        "tail": "e2",
+        "type": "located_in"
+      },
+      {
+        "head": "e3",
         "tail": "e2",
         "type": "located_in"
       }
@@ -16735,7 +16849,16 @@
   },
   {
     "text": "bolehkah melakukan vaksin covid saat sering pilek dan bersin di pagi hari",
-    "entities": [],
+    "entities": [
+      {
+        "id": "e1",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 44,
+        "end": 49,
+        "assertion": "AFFIRMED"
+      }
+    ],
     "relations": []
   },
   {
@@ -16856,7 +16979,16 @@
   },
   {
     "text": "penyebab pilek tidak kunjung sembuh",
-    "entities": [],
+    "entities": [
+      {
+        "id": "e1",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 9,
+        "end": 14,
+        "assertion": "AFFIRMED"
+      }
+    ],
     "relations": []
   },
   {
@@ -16875,7 +17007,16 @@
   },
   {
     "text": "dosis obat pilek untuk anak usia bulan",
-    "entities": [],
+    "entities": [
+      {
+        "id": "e1",
+        "text": "pilek",
+        "label": "GEJALA",
+        "start": 11,
+        "end": 16,
+        "assertion": "AFFIRMED"
+      }
+    ],
     "relations": []
   },
   {

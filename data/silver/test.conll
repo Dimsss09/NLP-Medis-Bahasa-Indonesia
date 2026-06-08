@@ -92,7 +92,7 @@ untuk O
 anak O
 sakit O
 batuk B-GEJALA
-pilek O
+pilek B-GEJALA
 
 mata B-ANATOMI
 perih O
@@ -1415,7 +1415,7 @@ di O
 hidung B-ANATOMI
 bagian O
 luar O
-pilek O
+pilek B-GEJALA
 dan O
 badan B-ANATOMI
 terasa O
@@ -2426,7 +2426,7 @@ obat O
 
 bersinbersin O
 batuk B-GEJALA
-pilek O
+pilek B-GEJALA
 tenggorokan B-ANATOMI
 mengganjal O
 dan O
@@ -3201,7 +3201,7 @@ obatobatan O
 batuk B-GEJALA
 berdahak I-GEJALA
 dan O
-pilek O
+pilek B-GEJALA
 untuk O
 ibu O
 menyusui O
@@ -4366,7 +4366,7 @@ jenis O
 obatobatan O
 batuk B-GEJALA
 dan O
-pilek O
+pilek B-GEJALA
 
 mengatasi O
 alergi B-GEJALA
@@ -9064,7 +9064,7 @@ cegukan O
 
 penyebab O
 sering O
-pilek O
+pilek B-GEJALA
 pusing B-GEJALA
 dada B-ANATOMI
 sesak O
@@ -9196,7 +9196,7 @@ simvastatin O
 
 hidung B-ANATOMI
 mudah O
-pilek O
+pilek B-GEJALA
 ketika O
 terpapar O
 debu O
@@ -9414,7 +9414,7 @@ anak O
 usia O
 tahun O
 yang O
-pilek O
+pilek B-GEJALA
 
 tenggorokan B-GEJALA
 gatal I-GEJALA
@@ -10284,7 +10284,7 @@ di O
 sekitar O
 hidung B-ANATOMI
 saat O
-pilek O
+pilek B-GEJALA
 
 leher O
 terasa O
@@ -11134,7 +11134,7 @@ vaksin O
 covid O
 saat O
 sering O
-pilek O
+pilek B-GEJALA
 dan O
 bersin O
 di O
@@ -11234,7 +11234,7 @@ digit O
 nyamuk O
 
 penyebab O
-pilek O
+pilek B-GEJALA
 tidak O
 kunjung O
 sembuh O
@@ -11251,7 +11251,7 @@ kambuh O
 
 dosis O
 obat O
-pilek O
+pilek B-GEJALA
 untuk O
 anak O
 usia O

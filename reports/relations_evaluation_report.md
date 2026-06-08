@@ -1,6 +1,6 @@
 # Tahap 2 — Assertion and Relation Extraction Evaluation Report
 
-Generated at: Just now
+Generated at: 1780877609.552222
 
 ## 🔍 Assertion Status Classification Performance
 Kelas: `AFFIRMED`, `NEGATED`, `UNCERTAIN`
@@ -8,13 +8,13 @@ Kelas: `AFFIRMED`, `NEGATED`, `UNCERTAIN`
 ```text
               precision    recall  f1-score   support
 
-    AFFIRMED       0.99      1.00      1.00       583
+    AFFIRMED       0.99      1.00      1.00       595
      NEGATED       0.91      0.91      0.91        11
    UNCERTAIN       1.00      0.79      0.88        14
 
-    accuracy                           0.99       608
-   macro avg       0.97      0.90      0.93       608
-weighted avg       0.99      0.99      0.99       608
+    accuracy                           0.99       620
+   macro avg       0.97      0.90      0.93       620
+weighted avg       0.99      0.99      0.99       620
 
 ```
 
@@ -24,14 +24,14 @@ Kelas: `dosage_of`, `treats`, `located_in`, `no_relation`
 ```text
               precision    recall  f1-score   support
 
-   dosage_of       0.88      1.00      0.93         7
-  located_in       0.98      0.99      0.99       267
- no_relation       0.82      0.67      0.74        21
-      treats       0.92      0.96      0.94        23
+   dosage_of       1.00      1.00      1.00         7
+  located_in       0.99      0.99      0.99       275
+ no_relation       0.90      0.90      0.90        21
+      treats       1.00      1.00      1.00        23
 
-    accuracy                           0.97       318
-   macro avg       0.90      0.90      0.90       318
-weighted avg       0.96      0.97      0.96       318
+    accuracy                           0.99       326
+   macro avg       0.97      0.97      0.97       326
+weighted avg       0.99      0.99      0.99       326
 
 ```
 

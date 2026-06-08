@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-06T19:07:15.011129+00:00",
+  "generated_at": "2026-06-08T01:08:47.336779+00:00",
   "dataset_type": "silver",
   "annotation_source": "rules_and_medical_lexicon",
   "human_annotated": false,
@@ -11,7 +11,7 @@
     "test": "data\\silver\\test.conll"
   },
   "split_counts": {
-    "train": 10441,
+    "train": 26908,
     "val": 1305,
     "test": 1306
   }
