@@ -12,7 +12,7 @@ ROOT_DIR = Path(__file__).resolve().parents[1]
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
-from src.predict_pipeline import run_hybrid_fallback
+from src.predict_pipeline import run_hybrid_fallback, run_hybrid_relations
 
 
 class TestHybridPipeline(unittest.TestCase):
@@ -93,6 +93,24 @@ class TestHybridPipeline(unittest.TestCase):
         dosages = [e for e in result if e["label"] == "DOSIS"]
         self.assertEqual(len(dosages), 1)
         self.assertEqual(dosages[0]["text"], "3x sehari")
+
+    def test_hybrid_relations(self) -> None:
+        text = "Pasien diberikan paracetamol 500 mg untuk mengobati demam, tetapi tidak mengeluhkan batuk."
+        entities = [
+            {"id": "e1", "text": "paracetamol", "label": "OBAT", "start": 17, "end": 28},
+            {"id": "e2", "text": "500 mg", "label": "DOSIS", "start": 29, "end": 35},
+            {"id": "e3", "text": "demam", "label": "GEJALA", "start": 51, "end": 56},
+            {"id": "e4", "text": "batuk", "label": "GEJALA", "start": 84, "end": 89}
+        ]
+        
+        existing_relations = []
+        relations = run_hybrid_relations(text, entities, existing_relations)
+        
+        self.assertTrue(len(relations) >= 2)
+        
+        rel_types = {(r["head"], r["tail"], r["type"]) for r in relations}
+        self.assertIn(("e2", "e1", "dosage_of"), rel_types)
+        self.assertIn(("e1", "e3", "treats"), rel_types)
 
 
 if __name__ == "__main__":
