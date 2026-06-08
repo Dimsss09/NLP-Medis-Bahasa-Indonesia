@@ -34,15 +34,17 @@ class TokenPrediction:
     end: int
 
 
-def load_model(model_dir: Path | str = DEFAULT_MODEL_DIR):
+def load_model(model_dir: Path | str = DEFAULT_MODEL_DIR, device: str | None = None):
     """Load tokenizer, model, and device for inference."""
     model_dir = Path(model_dir)
     tokenizer = AutoTokenizer.from_pretrained(model_dir)
     model = AutoModelForTokenClassification.from_pretrained(model_dir)
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model.to(device)
+    if device is None:
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+    device_obj = torch.device(device)
+    model.to(device_obj)
     model.eval()
-    return tokenizer, model, device
+    return tokenizer, model, device_obj
 
 
 def predict_tokens(text: str, tokenizer, model, device: torch.device) -> list[TokenPrediction]:

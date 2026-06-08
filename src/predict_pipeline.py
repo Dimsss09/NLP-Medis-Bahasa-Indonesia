@@ -36,8 +36,7 @@ class ClinicalPipeline:
         print(f"Initializing Clinical Pipeline on device: {self.device}")
         
         # Load NER model
-        self.ner_tok, self.ner_model, _ = load_ner_model(ner_dir)
-        self.ner_model.to(self.device)
+        self.ner_tok, self.ner_model, _ = load_ner_model(ner_dir, device=str(self.device))
         
         # Load Assertion model
         self.assert_tok = AutoTokenizer.from_pretrained(assertion_dir)
