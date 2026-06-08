@@ -252,11 +252,24 @@ def main() -> None:
         config = yaml.safe_load(file)
         
     data_config = config["data"]
+    train_config = config.get("training", {})
+    train_source = train_config.get("train_data_source", "annotated")
     
+    if train_source == "silver":
+        train_conll = Path(data_config["silver_train_file"])
+        val_conll = Path(data_config["silver_validation_file"])
+        test_conll = Path(data_config["silver_test_file"])
+        print("Using SILVER CoNLL files for relation dataset generation.")
+    else:
+        train_conll = Path(data_config["train_file"])
+        val_conll = Path(data_config["validation_file"])
+        test_conll = Path(data_config["test_file"])
+        print("Using ANNOTATED CoNLL files for relation dataset generation.")
+        
     splits = {
-        "train": (Path(data_config["train_file"]), Path("data/relations/train.json")),
-        "val": (Path(data_config["validation_file"]), Path("data/relations/val.json")),
-        "test": (Path(data_config["test_file"]), Path("data/relations/test.json"))
+        "train": (train_conll, Path("data/relations/train.json")),
+        "val": (val_conll, Path("data/relations/val.json")),
+        "test": (test_conll, Path("data/relations/test.json"))
     }
     
     for split_name, (conll_path, json_path) in splits.items():
