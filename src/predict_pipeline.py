@@ -25,6 +25,84 @@ ASSERTION_LABELS = ["AFFIRMED", "NEGATED", "UNCERTAIN"]
 RELATION_LABELS = ["no_relation", "dosage_of", "treats", "located_in"]
 
 
+def run_hybrid_fallback(text: str, entities: list[dict], lexicon_path: Path) -> list[dict]:
+    """Dynamically inject unmatched lexicon phrases and regex-based dosages."""
+    import re
+    import yaml
+
+    # Load lexicon dynamically
+    if lexicon_path.exists():
+        with lexicon_path.open("r", encoding="utf-8") as file:
+            lexicon = yaml.safe_load(file)
+    else:
+        lexicon = {}
+
+    occupied_ranges = [(ent["start"], ent["end"]) for ent in entities]
+
+    def is_overlap(start: int, end: int) -> bool:
+        for o_start, o_end in occupied_ranges:
+            if max(start, o_start) < min(end, o_end):
+                return True
+        return False
+
+    new_entities = list(entities)
+    entity_id_counter = len(entities) + 1
+
+    # 1. Match lexicon phrases (longest first, globally sorted, case-insensitive, word boundary)
+    global_phrases = []
+    for label, phrases in lexicon.items():
+        if isinstance(phrases, list):
+            for phrase in phrases:
+                global_phrases.append((phrase, label))
+                
+    global_phrases.sort(key=lambda x: len(x[0]), reverse=True)
+
+    for phrase, label in global_phrases:
+        escaped_phrase = re.escape(phrase.lower())
+        pattern = re.compile(r'\b' + escaped_phrase + r'\b')
+        
+        for match in pattern.finditer(text.lower()):
+            start, end = match.start(), match.end()
+            if not is_overlap(start, end):
+                new_entities.append({
+                    "id": f"e{entity_id_counter}",
+                    "text": text[start:end],
+                    "label": label,
+                    "start": start,
+                    "end": end
+                })
+                occupied_ranges.append((start, end))
+                entity_id_counter += 1
+
+    # 2. Match regex dosage patterns (e.g. number + unit, frequencies)
+    dosage_units = r"(?:mg|mcg|g|gram|ml|cc|iu|tablet|kapsul|sendok|tetes|unit|puff|drops|ampul|vial|botol|keping|sachet|caps|tab)"
+    dosage_pattern1 = re.compile(r'\b\d+(?:[,.]\d+)?\s*' + dosage_units + r'\b', re.IGNORECASE)
+    dosage_pattern2 = re.compile(r'\b\d+\s*[xX]\s*(?:sehari|hari|jam|minggu)?\b', re.IGNORECASE)
+
+    for pattern in [dosage_pattern1, dosage_pattern2]:
+        for match in pattern.finditer(text):
+            start, end = match.start(), match.end()
+            if not is_overlap(start, end):
+                new_entities.append({
+                    "id": f"e{entity_id_counter}",
+                    "text": text[start:end],
+                    "label": "DOSIS",
+                    "start": start,
+                    "end": end
+                })
+                occupied_ranges.append((start, end))
+                entity_id_counter += 1
+
+    # Sort all entities by starting character offset
+    new_entities.sort(key=lambda x: x["start"])
+    
+    # Re-assign sequential IDs e1, e2, ...
+    for idx, ent in enumerate(new_entities):
+        ent["id"] = f"e{idx+1}"
+
+    return new_entities
+
+
 class ClinicalPipeline:
     def __init__(self, ner_dir: Path, assertion_dir: Path, relation_dir: Path, device: str | None = None):
         # Device setup
@@ -92,6 +170,10 @@ class ClinicalPipeline:
                 "start": span.start,
                 "end": span.end
             })
+            
+        # Apply hybrid fallback matcher (Lexicon and Regex)
+        lexicon_path = ROOT_DIR / "resources" / "medical_lexicon.yaml"
+        entities = run_hybrid_fallback(text, entities, lexicon_path)
             
         # 2. Run Assertion Status Detection
         for ent in entities:

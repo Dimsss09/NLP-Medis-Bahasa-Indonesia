@@ -22,7 +22,7 @@ import yaml
 DEFAULT_CONFIG = Path("config.yaml")
 DEFAULT_LEXICON = Path("resources/medical_lexicon.yaml")
 TOKEN_PATTERN = re.compile(r"\d+(?:[,.]\d+)?|[A-Za-zÀ-ÿ]+(?:[-'][A-Za-zÀ-ÿ]+)*|[^\w\s]", re.UNICODE)
-DOSAGE_UNIT_PATTERN = re.compile(r"^(?:mg|mcg|g|gram|ml|cc|iu|tablet|kapsul|sendok|tetes)$", re.IGNORECASE)
+DOSAGE_UNIT_PATTERN = re.compile(r"^(?:mg|mcg|g|gram|ml|cc|iu|tablet|kapsul|sendok|tetes|unit|puff|drops|ampul|vial|botol|keping|sachet|caps|tab)$", re.IGNORECASE)
 DOSAGE_FREQ_PATTERN = re.compile(r"^\d+\s*x$", re.IGNORECASE)
 DOSAGE_TIME_WORDS = {"sehari", "hari", "jam", "minggu", "bulan", "sekali", "pagi", "siang", "malam"}
 DOSAGE_INSTRUCTION_WORDS = {"sesudah", "sebelum", "setelah", "makan", "minum"}
