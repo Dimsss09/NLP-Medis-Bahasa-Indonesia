@@ -108,11 +108,17 @@ def generate_graph_html(G: nx.DiGraph, height: str = "450px", width: str = "100%
     
     # Injected styling to vis-network canvas so it integrates cleanly in Streamlit iframe
     custom_style = """
-    <style>
         body { margin: 0; padding: 0; background-color: #0f172a; overflow: hidden; }
-        #mynetwork { width: 100vw; height: 100vh; background-color: #0f172a !important; }
-    </style>
+        #mynetwork {
+            width: 100% !important;
+            height: 100% !important;
+            background-color: #0f172a !important;
+            border: 1px solid #1e293b !important;
+        }
     """
-    html_content = html_content.replace("<style type=\"text/css\">", "<style type=\"text/css\">\n" + custom_style)
-    
+    for style_tag in ['<style type="text/css">', "<style type=\"text/css\">", '<style type=\'text/css\'>']:
+        if style_tag in html_content:
+            html_content = html_content.replace(style_tag, f'{style_tag}\n{custom_style}')
+            break
+            
     return html_content
