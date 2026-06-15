@@ -1,0 +1,61 @@
+project:
+  name: medical-ner-id-human-aligned
+  language: id
+  task: token-classification
+
+data:
+  raw_dir: data/raw
+  clean_dir: data/clean
+  annotated_dir: data/human_aligned_silver
+  source_dataset: iqbalpurba26/health-topic-dataset
+  text_column: topic
+  raw_file: data/raw/health_topic_dataset.jsonl
+  clean_file: data/clean/medical_text_corpus.txt
+  metadata_file: data/clean/medical_text_corpus_metadata.csv
+  train_file: data/human_aligned_silver/train.conll
+  validation_file: data/human_aligned_silver/val.conll
+  test_file: data/true_gold_300/gold_resolved.conll
+  silver_dir: data/human_aligned_silver
+  silver_train_file: data/human_aligned_silver/train.conll
+  silver_validation_file: data/human_aligned_silver/val.conll
+  silver_test_file: data/true_gold_300/gold_resolved.conll
+  manual_gold_dir: data/true_gold_300
+  manual_gold_file: data/true_gold_300/gold_resolved.conll
+
+labels:
+  - O
+  - B-GEJALA
+  - I-GEJALA
+  - B-OBAT
+  - I-OBAT
+  - B-DOSIS
+  - I-DOSIS
+  - B-DIAGNOSIS
+  - I-DIAGNOSIS
+  - B-ANATOMI
+  - I-ANATOMI
+
+model:
+  base_model: indobenchmark/indobert-base-p1
+  output_dir: models/indobert-medical-ner-id-human-aligned
+
+models:
+  indobert:
+    display_name: IndoBERT base p1 human-aligned
+    role: utama
+    base_model: indobenchmark/indobert-base-p1
+    output_dir: models/indobert-medical-ner-id-human-aligned
+
+training:
+  train_data_source: annotated
+  learning_rate: 0.00002
+  num_train_epochs: 3
+  per_device_train_batch_size: 32
+  per_device_eval_batch_size: 32
+  weight_decay: 0.01
+  seed: 42
+  max_length: 128
+  max_train_samples: null
+  max_eval_samples: 512
+  warmup_ratio: 0.1
+  max_grad_norm: 1.0

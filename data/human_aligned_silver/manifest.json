@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-06-15T08:48:34.147878+00:00",
+  "dataset_type": "human_aligned_silver",
+  "annotation_source": "rules_following_true_gold_adjudication_policy",
+  "human_annotated": false,
+  "human_gold": false,
+  "true_gold_texts_excluded": 300,
+  "records_after_exclusion": 12752,
+  "files": {
+    "train": "data\\human_aligned_silver\\train.conll",
+    "validation": "data\\human_aligned_silver\\val.conll"
+  },
+  "split_counts": {
+    "train": 11476,
+    "val": 1276
+  },
+  "entity_counts": {
+    "train": {
+      "GEJALA": 7915,
+      "ANATOMI": 5254,
+      "DIAGNOSIS": 2194,
+      "OBAT": 5001,
+      "DOSIS": 177
+    },
+    "val": {
+      "OBAT": 557,
+      "GEJALA": 837,
+      "ANATOMI": 574,
+      "DIAGNOSIS": 251,
+      "DOSIS": 23
+    }
+  }
+}

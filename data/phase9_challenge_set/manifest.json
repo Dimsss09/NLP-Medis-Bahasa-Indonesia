@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-06-15T09:13:17.442260+00:00",
+  "dataset_type": "phase9_challenge_set_draft",
+  "human_gold": false,
+  "human_review_required": true,
+  "sample_size": 160,
+  "excluded_true_gold_texts": 300,
+  "focus_counts": {
+    "HASIL_LAB": 23,
+    "OBAT_DOSIS": 74,
+    "PROSEDUR": 39,
+    "GEJALA_SULIT": 50,
+    "WAKTU_DURASI": 71,
+    "RIWAYAT_PENYAKIT": 23,
+    "ALERGI": 34
+  },
+  "draft_label_counts": {
+    "B-OBAT": 83,
+    "B-HASIL_LAB": 24,
+    "I-HASIL_LAB": 10,
+    "B-NILAI_LAB": 12,
+    "B-GEJALA": 95,
+    "I-GEJALA": 20,
+    "B-ANATOMI": 59,
+    "B-PROSEDUR": 42,
+    "I-PROSEDUR": 24,
+    "B-DIAGNOSIS": 22,
+    "B-WAKTU_DURASI": 77,
+    "I-OBAT": 11,
+    "B-ALERGI": 33,
+    "B-RIWAYAT_PENYAKIT": 3,
+    "I-RIWAYAT_PENYAKIT": 3,
+    "I-ANATOMI": 4,
+    "I-ALERGI": 1,
+    "I-WAKTU_DURASI": 1
+  },
+  "files": {
+    "sample_texts": "data\\phase9_challenge_set\\sample_texts.tsv",
+    "draft_labels": "data\\phase9_challenge_set\\draft_labels.conll",
+    "annotator_1": "data\\phase9_challenge_set\\annotator_1.conll",
+    "annotator_2": "data\\phase9_challenge_set\\annotator_2.conll"
+  }
+}

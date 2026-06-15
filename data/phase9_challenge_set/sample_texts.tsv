@@ -1,0 +1,161 @@
+id	focus_tags	text
+C04863	HASIL_LAB,OBAT_DOSIS	obat yang bagus untuk mengatasi gula darah tinggi
+C12034	HASIL_LAB	telat haid testpack negatif pinggang sakit keluar flek coklat dan urine berdarah
+C04916	HASIL_LAB,OBAT_DOSIS	rekomendasi obat untuk mengatasi leher tegang karena kolesterol
+C04979	HASIL_LAB,OBAT_DOSIS	obat untuk menurunkan kadar gula darah tinggi sampai
+C07275	PROSEDUR,HASIL_LAB,OBAT_DOSIS	bolehkan konsumsi obat kolesterol tanpa cek darah
+C04667	HASIL_LAB,OBAT_DOSIS,GEJALA_SULIT	obat untuk mengatasi mata kaki bengkak karena asam urat
+C07640	HASIL_LAB,OBAT_DOSIS	obat untuk mengatasi kolesterol
+C07695	HASIL_LAB	pengobatan yang tepat untuk mengatasi kolesterol tinggi
+C12293	HASIL_LAB	apakah menstruasi bisa menaikkan gula darah secara drastis
+C05815	HASIL_LAB,OBAT_DOSIS	obat untuk mengatasi peningkatan sgpt dan asam urat
+C05991	HASIL_LAB,OBAT_DOSIS	bolehkah konsumsi obat kolesterol darah tinggi dan asam urat bersamaan dengan vitamin d
+C10054	HASIL_LAB	hubungan trombosit rendah dengan siklus menstruasi
+C08465	HASIL_LAB,OBAT_DOSIS	apakah boleh minum obat kuat pada penderita hipertensi dan kolesterol tinggi
+C12213	HASIL_LAB,GEJALA_SULIT	darah haid tidak lancar disertai pusing dan badan sakit bolehkah cek hb
+C11860	HASIL_LAB	apakah menstruasi mempengaruhi hasil lab prolactin
+C06886	HASIL_LAB,OBAT_DOSIS	waktu untuk konsumsi obat sebelum cek gula darah
+C06085	HASIL_LAB,OBAT_DOSIS	obat yang dapat mempengaruhi hasil tes agregasi trombosit
+C11797	PROSEDUR,HASIL_LAB	penjelasan hasil pemeriksaan lab leukosit
+C06585	PROSEDUR,HASIL_LAB,WAKTU_DURASI,OBAT_DOSIS	konsumsi obat kolesterol dan asam urat setelah vaksin corona
+C05510	HASIL_LAB,OBAT_DOSIS	obat untuk mengatasi hipertensi kolesterol tinggi dan asam lambung
+C02431	HASIL_LAB	bagaimana cara agar leukosit tidak tinggi
+C01089	PROSEDUR,HASIL_LAB	kadar eritrosit dan eonosofil tanggi pada hasil pemeriksaan darah
+C12989	PROSEDUR,WAKTU_DURASI	gumpalan berwarna putih saat menstruasi dan menggunakan kb suntik bulan
+C09710	PROSEDUR,WAKTU_DURASI	apakah masih bisa menstruasi saat menggunakan suntik kb bulan
+C10631	PROSEDUR,WAKTU_DURASI	keluar banyak darah menstruasi setelah lepas kb suntik
+C11058	PROSEDUR	kemungkinan hamil saat hasil testpack dan usg berbeda
+C02306	PROSEDUR,GEJALA_SULIT	cara mengatasi gatal di area bekas operasi caesar
+C06881	PROSEDUR,WAKTU_DURASI,OBAT_DOSIS	resep obat yang digunakan pasca operasi wasir
+C12008	PROSEDUR,WAKTU_DURASI	mengatasi haid tidak teratur pasca operasi pengangkatan kista ovarium
+C00829	PROSEDUR,WAKTU_DURASI,GEJALA_SULIT	paha terasa gatal setelah operasi cangkoj tulang betis
+C08378	PROSEDUR,WAKTU_DURASI,OBAT_DOSIS,GEJALA_SULIT	pusing setelah minum obat pasca operasi selulitis
+C10634	PROSEDUR,WAKTU_DURASI	menstruasi setelah hasil test pack samar dan hasil usg belum terlihat
+C11108	PROSEDUR,WAKTU_DURASI	bagaimana normalnya siklus haid pasca operasi usus buntu
+C10149	PROSEDUR,RIWAYAT_PENYAKIT	haid yang tidak teratur dengan riwayat pemeriksaan usg yang normal
+C10161	PROSEDUR,WAKTU_DURASI	langsung menstruasi setelah suntik kb bulan
+C12937	PROSEDUR,WAKTU_DURASI	haid berkepanjangan setelah ganti suntik kb ke pil kb
+C12708	PROSEDUR,WAKTU_DURASI	penyebab siklus haid yang berubah pasca suntik kb bulan
+C12083	PROSEDUR,WAKTU_DURASI	kapan bisa pindah dari kb suntik bulan ke pil kb
+C12784	PROSEDUR	kaitan haid dengan gagalnya medical check up
+C10428	PROSEDUR	kaitan vaksin covid terhadap haid yang telat dan badan lemas
+C00791	ALERGI,PROSEDUR	keamanan melakukan suntik vaksinasi covid saat sedang mengalami alergi
+C00745	ALERGI,PROSEDUR	apakah saat alergi kambuh hingga muncul bintikbintik boleh vaksinasi covid
+C08066	PROSEDUR,OBAT_DOSIS	apakah obat suntik untuk mengatasi pengeroposan dengkul dapat mengancam kesehatan ginjal
+C12499	PROSEDUR,WAKTU_DURASI,OBAT_DOSIS	mengatasi haid berkepanjangan setelah suntik keloid dengan menggunakan obat kortikosteroid
+C09912	WAKTU_DURASI,RIWAYAT_PENYAKIT	haid tidak teratur dan keluar asi sedikit dengan riwayat kuretase bulan lalu
+C05733	RIWAYAT_PENYAKIT,OBAT_DOSIS	mengenai penggunaan obat untuk mengatasi sakit kepala saat hamil pada wanita dengan riwayat edema serebri
+C10909	RIWAYAT_PENYAKIT	siklus haid dengan riwayat penyakit kista
+C06731	RIWAYAT_PENYAKIT,OBAT_DOSIS	memiliki riwayat pengobatan hipertiroid sebelumnya dan sempat putus obat
+C07164	RIWAYAT_PENYAKIT	cara mengatasi anyanganyangan dengan riwayat penyakit paruparu
+C00720	ALERGI,RIWAYAT_PENYAKIT,GEJALA_SULIT	adanya riwayat alergi bengkak pada kaki kanan dan feses yang berwarna hitam
+C12154	WAKTU_DURASI,RIWAYAT_PENYAKIT	telat haid pada remaja usia tahun yang pernah diet
+C07645	ALERGI,RIWAYAT_PENYAKIT,OBAT_DOSIS,GEJALA_SULIT	obat untuk mengatasi rasa nyeri pada riwayat penderita alergi
+C11490	WAKTU_DURASI,RIWAYAT_PENYAKIT	penyebab tidak pernah haid selama tahun
+C12747	RIWAYAT_PENYAKIT	sering telat haid tibatiba pingsan dan memiliki riwayat asma
+C05876	RIWAYAT_PENYAKIT,OBAT_DOSIS	obat asam lambung yang dapat digunakan pada orang dengan riwayat jantung bocor
+C00587	ALERGI,PROSEDUR,RIWAYAT_PENYAKIT	bolehkah vaksin covid saat memiliki riwayat alergi
+C03078	ALERGI,RIWAYAT_PENYAKIT	apakah ikan tawar bisa menimbulkan alergi kalo punya riwayat alergi ikan laut
+C11372	RIWAYAT_PENYAKIT	haid tidak teratur dengan riwayat hormon tidak stabil
+C12705	WAKTU_DURASI,RIWAYAT_PENYAKIT,GEJALA_SULIT	penyebab telat haid selama minggu disertai pusing mual tidak nafsu makan pada wanita yang belum pernah melakukan hubungan intim
+C00687	PROSEDUR,WAKTU_DURASI,RIWAYAT_PENYAKIT	ada riwayat kulit bentolbentol usai divaksin apakah sekarang masih boleh vaksinasi covid
+C07019	RIWAYAT_PENYAKIT	pengobatan untuk mengatasi infeksi jamur dengan riwayat penderita gerd
+C05930	RIWAYAT_PENYAKIT,OBAT_DOSIS	pemberian obat antiparasit pada pasien covid dengan riwayat penyakit diabetes dan paruparu
+C07104	RIWAYAT_PENYAKIT,OBAT_DOSIS	amanah konsumsi obat hormon saat hamil dengan riwayat benjolan di payudara
+C10826	RIWAYAT_PENYAKIT	telat haid dengan riwayat pcos apakah hamil
+C08524	RIWAYAT_PENYAKIT,OBAT_DOSIS	konsumsi obat untuk memperkuat kandungan pada wanita dengan riwayat keguguran
+C10856	RIWAYAT_PENYAKIT	menstruasi tidak rutin dan memiliki riwayat darah rendah
+C04797	PROSEDUR,OBAT_DOSIS	apakah ada obat amandel tanpa harus operasi
+C08364	PROSEDUR,WAKTU_DURASI,OBAT_DOSIS	bolehkah minum obat pilek saat masa penyembuhan pasca operasi usus buntu
+C08380	OBAT_DOSIS	obat untuk mengatasi mata merah
+C04805	OBAT_DOSIS	apa sajakah efek samping dari obat tbc yang merah
+C06951	WAKTU_DURASI,OBAT_DOSIS	berkeringat berlebih setelah konsumsi obat pada penderita efusi pleura
+C08822	OBAT_DOSIS	apakah boleh minum obat antasida saat sedang pengobatan hipertensi
+C06666	OBAT_DOSIS	tidak sengaja konsumsi obat golongan ace inhibitor hingga kali
+C07405	WAKTU_DURASI,OBAT_DOSIS	sulit diare setelah konsumsi obat zinc
+C05593	OBAT_DOSIS	keamanan konsumsi obat pyrathiazine dan pyridoxine pada ibu hamil dan menyusui
+C04914	OBAT_DOSIS	apa obat herpes agar mudah cepat kering
+C07675	WAKTU_DURASI,OBAT_DOSIS	rasa ngantuk setelah minum diazepam pada orang dengan ketergantungan obat
+C06453	OBAT_DOSIS	aturan konsumsi obat cacing dibulan puasa
+C00566	WAKTU_DURASI,OBAT_DOSIS	wajah iritasi setelah menggunakan obat jerawat
+C04841	OBAT_DOSIS	rekomendasi salep untuk mengatasi jerawat punggung
+C07046	WAKTU_DURASI,OBAT_DOSIS	kapan boleh minum obat mabuk perjalanan setelah minum obat herbal
+C02343	WAKTU_DURASI,OBAT_DOSIS	badan gatalgatal setelah minum obat diabetes
+C05957	OBAT_DOSIS	bolehkah konsumsi obat penenang berkepanjangan
+C04456	OBAT_DOSIS	rekomendasi obat untuk menaikkan tekanan darah
+C08274	OBAT_DOSIS	apakah aman mengonsumsi obat spiramycin saat hamil
+C05052	OBAT_DOSIS,GEJALA_SULIT	obat untuk mengatasi kaki keselo dan bengkak
+C07570	OBAT_DOSIS	aturan pakai obat anti tuberkulosis
+C06603	OBAT_DOSIS	konsumsi obat golongan antitiroid bersamaan dengan obat hipotiroidisme
+C11487	GEJALA_SULIT	vagina gatal seminggu sebelum menstruasi apakah wajar
+C03849	GEJALA_SULIT	timbul bercak kemerahan pada tubuh yang disertai rasa gatal
+C08497	OBAT_DOSIS,GEJALA_SULIT	konsumsi obat batuk tanpa resep dokter
+C01679	ALERGI,GEJALA_SULIT	cara mengatasi hidung gatal dan bersinbersin karena alergi
+C00434	WAKTU_DURASI,GEJALA_SULIT	nyeri pada jari dan tidak bisa memegang apaapa setelah menggunakan pacar kuku
+C00670	GEJALA_SULIT	apa penyebab badan gatal dan bentol tibatiba disertai batuk
+C04858	WAKTU_DURASI,OBAT_DOSIS,GEJALA_SULIT	setelah menggunakan salep skabies masih gatal apakah wajar
+C05225	OBAT_DOSIS,GEJALA_SULIT	obat yang cocok untuk mengatasi batuk kering dan flu pada orang dewasa
+C11822	GEJALA_SULIT	penyebab tubuh terasa ngilu dan demam saat akan haid
+C00009	ALERGI,WAKTU_DURASI,OBAT_DOSIS,GEJALA_SULIT	obat batuk alergi di apotek untuk anak usia tahun
+C04103	GEJALA_SULIT	gatal disertai bengkak dan nyeri
+C02823	WAKTU_DURASI,GEJALA_SULIT	cara mengatasi siku dan lutut bentol pasca konsumsi suplemen
+C01241	GEJALA_SULIT	penanganan gatal pada kulit bayi akibat bulu serangga
+C06711	WAKTU_DURASI,OBAT_DOSIS,GEJALA_SULIT	penyebab mual dan tidak nyaman di perut setelah konsumsi obat batuk
+C03794	WAKTU_DURASI,OBAT_DOSIS,GEJALA_SULIT	ruam berbentuk garis merah pada kulit setelah konsumsi obat
+C01036	GEJALA_SULIT	telapak kaki yang terasa gatal dan berair
+C06486	WAKTU_DURASI,OBAT_DOSIS,GEJALA_SULIT	gatal di seluruh badan setelah minum obat jamur kulit
+C05703	WAKTU_DURASI,OBAT_DOSIS,GEJALA_SULIT	apakah obat batuk pilek bisa dikonsumsi bayi usia bulan
+C03276	PROSEDUR,WAKTU_DURASI,GEJALA_SULIT	nyeri dada mual sakit kepala dan tubuh gatal paska suntik kb bulan
+C03229	GEJALA_SULIT	mengatasi gatal dan bekas gigitan tungau
+C08510	OBAT_DOSIS,GEJALA_SULIT	salep untuk menghilangkan ruam kulit dan gatal saat hamil
+C06275	WAKTU_DURASI,OBAT_DOSIS,GEJALA_SULIT	mual setelah minum obat nyeri dan antibiotik
+C01198	ALERGI,WAKTU_DURASI,OBAT_DOSIS	alergi semakin bertambah di kaki dan telapak tangan setelah minum obat
+C02484	ALERGI,GEJALA_SULIT	bagaimana cara mengatasi batuk alergi
+C03500	ALERGI	pengobatan sakit mata akibat alergi debu
+C02012	ALERGI,OBAT_DOSIS	cara mengatasi alergi selain konsumsi obat alergi
+C02050	ALERGI,OBAT_DOSIS	apa ada efek samping meminum obat alergi secara rutin
+C00949	ALERGI	cara menghilangkan alergi pindahan
+C00699	ALERGI,OBAT_DOSIS	salep untuk bayi yang sedang alergi pada kulit
+C01030	ALERGI,WAKTU_DURASI,OBAT_DOSIS	obat alergi untuk anak tahun
+C03192	ALERGI,WAKTU_DURASI,GEJALA_SULIT	penyebab alergi disertai bntik merah dan batuk pada anak tahun
+C02867	ALERGI,WAKTU_DURASI	alergi dan pneumonia pada bayi usia bulan
+C01762	ALERGI	penyebab kulit alergi tampak merah
+C02987	ALERGI,GEJALA_SULIT	apa efek samping dari ctm pada penderita alergi bisa membuat pipi bengkak dan perut buncit
+C00242	ALERGI	berapa lama alergi di wajah akibat make up bisa hilang
+C01351	ALERGI	cara mengetahui alergi terhadap sesuatu
+C01331	ALERGI	bolehkah penderita alergi konsumsi makanan yang mengandung ayam dan telur
+C03020	ALERGI,WAKTU_DURASI,OBAT_DOSIS	kenapa sudah beberapa hari minum cetirizine alergi belum sembuh juga
+C01117	ALERGI,WAKTU_DURASI	penyebab dan cara mengatasi alergi pada balita usia tahun
+C01851	ALERGI,OBAT_DOSIS,GEJALA_SULIT	obat untuk mata gatal bersin dan sesak napas karena alergi
+C00298	ALERGI	kulit bayi panas saat pakai minyak telon apakah tanda alergi
+C01704	ALERGI,GEJALA_SULIT	ruam kulit seperti alergi berkepanjangan dan kaitan dengan corona
+C04342	ALERGI,PROSEDUR	tentang prosedur pemeriksaan alergi
+C00641	ALERGI,GEJALA_SULIT	jari kaki bengkak dan bernanah karena alergi
+C03449	WAKTU_DURASI	berapa lama tidak boleh kena air hujan setelah cacar air
+C09416	WAKTU_DURASI	kenapa siklus haid selalu maju setelah sebelumnya normal
+C03655	WAKTU_DURASI,OBAT_DOSIS	mata merah setelah minum obat
+C06601	WAKTU_DURASI,OBAT_DOSIS	obat nebulizer untuk anak tahun
+C06317	WAKTU_DURASI,OBAT_DOSIS,GEJALA_SULIT	anak usia tahun mengeluh nyeri perut bawah setelah minum obat cacing
+C07732	WAKTU_DURASI,OBAT_DOSIS	obat untuk mengatasi mata merah untuk anak tahun
+C06423	WAKTU_DURASI,OBAT_DOSIS	bayi usia bulan kelebihan dosis obat diare
+C01455	WAKTU_DURASI,GEJALA_SULIT	gatal tak kunjung hilang pasca terkena pasir
+C03738	WAKTU_DURASI,GEJALA_SULIT	wajah perih dan mengelupas setelah menggunakan krim spc
+C02786	WAKTU_DURASI,GEJALA_SULIT	sering harus menarik nafas panjang dan setiap tidur siang selalu batuk
+C02655	WAKTU_DURASI,GEJALA_SULIT	gatal pada sekitar daerah kemaluan saat malam hari
+C01600	WAKTU_DURASI,GEJALA_SULIT	lengan kiri lemah berkeringat disertai telapak tangan dan jari gatal pasca konsumsi udang
+C08000	WAKTU_DURASI,OBAT_DOSIS	perlukah konsumsi obat gerd setiap hari meskipun tanpa gejala
+C11107	PROSEDUR,WAKTU_DURASI	siklus menstruasi menjadi lebih pendek pasca operasi kista ovarium
+C09808	WAKTU_DURASI	telat haid hari dan disertai keputihan apakah tanda kehamilan
+C11514	WAKTU_DURASI,GEJALA_SULIT	penyebab nyeri haid hingga hari
+C01643	WAKTU_DURASI,GEJALA_SULIT	kulit wajah seperti melepuh terbakar hingga bengkak setelah pakai sabun
+C12633	WAKTU_DURASI	penyebab telat haid pada remaja tahun
+C02675	PROSEDUR,WAKTU_DURASI	cara mengatasi muntahmuntah setelah operasi kelenjar getah bening
+C01405	ALERGI,WAKTU_DURASI	sering bersin karena alergi apakah berbahaya bagi janin usia minggu
+C09759	WAKTU_DURASI	penyebab muncul benjolan di perut kanan bawah disertai telat haid bulan
+C09515	PROSEDUR,WAKTU_DURASI	cara mengatasi efek samping setelah lepas kb suntik bulan
+C00464	ALERGI,WAKTU_DURASI,OBAT_DOSIS,GEJALA_SULIT	ruam merah hilang timbul setelah alergi obat
+C00470	PROSEDUR,WAKTU_DURASI,OBAT_DOSIS,GEJALA_SULIT	gatal pada kulit setelah vaksin covid dosis kedua
+C00610	PROSEDUR,WAKTU_DURASI,OBAT_DOSIS,GEJALA_SULIT	tubuh bentol dan gatal setelah vaksin dosis
+C00704	ALERGI,PROSEDUR,WAKTU_DURASI,OBAT_DOSIS	apakah boleh minum obat alergi setelah vaksinasi covid
+C02200	ALERGI,WAKTU_DURASI,OBAT_DOSIS,GEJALA_SULIT	gatal yang kembali muncul setelah konsumsi obat anti alergi
+C03071	PROSEDUR,HASIL_LAB,WAKTU_DURASI,GEJALA_SULIT	tes lab apa yang bisa dilakukan untuk pemeriksaan gatal pada anak usia tahun

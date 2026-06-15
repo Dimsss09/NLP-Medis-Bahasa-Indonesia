@@ -1,0 +1,90 @@
+{
+  "sentence_count": 300,
+  "token_count": 2403,
+  "token_mismatches": 380,
+  "token_accuracy": 0.8418643362463587,
+  "sentence_exact_match": 0.38,
+  "micro_precision": 0.7967479674796748,
+  "micro_recall": 0.6630581867388363,
+  "micro_f1": 0.723781388478582,
+  "seqeval_report": {
+    "ANATOMI": {
+      "precision": 0.8227848101265823,
+      "recall": 0.8441558441558441,
+      "f1-score": 0.8333333333333334,
+      "support": 154
+    },
+    "DIAGNOSIS": {
+      "precision": 0.9452054794520548,
+      "recall": 0.75,
+      "f1-score": 0.8363636363636364,
+      "support": 92
+    },
+    "DOSIS": {
+      "precision": 0.5714285714285714,
+      "recall": 0.4,
+      "f1-score": 0.47058823529411764,
+      "support": 10
+    },
+    "GEJALA": {
+      "precision": 0.8130081300813008,
+      "recall": 0.5988023952095808,
+      "f1-score": 0.6896551724137931,
+      "support": 334
+    },
+    "OBAT": {
+      "precision": 0.6641221374045801,
+      "recall": 0.5838926174496645,
+      "f1-score": 0.6214285714285714,
+      "support": 149
+    },
+    "micro avg": {
+      "precision": 0.7967479674796748,
+      "recall": 0.6630581867388363,
+      "f1-score": 0.723781388478582,
+      "support": 739
+    },
+    "macro avg": {
+      "precision": 0.7633098256986179,
+      "recall": 0.6353701713630178,
+      "f1-score": 0.6902737897666904,
+      "support": 739
+    },
+    "weighted avg": {
+      "precision": 0.7982151075829571,
+      "recall": 0.6630581867388363,
+      "f1-score": 0.721139857863049,
+      "support": 739
+    }
+  },
+  "gold_label_counts": {
+    "O": 1364,
+    "B-GEJALA": 333,
+    "I-GEJALA": 172,
+    "B-ANATOMI": 154,
+    "I-ANATOMI": 26,
+    "B-OBAT": 149,
+    "I-OBAT": 90,
+    "B-DIAGNOSIS": 92,
+    "I-DIAGNOSIS": 13,
+    "B-DOSIS": 10
+  },
+  "predicted_label_counts": {
+    "O": 1661,
+    "B-GEJALA": 245,
+    "I-GEJALA": 81,
+    "B-ANATOMI": 158,
+    "I-ANATOMI": 13,
+    "B-DOSIS": 7,
+    "B-DIAGNOSIS": 73,
+    "B-OBAT": 131,
+    "I-OBAT": 30,
+    "I-DIAGNOSIS": 4
+  },
+  "model_key": "indobert",
+  "model_name": "IndoBERT base p1 human-aligned",
+  "role": "utama",
+  "base_model": "indobenchmark/indobert-base-p1",
+  "model_dir": "models/indobert-medical-ner-id-human-aligned",
+  "test_file": "data\\true_gold_300\\gold_resolved.conll"
+}

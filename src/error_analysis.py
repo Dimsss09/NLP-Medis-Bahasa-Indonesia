@@ -55,6 +55,8 @@ def main() -> None:
     examples = load_examples(args.examples)
     incorrect_examples = [example for example in examples if example["status"] == "incorrect"]
     predicted_counts = Counter(metrics.get("predicted_label_counts", {}))
+    test_file = str(metrics.get("test_file", "")).replace("\\", "/").lower()
+    is_human_gold = "true_gold" in test_file or "gold_resolved" in test_file
 
     lines = [
         "# Error Analysis",
@@ -77,7 +79,10 @@ def main() -> None:
     elif predicted_counts.get("B-OBAT", 0) < metrics["gold_label_counts"].get("B-OBAT", 0):
         lines.append("- `OBAT` still has a small number of missed mentions despite high overall recall.")
     lines.append("- The model is biased toward labels seen often in the bootstrap training subset.")
-    lines.append("- Metrics are still measured against semi-automatic labels, not a human gold set.")
+    if is_human_gold:
+        lines.append("- Metrics are measured against a manually adjudicated human gold set.")
+    else:
+        lines.append("- Metrics are still measured against semi-automatic labels, not a human gold set.")
 
     lines.extend(["", "## Largest Token-Level Confusions", "", "| Gold | Predicted | Count |", "| --- | --- | ---: |"])
     for gold, predicted, count in confusions[:10]:
@@ -94,10 +99,10 @@ def main() -> None:
             "",
             "## Recommended Fixes",
             "",
-            "- Complete manual double annotation and evaluate on `gold_resolved.conll`.",
-            "- Add more manually validated `DOSIS` and `OBAT` examples to training.",
-            "- Train on a larger subset or full training set when GPU time is available.",
-            "- Review ambiguous lexicon labels before reporting final performance.",
+            "- Keep the true gold set held out as the benchmark.",
+            "- Add more manually validated `DOSIS`, `OBAT`, and `DIAGNOSIS` examples to training data.",
+            "- Correct a separate silver/human-aligned training subset using the adjudication rules.",
+            "- Retrain the NER model and evaluate again against the true gold set.",
         ]
     )
     args.output.write_text("\n".join(lines) + "\n", encoding="utf-8")

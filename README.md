@@ -4,6 +4,7 @@
 ![Model](https://img.shields.io/badge/Models-IndoBERT%20%2B%20XLM--R-teal)
 ![Demo](https://img.shields.io/badge/Demo-Streamlit-ff4b4b)
 ![Micro F1](https://img.shields.io/badge/Silver%20Micro%20F1-0.9996-brightgreen)
+![True Gold](https://img.shields.io/badge/True%20Gold%20Human--Aligned%20F1-0.7238-orange)
 ![Relation Acc](https://img.shields.io/badge/Relation%20Accuracy-99%25-brightgreen)
 ![Knowledge Graph](https://img.shields.io/badge/Knowledge%20Graph-NetworkX%20%2B%20PyVis-purple)
 ![QA](https://img.shields.io/badge/QA%20Assistant-RAG%20%2B%20KG-orange)
@@ -27,24 +28,39 @@ Output utama proyek:
 
 ## Hasil Singkat
 
-Evaluasi engineering terbaru dijalankan pada test set semi-otomatis/silver (untuk melihat progres model tetapi belum sebagai klaim klinis final).
+Evaluasi terbaru sekarang memakai dua jalur: **silver evaluation** untuk melihat
+progres engineering pada label otomatis, dan **true human gold evaluation** untuk
+mengukur performa yang lebih jujur terhadap label manusia teradjudikasi.
 
 ### 1. Named Entity Recognition (NER)
 
 | Model | Role | Micro precision | Micro recall | Micro F1 |
 | --- | --- | ---: | ---: | ---: |
-| `indobert` | utama | 1.0000 | 0.9991 | 0.9996 |
-| `xlm_roberta` | pembanding | 0.9656 | 0.9782 | 0.9718 |
+| `indobert-human-aligned` | retrained | 0.7967 | 0.6631 | 0.7238 |
+| `indobert` | baseline | 0.6538 | 0.2530 | 0.3649 |
+| `xlm_roberta` | baseline pembanding | 0.6367 | 0.2395 | 0.3481 |
 
 Perbandingan F1 per entitas:
 
-| Entity | IndoBERT F1 | XLM-R F1 |
-| --- | ---: | ---: |
-| ANATOMI | 1.0000 | 0.9744 |
-| DIAGNOSIS | 1.0000 | 0.9924 |
-| DOSIS | 0.9888 | 0.9462 |
-| GEJALA | 1.0000 | 0.9688 |
-| OBAT | 1.0000 | 0.9784 |
+| Entity | Human-aligned IndoBERT F1 | Baseline IndoBERT F1 | XLM-R F1 |
+| --- | ---: | ---: | ---: |
+| ANATOMI | 0.8333 | 0.5391 | 0.5197 |
+| DIAGNOSIS | 0.8364 | 0.1905 | 0.1905 |
+| DOSIS | 0.4706 | 0.0000 | 0.0000 |
+| GEJALA | 0.6897 | 0.4184 | 0.3941 |
+| OBAT | 0.6214 | 0.0970 | 0.0970 |
+
+Gold set ini berisi 300 teks, 2 annotator manusia independen, dan adjudication
+manual atas 263 konflik label. Agreement sebelum adjudication: token agreement
+0.8906, Cohen's Kappa 0.8290, dan entity F1 antar annotator 0.7532.
+
+Hasil silver lama tetap disimpan sebagai indikator bootstrap engineering:
+IndoBERT micro F1 0.9996 dan XLM-R micro F1 0.9718. Nilai silver tersebut tidak
+dipakai sebagai klaim performa klinis.
+
+Model `indobert-human-aligned` dilatih ulang pada `data/human_aligned_silver/`,
+yaitu silver training set baru yang mengecualikan 300 teks true gold dan
+mengikuti prinsip adjudikasi manual.
 
 ### 2. Assertion Status (Negation & Uncertainty)
 *Model: Fine-tuned IndoBERT (`models/indobert-medical-assertion-id`)*
@@ -163,11 +179,17 @@ Label NER:
 | `DIAGNOSIS` | nama penyakit atau kondisi medis |
 | `ANATOMI` | bagian tubuh atau organ |
 
-Strategi data saat ini memakai `data/silver/` sebagai training source. Silver
-annotation dibuat dari rules dan lexicon sehingga cocok untuk bootstrap model,
-tetapi bukan pengganti human gold. Workflow human gold sudah disiapkan di
-`data/manual_gold/` dan perlu diisi oleh minimal dua annotator manusia sebelum
-agreement, conflict resolution, dan evaluasi final berbasis gold test set.
+Strategi training saat ini masih memakai `data/silver/` sebagai training source.
+Silver annotation dibuat dari rules dan lexicon sehingga cocok untuk bootstrap
+model, tetapi bukan pengganti human gold.
+
+True human gold set sudah tersedia di `data/true_gold_300/`:
+
+- `annotator_1.conll` dan `annotator_2.conll`: hasil dua annotator manusia;
+- `agreement_summary.json`: ringkasan agreement;
+- `conflicts_resolved.tsv`: konflik label yang sudah diselesaikan manual;
+- `gold_resolved.conll`: gold set final untuk evaluasi;
+- `adjudication_notes.md`: prinsip adjudikasi dan catatan keterbatasan.
 
 ## Tech Web Demo
 
@@ -353,6 +375,7 @@ pip check
 
 Model ini adalah prototype riset/engineering untuk ekstraksi informasi teks
 medis Bahasa Indonesia. Jangan gunakan sebagai alat diagnosis klinis. Untuk
-klaim performa yang mendekati standar industri, evaluasi harus dijalankan ulang
-hanya pada gold test set manual yang sudah melewati agreement antar annotator
-dan conflict resolution.
+klaim performa yang mendekati standar industri, hasil true human gold terbaru
+harus dipakai sebagai acuan utama, bukan hasil silver. Evaluasi true gold saat
+ini menunjukkan recall model masih rendah, terutama untuk `OBAT`, `DIAGNOSIS`,
+dan `DOSIS`, sehingga proyek belum siap dipakai untuk skenario klinis nyata.

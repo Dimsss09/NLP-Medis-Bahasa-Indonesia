@@ -256,6 +256,19 @@ def write_markdown_report(
     path.parent.mkdir(parents=True, exist_ok=True)
     report = summary["seqeval_report"]
     entity_names = [key for key in report if key not in {"micro avg", "macro avg", "weighted avg"}]
+    normalized_test_file = test_file.replace("\\", "/").lower()
+    if "true_gold" in normalized_test_file or "gold_resolved" in normalized_test_file:
+        caveat = (
+            "These metrics evaluate the model against a manually adjudicated "
+            "human gold set. They are suitable for prototype research reporting, "
+            "but they are not a formal clinical validation."
+        )
+    else:
+        caveat = (
+            "These metrics evaluate the Phase 3 bootstrap model against "
+            "semi-automatic labels. They are useful for engineering progress, "
+            "but final claims still need manually reviewed labels."
+        )
 
     rows = []
     for entity in sorted(entity_names):
@@ -304,9 +317,7 @@ Generated at: {datetime.now(timezone.utc).isoformat()}
 
 ## Caveat
 
-These metrics evaluate the Phase 3 bootstrap model against the semi-automatic
-Phase 2 labels. They are useful for engineering progress, but final claims still
-need manually reviewed labels.
+{caveat}
 """
     path.write_text(content, encoding="utf-8")
 

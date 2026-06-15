@@ -1,0 +1,2006 @@
+# id = C04863
+# focus = HASIL_LAB, OBAT_DOSIS
+# text = obat yang bagus untuk mengatasi gula darah tinggi
+obat B-OBAT
+yang O
+bagus O
+untuk O
+mengatasi O
+gula B-HASIL_LAB
+darah I-HASIL_LAB
+tinggi B-NILAI_LAB
+
+# id = C12034
+# focus = HASIL_LAB
+# text = telat haid testpack negatif pinggang sakit keluar flek coklat dan urine berdarah
+telat B-GEJALA
+haid I-GEJALA
+testpack O
+negatif O
+pinggang O
+sakit B-GEJALA
+keluar B-GEJALA
+flek I-GEJALA
+coklat I-GEJALA
+dan O
+urine B-HASIL_LAB
+berdarah B-GEJALA
+
+# id = C04916
+# focus = HASIL_LAB, OBAT_DOSIS
+# text = rekomendasi obat untuk mengatasi leher tegang karena kolesterol
+rekomendasi O
+obat B-OBAT
+untuk O
+mengatasi O
+leher B-ANATOMI
+tegang O
+karena O
+kolesterol B-HASIL_LAB
+
+# id = C04979
+# focus = HASIL_LAB, OBAT_DOSIS
+# text = obat untuk menurunkan kadar gula darah tinggi sampai
+obat B-OBAT
+untuk O
+menurunkan O
+kadar O
+gula B-HASIL_LAB
+darah I-HASIL_LAB
+tinggi B-NILAI_LAB
+sampai O
+
+# id = C07275
+# focus = PROSEDUR, HASIL_LAB, OBAT_DOSIS
+# text = bolehkan konsumsi obat kolesterol tanpa cek darah
+bolehkan O
+konsumsi O
+obat B-OBAT
+kolesterol B-HASIL_LAB
+tanpa O
+cek B-PROSEDUR
+darah I-PROSEDUR
+
+# id = C04667
+# focus = HASIL_LAB, OBAT_DOSIS, GEJALA_SULIT
+# text = obat untuk mengatasi mata kaki bengkak karena asam urat
+obat B-OBAT
+untuk O
+mengatasi O
+mata B-ANATOMI
+kaki B-ANATOMI
+bengkak B-GEJALA
+karena O
+asam B-HASIL_LAB
+urat I-HASIL_LAB
+
+# id = C07640
+# focus = HASIL_LAB, OBAT_DOSIS
+# text = obat untuk mengatasi kolesterol
+obat B-OBAT
+untuk O
+mengatasi O
+kolesterol B-HASIL_LAB
+
+# id = C07695
+# focus = HASIL_LAB
+# text = pengobatan yang tepat untuk mengatasi kolesterol tinggi
+pengobatan O
+yang O
+tepat O
+untuk O
+mengatasi O
+kolesterol B-HASIL_LAB
+tinggi B-NILAI_LAB
+
+# id = C12293
+# focus = HASIL_LAB
+# text = apakah menstruasi bisa menaikkan gula darah secara drastis
+apakah O
+menstruasi O
+bisa O
+menaikkan O
+gula B-HASIL_LAB
+darah I-HASIL_LAB
+secara O
+drastis O
+
+# id = C05815
+# focus = HASIL_LAB, OBAT_DOSIS
+# text = obat untuk mengatasi peningkatan sgpt dan asam urat
+obat B-OBAT
+untuk O
+mengatasi O
+peningkatan B-NILAI_LAB
+sgpt O
+dan O
+asam B-HASIL_LAB
+urat I-HASIL_LAB
+
+# id = C05991
+# focus = HASIL_LAB, OBAT_DOSIS
+# text = bolehkah konsumsi obat kolesterol darah tinggi dan asam urat bersamaan dengan vitamin d
+bolehkah O
+konsumsi O
+obat B-OBAT
+kolesterol B-HASIL_LAB
+darah O
+tinggi B-NILAI_LAB
+dan O
+asam B-HASIL_LAB
+urat I-HASIL_LAB
+bersamaan O
+dengan O
+vitamin B-OBAT
+d O
+
+# id = C10054
+# focus = HASIL_LAB
+# text = hubungan trombosit rendah dengan siklus menstruasi
+hubungan O
+trombosit B-HASIL_LAB
+rendah B-NILAI_LAB
+dengan O
+siklus O
+menstruasi O
+
+# id = C08465
+# focus = HASIL_LAB, OBAT_DOSIS
+# text = apakah boleh minum obat kuat pada penderita hipertensi dan kolesterol tinggi
+apakah O
+boleh O
+minum O
+obat B-OBAT
+kuat O
+pada O
+penderita O
+hipertensi B-DIAGNOSIS
+dan O
+kolesterol B-HASIL_LAB
+tinggi B-NILAI_LAB
+
+# id = C12213
+# focus = HASIL_LAB, GEJALA_SULIT
+# text = darah haid tidak lancar disertai pusing dan badan sakit bolehkah cek hb
+darah B-GEJALA
+haid I-GEJALA
+tidak B-GEJALA
+lancar I-GEJALA
+disertai O
+pusing B-GEJALA
+dan O
+badan B-ANATOMI
+sakit B-GEJALA
+bolehkah O
+cek O
+hb B-HASIL_LAB
+
+# id = C11860
+# focus = HASIL_LAB
+# text = apakah menstruasi mempengaruhi hasil lab prolactin
+apakah O
+menstruasi O
+mempengaruhi O
+hasil B-HASIL_LAB
+lab I-HASIL_LAB
+prolactin O
+
+# id = C06886
+# focus = HASIL_LAB, OBAT_DOSIS
+# text = waktu untuk konsumsi obat sebelum cek gula darah
+waktu O
+untuk O
+konsumsi O
+obat B-OBAT
+sebelum O
+cek O
+gula B-HASIL_LAB
+darah I-HASIL_LAB
+
+# id = C06085
+# focus = HASIL_LAB, OBAT_DOSIS
+# text = obat yang dapat mempengaruhi hasil tes agregasi trombosit
+obat B-OBAT
+yang O
+dapat O
+mempengaruhi O
+hasil O
+tes O
+agregasi O
+trombosit B-HASIL_LAB
+
+# id = C11797
+# focus = PROSEDUR, HASIL_LAB
+# text = penjelasan hasil pemeriksaan lab leukosit
+penjelasan O
+hasil O
+pemeriksaan B-PROSEDUR
+lab I-PROSEDUR
+leukosit B-HASIL_LAB
+
+# id = C06585
+# focus = PROSEDUR, HASIL_LAB, WAKTU_DURASI, OBAT_DOSIS
+# text = konsumsi obat kolesterol dan asam urat setelah vaksin corona
+konsumsi O
+obat B-OBAT
+kolesterol B-HASIL_LAB
+dan O
+asam B-HASIL_LAB
+urat I-HASIL_LAB
+setelah B-WAKTU_DURASI
+vaksin B-PROSEDUR
+corona O
+
+# id = C05510
+# focus = HASIL_LAB, OBAT_DOSIS
+# text = obat untuk mengatasi hipertensi kolesterol tinggi dan asam lambung
+obat B-OBAT
+untuk O
+mengatasi O
+hipertensi B-DIAGNOSIS
+kolesterol B-HASIL_LAB
+tinggi B-NILAI_LAB
+dan O
+asam O
+lambung B-ANATOMI
+
+# id = C02431
+# focus = HASIL_LAB
+# text = bagaimana cara agar leukosit tidak tinggi
+bagaimana O
+cara O
+agar O
+leukosit B-HASIL_LAB
+tidak O
+tinggi B-NILAI_LAB
+
+# id = C01089
+# focus = PROSEDUR, HASIL_LAB
+# text = kadar eritrosit dan eonosofil tanggi pada hasil pemeriksaan darah
+kadar B-HASIL_LAB
+eritrosit I-HASIL_LAB
+dan O
+eonosofil O
+tanggi O
+pada O
+hasil O
+pemeriksaan B-PROSEDUR
+darah I-PROSEDUR
+
+# id = C12989
+# focus = PROSEDUR, WAKTU_DURASI
+# text = gumpalan berwarna putih saat menstruasi dan menggunakan kb suntik bulan
+gumpalan O
+berwarna O
+putih O
+saat O
+menstruasi O
+dan O
+menggunakan O
+kb B-OBAT
+suntik B-PROSEDUR
+bulan B-WAKTU_DURASI
+
+# id = C09710
+# focus = PROSEDUR, WAKTU_DURASI
+# text = apakah masih bisa menstruasi saat menggunakan suntik kb bulan
+apakah O
+masih O
+bisa O
+menstruasi O
+saat O
+menggunakan O
+suntik B-PROSEDUR
+kb I-PROSEDUR
+bulan B-WAKTU_DURASI
+
+# id = C10631
+# focus = PROSEDUR, WAKTU_DURASI
+# text = keluar banyak darah menstruasi setelah lepas kb suntik
+keluar O
+banyak O
+darah O
+menstruasi O
+setelah B-WAKTU_DURASI
+lepas O
+kb B-OBAT
+suntik B-PROSEDUR
+
+# id = C11058
+# focus = PROSEDUR
+# text = kemungkinan hamil saat hasil testpack dan usg berbeda
+kemungkinan O
+hamil B-DIAGNOSIS
+saat O
+hasil O
+testpack O
+dan O
+usg B-PROSEDUR
+berbeda O
+
+# id = C02306
+# focus = PROSEDUR, GEJALA_SULIT
+# text = cara mengatasi gatal di area bekas operasi caesar
+cara O
+mengatasi O
+gatal B-GEJALA
+di O
+area O
+bekas O
+operasi B-PROSEDUR
+caesar I-PROSEDUR
+
+# id = C06881
+# focus = PROSEDUR, WAKTU_DURASI, OBAT_DOSIS
+# text = resep obat yang digunakan pasca operasi wasir
+resep O
+obat B-OBAT
+yang O
+digunakan O
+pasca B-WAKTU_DURASI
+operasi B-PROSEDUR
+wasir O
+
+# id = C12008
+# focus = PROSEDUR, WAKTU_DURASI
+# text = mengatasi haid tidak teratur pasca operasi pengangkatan kista ovarium
+mengatasi O
+haid O
+tidak B-GEJALA
+teratur I-GEJALA
+pasca B-WAKTU_DURASI
+operasi B-PROSEDUR
+pengangkatan O
+kista O
+ovarium O
+
+# id = C00829
+# focus = PROSEDUR, WAKTU_DURASI, GEJALA_SULIT
+# text = paha terasa gatal setelah operasi cangkoj tulang betis
+paha B-ANATOMI
+terasa O
+gatal B-GEJALA
+setelah B-WAKTU_DURASI
+operasi B-PROSEDUR
+cangkoj O
+tulang O
+betis O
+
+# id = C08378
+# focus = PROSEDUR, WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
+# text = pusing setelah minum obat pasca operasi selulitis
+pusing B-GEJALA
+setelah B-WAKTU_DURASI
+minum O
+obat B-OBAT
+pasca B-WAKTU_DURASI
+operasi B-PROSEDUR
+selulitis O
+
+# id = C10634
+# focus = PROSEDUR, WAKTU_DURASI
+# text = menstruasi setelah hasil test pack samar dan hasil usg belum terlihat
+menstruasi O
+setelah B-WAKTU_DURASI
+hasil O
+test O
+pack O
+samar O
+dan O
+hasil O
+usg B-PROSEDUR
+belum O
+terlihat O
+
+# id = C11108
+# focus = PROSEDUR, WAKTU_DURASI
+# text = bagaimana normalnya siklus haid pasca operasi usus buntu
+bagaimana O
+normalnya O
+siklus O
+haid O
+pasca B-WAKTU_DURASI
+operasi B-PROSEDUR
+usus I-PROSEDUR
+buntu I-PROSEDUR
+
+# id = C10149
+# focus = PROSEDUR, RIWAYAT_PENYAKIT
+# text = haid yang tidak teratur dengan riwayat pemeriksaan usg yang normal
+haid O
+yang O
+tidak B-GEJALA
+teratur I-GEJALA
+dengan O
+riwayat O
+pemeriksaan B-PROSEDUR
+usg B-PROSEDUR
+yang O
+normal B-NILAI_LAB
+
+# id = C10161
+# focus = PROSEDUR, WAKTU_DURASI
+# text = langsung menstruasi setelah suntik kb bulan
+langsung O
+menstruasi O
+setelah B-WAKTU_DURASI
+suntik B-PROSEDUR
+kb I-PROSEDUR
+bulan B-WAKTU_DURASI
+
+# id = C12937
+# focus = PROSEDUR, WAKTU_DURASI
+# text = haid berkepanjangan setelah ganti suntik kb ke pil kb
+haid O
+berkepanjangan B-GEJALA
+setelah B-WAKTU_DURASI
+ganti O
+suntik B-PROSEDUR
+kb I-PROSEDUR
+ke O
+pil B-OBAT
+kb I-OBAT
+
+# id = C12708
+# focus = PROSEDUR, WAKTU_DURASI
+# text = penyebab siklus haid yang berubah pasca suntik kb bulan
+penyebab O
+siklus O
+haid O
+yang O
+berubah O
+pasca B-WAKTU_DURASI
+suntik B-PROSEDUR
+kb I-PROSEDUR
+bulan B-WAKTU_DURASI
+
+# id = C12083
+# focus = PROSEDUR, WAKTU_DURASI
+# text = kapan bisa pindah dari kb suntik bulan ke pil kb
+kapan O
+bisa O
+pindah O
+dari O
+kb B-OBAT
+suntik B-PROSEDUR
+bulan B-WAKTU_DURASI
+ke O
+pil B-OBAT
+kb I-OBAT
+
+# id = C12784
+# focus = PROSEDUR
+# text = kaitan haid dengan gagalnya medical check up
+kaitan O
+haid O
+dengan O
+gagalnya O
+medical B-PROSEDUR
+check I-PROSEDUR
+up I-PROSEDUR
+
+# id = C10428
+# focus = PROSEDUR
+# text = kaitan vaksin covid terhadap haid yang telat dan badan lemas
+kaitan O
+vaksin B-PROSEDUR
+covid I-PROSEDUR
+terhadap O
+haid O
+yang O
+telat O
+dan O
+badan B-ANATOMI
+lemas B-GEJALA
+
+# id = C00791
+# focus = ALERGI, PROSEDUR
+# text = keamanan melakukan suntik vaksinasi covid saat sedang mengalami alergi
+keamanan O
+melakukan O
+suntik B-PROSEDUR
+vaksinasi B-PROSEDUR
+covid I-PROSEDUR
+saat O
+sedang O
+mengalami O
+alergi B-ALERGI
+
+# id = C00745
+# focus = ALERGI, PROSEDUR
+# text = apakah saat alergi kambuh hingga muncul bintikbintik boleh vaksinasi covid
+apakah O
+saat O
+alergi B-ALERGI
+kambuh O
+hingga O
+muncul O
+bintikbintik O
+boleh O
+vaksinasi B-PROSEDUR
+covid I-PROSEDUR
+
+# id = C08066
+# focus = PROSEDUR, OBAT_DOSIS
+# text = apakah obat suntik untuk mengatasi pengeroposan dengkul dapat mengancam kesehatan ginjal
+apakah O
+obat B-OBAT
+suntik B-PROSEDUR
+untuk O
+mengatasi O
+pengeroposan O
+dengkul O
+dapat O
+mengancam O
+kesehatan O
+ginjal O
+
+# id = C12499
+# focus = PROSEDUR, WAKTU_DURASI, OBAT_DOSIS
+# text = mengatasi haid berkepanjangan setelah suntik keloid dengan menggunakan obat kortikosteroid
+mengatasi O
+haid O
+berkepanjangan B-GEJALA
+setelah B-WAKTU_DURASI
+suntik B-PROSEDUR
+keloid O
+dengan O
+menggunakan O
+obat B-OBAT
+kortikosteroid O
+
+# id = C09912
+# focus = WAKTU_DURASI, RIWAYAT_PENYAKIT
+# text = haid tidak teratur dan keluar asi sedikit dengan riwayat kuretase bulan lalu
+haid O
+tidak B-GEJALA
+teratur I-GEJALA
+dan O
+keluar O
+asi O
+sedikit O
+dengan O
+riwayat O
+kuretase O
+bulan B-WAKTU_DURASI
+lalu O
+
+# id = C05733
+# focus = RIWAYAT_PENYAKIT, OBAT_DOSIS
+# text = mengenai penggunaan obat untuk mengatasi sakit kepala saat hamil pada wanita dengan riwayat edema serebri
+mengenai O
+penggunaan O
+obat B-OBAT
+untuk O
+mengatasi O
+sakit B-GEJALA
+kepala B-ANATOMI
+saat O
+hamil B-DIAGNOSIS
+pada O
+wanita O
+dengan O
+riwayat O
+edema O
+serebri O
+
+# id = C10909
+# focus = RIWAYAT_PENYAKIT
+# text = siklus haid dengan riwayat penyakit kista
+siklus O
+haid O
+dengan O
+riwayat O
+penyakit O
+kista O
+
+# id = C06731
+# focus = RIWAYAT_PENYAKIT, OBAT_DOSIS
+# text = memiliki riwayat pengobatan hipertiroid sebelumnya dan sempat putus obat
+memiliki O
+riwayat O
+pengobatan O
+hipertiroid O
+sebelumnya O
+dan O
+sempat O
+putus O
+obat B-OBAT
+
+# id = C07164
+# focus = RIWAYAT_PENYAKIT
+# text = cara mengatasi anyanganyangan dengan riwayat penyakit paruparu
+cara O
+mengatasi O
+anyanganyangan O
+dengan O
+riwayat O
+penyakit O
+paruparu O
+
+# id = C00720
+# focus = ALERGI, RIWAYAT_PENYAKIT, GEJALA_SULIT
+# text = adanya riwayat alergi bengkak pada kaki kanan dan feses yang berwarna hitam
+adanya O
+riwayat B-RIWAYAT_PENYAKIT
+alergi I-RIWAYAT_PENYAKIT
+bengkak B-GEJALA
+pada O
+kaki B-ANATOMI
+kanan O
+dan O
+feses O
+yang O
+berwarna B-GEJALA
+hitam I-GEJALA
+
+# id = C12154
+# focus = WAKTU_DURASI, RIWAYAT_PENYAKIT
+# text = telat haid pada remaja usia tahun yang pernah diet
+telat B-GEJALA
+haid I-GEJALA
+pada O
+remaja O
+usia O
+tahun B-WAKTU_DURASI
+yang O
+pernah O
+diet O
+
+# id = C07645
+# focus = ALERGI, RIWAYAT_PENYAKIT, OBAT_DOSIS, GEJALA_SULIT
+# text = obat untuk mengatasi rasa nyeri pada riwayat penderita alergi
+obat B-OBAT
+untuk O
+mengatasi O
+rasa O
+nyeri B-GEJALA
+pada O
+riwayat O
+penderita O
+alergi B-ALERGI
+
+# id = C11490
+# focus = WAKTU_DURASI, RIWAYAT_PENYAKIT
+# text = penyebab tidak pernah haid selama tahun
+penyebab O
+tidak O
+pernah O
+haid O
+selama B-WAKTU_DURASI
+tahun B-WAKTU_DURASI
+
+# id = C12747
+# focus = RIWAYAT_PENYAKIT
+# text = sering telat haid tibatiba pingsan dan memiliki riwayat asma
+sering O
+telat B-GEJALA
+haid I-GEJALA
+tibatiba O
+pingsan O
+dan O
+memiliki O
+riwayat O
+asma B-DIAGNOSIS
+
+# id = C05876
+# focus = RIWAYAT_PENYAKIT, OBAT_DOSIS
+# text = obat asam lambung yang dapat digunakan pada orang dengan riwayat jantung bocor
+obat B-OBAT
+asam O
+lambung B-ANATOMI
+yang O
+dapat O
+digunakan O
+pada O
+orang O
+dengan O
+riwayat O
+jantung B-ANATOMI
+bocor O
+
+# id = C00587
+# focus = ALERGI, PROSEDUR, RIWAYAT_PENYAKIT
+# text = bolehkah vaksin covid saat memiliki riwayat alergi
+bolehkah O
+vaksin B-PROSEDUR
+covid I-PROSEDUR
+saat O
+memiliki O
+riwayat B-RIWAYAT_PENYAKIT
+alergi I-RIWAYAT_PENYAKIT
+
+# id = C03078
+# focus = ALERGI, RIWAYAT_PENYAKIT
+# text = apakah ikan tawar bisa menimbulkan alergi kalo punya riwayat alergi ikan laut
+apakah O
+ikan O
+tawar O
+bisa O
+menimbulkan O
+alergi B-ALERGI
+kalo O
+punya O
+riwayat B-RIWAYAT_PENYAKIT
+alergi I-RIWAYAT_PENYAKIT
+ikan O
+laut O
+
+# id = C11372
+# focus = RIWAYAT_PENYAKIT
+# text = haid tidak teratur dengan riwayat hormon tidak stabil
+haid O
+tidak B-GEJALA
+teratur I-GEJALA
+dengan O
+riwayat O
+hormon O
+tidak O
+stabil O
+
+# id = C12705
+# focus = WAKTU_DURASI, RIWAYAT_PENYAKIT, GEJALA_SULIT
+# text = penyebab telat haid selama minggu disertai pusing mual tidak nafsu makan pada wanita yang belum pernah melakukan hubungan intim
+penyebab O
+telat B-GEJALA
+haid I-GEJALA
+selama B-WAKTU_DURASI
+minggu B-WAKTU_DURASI
+disertai O
+pusing B-GEJALA
+mual B-GEJALA
+tidak O
+nafsu O
+makan O
+pada O
+wanita O
+yang O
+belum O
+pernah O
+melakukan O
+hubungan O
+intim O
+
+# id = C00687
+# focus = PROSEDUR, WAKTU_DURASI, RIWAYAT_PENYAKIT
+# text = ada riwayat kulit bentolbentol usai divaksin apakah sekarang masih boleh vaksinasi covid
+ada O
+riwayat O
+kulit B-ANATOMI
+bentolbentol B-GEJALA
+usai B-WAKTU_DURASI
+divaksin O
+apakah O
+sekarang O
+masih O
+boleh O
+vaksinasi B-PROSEDUR
+covid I-PROSEDUR
+
+# id = C07019
+# focus = RIWAYAT_PENYAKIT
+# text = pengobatan untuk mengatasi infeksi jamur dengan riwayat penderita gerd
+pengobatan O
+untuk O
+mengatasi O
+infeksi B-DIAGNOSIS
+jamur O
+dengan O
+riwayat O
+penderita O
+gerd O
+
+# id = C05930
+# focus = RIWAYAT_PENYAKIT, OBAT_DOSIS
+# text = pemberian obat antiparasit pada pasien covid dengan riwayat penyakit diabetes dan paruparu
+pemberian O
+obat B-OBAT
+antiparasit O
+pada O
+pasien O
+covid O
+dengan O
+riwayat O
+penyakit O
+diabetes B-DIAGNOSIS
+dan O
+paruparu O
+
+# id = C07104
+# focus = RIWAYAT_PENYAKIT, OBAT_DOSIS
+# text = amanah konsumsi obat hormon saat hamil dengan riwayat benjolan di payudara
+amanah O
+konsumsi O
+obat B-OBAT
+hormon I-OBAT
+saat O
+hamil B-DIAGNOSIS
+dengan O
+riwayat O
+benjolan B-GEJALA
+di O
+payudara B-ANATOMI
+
+# id = C10826
+# focus = RIWAYAT_PENYAKIT
+# text = telat haid dengan riwayat pcos apakah hamil
+telat B-GEJALA
+haid I-GEJALA
+dengan O
+riwayat O
+pcos O
+apakah O
+hamil B-DIAGNOSIS
+
+# id = C08524
+# focus = RIWAYAT_PENYAKIT, OBAT_DOSIS
+# text = konsumsi obat untuk memperkuat kandungan pada wanita dengan riwayat keguguran
+konsumsi O
+obat B-OBAT
+untuk O
+memperkuat O
+kandungan B-ANATOMI
+pada O
+wanita O
+dengan O
+riwayat O
+keguguran B-DIAGNOSIS
+
+# id = C10856
+# focus = RIWAYAT_PENYAKIT
+# text = menstruasi tidak rutin dan memiliki riwayat darah rendah
+menstruasi O
+tidak O
+rutin O
+dan O
+memiliki O
+riwayat O
+darah O
+rendah B-NILAI_LAB
+
+# id = C04797
+# focus = PROSEDUR, OBAT_DOSIS
+# text = apakah ada obat amandel tanpa harus operasi
+apakah O
+ada O
+obat B-OBAT
+amandel O
+tanpa O
+harus O
+operasi B-PROSEDUR
+
+# id = C08364
+# focus = PROSEDUR, WAKTU_DURASI, OBAT_DOSIS
+# text = bolehkah minum obat pilek saat masa penyembuhan pasca operasi usus buntu
+bolehkah O
+minum O
+obat B-OBAT
+pilek B-GEJALA
+saat O
+masa O
+penyembuhan O
+pasca B-WAKTU_DURASI
+operasi B-PROSEDUR
+usus I-PROSEDUR
+buntu I-PROSEDUR
+
+# id = C08380
+# focus = OBAT_DOSIS
+# text = obat untuk mengatasi mata merah
+obat B-OBAT
+untuk O
+mengatasi O
+mata B-ANATOMI
+merah O
+
+# id = C04805
+# focus = OBAT_DOSIS
+# text = apa sajakah efek samping dari obat tbc yang merah
+apa O
+sajakah O
+efek O
+samping O
+dari O
+obat B-OBAT
+tbc B-DIAGNOSIS
+yang O
+merah O
+
+# id = C06951
+# focus = WAKTU_DURASI, OBAT_DOSIS
+# text = berkeringat berlebih setelah konsumsi obat pada penderita efusi pleura
+berkeringat O
+berlebih O
+setelah B-WAKTU_DURASI
+konsumsi O
+obat B-OBAT
+pada O
+penderita O
+efusi O
+pleura O
+
+# id = C08822
+# focus = OBAT_DOSIS
+# text = apakah boleh minum obat antasida saat sedang pengobatan hipertensi
+apakah O
+boleh O
+minum O
+obat B-OBAT
+antasida O
+saat O
+sedang O
+pengobatan O
+hipertensi B-DIAGNOSIS
+
+# id = C06666
+# focus = OBAT_DOSIS
+# text = tidak sengaja konsumsi obat golongan ace inhibitor hingga kali
+tidak O
+sengaja O
+konsumsi O
+obat B-OBAT
+golongan O
+ace O
+inhibitor O
+hingga O
+kali O
+
+# id = C07405
+# focus = WAKTU_DURASI, OBAT_DOSIS
+# text = sulit diare setelah konsumsi obat zinc
+sulit O
+diare B-GEJALA
+setelah B-WAKTU_DURASI
+konsumsi O
+obat B-OBAT
+zinc O
+
+# id = C05593
+# focus = OBAT_DOSIS
+# text = keamanan konsumsi obat pyrathiazine dan pyridoxine pada ibu hamil dan menyusui
+keamanan O
+konsumsi O
+obat B-OBAT
+pyrathiazine O
+dan O
+pyridoxine O
+pada O
+ibu O
+hamil B-DIAGNOSIS
+dan O
+menyusui O
+
+# id = C04914
+# focus = OBAT_DOSIS
+# text = apa obat herpes agar mudah cepat kering
+apa O
+obat B-OBAT
+herpes B-DIAGNOSIS
+agar O
+mudah O
+cepat O
+kering O
+
+# id = C07675
+# focus = WAKTU_DURASI, OBAT_DOSIS
+# text = rasa ngantuk setelah minum diazepam pada orang dengan ketergantungan obat
+rasa O
+ngantuk O
+setelah B-WAKTU_DURASI
+minum O
+diazepam O
+pada O
+orang O
+dengan O
+ketergantungan O
+obat B-OBAT
+
+# id = C06453
+# focus = OBAT_DOSIS
+# text = aturan konsumsi obat cacing dibulan puasa
+aturan O
+konsumsi O
+obat B-OBAT
+cacing I-OBAT
+dibulan O
+puasa O
+
+# id = C00566
+# focus = WAKTU_DURASI, OBAT_DOSIS
+# text = wajah iritasi setelah menggunakan obat jerawat
+wajah B-ANATOMI
+iritasi B-DIAGNOSIS
+setelah B-WAKTU_DURASI
+menggunakan O
+obat B-OBAT
+jerawat B-DIAGNOSIS
+
+# id = C04841
+# focus = OBAT_DOSIS
+# text = rekomendasi salep untuk mengatasi jerawat punggung
+rekomendasi O
+salep B-OBAT
+untuk O
+mengatasi O
+jerawat B-DIAGNOSIS
+punggung B-ANATOMI
+
+# id = C07046
+# focus = WAKTU_DURASI, OBAT_DOSIS
+# text = kapan boleh minum obat mabuk perjalanan setelah minum obat herbal
+kapan O
+boleh O
+minum O
+obat B-OBAT
+mabuk O
+perjalanan O
+setelah B-WAKTU_DURASI
+minum O
+obat B-OBAT
+herbal I-OBAT
+
+# id = C02343
+# focus = WAKTU_DURASI, OBAT_DOSIS
+# text = badan gatalgatal setelah minum obat diabetes
+badan B-ANATOMI
+gatalgatal B-GEJALA
+setelah B-WAKTU_DURASI
+minum O
+obat B-OBAT
+diabetes B-DIAGNOSIS
+
+# id = C05957
+# focus = OBAT_DOSIS
+# text = bolehkah konsumsi obat penenang berkepanjangan
+bolehkah O
+konsumsi O
+obat B-OBAT
+penenang O
+berkepanjangan B-GEJALA
+
+# id = C04456
+# focus = OBAT_DOSIS
+# text = rekomendasi obat untuk menaikkan tekanan darah
+rekomendasi O
+obat B-OBAT
+untuk O
+menaikkan O
+tekanan O
+darah O
+
+# id = C08274
+# focus = OBAT_DOSIS
+# text = apakah aman mengonsumsi obat spiramycin saat hamil
+apakah O
+aman O
+mengonsumsi O
+obat B-OBAT
+spiramycin O
+saat O
+hamil B-DIAGNOSIS
+
+# id = C05052
+# focus = OBAT_DOSIS, GEJALA_SULIT
+# text = obat untuk mengatasi kaki keselo dan bengkak
+obat B-OBAT
+untuk O
+mengatasi O
+kaki B-ANATOMI
+keselo O
+dan O
+bengkak B-GEJALA
+
+# id = C07570
+# focus = OBAT_DOSIS
+# text = aturan pakai obat anti tuberkulosis
+aturan O
+pakai O
+obat B-OBAT
+anti O
+tuberkulosis O
+
+# id = C06603
+# focus = OBAT_DOSIS
+# text = konsumsi obat golongan antitiroid bersamaan dengan obat hipotiroidisme
+konsumsi O
+obat B-OBAT
+golongan O
+antitiroid O
+bersamaan O
+dengan O
+obat B-OBAT
+hipotiroidisme O
+
+# id = C11487
+# focus = GEJALA_SULIT
+# text = vagina gatal seminggu sebelum menstruasi apakah wajar
+vagina B-ANATOMI
+gatal B-GEJALA
+seminggu O
+sebelum O
+menstruasi O
+apakah O
+wajar O
+
+# id = C03849
+# focus = GEJALA_SULIT
+# text = timbul bercak kemerahan pada tubuh yang disertai rasa gatal
+timbul O
+bercak O
+kemerahan B-GEJALA
+pada O
+tubuh B-ANATOMI
+yang O
+disertai O
+rasa O
+gatal B-GEJALA
+
+# id = C08497
+# focus = OBAT_DOSIS, GEJALA_SULIT
+# text = konsumsi obat batuk tanpa resep dokter
+konsumsi O
+obat B-OBAT
+batuk I-OBAT
+tanpa O
+resep O
+dokter O
+
+# id = C01679
+# focus = ALERGI, GEJALA_SULIT
+# text = cara mengatasi hidung gatal dan bersinbersin karena alergi
+cara O
+mengatasi O
+hidung B-ANATOMI
+gatal B-GEJALA
+dan O
+bersinbersin O
+karena O
+alergi B-ALERGI
+
+# id = C00434
+# focus = WAKTU_DURASI, GEJALA_SULIT
+# text = nyeri pada jari dan tidak bisa memegang apaapa setelah menggunakan pacar kuku
+nyeri B-GEJALA
+pada O
+jari B-ANATOMI
+dan O
+tidak O
+bisa O
+memegang O
+apaapa O
+setelah B-WAKTU_DURASI
+menggunakan O
+pacar O
+kuku O
+
+# id = C00670
+# focus = GEJALA_SULIT
+# text = apa penyebab badan gatal dan bentol tibatiba disertai batuk
+apa O
+penyebab O
+badan B-ANATOMI
+gatal B-GEJALA
+dan O
+bentol B-GEJALA
+tibatiba O
+disertai O
+batuk B-GEJALA
+
+# id = C04858
+# focus = WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
+# text = setelah menggunakan salep skabies masih gatal apakah wajar
+setelah B-WAKTU_DURASI
+menggunakan O
+salep B-OBAT
+skabies O
+masih O
+gatal B-GEJALA
+apakah O
+wajar O
+
+# id = C05225
+# focus = OBAT_DOSIS, GEJALA_SULIT
+# text = obat yang cocok untuk mengatasi batuk kering dan flu pada orang dewasa
+obat B-OBAT
+yang O
+cocok O
+untuk O
+mengatasi O
+batuk B-GEJALA
+kering I-GEJALA
+dan O
+flu B-DIAGNOSIS
+pada O
+orang O
+dewasa O
+
+# id = C11822
+# focus = GEJALA_SULIT
+# text = penyebab tubuh terasa ngilu dan demam saat akan haid
+penyebab O
+tubuh B-ANATOMI
+terasa O
+ngilu O
+dan O
+demam B-GEJALA
+saat O
+akan O
+haid O
+
+# id = C00009
+# focus = ALERGI, WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
+# text = obat batuk alergi di apotek untuk anak usia tahun
+obat B-OBAT
+batuk I-OBAT
+alergi B-ALERGI
+di O
+apotek O
+untuk O
+anak O
+usia O
+tahun B-WAKTU_DURASI
+
+# id = C04103
+# focus = GEJALA_SULIT
+# text = gatal disertai bengkak dan nyeri
+gatal B-GEJALA
+disertai O
+bengkak B-GEJALA
+dan O
+nyeri B-GEJALA
+
+# id = C02823
+# focus = WAKTU_DURASI, GEJALA_SULIT
+# text = cara mengatasi siku dan lutut bentol pasca konsumsi suplemen
+cara O
+mengatasi O
+siku B-ANATOMI
+dan O
+lutut O
+bentol B-GEJALA
+pasca B-WAKTU_DURASI
+konsumsi O
+suplemen O
+
+# id = C01241
+# focus = GEJALA_SULIT
+# text = penanganan gatal pada kulit bayi akibat bulu serangga
+penanganan O
+gatal B-GEJALA
+pada O
+kulit B-ANATOMI
+bayi O
+akibat O
+bulu O
+serangga O
+
+# id = C06711
+# focus = WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
+# text = penyebab mual dan tidak nyaman di perut setelah konsumsi obat batuk
+penyebab O
+mual B-GEJALA
+dan O
+tidak O
+nyaman O
+di O
+perut B-ANATOMI
+setelah B-WAKTU_DURASI
+konsumsi O
+obat B-OBAT
+batuk I-OBAT
+
+# id = C03794
+# focus = WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
+# text = ruam berbentuk garis merah pada kulit setelah konsumsi obat
+ruam B-GEJALA
+berbentuk O
+garis O
+merah O
+pada O
+kulit B-ANATOMI
+setelah B-WAKTU_DURASI
+konsumsi O
+obat B-OBAT
+
+# id = C01036
+# focus = GEJALA_SULIT
+# text = telapak kaki yang terasa gatal dan berair
+telapak O
+kaki B-ANATOMI
+yang O
+terasa O
+gatal B-GEJALA
+dan O
+berair B-GEJALA
+
+# id = C06486
+# focus = WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
+# text = gatal di seluruh badan setelah minum obat jamur kulit
+gatal B-GEJALA
+di O
+seluruh O
+badan B-ANATOMI
+setelah B-WAKTU_DURASI
+minum O
+obat B-OBAT
+jamur O
+kulit B-ANATOMI
+
+# id = C05703
+# focus = WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
+# text = apakah obat batuk pilek bisa dikonsumsi bayi usia bulan
+apakah O
+obat B-OBAT
+batuk I-OBAT
+pilek B-GEJALA
+bisa O
+dikonsumsi O
+bayi O
+usia O
+bulan B-WAKTU_DURASI
+
+# id = C03276
+# focus = PROSEDUR, WAKTU_DURASI, GEJALA_SULIT
+# text = nyeri dada mual sakit kepala dan tubuh gatal paska suntik kb bulan
+nyeri B-GEJALA
+dada B-ANATOMI
+mual B-GEJALA
+sakit B-GEJALA
+kepala B-ANATOMI
+dan O
+tubuh B-ANATOMI
+gatal B-GEJALA
+paska O
+suntik B-PROSEDUR
+kb I-PROSEDUR
+bulan B-WAKTU_DURASI
+
+# id = C03229
+# focus = GEJALA_SULIT
+# text = mengatasi gatal dan bekas gigitan tungau
+mengatasi O
+gatal B-GEJALA
+dan O
+bekas O
+gigitan O
+tungau O
+
+# id = C08510
+# focus = OBAT_DOSIS, GEJALA_SULIT
+# text = salep untuk menghilangkan ruam kulit dan gatal saat hamil
+salep B-OBAT
+untuk O
+menghilangkan O
+ruam B-GEJALA
+kulit B-ANATOMI
+dan O
+gatal B-GEJALA
+saat O
+hamil B-DIAGNOSIS
+
+# id = C06275
+# focus = WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
+# text = mual setelah minum obat nyeri dan antibiotik
+mual B-GEJALA
+setelah B-WAKTU_DURASI
+minum O
+obat B-OBAT
+nyeri I-OBAT
+dan O
+antibiotik B-OBAT
+
+# id = C01198
+# focus = ALERGI, WAKTU_DURASI, OBAT_DOSIS
+# text = alergi semakin bertambah di kaki dan telapak tangan setelah minum obat
+alergi B-ALERGI
+semakin O
+bertambah O
+di O
+kaki B-ANATOMI
+dan O
+telapak B-ANATOMI
+tangan I-ANATOMI
+setelah B-WAKTU_DURASI
+minum O
+obat B-OBAT
+
+# id = C02484
+# focus = ALERGI, GEJALA_SULIT
+# text = bagaimana cara mengatasi batuk alergi
+bagaimana O
+cara O
+mengatasi O
+batuk B-GEJALA
+alergi B-ALERGI
+
+# id = C03500
+# focus = ALERGI
+# text = pengobatan sakit mata akibat alergi debu
+pengobatan O
+sakit B-GEJALA
+mata B-ANATOMI
+akibat O
+alergi B-ALERGI
+debu I-ALERGI
+
+# id = C02012
+# focus = ALERGI, OBAT_DOSIS
+# text = cara mengatasi alergi selain konsumsi obat alergi
+cara O
+mengatasi O
+alergi B-ALERGI
+selain O
+konsumsi O
+obat B-OBAT
+alergi B-ALERGI
+
+# id = C02050
+# focus = ALERGI, OBAT_DOSIS
+# text = apa ada efek samping meminum obat alergi secara rutin
+apa O
+ada O
+efek O
+samping O
+meminum O
+obat B-OBAT
+alergi B-ALERGI
+secara O
+rutin O
+
+# id = C00949
+# focus = ALERGI
+# text = cara menghilangkan alergi pindahan
+cara O
+menghilangkan O
+alergi B-ALERGI
+pindahan O
+
+# id = C00699
+# focus = ALERGI, OBAT_DOSIS
+# text = salep untuk bayi yang sedang alergi pada kulit
+salep B-OBAT
+untuk O
+bayi O
+yang O
+sedang O
+alergi B-ALERGI
+pada O
+kulit B-ANATOMI
+
+# id = C01030
+# focus = ALERGI, WAKTU_DURASI, OBAT_DOSIS
+# text = obat alergi untuk anak tahun
+obat B-OBAT
+alergi B-ALERGI
+untuk O
+anak O
+tahun B-WAKTU_DURASI
+
+# id = C03192
+# focus = ALERGI, WAKTU_DURASI, GEJALA_SULIT
+# text = penyebab alergi disertai bntik merah dan batuk pada anak tahun
+penyebab O
+alergi B-ALERGI
+disertai O
+bntik O
+merah O
+dan O
+batuk B-GEJALA
+pada O
+anak O
+tahun B-WAKTU_DURASI
+
+# id = C02867
+# focus = ALERGI, WAKTU_DURASI
+# text = alergi dan pneumonia pada bayi usia bulan
+alergi B-ALERGI
+dan O
+pneumonia O
+pada O
+bayi O
+usia O
+bulan B-WAKTU_DURASI
+
+# id = C01762
+# focus = ALERGI
+# text = penyebab kulit alergi tampak merah
+penyebab O
+kulit B-ANATOMI
+alergi B-ALERGI
+tampak O
+merah O
+
+# id = C02987
+# focus = ALERGI, GEJALA_SULIT
+# text = apa efek samping dari ctm pada penderita alergi bisa membuat pipi bengkak dan perut buncit
+apa O
+efek O
+samping O
+dari O
+ctm O
+pada O
+penderita O
+alergi B-ALERGI
+bisa O
+membuat O
+pipi B-ANATOMI
+bengkak B-GEJALA
+dan O
+perut B-ANATOMI
+buncit O
+
+# id = C00242
+# focus = ALERGI
+# text = berapa lama alergi di wajah akibat make up bisa hilang
+berapa O
+lama O
+alergi B-ALERGI
+di O
+wajah B-ANATOMI
+akibat O
+make O
+up O
+bisa O
+hilang O
+
+# id = C01351
+# focus = ALERGI
+# text = cara mengetahui alergi terhadap sesuatu
+cara O
+mengetahui O
+alergi B-ALERGI
+terhadap O
+sesuatu O
+
+# id = C01331
+# focus = ALERGI
+# text = bolehkah penderita alergi konsumsi makanan yang mengandung ayam dan telur
+bolehkah O
+penderita O
+alergi B-ALERGI
+konsumsi O
+makanan O
+yang O
+mengandung O
+ayam O
+dan O
+telur O
+
+# id = C03020
+# focus = ALERGI, WAKTU_DURASI, OBAT_DOSIS
+# text = kenapa sudah beberapa hari minum cetirizine alergi belum sembuh juga
+kenapa O
+sudah O
+beberapa O
+hari B-WAKTU_DURASI
+minum O
+cetirizine B-OBAT
+alergi B-ALERGI
+belum O
+sembuh O
+juga O
+
+# id = C01117
+# focus = ALERGI, WAKTU_DURASI
+# text = penyebab dan cara mengatasi alergi pada balita usia tahun
+penyebab O
+dan O
+cara O
+mengatasi O
+alergi B-ALERGI
+pada O
+balita O
+usia O
+tahun B-WAKTU_DURASI
+
+# id = C01851
+# focus = ALERGI, OBAT_DOSIS, GEJALA_SULIT
+# text = obat untuk mata gatal bersin dan sesak napas karena alergi
+obat B-OBAT
+untuk O
+mata B-ANATOMI
+gatal B-GEJALA
+bersin O
+dan O
+sesak B-GEJALA
+napas I-GEJALA
+karena O
+alergi B-ALERGI
+
+# id = C00298
+# focus = ALERGI
+# text = kulit bayi panas saat pakai minyak telon apakah tanda alergi
+kulit B-ANATOMI
+bayi O
+panas B-GEJALA
+saat O
+pakai O
+minyak O
+telon O
+apakah O
+tanda O
+alergi B-ALERGI
+
+# id = C01704
+# focus = ALERGI, GEJALA_SULIT
+# text = ruam kulit seperti alergi berkepanjangan dan kaitan dengan corona
+ruam B-GEJALA
+kulit B-ANATOMI
+seperti O
+alergi B-ALERGI
+berkepanjangan B-GEJALA
+dan O
+kaitan O
+dengan O
+corona O
+
+# id = C04342
+# focus = ALERGI, PROSEDUR
+# text = tentang prosedur pemeriksaan alergi
+tentang O
+prosedur O
+pemeriksaan B-PROSEDUR
+alergi B-ALERGI
+
+# id = C00641
+# focus = ALERGI, GEJALA_SULIT
+# text = jari kaki bengkak dan bernanah karena alergi
+jari B-ANATOMI
+kaki B-ANATOMI
+bengkak B-GEJALA
+dan O
+bernanah O
+karena O
+alergi B-ALERGI
+
+# id = C03449
+# focus = WAKTU_DURASI
+# text = berapa lama tidak boleh kena air hujan setelah cacar air
+berapa O
+lama O
+tidak O
+boleh O
+kena O
+air O
+hujan O
+setelah B-WAKTU_DURASI
+cacar O
+air O
+
+# id = C09416
+# focus = WAKTU_DURASI
+# text = kenapa siklus haid selalu maju setelah sebelumnya normal
+kenapa O
+siklus O
+haid O
+selalu O
+maju O
+setelah B-WAKTU_DURASI
+sebelumnya O
+normal B-NILAI_LAB
+
+# id = C03655
+# focus = WAKTU_DURASI, OBAT_DOSIS
+# text = mata merah setelah minum obat
+mata B-ANATOMI
+merah O
+setelah B-WAKTU_DURASI
+minum O
+obat B-OBAT
+
+# id = C06601
+# focus = WAKTU_DURASI, OBAT_DOSIS
+# text = obat nebulizer untuk anak tahun
+obat B-OBAT
+nebulizer O
+untuk O
+anak O
+tahun B-WAKTU_DURASI
+
+# id = C06317
+# focus = WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
+# text = anak usia tahun mengeluh nyeri perut bawah setelah minum obat cacing
+anak O
+usia O
+tahun B-WAKTU_DURASI
+mengeluh O
+nyeri B-GEJALA
+perut B-ANATOMI
+bawah I-ANATOMI
+setelah B-WAKTU_DURASI
+minum O
+obat B-OBAT
+cacing I-OBAT
+
+# id = C07732
+# focus = WAKTU_DURASI, OBAT_DOSIS
+# text = obat untuk mengatasi mata merah untuk anak tahun
+obat B-OBAT
+untuk O
+mengatasi O
+mata B-ANATOMI
+merah O
+untuk O
+anak O
+tahun B-WAKTU_DURASI
+
+# id = C06423
+# focus = WAKTU_DURASI, OBAT_DOSIS
+# text = bayi usia bulan kelebihan dosis obat diare
+bayi O
+usia O
+bulan B-WAKTU_DURASI
+kelebihan O
+dosis O
+obat B-OBAT
+diare B-GEJALA
+
+# id = C01455
+# focus = WAKTU_DURASI, GEJALA_SULIT
+# text = gatal tak kunjung hilang pasca terkena pasir
+gatal B-GEJALA
+tak O
+kunjung O
+hilang O
+pasca B-WAKTU_DURASI
+terkena O
+pasir O
+
+# id = C03738
+# focus = WAKTU_DURASI, GEJALA_SULIT
+# text = wajah perih dan mengelupas setelah menggunakan krim spc
+wajah B-ANATOMI
+perih O
+dan O
+mengelupas O
+setelah B-WAKTU_DURASI
+menggunakan O
+krim B-OBAT
+spc O
+
+# id = C02786
+# focus = WAKTU_DURASI, GEJALA_SULIT
+# text = sering harus menarik nafas panjang dan setiap tidur siang selalu batuk
+sering O
+harus O
+menarik O
+nafas O
+panjang O
+dan O
+setiap O
+tidur O
+siang O
+selalu O
+batuk B-GEJALA
+
+# id = C02655
+# focus = WAKTU_DURASI, GEJALA_SULIT
+# text = gatal pada sekitar daerah kemaluan saat malam hari
+gatal B-GEJALA
+pada O
+sekitar O
+daerah O
+kemaluan O
+saat O
+malam B-WAKTU_DURASI
+hari I-WAKTU_DURASI
+
+# id = C01600
+# focus = WAKTU_DURASI, GEJALA_SULIT
+# text = lengan kiri lemah berkeringat disertai telapak tangan dan jari gatal pasca konsumsi udang
+lengan O
+kiri O
+lemah O
+berkeringat O
+disertai O
+telapak B-ANATOMI
+tangan I-ANATOMI
+dan O
+jari B-ANATOMI
+gatal B-GEJALA
+pasca B-WAKTU_DURASI
+konsumsi O
+udang O
+
+# id = C08000
+# focus = WAKTU_DURASI, OBAT_DOSIS
+# text = perlukah konsumsi obat gerd setiap hari meskipun tanpa gejala
+perlukah O
+konsumsi O
+obat B-OBAT
+gerd O
+setiap O
+hari B-WAKTU_DURASI
+meskipun O
+tanpa O
+gejala O
+
+# id = C11107
+# focus = PROSEDUR, WAKTU_DURASI
+# text = siklus menstruasi menjadi lebih pendek pasca operasi kista ovarium
+siklus O
+menstruasi O
+menjadi O
+lebih O
+pendek O
+pasca B-WAKTU_DURASI
+operasi B-PROSEDUR
+kista I-PROSEDUR
+ovarium O
+
+# id = C09808
+# focus = WAKTU_DURASI
+# text = telat haid hari dan disertai keputihan apakah tanda kehamilan
+telat B-GEJALA
+haid I-GEJALA
+hari B-WAKTU_DURASI
+dan O
+disertai O
+keputihan B-GEJALA
+apakah O
+tanda O
+kehamilan B-DIAGNOSIS
+
+# id = C11514
+# focus = WAKTU_DURASI, GEJALA_SULIT
+# text = penyebab nyeri haid hingga hari
+penyebab O
+nyeri B-GEJALA
+haid O
+hingga O
+hari B-WAKTU_DURASI
+
+# id = C01643
+# focus = WAKTU_DURASI, GEJALA_SULIT
+# text = kulit wajah seperti melepuh terbakar hingga bengkak setelah pakai sabun
+kulit B-ANATOMI
+wajah I-ANATOMI
+seperti O
+melepuh O
+terbakar O
+hingga O
+bengkak B-GEJALA
+setelah B-WAKTU_DURASI
+pakai O
+sabun O
+
+# id = C12633
+# focus = WAKTU_DURASI
+# text = penyebab telat haid pada remaja tahun
+penyebab O
+telat B-GEJALA
+haid I-GEJALA
+pada O
+remaja O
+tahun B-WAKTU_DURASI
+
+# id = C02675
+# focus = PROSEDUR, WAKTU_DURASI
+# text = cara mengatasi muntahmuntah setelah operasi kelenjar getah bening
+cara O
+mengatasi O
+muntahmuntah O
+setelah B-WAKTU_DURASI
+operasi B-PROSEDUR
+kelenjar O
+getah O
+bening O
+
+# id = C01405
+# focus = ALERGI, WAKTU_DURASI
+# text = sering bersin karena alergi apakah berbahaya bagi janin usia minggu
+sering O
+bersin O
+karena O
+alergi B-ALERGI
+apakah O
+berbahaya O
+bagi O
+janin O
+usia O
+minggu B-WAKTU_DURASI
+
+# id = C09759
+# focus = WAKTU_DURASI
+# text = penyebab muncul benjolan di perut kanan bawah disertai telat haid bulan
+penyebab O
+muncul O
+benjolan B-GEJALA
+di O
+perut B-ANATOMI
+kanan O
+bawah O
+disertai O
+telat B-GEJALA
+haid I-GEJALA
+bulan B-WAKTU_DURASI
+
+# id = C09515
+# focus = PROSEDUR, WAKTU_DURASI
+# text = cara mengatasi efek samping setelah lepas kb suntik bulan
+cara O
+mengatasi O
+efek O
+samping O
+setelah B-WAKTU_DURASI
+lepas O
+kb B-OBAT
+suntik B-PROSEDUR
+bulan B-WAKTU_DURASI
+
+# id = C00464
+# focus = ALERGI, WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
+# text = ruam merah hilang timbul setelah alergi obat
+ruam B-GEJALA
+merah I-GEJALA
+hilang O
+timbul O
+setelah B-WAKTU_DURASI
+alergi B-ALERGI
+obat B-OBAT
+
+# id = C00470
+# focus = PROSEDUR, WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
+# text = gatal pada kulit setelah vaksin covid dosis kedua
+gatal B-GEJALA
+pada O
+kulit B-ANATOMI
+setelah B-WAKTU_DURASI
+vaksin B-PROSEDUR
+covid I-PROSEDUR
+dosis O
+kedua O
+
+# id = C00610
+# focus = PROSEDUR, WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
+# text = tubuh bentol dan gatal setelah vaksin dosis
+tubuh B-ANATOMI
+bentol B-GEJALA
+dan O
+gatal B-GEJALA
+setelah B-WAKTU_DURASI
+vaksin B-PROSEDUR
+dosis O
+
+# id = C00704
+# focus = ALERGI, PROSEDUR, WAKTU_DURASI, OBAT_DOSIS
+# text = apakah boleh minum obat alergi setelah vaksinasi covid
+apakah O
+boleh O
+minum O
+obat B-OBAT
+alergi B-ALERGI
+setelah B-WAKTU_DURASI
+vaksinasi B-PROSEDUR
+covid I-PROSEDUR
+
+# id = C02200
+# focus = ALERGI, WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
+# text = gatal yang kembali muncul setelah konsumsi obat anti alergi
+gatal B-GEJALA
+yang O
+kembali O
+muncul O
+setelah B-WAKTU_DURASI
+konsumsi O
+obat B-OBAT
+anti O
+alergi B-ALERGI
+
+# id = C03071
+# focus = PROSEDUR, HASIL_LAB, WAKTU_DURASI, GEJALA_SULIT
+# text = tes lab apa yang bisa dilakukan untuk pemeriksaan gatal pada anak usia tahun
+tes B-PROSEDUR
+lab I-PROSEDUR
+apa O
+yang O
+bisa O
+dilakukan O
+untuk O
+pemeriksaan B-PROSEDUR
+gatal B-GEJALA
+pada O
+anak O
+usia O
+tahun B-WAKTU_DURASI
+

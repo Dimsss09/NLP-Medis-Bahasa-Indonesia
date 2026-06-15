@@ -65,6 +65,20 @@ Bagian tubuh atau organ.
 
 ## Aturan anotasi penting
 
+### Update aturan adjudikasi - 2026-06-15
+
+Aturan ini mengikuti keputusan conflict resolution pada true human gold. Pakai aturan ini saat membuat data training tambahan.
+
+| Label | Aturan sederhana |
+| --- | --- |
+| `ANATOMI` | Bagian tubuh selalu ditandai sendiri. Pada "hidung tersumbat", "hidung" = `B-ANATOMI`, "tersumbat" = `B-GEJALA`. |
+| `GEJALA` | Keluhan atau temuan klinis, seperti gatal, nyeri, perih, bengkak, berdarah, tersumbat. Kata seperti terasa, muncul, timbul, keluar, sering, selalu tetap `O`. |
+| `DIAGNOSIS` | Nama kondisi atau penyakit, termasuk biduran, bisul, trikomoniasis, panas dalam, kolesterol tinggi, floaters, flek paru, hamil, kehamilan. |
+| `OBAT` | Nama obat, zat, produk, atau benda terapi/perawatan, termasuk salep mata, air alkali, sabun wajah, handbody, softlens, masker kopi. |
+| `DOSIS` | Bentuk atau ukuran penggunaan obat, misalnya sirup, kapsul, 500 mg. |
+
+Keputusan khusus: `hamil` dan `kehamilan` = `DIAGNOSIS`; `kandungan` bisa `ANATOMI` jika berarti rahim, tetapi `O` jika berarti komposisi; frasa seperti `panas dalam`, `kolesterol tinggi`, dan `infeksi trikomoniasis` dijaga sebagai satu span diagnosis.
+
 1. **Anotasi rentang terpanjang yang bermakna** (mis. "nyeri dada sebelah kiri" sebagai satu `GEJALA`).
 2. **Konsisten** untuk kasus ambigu — catat keputusan di "Catatan kasus ambigu" di bawah.
 3. Jika ragu antara dua label, prioritaskan konteks klinis.

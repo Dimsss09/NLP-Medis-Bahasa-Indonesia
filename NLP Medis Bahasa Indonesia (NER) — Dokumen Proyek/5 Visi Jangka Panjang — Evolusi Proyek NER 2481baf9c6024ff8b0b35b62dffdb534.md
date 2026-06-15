@@ -104,3 +104,35 @@ flowchart TD
 - Folder proyek: [NLP Medis Bahasa Indonesia (NER) — Dokumen Proyek](https://app.notion.com/p/NLP-Medis-Bahasa-Indonesia-NER-Dokumen-Proyek-02f2b9a09c134677a0fced571f19f748?pvs=21)
 - Roadmap teknis fase 0–6: [3. Roadmap — Instruksi untuk AI (Kerjakan Sampai Selesai)](https://app.notion.com/p/3-Roadmap-Instruksi-untuk-AI-Kerjakan-Sampai-Selesai-35d09a723f6f409c8d49573a3b848543?pvs=21)
 - Ide proyek medtech: [Proyek Medical Technology untuk CV (Anti-Mainstream)](https://app.notion.com/p/Proyek-Medical-Technology-untuk-CV-Anti-Mainstream-9731685da2744af3bc6460a4acca4115?pvs=21)
+## Update progres berdasarkan visi jangka panjang - 2026-06-15
+
+Proyek sekarang sudah melewati tahap prototype awal. Titik paling penting: sudah ada true human gold kecil, lalu model dilatih ulang agar lebih mengikuti keputusan manusia.
+
+### Bukti progres terbaru
+
+- True human gold tersedia di `data/true_gold_300`.
+- Jumlah teks true gold: 300 teks.
+- Konflik anotasi sudah diselesaikan manual dan disimpan sebagai catatan adjudication.
+- Baseline IndoBERT pada true gold: micro F1 `0.3649`.
+- Baseline XLM-R pada true gold: micro F1 `0.3481`.
+- IndoBERT human-aligned pada true gold: micro F1 `0.7238`.
+
+### Status visi saat ini
+
+| Tahap visi | Status sekarang | Catatan |
+| --- | --- | --- |
+| Tahap 1 - Fondasi NER | Selesai dan diperkuat | Sudah ada true gold dan retraining human-aligned. |
+| Tahap 2 - Relasi dan negasi | Prototype selesai | Perlu evaluasi lebih keras dengan contoh manual. |
+| Tahap 3 - Knowledge Graph | Prototype selesai | Masih NetworkX/JSON, belum graph database seperti Neo4j. |
+| Tahap 4 - Asisten QA | Prototype selesai | Masih perlu upgrade retrieval dan rujukan sumber. |
+| Tahap 5 - Benchmark publik | Mulai berjalan | Sudah ada benchmark internal, belum layak rilis publik sebelum audit privasi/lisensi. |
+
+### Langkah berikutnya yang paling masuk akal
+
+1. Perkuat benchmark, bukan langsung menambah fitur besar.
+2. Tambah data manual untuk label yang masih lemah.
+3. Baru perluas skema label ke `PROSEDUR`, `HASIL_LAB`, `NILAI_LAB`, `WAKTU_DURASI`, `ALERGI`, dan `RIWAYAT_PENYAKIT`.
+4. Setelah performa stabil, pisahkan model menjadi API agar tidak terkunci di Streamlit.
+5. Setelah API siap, baru upgrade RAG dan Knowledge Graph untuk arah production-ready.
+
+Dengan posisi sekarang, fokus terdekat bukan "bikin semuanya makin banyak", tetapi "membuat hasil yang sudah ada makin sah dan bisa dipertanggungjawabkan".

@@ -26,6 +26,18 @@ ALLOWED_LABELS = {
     "I-DIAGNOSIS",
     "B-ANATOMI",
     "I-ANATOMI",
+    "B-PROSEDUR",
+    "I-PROSEDUR",
+    "B-HASIL_LAB",
+    "I-HASIL_LAB",
+    "B-NILAI_LAB",
+    "I-NILAI_LAB",
+    "B-WAKTU_DURASI",
+    "I-WAKTU_DURASI",
+    "B-ALERGI",
+    "I-ALERGI",
+    "B-RIWAYAT_PENYAKIT",
+    "I-RIWAYAT_PENYAKIT",
 }
 
 
@@ -88,12 +100,15 @@ def write_conflicts(
     conflict_count = 0
     with path.open("w", encoding="utf-8", newline="") as file:
         writer = csv.writer(file, delimiter="\t")
-        writer.writerow(["sentence_id", "token_id", "token", "annotator_1", "annotator_2", "resolved_label"])
+        writer.writerow(
+            ["sentence_id", "sentence_text", "token_id", "token", "annotator_1", "annotator_2", "resolved_label", "reviewer_note"]
+        )
         for sentence_id, ((tokens, labels_a), (_, labels_b)) in enumerate(zip(a, b, strict=True), start=1):
+            sentence_text = " ".join(tokens)
             for token_id, (token, label_a, label_b) in enumerate(zip(tokens, labels_a, labels_b, strict=True), start=1):
                 if label_a != label_b:
                     conflict_count += 1
-                    writer.writerow([sentence_id, token_id, token, label_a, label_b, ""])
+                    writer.writerow([sentence_id, sentence_text, token_id, token, label_a, label_b, "", ""])
     return conflict_count
 
 

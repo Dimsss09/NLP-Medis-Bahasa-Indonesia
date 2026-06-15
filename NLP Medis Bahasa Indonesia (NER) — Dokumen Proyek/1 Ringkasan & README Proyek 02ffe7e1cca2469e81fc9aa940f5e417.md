@@ -47,6 +47,18 @@ Mayoritas riset & model NER medis berbahasa Inggris. Model berbahasa Inggris ber
 
 ## Deliverables
 
+### Update deliverables - 2026-06-15
+
+Checklist lama di bawah adalah target awal proyek. Per hari ini, proyek sudah punya tambahan penting: true human gold 300 teks, adjudication manual, retraining IndoBERT human-aligned, dan evaluasi ulang ke true gold.
+
+| Model | Data evaluasi | Micro F1 |
+| --- | --- | --- |
+| IndoBERT baseline | true human gold 300 | 0.3649 |
+| XLM-R baseline | true human gold 300 | 0.3481 |
+| IndoBERT human-aligned | true human gold 300 | 0.7238 |
+
+Kesimpulan sementara: `IndoBERT human-aligned` adalah versi utama terbaru. Angka ini sah sebagai benchmark internal berbasis manusia, tetapi belum boleh diklaim sebagai validasi klinis.
+
 - [ ]  Dataset teranotasi (format BIO)
 - [ ]  Notebook/skrip training & evaluasi
 - [ ]  Model terlatih + laporan metrik

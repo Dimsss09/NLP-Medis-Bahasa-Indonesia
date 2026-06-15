@@ -107,3 +107,38 @@ DEFINISI SELESAI (Definition of Done):
 - [x]  Fase 4 — Evaluasi terukur + tabel perbandingan model
 - [x]  Fase 5 — Demo berjalan
 - [x]  Fase 6 — Dokumentasi & publikasi
+## Update roadmap teknis - 2026-06-15
+
+Roadmap awal fase 0 sampai 6 sudah selesai sebagai prototype. Setelah true human gold dibuat, roadmap berikutnya adalah memperkuat benchmark, memperluas label secara hati-hati, lalu menyiapkan API.
+
+### Fase 7 - True human gold benchmark
+
+- [x] Siapkan 300 teks untuk true gold.
+- [x] Siapkan file annotator 1 dan annotator 2.
+- [x] Lakukan anotasi manusia.
+- [x] Selesaikan konflik label secara manual.
+- [x] Simpan hasil akhir di `data/true_gold_300/gold_resolved.conll`.
+- [x] Evaluasi model baseline ke true gold.
+
+### Fase 8 - Training ulang mengikuti aturan manusia
+
+- [x] Buat data training tambahan yang mengikuti aturan adjudikasi.
+- [x] Simpan data di `data/human_aligned_silver`.
+- [x] Latih ulang IndoBERT dengan `config_human_aligned.yaml`.
+- [x] Simpan model ke `models/indobert-medical-ner-id-human-aligned`.
+- [x] Evaluasi ulang ke true gold.
+- [x] Buat error analysis untuk model human-aligned.
+
+### Fase 9 - Benchmark hardening
+
+- [ ] Tambah 100 sampai 200 contoh manual untuk label yang masih lemah, terutama `DOSIS`, `OBAT`, dan `GEJALA`.
+- [ ] Buat challenge set kecil untuk kasus sulit: negasi, alergi, hasil lab, prosedur, waktu/durasi, dan riwayat penyakit.
+- [ ] Pisahkan jelas data training dan data evaluasi agar true gold tidak bocor ke training.
+- [ ] Tulis laporan keterbatasan model dengan bahasa jujur: ini benchmark internal, bukan validasi klinis.
+
+### Fase 10 - Production readiness ringan
+
+- [ ] Pisahkan inference menjadi API, misalnya FastAPI.
+- [ ] Buat endpoint minimal: `/ner`, `/extract`, `/relations`, dan `/qa`.
+- [ ] Tambahkan Docker agar proyek mudah dijalankan di mesin lain.
+- [ ] Siapkan desain migrasi RAG dari TF-IDF ke dense retrieval seperti FAISS atau ChromaDB.

@@ -1,0 +1,90 @@
+{
+  "sentence_count": 300,
+  "token_count": 2403,
+  "token_mismatches": 839,
+  "token_accuracy": 0.6508531002913025,
+  "sentence_exact_match": 0.056666666666666664,
+  "micro_precision": 0.6366906474820144,
+  "micro_recall": 0.2395128552097429,
+  "micro_f1": 0.34808259587020646,
+  "seqeval_report": {
+    "ANATOMI": {
+      "precision": 0.66,
+      "recall": 0.42857142857142855,
+      "f1-score": 0.5196850393700788,
+      "support": 154
+    },
+    "DIAGNOSIS": {
+      "precision": 0.7692307692307693,
+      "recall": 0.10869565217391304,
+      "f1-score": 0.19047619047619047,
+      "support": 92
+    },
+    "DOSIS": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 10
+    },
+    "GEJALA": {
+      "precision": 0.6739130434782609,
+      "recall": 0.27844311377245506,
+      "f1-score": 0.39406779661016944,
+      "support": 334
+    },
+    "OBAT": {
+      "precision": 0.5,
+      "recall": 0.053691275167785234,
+      "f1-score": 0.09696969696969696,
+      "support": 149
+    },
+    "micro avg": {
+      "precision": 0.6366906474820144,
+      "recall": 0.2395128552097429,
+      "f1-score": 0.34808259587020646,
+      "support": 739
+    },
+    "macro avg": {
+      "precision": 0.520628762541806,
+      "recall": 0.1738802939371164,
+      "f1-score": 0.24023974468522713,
+      "support": 739
+    },
+    "weighted avg": {
+      "precision": 0.6386957879444789,
+      "recall": 0.2395128552097429,
+      "f1-score": 0.329664999327582,
+      "support": 739
+    }
+  },
+  "gold_label_counts": {
+    "O": 1364,
+    "B-GEJALA": 333,
+    "I-GEJALA": 172,
+    "B-ANATOMI": 154,
+    "I-ANATOMI": 26,
+    "B-OBAT": 149,
+    "I-OBAT": 90,
+    "B-DIAGNOSIS": 92,
+    "I-DIAGNOSIS": 13,
+    "B-DOSIS": 10
+  },
+  "predicted_label_counts": {
+    "O": 2095,
+    "B-GEJALA": 137,
+    "B-ANATOMI": 100,
+    "I-ANATOMI": 1,
+    "I-GEJALA": 16,
+    "B-DIAGNOSIS": 13,
+    "B-DOSIS": 11,
+    "I-DOSIS": 11,
+    "B-OBAT": 16,
+    "I-OBAT": 3
+  },
+  "model_key": "xlm_roberta",
+  "model_name": "XLM-RoBERTa base",
+  "role": "pembanding",
+  "base_model": "xlm-roberta-base",
+  "model_dir": "models/xlm-roberta-medical-ner-id",
+  "test_file": "data\\true_gold_300\\gold_resolved.conll"
+}

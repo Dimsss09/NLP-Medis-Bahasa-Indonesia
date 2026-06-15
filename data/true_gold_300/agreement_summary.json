@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-06-15T05:58:13.148836+00:00",
+  "status": "ready_for_resolution",
+  "errors": [],
+  "incomplete_template_detected": false,
+  "sentence_count": 300,
+  "token_count": 2403,
+  "token_agreement": 0.8905534748231377,
+  "cohen_kappa": 0.8289660275152986,
+  "entity_f1_between_annotators": 0.7531556802244039,
+  "conflict_count": 263,
+  "annotator_1_label_counts": {
+    "O": 1363,
+    "B-GEJALA": 355,
+    "I-GEJALA": 214,
+    "B-ANATOMI": 123,
+    "I-ANATOMI": 22,
+    "B-OBAT": 152,
+    "I-OBAT": 77,
+    "B-DIAGNOSIS": 79,
+    "I-DIAGNOSIS": 8,
+    "B-DOSIS": 10
+  },
+  "annotator_2_label_counts": {
+    "O": 1369,
+    "B-GEJALA": 324,
+    "I-GEJALA": 204,
+    "B-ANATOMI": 159,
+    "I-ANATOMI": 24,
+    "B-OBAT": 145,
+    "I-OBAT": 87,
+    "B-DIAGNOSIS": 72,
+    "I-DIAGNOSIS": 12,
+    "B-DOSIS": 7
+  }
+}

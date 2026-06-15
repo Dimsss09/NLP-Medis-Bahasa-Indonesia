@@ -1,36 +1,36 @@
 # Phase 4 Model Comparison
 
-Generated at: 2026-06-07T23:28:40.606918+00:00
+Generated at: 2026-06-15T08:36:15.617981+00:00
 
 ## Overall Metrics
 
 | Model key | Role | Base model | Model dir | Micro precision | Micro recall | Micro F1 |
 | --- | --- | --- | --- | ---: | ---: | ---: |
-| indobert | utama | indobenchmark/indobert-base-p1 | models/indobert-medical-ner-id | 1.0000 | 0.9974 | 0.9987 |
-| xlm_roberta | pembanding | xlm-roberta-base | models/xlm-roberta-medical-ner-id | 0.9762 | 0.9762 | 0.9762 |
+| indobert | utama | indobenchmark/indobert-base-p1 | models/indobert-medical-ner-id | 0.6538 | 0.2530 | 0.3649 |
+| xlm_roberta | pembanding | xlm-roberta-base | models/xlm-roberta-medical-ner-id | 0.6367 | 0.2395 | 0.3481 |
 
 ## F1 per Entity
 
 | Entity | indobert F1 | xlm_roberta F1 |
 | --- | ---: | ---: |
-| ANATOMI | 1.0000 | 0.9714 |
-| DIAGNOSIS | 1.0000 | 1.0000 |
-| DOSIS | 0.9630 | 0.9630 |
-| GEJALA | 1.0000 | 0.9756 |
-| OBAT | 1.0000 | 1.0000 |
+| ANATOMI | 0.5391 | 0.5197 |
+| DIAGNOSIS | 0.1905 | 0.1905 |
+| DOSIS | 0.0000 | 0.0000 |
+| GEJALA | 0.4184 | 0.3941 |
+| OBAT | 0.0970 | 0.0970 |
 
 ## Compact F1 Chart
 
-- ANATOMI / indobert: `####################` 1.0000
-- ANATOMI / xlm_roberta: `###################-` 0.9714
-- DIAGNOSIS / indobert: `####################` 1.0000
-- DIAGNOSIS / xlm_roberta: `####################` 1.0000
-- DOSIS / indobert: `###################-` 0.9630
-- DOSIS / xlm_roberta: `###################-` 0.9630
-- GEJALA / indobert: `####################` 1.0000
-- GEJALA / xlm_roberta: `####################` 0.9756
-- OBAT / indobert: `####################` 1.0000
-- OBAT / xlm_roberta: `####################` 1.0000
+- ANATOMI / indobert: `###########---------` 0.5391
+- ANATOMI / xlm_roberta: `##########----------` 0.5197
+- DIAGNOSIS / indobert: `####----------------` 0.1905
+- DIAGNOSIS / xlm_roberta: `####----------------` 0.1905
+- DOSIS / indobert: `--------------------` 0.0000
+- DOSIS / xlm_roberta: `--------------------` 0.0000
+- GEJALA / indobert: `########------------` 0.4184
+- GEJALA / xlm_roberta: `########------------` 0.3941
+- OBAT / indobert: `##------------------` 0.0970
+- OBAT / xlm_roberta: `##------------------` 0.0970
 
 ## Trade-off Notes
 
