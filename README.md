@@ -371,6 +371,25 @@ pip check
 - [x] Tab QA interaktif di demo Streamlit
 - [x] Unit test (`tests/test_qa_assistant.py`) — 21 total test lulus
 
+### Phase 9 - Expanded Label Challenge Set
+
+- [x] Challenge gold internal 160 teks di `data/phase9_challenge_set/gold_resolved.conll`
+- [x] Label baru: `ALERGI`, `PROSEDUR`, `HASIL_LAB`, `NILAI_LAB`, `WAKTU_DURASI`, `RIWAYAT_PENYAKIT`
+- [x] Adjudication manual diterapkan ke 148 konflik annotator
+- [x] Dataset training silver expanded-label di `data/phase9_expanded_silver/`
+- [x] Model expanded-label di `models/indobert-medical-ner-id-phase9-expanded`
+
+| Model | Evaluasi | Micro F1 |
+| --- | --- | ---: |
+| IndoBERT human-aligned | Phase 9 challenge | 0.5137 |
+| IndoBERT phase9-expanded | Phase 9 challenge | 0.6837 |
+| IndoBERT human-aligned | true gold 300 | 0.7238 |
+| IndoBERT phase9-expanded | true gold 300 | 0.6325 |
+
+Catatan: model expanded lebih baik untuk label baru, tetapi turun pada true gold
+lama. Keputusan manusia berikutnya adalah memilih prioritas: stabilitas 5 label
+lama atau melanjutkan penuh ke skema 11 label.
+
 ## Catatan Batasan
 
 Model ini adalah prototype riset/engineering untuk ekstraksi informasi teks

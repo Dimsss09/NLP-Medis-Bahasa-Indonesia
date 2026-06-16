@@ -1,0 +1,1526 @@
+obat B-OBAT
+yang O
+bagus O
+untuk O
+mengatasi O
+gula B-HASIL_LAB
+darah I-HASIL_LAB
+tinggi B-NILAI_LAB
+
+telat B-GEJALA
+haid I-GEJALA
+testpack B-PROSEDUR
+negatif B-NILAI_LAB
+pinggang B-ANATOMI
+sakit B-GEJALA
+keluar B-GEJALA
+flek I-GEJALA
+coklat I-GEJALA
+dan O
+urine B-GEJALA
+berdarah I-GEJALA
+
+rekomendasi O
+obat B-OBAT
+untuk O
+mengatasi O
+leher B-ANATOMI
+tegang B-GEJALA
+karena O
+kolesterol B-HASIL_LAB
+
+obat B-OBAT
+untuk O
+menurunkan O
+kadar O
+gula B-HASIL_LAB
+darah I-HASIL_LAB
+tinggi B-NILAI_LAB
+sampai O
+
+bolehkan O
+konsumsi O
+obat B-OBAT
+kolesterol B-HASIL_LAB
+tanpa O
+cek B-PROSEDUR
+darah I-PROSEDUR
+
+obat B-OBAT
+untuk O
+mengatasi O
+mata B-ANATOMI
+kaki I-ANATOMI
+bengkak B-GEJALA
+karena O
+asam B-HASIL_LAB
+urat I-HASIL_LAB
+
+obat B-OBAT
+untuk O
+mengatasi O
+kolesterol B-HASIL_LAB
+
+pengobatan O
+yang O
+tepat O
+untuk O
+mengatasi O
+kolesterol B-HASIL_LAB
+tinggi B-NILAI_LAB
+
+apakah O
+menstruasi O
+bisa O
+menaikkan O
+gula B-HASIL_LAB
+darah I-HASIL_LAB
+secara O
+drastis O
+
+obat B-OBAT
+untuk O
+mengatasi O
+peningkatan B-NILAI_LAB
+sgpt B-HASIL_LAB
+dan O
+asam B-HASIL_LAB
+urat I-HASIL_LAB
+
+bolehkah O
+konsumsi O
+obat B-OBAT
+kolesterol B-HASIL_LAB
+darah I-HASIL_LAB
+tinggi B-NILAI_LAB
+dan O
+asam B-HASIL_LAB
+urat I-HASIL_LAB
+bersamaan O
+dengan O
+vitamin B-OBAT
+d I-OBAT
+
+hubungan O
+trombosit B-HASIL_LAB
+rendah B-NILAI_LAB
+dengan O
+siklus O
+menstruasi O
+
+apakah O
+boleh O
+minum O
+obat B-OBAT
+kuat I-OBAT
+pada O
+penderita O
+hipertensi B-DIAGNOSIS
+dan O
+kolesterol B-HASIL_LAB
+tinggi B-NILAI_LAB
+
+darah B-GEJALA
+haid I-GEJALA
+tidak B-GEJALA
+lancar I-GEJALA
+disertai O
+pusing B-GEJALA
+dan O
+badan B-ANATOMI
+sakit B-GEJALA
+bolehkah O
+cek B-PROSEDUR
+hb B-HASIL_LAB
+
+apakah O
+menstruasi O
+mempengaruhi O
+hasil O
+lab B-PROSEDUR
+prolactin B-HASIL_LAB
+
+waktu O
+untuk O
+konsumsi O
+obat B-OBAT
+sebelum O
+cek B-PROSEDUR
+gula B-HASIL_LAB
+darah I-HASIL_LAB
+
+obat B-OBAT
+yang O
+dapat O
+mempengaruhi O
+hasil O
+tes B-PROSEDUR
+agregasi I-PROSEDUR
+trombosit I-PROSEDUR
+
+penjelasan O
+hasil O
+pemeriksaan B-PROSEDUR
+lab I-PROSEDUR
+leukosit B-HASIL_LAB
+
+konsumsi O
+obat B-OBAT
+kolesterol B-HASIL_LAB
+dan O
+asam B-HASIL_LAB
+urat I-HASIL_LAB
+setelah O
+vaksin B-PROSEDUR
+corona I-PROSEDUR
+
+obat B-OBAT
+untuk O
+mengatasi O
+hipertensi B-DIAGNOSIS
+kolesterol B-HASIL_LAB
+tinggi B-NILAI_LAB
+dan O
+asam B-DIAGNOSIS
+lambung I-DIAGNOSIS
+
+bagaimana O
+cara O
+agar O
+leukosit B-HASIL_LAB
+tidak O
+tinggi B-NILAI_LAB
+
+kadar B-HASIL_LAB
+eritrosit B-HASIL_LAB
+dan O
+eonosofil B-HASIL_LAB
+tanggi B-NILAI_LAB
+pada O
+hasil O
+pemeriksaan B-PROSEDUR
+darah I-PROSEDUR
+
+gumpalan B-GEJALA
+berwarna I-GEJALA
+putih I-GEJALA
+saat O
+menstruasi O
+dan O
+menggunakan O
+kb B-PROSEDUR
+suntik B-PROSEDUR
+bulan B-WAKTU_DURASI
+
+apakah O
+masih O
+bisa O
+menstruasi O
+saat O
+menggunakan O
+suntik B-PROSEDUR
+kb B-PROSEDUR
+bulan B-WAKTU_DURASI
+
+keluar B-GEJALA
+banyak I-GEJALA
+darah I-GEJALA
+menstruasi I-GEJALA
+setelah O
+lepas O
+kb B-PROSEDUR
+suntik B-PROSEDUR
+
+kemungkinan O
+hamil B-DIAGNOSIS
+saat O
+hasil O
+testpack B-PROSEDUR
+dan O
+usg B-PROSEDUR
+berbeda O
+
+cara O
+mengatasi O
+gatal B-GEJALA
+di O
+area O
+bekas O
+operasi B-PROSEDUR
+caesar I-PROSEDUR
+
+resep O
+obat B-OBAT
+yang O
+digunakan O
+pasca O
+operasi B-PROSEDUR
+wasir B-DIAGNOSIS
+
+mengatasi O
+haid B-GEJALA
+tidak I-GEJALA
+teratur I-GEJALA
+pasca O
+operasi B-PROSEDUR
+pengangkatan I-PROSEDUR
+kista B-DIAGNOSIS
+ovarium I-DIAGNOSIS
+
+paha B-ANATOMI
+terasa O
+gatal B-GEJALA
+setelah O
+operasi B-PROSEDUR
+cangkoj I-PROSEDUR
+tulang B-ANATOMI
+betis I-ANATOMI
+
+pusing B-GEJALA
+setelah O
+minum O
+obat B-OBAT
+pasca O
+operasi B-PROSEDUR
+selulitis B-DIAGNOSIS
+
+menstruasi O
+setelah O
+hasil O
+test B-PROSEDUR
+pack I-PROSEDUR
+samar B-NILAI_LAB
+dan O
+hasil O
+usg B-PROSEDUR
+belum B-NILAI_LAB
+terlihat I-NILAI_LAB
+
+bagaimana O
+normalnya O
+siklus B-GEJALA
+haid I-GEJALA
+pasca O
+operasi B-PROSEDUR
+usus I-PROSEDUR
+buntu I-PROSEDUR
+
+haid O
+yang O
+tidak B-GEJALA
+teratur I-GEJALA
+dengan O
+riwayat B-RIWAYAT_PENYAKIT
+pemeriksaan B-PROSEDUR
+usg I-PROSEDUR
+yang O
+normal B-NILAI_LAB
+
+langsung O
+menstruasi O
+setelah O
+suntik B-PROSEDUR
+kb B-PROSEDUR
+bulan B-WAKTU_DURASI
+
+haid B-GEJALA
+berkepanjangan I-GEJALA
+setelah O
+ganti O
+suntik B-PROSEDUR
+kb B-PROSEDUR
+ke O
+pil B-OBAT
+kb I-OBAT
+
+penyebab O
+siklus B-GEJALA
+haid I-GEJALA
+yang O
+berubah B-GEJALA
+pasca O
+suntik B-PROSEDUR
+kb B-PROSEDUR
+bulan B-WAKTU_DURASI
+
+kapan O
+bisa O
+pindah O
+dari O
+kb B-PROSEDUR
+suntik B-PROSEDUR
+bulan B-WAKTU_DURASI
+ke O
+pil B-OBAT
+kb I-OBAT
+
+kaitan O
+haid O
+dengan O
+gagalnya O
+medical B-PROSEDUR
+check I-PROSEDUR
+up I-PROSEDUR
+
+kaitan O
+vaksin B-PROSEDUR
+covid I-PROSEDUR
+terhadap O
+haid O
+yang O
+telat B-GEJALA
+dan O
+badan B-ANATOMI
+lemas B-GEJALA
+
+keamanan O
+melakukan O
+suntik B-PROSEDUR
+vaksinasi I-PROSEDUR
+covid I-PROSEDUR
+saat O
+sedang O
+mengalami O
+alergi B-ALERGI
+
+apakah O
+saat O
+alergi B-ALERGI
+kambuh O
+hingga O
+muncul O
+bintikbintik B-GEJALA
+boleh O
+vaksinasi B-PROSEDUR
+covid I-PROSEDUR
+
+apakah O
+obat B-OBAT
+suntik B-PROSEDUR
+untuk O
+mengatasi O
+pengeroposan B-DIAGNOSIS
+dengkul B-ANATOMI
+dapat O
+mengancam O
+kesehatan O
+ginjal B-ANATOMI
+
+mengatasi O
+haid B-GEJALA
+berkepanjangan I-GEJALA
+setelah O
+suntik B-PROSEDUR
+keloid B-DIAGNOSIS
+dengan O
+menggunakan O
+obat B-OBAT
+kortikosteroid B-OBAT
+
+haid B-GEJALA
+tidak I-GEJALA
+teratur I-GEJALA
+dan O
+keluar B-GEJALA
+asi I-GEJALA
+sedikit I-GEJALA
+dengan O
+riwayat B-RIWAYAT_PENYAKIT
+kuretase B-PROSEDUR
+bulan B-WAKTU_DURASI
+lalu I-WAKTU_DURASI
+
+mengenai O
+penggunaan O
+obat B-OBAT
+untuk O
+mengatasi O
+sakit B-GEJALA
+kepala B-ANATOMI
+saat O
+hamil B-DIAGNOSIS
+pada O
+wanita O
+dengan O
+riwayat B-RIWAYAT_PENYAKIT
+edema I-RIWAYAT_PENYAKIT
+serebri I-RIWAYAT_PENYAKIT
+
+siklus B-GEJALA
+haid I-GEJALA
+dengan O
+riwayat B-RIWAYAT_PENYAKIT
+penyakit I-RIWAYAT_PENYAKIT
+kista I-RIWAYAT_PENYAKIT
+
+memiliki O
+riwayat B-RIWAYAT_PENYAKIT
+pengobatan I-RIWAYAT_PENYAKIT
+hipertiroid I-RIWAYAT_PENYAKIT
+sebelumnya B-WAKTU_DURASI
+dan O
+sempat O
+putus O
+obat B-OBAT
+
+cara O
+mengatasi O
+anyanganyangan B-GEJALA
+dengan O
+riwayat B-RIWAYAT_PENYAKIT
+penyakit I-RIWAYAT_PENYAKIT
+paruparu I-RIWAYAT_PENYAKIT
+
+adanya O
+riwayat B-RIWAYAT_PENYAKIT
+alergi I-RIWAYAT_PENYAKIT
+bengkak B-GEJALA
+pada O
+kaki B-ANATOMI
+kanan O
+dan O
+feses O
+yang O
+berwarna B-GEJALA
+hitam I-GEJALA
+
+telat B-GEJALA
+haid I-GEJALA
+pada O
+remaja O
+usia O
+tahun B-WAKTU_DURASI
+yang O
+pernah O
+diet O
+
+obat B-OBAT
+untuk O
+mengatasi O
+rasa O
+nyeri B-GEJALA
+pada O
+riwayat B-RIWAYAT_PENYAKIT
+penderita I-RIWAYAT_PENYAKIT
+alergi B-ALERGI
+
+penyebab O
+tidak B-GEJALA
+pernah I-GEJALA
+haid I-GEJALA
+selama B-WAKTU_DURASI
+tahun B-WAKTU_DURASI
+
+sering O
+telat B-GEJALA
+haid I-GEJALA
+tibatiba O
+pingsan B-GEJALA
+dan O
+memiliki O
+riwayat B-RIWAYAT_PENYAKIT
+asma I-RIWAYAT_PENYAKIT
+
+obat B-OBAT
+asam B-DIAGNOSIS
+lambung I-DIAGNOSIS
+yang O
+dapat O
+digunakan O
+pada O
+orang O
+dengan O
+riwayat B-RIWAYAT_PENYAKIT
+jantung I-RIWAYAT_PENYAKIT
+bocor I-RIWAYAT_PENYAKIT
+
+bolehkah O
+vaksin B-PROSEDUR
+covid I-PROSEDUR
+saat O
+memiliki O
+riwayat B-RIWAYAT_PENYAKIT
+alergi I-RIWAYAT_PENYAKIT
+
+apakah O
+ikan O
+tawar O
+bisa O
+menimbulkan O
+alergi B-ALERGI
+kalo O
+punya O
+riwayat B-RIWAYAT_PENYAKIT
+alergi I-RIWAYAT_PENYAKIT
+ikan I-RIWAYAT_PENYAKIT
+laut I-RIWAYAT_PENYAKIT
+
+haid B-GEJALA
+tidak I-GEJALA
+teratur I-GEJALA
+dengan O
+riwayat B-RIWAYAT_PENYAKIT
+hormon I-RIWAYAT_PENYAKIT
+tidak I-RIWAYAT_PENYAKIT
+stabil I-RIWAYAT_PENYAKIT
+
+penyebab O
+telat B-GEJALA
+haid I-GEJALA
+selama B-WAKTU_DURASI
+minggu B-WAKTU_DURASI
+disertai O
+pusing B-GEJALA
+mual B-GEJALA
+tidak B-GEJALA
+nafsu I-GEJALA
+makan I-GEJALA
+pada O
+wanita O
+yang O
+belum O
+pernah O
+melakukan O
+hubungan O
+intim O
+
+ada O
+riwayat B-RIWAYAT_PENYAKIT
+kulit B-ANATOMI
+bentolbentol B-GEJALA
+usai O
+divaksin B-PROSEDUR
+apakah O
+sekarang O
+masih O
+boleh O
+vaksinasi B-PROSEDUR
+covid I-PROSEDUR
+
+pengobatan O
+untuk O
+mengatasi O
+infeksi B-DIAGNOSIS
+jamur I-DIAGNOSIS
+dengan O
+riwayat B-RIWAYAT_PENYAKIT
+penderita I-RIWAYAT_PENYAKIT
+gerd I-RIWAYAT_PENYAKIT
+
+pemberian O
+obat B-OBAT
+antiparasit I-OBAT
+pada O
+pasien O
+covid B-DIAGNOSIS
+dengan O
+riwayat B-RIWAYAT_PENYAKIT
+penyakit I-RIWAYAT_PENYAKIT
+diabetes I-RIWAYAT_PENYAKIT
+dan O
+paruparu I-RIWAYAT_PENYAKIT
+
+amanah O
+konsumsi O
+obat B-OBAT
+hormon I-OBAT
+saat O
+hamil B-DIAGNOSIS
+dengan O
+riwayat B-RIWAYAT_PENYAKIT
+benjolan I-RIWAYAT_PENYAKIT
+di O
+payudara B-ANATOMI
+
+telat B-GEJALA
+haid I-GEJALA
+dengan O
+riwayat B-RIWAYAT_PENYAKIT
+pcos I-RIWAYAT_PENYAKIT
+apakah O
+hamil B-DIAGNOSIS
+
+konsumsi O
+obat B-OBAT
+untuk O
+memperkuat O
+kandungan B-ANATOMI
+pada O
+wanita O
+dengan O
+riwayat B-RIWAYAT_PENYAKIT
+keguguran I-RIWAYAT_PENYAKIT
+
+menstruasi B-GEJALA
+tidak I-GEJALA
+rutin I-GEJALA
+dan O
+memiliki O
+riwayat B-RIWAYAT_PENYAKIT
+darah I-RIWAYAT_PENYAKIT
+rendah I-RIWAYAT_PENYAKIT
+
+apakah O
+ada O
+obat B-OBAT
+amandel B-DIAGNOSIS
+tanpa O
+harus O
+operasi B-PROSEDUR
+
+bolehkah O
+minum O
+obat B-OBAT
+pilek B-GEJALA
+saat O
+masa O
+penyembuhan O
+pasca O
+operasi B-PROSEDUR
+usus I-PROSEDUR
+buntu I-PROSEDUR
+
+obat B-OBAT
+untuk O
+mengatasi O
+mata B-ANATOMI
+merah B-GEJALA
+
+apa O
+sajakah O
+efek O
+samping O
+dari O
+obat B-OBAT
+tbc B-DIAGNOSIS
+yang O
+merah B-GEJALA
+
+berkeringat B-GEJALA
+berlebih I-GEJALA
+setelah O
+konsumsi O
+obat B-OBAT
+pada O
+penderita O
+efusi B-DIAGNOSIS
+pleura I-DIAGNOSIS
+
+apakah O
+boleh O
+minum O
+obat B-OBAT
+antasida B-OBAT
+saat O
+sedang O
+pengobatan O
+hipertensi B-DIAGNOSIS
+
+tidak O
+sengaja O
+konsumsi O
+obat B-OBAT
+golongan O
+ace B-OBAT
+inhibitor I-OBAT
+hingga O
+kali O
+
+sulit O
+diare B-GEJALA
+setelah O
+konsumsi O
+obat B-OBAT
+zinc B-OBAT
+
+keamanan O
+konsumsi O
+obat B-OBAT
+pyrathiazine B-OBAT
+dan O
+pyridoxine B-OBAT
+pada O
+ibu O
+hamil B-DIAGNOSIS
+dan O
+menyusui O
+
+apa O
+obat B-OBAT
+herpes B-DIAGNOSIS
+agar O
+mudah O
+cepat O
+kering B-GEJALA
+
+rasa O
+ngantuk B-GEJALA
+setelah O
+minum O
+diazepam B-OBAT
+pada O
+orang O
+dengan O
+ketergantungan O
+obat B-OBAT
+
+aturan O
+konsumsi O
+obat B-OBAT
+cacing I-OBAT
+dibulan O
+puasa O
+
+wajah B-ANATOMI
+iritasi B-GEJALA
+setelah O
+menggunakan O
+obat B-OBAT
+jerawat B-DIAGNOSIS
+
+rekomendasi O
+salep B-OBAT
+untuk O
+mengatasi O
+jerawat B-DIAGNOSIS
+punggung B-ANATOMI
+
+kapan O
+boleh O
+minum O
+obat B-OBAT
+mabuk B-GEJALA
+perjalanan I-GEJALA
+setelah O
+minum O
+obat B-OBAT
+herbal I-OBAT
+
+badan B-ANATOMI
+gatalgatal B-GEJALA
+setelah O
+minum O
+obat B-OBAT
+diabetes B-DIAGNOSIS
+
+bolehkah O
+konsumsi O
+obat B-OBAT
+penenang I-OBAT
+berkepanjangan B-GEJALA
+
+rekomendasi O
+obat B-OBAT
+untuk O
+menaikkan O
+tekanan B-HASIL_LAB
+darah I-HASIL_LAB
+
+apakah O
+aman O
+mengonsumsi O
+obat B-OBAT
+spiramycin B-OBAT
+saat O
+hamil B-DIAGNOSIS
+
+obat B-OBAT
+untuk O
+mengatasi O
+kaki B-ANATOMI
+keselo B-GEJALA
+dan O
+bengkak B-GEJALA
+
+aturan O
+pakai O
+obat B-OBAT
+anti I-OBAT
+tuberkulosis I-OBAT
+
+konsumsi O
+obat B-OBAT
+golongan O
+antitiroid B-OBAT
+bersamaan O
+dengan O
+obat B-OBAT
+hipotiroidisme B-DIAGNOSIS
+
+vagina B-ANATOMI
+gatal B-GEJALA
+seminggu B-WAKTU_DURASI
+sebelum O
+menstruasi O
+apakah O
+wajar O
+
+timbul O
+bercak B-GEJALA
+kemerahan I-GEJALA
+pada O
+tubuh B-ANATOMI
+yang O
+disertai O
+rasa O
+gatal B-GEJALA
+
+konsumsi O
+obat B-OBAT
+batuk B-GEJALA
+tanpa O
+resep O
+dokter O
+
+cara O
+mengatasi O
+hidung B-ANATOMI
+gatal B-GEJALA
+dan O
+bersinbersin B-GEJALA
+karena O
+alergi B-ALERGI
+
+nyeri B-GEJALA
+pada O
+jari B-ANATOMI
+dan O
+tidak O
+bisa O
+memegang O
+apaapa O
+setelah O
+menggunakan O
+pacar O
+kuku B-ANATOMI
+
+apa O
+penyebab O
+badan B-ANATOMI
+gatal B-GEJALA
+dan O
+bentol B-GEJALA
+tibatiba O
+disertai O
+batuk B-GEJALA
+
+setelah O
+menggunakan O
+salep B-OBAT
+skabies B-DIAGNOSIS
+masih O
+gatal B-GEJALA
+apakah O
+wajar O
+
+obat B-OBAT
+yang O
+cocok O
+untuk O
+mengatasi O
+batuk B-GEJALA
+kering B-GEJALA
+dan O
+flu B-DIAGNOSIS
+pada O
+orang O
+dewasa O
+
+penyebab O
+tubuh B-ANATOMI
+terasa O
+ngilu B-GEJALA
+dan O
+demam B-GEJALA
+saat O
+akan O
+haid O
+
+obat B-OBAT
+batuk B-GEJALA
+alergi B-ALERGI
+di O
+apotek O
+untuk O
+anak O
+usia O
+tahun B-WAKTU_DURASI
+
+gatal B-GEJALA
+disertai O
+bengkak B-GEJALA
+dan O
+nyeri B-GEJALA
+
+cara O
+mengatasi O
+siku B-ANATOMI
+dan O
+lutut B-ANATOMI
+bentol B-GEJALA
+pasca O
+konsumsi O
+suplemen B-OBAT
+
+penanganan O
+gatal B-GEJALA
+pada O
+kulit B-ANATOMI
+bayi O
+akibat O
+bulu O
+serangga O
+
+penyebab O
+mual B-GEJALA
+dan O
+tidak O
+nyaman O
+di O
+perut B-ANATOMI
+setelah O
+konsumsi O
+obat B-OBAT
+batuk B-GEJALA
+
+ruam B-GEJALA
+berbentuk I-GEJALA
+garis I-GEJALA
+merah I-GEJALA
+pada O
+kulit B-ANATOMI
+setelah O
+konsumsi O
+obat B-OBAT
+
+telapak B-ANATOMI
+kaki I-ANATOMI
+yang O
+terasa O
+gatal B-GEJALA
+dan O
+berair B-GEJALA
+
+gatal B-GEJALA
+di O
+seluruh O
+badan B-ANATOMI
+setelah O
+minum O
+obat B-OBAT
+jamur B-DIAGNOSIS
+kulit I-DIAGNOSIS
+
+apakah O
+obat B-OBAT
+batuk B-GEJALA
+pilek B-GEJALA
+bisa O
+dikonsumsi O
+bayi O
+usia O
+bulan B-WAKTU_DURASI
+
+nyeri B-GEJALA
+dada B-ANATOMI
+mual B-GEJALA
+sakit B-GEJALA
+kepala B-ANATOMI
+dan O
+tubuh B-ANATOMI
+gatal B-GEJALA
+paska B-WAKTU_DURASI
+suntik B-PROSEDUR
+kb B-PROSEDUR
+bulan B-WAKTU_DURASI
+
+mengatasi O
+gatal B-GEJALA
+dan O
+bekas O
+gigitan O
+tungau O
+
+salep B-OBAT
+untuk O
+menghilangkan O
+ruam B-GEJALA
+kulit B-ANATOMI
+dan O
+gatal B-GEJALA
+saat O
+hamil B-DIAGNOSIS
+
+mual B-GEJALA
+setelah O
+minum O
+obat B-OBAT
+nyeri B-GEJALA
+dan O
+antibiotik B-OBAT
+
+alergi B-ALERGI
+semakin O
+bertambah O
+di O
+kaki B-ANATOMI
+dan O
+telapak B-ANATOMI
+tangan I-ANATOMI
+setelah O
+minum O
+obat B-OBAT
+
+bagaimana O
+cara O
+mengatasi O
+batuk B-GEJALA
+alergi B-ALERGI
+
+pengobatan O
+sakit B-GEJALA
+mata B-ANATOMI
+akibat O
+alergi B-ALERGI
+debu I-ALERGI
+
+cara O
+mengatasi O
+alergi B-ALERGI
+selain O
+konsumsi O
+obat B-OBAT
+alergi B-ALERGI
+
+apa O
+ada O
+efek O
+samping O
+meminum O
+obat B-OBAT
+alergi B-ALERGI
+secara O
+rutin O
+
+cara O
+menghilangkan O
+alergi B-ALERGI
+pindahan O
+
+salep B-OBAT
+untuk O
+bayi O
+yang O
+sedang O
+alergi B-ALERGI
+pada O
+kulit B-ANATOMI
+
+obat B-OBAT
+alergi B-ALERGI
+untuk O
+anak O
+tahun B-WAKTU_DURASI
+
+penyebab O
+alergi B-ALERGI
+disertai O
+bntik B-GEJALA
+merah I-GEJALA
+dan O
+batuk B-GEJALA
+pada O
+anak O
+tahun B-WAKTU_DURASI
+
+alergi B-ALERGI
+dan O
+pneumonia B-DIAGNOSIS
+pada O
+bayi O
+usia O
+bulan B-WAKTU_DURASI
+
+penyebab O
+kulit B-ANATOMI
+alergi B-ALERGI
+tampak O
+merah B-GEJALA
+
+apa O
+efek O
+samping O
+dari O
+ctm B-OBAT
+pada O
+penderita O
+alergi B-ALERGI
+bisa O
+membuat O
+pipi B-ANATOMI
+bengkak B-GEJALA
+dan O
+perut B-ANATOMI
+buncit B-GEJALA
+
+berapa O
+lama O
+alergi B-ALERGI
+di O
+wajah B-ANATOMI
+akibat O
+make B-OBAT
+up I-OBAT
+bisa O
+hilang O
+
+cara O
+mengetahui O
+alergi B-ALERGI
+terhadap O
+sesuatu O
+
+bolehkah O
+penderita O
+alergi B-ALERGI
+konsumsi O
+makanan O
+yang O
+mengandung O
+ayam O
+dan O
+telur O
+
+kenapa O
+sudah O
+beberapa B-WAKTU_DURASI
+hari B-WAKTU_DURASI
+minum O
+cetirizine B-OBAT
+alergi B-ALERGI
+belum O
+sembuh O
+juga O
+
+penyebab O
+dan O
+cara O
+mengatasi O
+alergi B-ALERGI
+pada O
+balita O
+usia O
+tahun B-WAKTU_DURASI
+
+obat B-OBAT
+untuk O
+mata B-ANATOMI
+gatal B-GEJALA
+bersin B-GEJALA
+dan O
+sesak B-GEJALA
+napas I-GEJALA
+karena O
+alergi B-ALERGI
+
+kulit B-ANATOMI
+bayi O
+panas B-GEJALA
+saat O
+pakai O
+minyak B-OBAT
+telon I-OBAT
+apakah O
+tanda O
+alergi B-ALERGI
+
+ruam B-GEJALA
+kulit B-ANATOMI
+seperti O
+alergi B-ALERGI
+berkepanjangan B-GEJALA
+dan O
+kaitan O
+dengan O
+corona B-DIAGNOSIS
+
+tentang O
+prosedur O
+pemeriksaan B-PROSEDUR
+alergi B-ALERGI
+
+jari B-ANATOMI
+kaki I-ANATOMI
+bengkak B-GEJALA
+dan O
+bernanah B-GEJALA
+karena O
+alergi B-ALERGI
+
+berapa O
+lama O
+tidak O
+boleh O
+kena O
+air O
+hujan O
+setelah O
+cacar B-DIAGNOSIS
+air I-DIAGNOSIS
+
+kenapa O
+siklus B-GEJALA
+haid I-GEJALA
+selalu O
+maju B-GEJALA
+setelah O
+sebelumnya B-WAKTU_DURASI
+normal O
+
+mata B-ANATOMI
+merah B-GEJALA
+setelah O
+minum O
+obat B-OBAT
+
+obat B-OBAT
+nebulizer I-OBAT
+untuk O
+anak O
+tahun B-WAKTU_DURASI
+
+anak O
+usia O
+tahun B-WAKTU_DURASI
+mengeluh O
+nyeri B-GEJALA
+perut B-ANATOMI
+bawah I-ANATOMI
+setelah O
+minum O
+obat B-OBAT
+cacing I-OBAT
+
+obat B-OBAT
+untuk O
+mengatasi O
+mata B-ANATOMI
+merah B-GEJALA
+untuk O
+anak O
+tahun B-WAKTU_DURASI
+
+bayi O
+usia O
+bulan B-WAKTU_DURASI
+kelebihan O
+dosis B-DOSIS
+obat B-OBAT
+diare B-GEJALA
+
+gatal B-GEJALA
+tak O
+kunjung O
+hilang O
+pasca O
+terkena O
+pasir O
+
+wajah B-ANATOMI
+perih B-GEJALA
+dan O
+mengelupas B-GEJALA
+setelah O
+menggunakan O
+krim B-OBAT
+spc I-OBAT
+
+sering O
+harus O
+menarik B-GEJALA
+nafas I-GEJALA
+panjang I-GEJALA
+dan O
+setiap B-WAKTU_DURASI
+tidur I-WAKTU_DURASI
+siang I-WAKTU_DURASI
+selalu O
+batuk B-GEJALA
+
+gatal B-GEJALA
+pada O
+sekitar O
+daerah O
+kemaluan B-ANATOMI
+saat O
+malam B-WAKTU_DURASI
+hari I-WAKTU_DURASI
+
+lengan B-ANATOMI
+kiri I-ANATOMI
+lemah B-GEJALA
+berkeringat B-GEJALA
+disertai O
+telapak B-ANATOMI
+tangan I-ANATOMI
+dan O
+jari B-ANATOMI
+gatal B-GEJALA
+pasca O
+konsumsi O
+udang O
+
+perlukah O
+konsumsi O
+obat B-OBAT
+gerd B-DIAGNOSIS
+setiap B-WAKTU_DURASI
+hari B-WAKTU_DURASI
+meskipun O
+tanpa B-GEJALA
+gejala I-GEJALA
+
+siklus O
+menstruasi O
+menjadi O
+lebih O
+pendek O
+pasca O
+operasi B-PROSEDUR
+kista B-DIAGNOSIS
+ovarium I-DIAGNOSIS
+
+telat B-GEJALA
+haid I-GEJALA
+hari B-WAKTU_DURASI
+dan O
+disertai O
+keputihan B-GEJALA
+apakah O
+tanda O
+kehamilan B-DIAGNOSIS
+
+penyebab O
+nyeri B-GEJALA
+haid I-GEJALA
+hingga O
+hari B-WAKTU_DURASI
+
+kulit B-ANATOMI
+wajah I-ANATOMI
+seperti O
+melepuh B-GEJALA
+terbakar B-GEJALA
+hingga O
+bengkak B-GEJALA
+setelah O
+pakai O
+sabun B-OBAT
+
+penyebab O
+telat B-GEJALA
+haid I-GEJALA
+pada O
+remaja O
+tahun B-WAKTU_DURASI
+
+cara O
+mengatasi O
+muntahmuntah B-GEJALA
+setelah O
+operasi B-PROSEDUR
+kelenjar I-PROSEDUR
+getah I-PROSEDUR
+bening I-PROSEDUR
+
+sering O
+bersin B-GEJALA
+karena O
+alergi B-ALERGI
+apakah O
+berbahaya O
+bagi O
+janin O
+usia O
+minggu B-WAKTU_DURASI
+
+penyebab O
+muncul O
+benjolan B-GEJALA
+di O
+perut B-ANATOMI
+kanan I-ANATOMI
+bawah I-ANATOMI
+disertai O
+telat B-GEJALA
+haid I-GEJALA
+bulan B-WAKTU_DURASI
+
+cara O
+mengatasi O
+efek O
+samping O
+setelah O
+lepas O
+kb B-PROSEDUR
+suntik B-PROSEDUR
+bulan B-WAKTU_DURASI
+
+ruam B-GEJALA
+merah I-GEJALA
+hilang O
+timbul O
+setelah O
+alergi B-ALERGI
+obat I-ALERGI
+
+gatal B-GEJALA
+pada O
+kulit B-ANATOMI
+setelah O
+vaksin B-PROSEDUR
+covid I-PROSEDUR
+dosis B-DOSIS
+kedua I-DOSIS
+
+tubuh B-ANATOMI
+bentol B-GEJALA
+dan O
+gatal B-GEJALA
+setelah O
+vaksin B-PROSEDUR
+dosis B-DOSIS
+
+apakah O
+boleh O
+minum O
+obat B-OBAT
+alergi B-ALERGI
+setelah O
+vaksinasi B-PROSEDUR
+covid I-PROSEDUR
+
+gatal B-GEJALA
+yang O
+kembali O
+muncul O
+setelah O
+konsumsi O
+obat B-OBAT
+anti I-OBAT
+alergi B-ALERGI
+
+tes B-PROSEDUR
+lab I-PROSEDUR
+apa O
+yang O
+bisa O
+dilakukan O
+untuk O
+pemeriksaan B-PROSEDUR
+gatal B-GEJALA
+pada O
+anak O
+usia O
+tahun B-WAKTU_DURASI
+

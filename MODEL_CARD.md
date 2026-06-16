@@ -63,6 +63,25 @@ The previous silver benchmark produced much higher scores, for example IndoBERT
 micro F1 0.9996. Those numbers are retained only as engineering bootstrap
 evidence and must not be used as clinical performance claims.
 
+## Phase 9 Expanded-Label Evaluation
+
+The project now includes an internal Phase 9 challenge set in
+`data/phase9_challenge_set/gold_resolved.conll`. It contains 160 manually
+adjudicated texts and expands the schema with `ALERGI`, `PROSEDUR`,
+`HASIL_LAB`, `NILAI_LAB`, `WAKTU_DURASI`, and `RIWAYAT_PENYAKIT`.
+
+| Model | Evaluation set | Micro F1 |
+| --- | --- | ---: |
+| IndoBERT human-aligned | Phase 9 challenge | 0.5137 |
+| IndoBERT phase9-expanded | Phase 9 challenge | 0.6837 |
+| IndoBERT human-aligned | true gold 300 | 0.7238 |
+| IndoBERT phase9-expanded | true gold 300 | 0.6325 |
+
+The expanded model improves recognition of new labels such as `ALERGI`,
+`HASIL_LAB`, `NILAI_LAB`, and `PROSEDUR`, but it reduces performance on the
+original true-gold benchmark. This is a schema trade-off, not yet a final model
+selection.
+
 ## Limitations
 
 - The human-aligned retraining substantially improves true-gold performance, but
@@ -77,6 +96,8 @@ evidence and must not be used as clinical performance claims.
 - Keep `data/true_gold_300/gold_resolved.conll` as the held-out benchmark.
 - Add more manually reviewed training examples, especially for `DOSIS`, `OBAT`,
   and ambiguous symptoms.
+- Add more manually reviewed examples for `RIWAYAT_PENYAKIT`, `DOSIS`,
+  `PROSEDUR`, and `WAKTU_DURASI` before making the expanded schema the default.
 - Evaluate public claims against the true gold set, not the silver set.
 - Add a domain expert review for medical safety-sensitive labels.
 

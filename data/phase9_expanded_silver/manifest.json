@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-06-16T14:04:26.714142+00:00",
+  "dataset_type": "phase9_expanded_silver",
+  "annotation_source": "rules_following_phase9_human_adjudication_policy",
+  "human_annotated": false,
+  "human_gold": false,
+  "true_gold_texts_excluded": 300,
+  "phase9_challenge_texts_excluded": 160,
+  "records_after_exclusion": 12592,
+  "entity_types": [
+    "GEJALA",
+    "OBAT",
+    "DOSIS",
+    "DIAGNOSIS",
+    "ANATOMI",
+    "PROSEDUR",
+    "HASIL_LAB",
+    "NILAI_LAB",
+    "WAKTU_DURASI",
+    "ALERGI",
+    "RIWAYAT_PENYAKIT"
+  ],
+  "files": {
+    "train": "data\\phase9_expanded_silver\\train.conll",
+    "validation": "data\\phase9_expanded_silver\\val.conll"
+  },
+  "split_counts": {
+    "train": 11332,
+    "val": 1260
+  },
+  "entity_counts": {
+    "train": {
+      "ANATOMI": 5172,
+      "GEJALA": 7795,
+      "OBAT": 4738,
+      "WAKTU_DURASI": 4309,
+      "DIAGNOSIS": 1568,
+      "PROSEDUR": 518,
+      "ALERGI": 542,
+      "NILAI_LAB": 209,
+      "DOSIS": 180,
+      "HASIL_LAB": 67,
+      "RIWAYAT_PENYAKIT": 6
+    },
+    "val": {
+      "OBAT": 527,
+      "WAKTU_DURASI": 475,
+      "ANATOMI": 576,
+      "GEJALA": 862,
+      "DIAGNOSIS": 173,
+      "NILAI_LAB": 28,
+      "ALERGI": 67,
+      "PROSEDUR": 49,
+      "DOSIS": 20,
+      "HASIL_LAB": 10,
+      "RIWAYAT_PENYAKIT": 2
+    }
+  }
+}

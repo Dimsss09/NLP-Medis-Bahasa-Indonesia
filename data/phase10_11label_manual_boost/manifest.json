@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-06-16T14:22:41.153583+00:00",
+  "dataset_type": "phase10_11label_manual_boost_draft",
+  "human_gold": false,
+  "human_review_required": true,
+  "focus_labels": [
+    "RIWAYAT_PENYAKIT",
+    "DOSIS",
+    "PROSEDUR",
+    "WAKTU_DURASI"
+  ],
+  "per_label_target": 50,
+  "sample_size": 200,
+  "label_counts": {
+    "B-RIWAYAT_PENYAKIT": 49,
+    "I-RIWAYAT_PENYAKIT": 26,
+    "B-PROSEDUR": 50,
+    "I-PROSEDUR": 27,
+    "B-WAKTU_DURASI": 132,
+    "B-GEJALA": 97,
+    "B-ANATOMI": 59,
+    "B-ALERGI": 5,
+    "B-OBAT": 107,
+    "I-OBAT": 10,
+    "B-NILAI_LAB": 3,
+    "B-DOSIS": 18,
+    "B-DIAGNOSIS": 24,
+    "I-GEJALA": 46,
+    "I-ANATOMI": 2,
+    "I-ALERGI": 1,
+    "B-HASIL_LAB": 1,
+    "I-HASIL_LAB": 1,
+    "I-WAKTU_DURASI": 4
+  },
+  "files": {
+    "sample_texts": "data\\phase10_11label_manual_boost\\sample_texts.tsv",
+    "draft_labels": "data\\phase10_11label_manual_boost\\draft_labels.conll",
+    "annotator_1": "data\\phase10_11label_manual_boost\\annotator_1.conll",
+    "annotator_2": "data\\phase10_11label_manual_boost\\annotator_2.conll"
+  }
+}

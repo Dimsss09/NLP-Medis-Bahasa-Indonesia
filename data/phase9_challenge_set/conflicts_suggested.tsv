@@ -1,0 +1,149 @@
+sentence_id	sentence_text	token_id	token	annotator_1	annotator_2	resolved_label	reviewer_note	suggested_label	suggestion_note
+2	telat haid testpack negatif pinggang sakit keluar flek coklat dan urine berdarah	3	testpack	O	B-PROSEDUR	B-PROSEDUR		B-PROSEDUR	token kuat sebagai prosedur/pemeriksaan
+2	telat haid testpack negatif pinggang sakit keluar flek coklat dan urine berdarah	4	negatif	O	B-NILAI_LAB	B-NILAI_LAB		B-NILAI_LAB	token kuat sebagai nilai hasil
+11	bolehkah konsumsi obat kolesterol darah tinggi dan asam urat bersamaan dengan vitamin d	5	darah	I-HASIL_LAB	B-DIAGNOSIS	I-HASIL_LAB		I-HASIL_LAB	konflik lab; pakai saran annotator 1 sebagai awal, tetap review manual
+11	bolehkah konsumsi obat kolesterol darah tinggi dan asam urat bersamaan dengan vitamin d	6	tinggi	B-NILAI_LAB	I-DIAGNOSIS	B-NILAI_LAB		B-NILAI_LAB	konflik lab; pakai saran annotator 1 sebagai awal, tetap review manual
+13	apakah boleh minum obat kuat pada penderita hipertensi dan kolesterol tinggi	5	kuat	O	I-OBAT	I-OBAT		I-OBAT	satu annotator memberi entitas; perlu cek cepat
+14	darah haid tidak lancar disertai pusing dan badan sakit bolehkah cek hb	3	tidak	I-GEJALA	B-GEJALA	B-GEJALA		B-GEJALA	beda B/I pada tipe sama; pilih B agar aman dari I tanpa awal span
+15	apakah menstruasi mempengaruhi hasil lab prolactin	5	lab	O	B-PROSEDUR	B-PROSEDUR		B-PROSEDUR	satu annotator memberi entitas; perlu cek cepat
+17	obat yang dapat mempengaruhi hasil tes agregasi trombosit	8	trombosit	I-PROSEDUR	B-HASIL_LAB	I-PROSEDUR		I-PROSEDUR	konflik lab; pakai saran annotator 1 sebagai awal, tetap review manual
+19	konsumsi obat kolesterol dan asam urat setelah vaksin corona	7	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+22	kadar eritrosit dan eonosofil tanggi pada hasil pemeriksaan darah	1	kadar	O	B-HASIL_LAB	B-HASIL_LAB		B-HASIL_LAB	satu annotator memberi entitas; perlu cek cepat
+22	kadar eritrosit dan eonosofil tanggi pada hasil pemeriksaan darah	2	eritrosit	B-HASIL_LAB	I-HASIL_LAB	B-HASIL_LAB		B-HASIL_LAB	beda B/I pada tipe sama; pilih B agar aman dari I tanpa awal span
+23	gumpalan berwarna putih saat menstruasi dan menggunakan kb suntik bulan	8	kb	B-OBAT	B-PROSEDUR	B-PROSEDUR		B-PROSEDUR	suntik/vaksin/kb lebih cocok sebagai prosedur pada fase 9
+23	gumpalan berwarna putih saat menstruasi dan menggunakan kb suntik bulan	9	suntik	B-PROSEDUR	I-PROSEDUR	B-PROSEDUR		B-PROSEDUR	beda B/I pada tipe sama; pilih B agar aman dari I tanpa awal span
+24	apakah masih bisa menstruasi saat menggunakan suntik kb bulan	8	kb	B-OBAT	I-PROSEDUR	B-PROSEDUR		B-PROSEDUR	suntik/vaksin/kb lebih cocok sebagai prosedur pada fase 9
+25	keluar banyak darah menstruasi setelah lepas kb suntik	5	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+25	keluar banyak darah menstruasi setelah lepas kb suntik	7	kb	B-OBAT	B-PROSEDUR	B-PROSEDUR		B-PROSEDUR	suntik/vaksin/kb lebih cocok sebagai prosedur pada fase 9
+25	keluar banyak darah menstruasi setelah lepas kb suntik	8	suntik	B-PROSEDUR	I-PROSEDUR	B-PROSEDUR		B-PROSEDUR	beda B/I pada tipe sama; pilih B agar aman dari I tanpa awal span
+26	kemungkinan hamil saat hasil testpack dan usg berbeda	5	testpack	O	B-PROSEDUR	B-PROSEDUR		B-PROSEDUR	token kuat sebagai prosedur/pemeriksaan
+28	resep obat yang digunakan pasca operasi wasir	5	pasca	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+28	resep obat yang digunakan pasca operasi wasir	7	wasir	B-DIAGNOSIS	I-PROSEDUR	B-DIAGNOSIS	Nama penyakit hemoroid; prosedurnya adalah operasi, bukan wasir.	B-DIAGNOSIS	final human adjudication from user decision
+29	mengatasi haid tidak teratur pasca operasi pengangkatan kista ovarium	5	pasca	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+30	paha terasa gatal setelah operasi cangkoj tulang betis	4	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+31	pusing setelah minum obat pasca operasi selulitis	2	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+31	pusing setelah minum obat pasca operasi selulitis	5	pasca	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+32	menstruasi setelah hasil test pack samar dan hasil usg belum terlihat	2	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+32	menstruasi setelah hasil test pack samar dan hasil usg belum terlihat	4	test	O	B-PROSEDUR	B-PROSEDUR		B-PROSEDUR	satu annotator memberi entitas; perlu cek cepat
+32	menstruasi setelah hasil test pack samar dan hasil usg belum terlihat	5	pack	O	I-PROSEDUR	I-PROSEDUR		I-PROSEDUR	satu annotator memberi entitas; perlu cek cepat
+32	menstruasi setelah hasil test pack samar dan hasil usg belum terlihat	6	samar	O	B-NILAI_LAB	B-NILAI_LAB		B-NILAI_LAB	satu annotator memberi entitas; perlu cek cepat
+32	menstruasi setelah hasil test pack samar dan hasil usg belum terlihat	10	belum	O	B-NILAI_LAB	B-NILAI_LAB		B-NILAI_LAB	satu annotator memberi entitas; perlu cek cepat
+32	menstruasi setelah hasil test pack samar dan hasil usg belum terlihat	11	terlihat	O	I-NILAI_LAB	I-NILAI_LAB		I-NILAI_LAB	satu annotator memberi entitas; perlu cek cepat
+33	bagaimana normalnya siklus haid pasca operasi usus buntu	3	siklus	O	B-GEJALA	B-GEJALA		B-GEJALA	satu annotator memberi entitas; perlu cek cepat
+33	bagaimana normalnya siklus haid pasca operasi usus buntu	4	haid	O	I-GEJALA	I-GEJALA		I-GEJALA	satu annotator memberi entitas; perlu cek cepat
+33	bagaimana normalnya siklus haid pasca operasi usus buntu	5	pasca	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+34	haid yang tidak teratur dengan riwayat pemeriksaan usg yang normal	6	riwayat	O	B-RIWAYAT_PENYAKIT	B-RIWAYAT_PENYAKIT		B-RIWAYAT_PENYAKIT	token kuat sebagai riwayat
+34	haid yang tidak teratur dengan riwayat pemeriksaan usg yang normal	7	pemeriksaan	B-PROSEDUR	I-RIWAYAT_PENYAKIT	B-PROSEDUR	Tindakan/pemeriksaan; riwayat pemeriksaan bukan riwayat penyakit.	B-PROSEDUR	final human adjudication from user decision
+34	haid yang tidak teratur dengan riwayat pemeriksaan usg yang normal	8	usg	I-PROSEDUR	I-RIWAYAT_PENYAKIT	I-PROSEDUR	Lanjutan frasa tindakan pemeriksaan usg.	I-PROSEDUR	final human adjudication from user decision
+35	langsung menstruasi setelah suntik kb bulan	3	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+35	langsung menstruasi setelah suntik kb bulan	5	kb	B-OBAT	I-PROSEDUR	B-PROSEDUR		B-PROSEDUR	suntik/vaksin/kb lebih cocok sebagai prosedur pada fase 9
+36	haid berkepanjangan setelah ganti suntik kb ke pil kb	3	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+36	haid berkepanjangan setelah ganti suntik kb ke pil kb	6	kb	B-OBAT	I-PROSEDUR	B-PROSEDUR		B-PROSEDUR	suntik/vaksin/kb lebih cocok sebagai prosedur pada fase 9
+37	penyebab siklus haid yang berubah pasca suntik kb bulan	2	siklus	O	B-GEJALA	B-GEJALA		B-GEJALA	satu annotator memberi entitas; perlu cek cepat
+37	penyebab siklus haid yang berubah pasca suntik kb bulan	3	haid	O	I-GEJALA	I-GEJALA		I-GEJALA	satu annotator memberi entitas; perlu cek cepat
+37	penyebab siklus haid yang berubah pasca suntik kb bulan	5	berubah	O	B-GEJALA	B-GEJALA		B-GEJALA	satu annotator memberi entitas; perlu cek cepat
+37	penyebab siklus haid yang berubah pasca suntik kb bulan	6	pasca	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+37	penyebab siklus haid yang berubah pasca suntik kb bulan	8	kb	B-OBAT	I-PROSEDUR	B-PROSEDUR		B-PROSEDUR	suntik/vaksin/kb lebih cocok sebagai prosedur pada fase 9
+38	kapan bisa pindah dari kb suntik bulan ke pil kb	5	kb	B-OBAT	B-PROSEDUR	B-PROSEDUR		B-PROSEDUR	suntik/vaksin/kb lebih cocok sebagai prosedur pada fase 9
+38	kapan bisa pindah dari kb suntik bulan ke pil kb	6	suntik	B-PROSEDUR	I-PROSEDUR	B-PROSEDUR		B-PROSEDUR	beda B/I pada tipe sama; pilih B agar aman dari I tanpa awal span
+43	apakah obat suntik untuk mengatasi pengeroposan dengkul dapat mengancam kesehatan ginjal	3	suntik	I-OBAT	B-PROSEDUR	B-PROSEDUR		B-PROSEDUR	suntik/vaksin/kb lebih cocok sebagai prosedur pada fase 9
+44	mengatasi haid berkepanjangan setelah suntik keloid dengan menggunakan obat kortikosteroid	4	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+44	mengatasi haid berkepanjangan setelah suntik keloid dengan menggunakan obat kortikosteroid	6	keloid	B-DIAGNOSIS	I-PROSEDUR	B-DIAGNOSIS	Kondisi/penyakit kulit; prosedurnya adalah suntik.	B-DIAGNOSIS	final human adjudication from user decision
+44	mengatasi haid berkepanjangan setelah suntik keloid dengan menggunakan obat kortikosteroid	10	kortikosteroid	I-OBAT	B-OBAT	B-OBAT		B-OBAT	beda B/I pada tipe sama; pilih B agar aman dari I tanpa awal span
+45	haid tidak teratur dan keluar asi sedikit dengan riwayat kuretase bulan lalu	9	riwayat	O	B-RIWAYAT_PENYAKIT	B-RIWAYAT_PENYAKIT		B-RIWAYAT_PENYAKIT	token kuat sebagai riwayat
+45	haid tidak teratur dan keluar asi sedikit dengan riwayat kuretase bulan lalu	10	kuretase	B-PROSEDUR	I-RIWAYAT_PENYAKIT	B-PROSEDUR	Tindakan kuretase; riwayat tindakan, bukan penyakit.	B-PROSEDUR	final human adjudication from user decision
+47	siklus haid dengan riwayat penyakit kista	1	siklus	O	B-GEJALA	B-GEJALA		B-GEJALA	satu annotator memberi entitas; perlu cek cepat
+47	siklus haid dengan riwayat penyakit kista	2	haid	O	I-GEJALA	I-GEJALA		I-GEJALA	satu annotator memberi entitas; perlu cek cepat
+48	memiliki riwayat pengobatan hipertiroid sebelumnya dan sempat putus obat	5	sebelumnya	O	B-WAKTU_DURASI	B-WAKTU_DURASI		B-WAKTU_DURASI	satu annotator memberi entitas; perlu cek cepat
+49	cara mengatasi anyanganyangan dengan riwayat penyakit paruparu	3	anyanganyangan	B-GEJALA	O	B-GEJALA		B-GEJALA	satu annotator memberi entitas; perlu cek cepat
+52	obat untuk mengatasi rasa nyeri pada riwayat penderita alergi	7	riwayat	O	B-RIWAYAT_PENYAKIT	B-RIWAYAT_PENYAKIT		B-RIWAYAT_PENYAKIT	token kuat sebagai riwayat
+52	obat untuk mengatasi rasa nyeri pada riwayat penderita alergi	8	penderita	O	I-RIWAYAT_PENYAKIT	I-RIWAYAT_PENYAKIT		I-RIWAYAT_PENYAKIT	satu annotator memberi entitas; perlu cek cepat
+52	obat untuk mengatasi rasa nyeri pada riwayat penderita alergi	9	alergi	B-ALERGI	I-RIWAYAT_PENYAKIT	B-ALERGI	Merujuk kondisi alergi; terpisah dari kata riwayat oleh penderita.	B-ALERGI	final human adjudication from user decision
+53	penyebab tidak pernah haid selama tahun	5	selama	O	B-WAKTU_DURASI	B-WAKTU_DURASI		B-WAKTU_DURASI	satu annotator memberi entitas; perlu cek cepat
+57	apakah ikan tawar bisa menimbulkan alergi kalo punya riwayat alergi ikan laut	11	ikan	I-RIWAYAT_PENYAKIT	O	I-RIWAYAT_PENYAKIT		I-RIWAYAT_PENYAKIT	satu annotator memberi entitas; perlu cek cepat
+57	apakah ikan tawar bisa menimbulkan alergi kalo punya riwayat alergi ikan laut	12	laut	I-RIWAYAT_PENYAKIT	O	I-RIWAYAT_PENYAKIT		I-RIWAYAT_PENYAKIT	satu annotator memberi entitas; perlu cek cepat
+59	penyebab telat haid selama minggu disertai pusing mual tidak nafsu makan pada wanita yang belum pernah melakukan hubungan intim	4	selama	O	B-WAKTU_DURASI	B-WAKTU_DURASI		B-WAKTU_DURASI	satu annotator memberi entitas; perlu cek cepat
+60	ada riwayat kulit bentolbentol usai divaksin apakah sekarang masih boleh vaksinasi covid	2	riwayat	O	B-RIWAYAT_PENYAKIT	B-RIWAYAT_PENYAKIT		B-RIWAYAT_PENYAKIT	token kuat sebagai riwayat
+60	ada riwayat kulit bentolbentol usai divaksin apakah sekarang masih boleh vaksinasi covid	3	kulit	B-ANATOMI	I-RIWAYAT_PENYAKIT	B-ANATOMI	Bagian tubuh; riwayat berdiri sendiri.	B-ANATOMI	final human adjudication from user decision
+60	ada riwayat kulit bentolbentol usai divaksin apakah sekarang masih boleh vaksinasi covid	4	bentolbentol	B-GEJALA	I-RIWAYAT_PENYAKIT	B-GEJALA	Keluhan/gejala di kulit.	B-GEJALA	final human adjudication from user decision
+60	ada riwayat kulit bentolbentol usai divaksin apakah sekarang masih boleh vaksinasi covid	5	usai	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+61	pengobatan untuk mengatasi infeksi jamur dengan riwayat penderita gerd	4	infeksi	B-DIAGNOSIS	O	B-DIAGNOSIS		B-DIAGNOSIS	satu annotator memberi entitas; perlu cek cepat
+61	pengobatan untuk mengatasi infeksi jamur dengan riwayat penderita gerd	5	jamur	I-DIAGNOSIS	O	I-DIAGNOSIS		I-DIAGNOSIS	satu annotator memberi entitas; perlu cek cepat
+62	pemberian obat antiparasit pada pasien covid dengan riwayat penyakit diabetes dan paruparu	12	paruparu	I-RIWAYAT_PENYAKIT	B-DIAGNOSIS	I-RIWAYAT_PENYAKIT	Bagian daftar pada frasa riwayat penyakit diabetes dan paruparu.	I-RIWAYAT_PENYAKIT	final human adjudication from user decision
+68	bolehkah minum obat pilek saat masa penyembuhan pasca operasi usus buntu	8	pasca	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+70	apa sajakah efek samping dari obat tbc yang merah	9	merah	O	B-GEJALA	B-GEJALA		B-GEJALA	satu annotator memberi entitas; perlu cek cepat
+71	berkeringat berlebih setelah konsumsi obat pada penderita efusi pleura	3	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+72	apakah boleh minum obat antasida saat sedang pengobatan hipertensi	5	antasida	I-OBAT	B-OBAT	B-OBAT		B-OBAT	beda B/I pada tipe sama; pilih B agar aman dari I tanpa awal span
+74	sulit diare setelah konsumsi obat zinc	3	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+74	sulit diare setelah konsumsi obat zinc	6	zinc	I-OBAT	B-OBAT	B-OBAT		B-OBAT	beda B/I pada tipe sama; pilih B agar aman dari I tanpa awal span
+75	keamanan konsumsi obat pyrathiazine dan pyridoxine pada ibu hamil dan menyusui	4	pyrathiazine	I-OBAT	B-OBAT	B-OBAT		B-OBAT	beda B/I pada tipe sama; pilih B agar aman dari I tanpa awal span
+76	apa obat herpes agar mudah cepat kering	7	kering	O	B-GEJALA	B-GEJALA		B-GEJALA	satu annotator memberi entitas; perlu cek cepat
+77	rasa ngantuk setelah minum diazepam pada orang dengan ketergantungan obat	3	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+78	aturan konsumsi obat cacing dibulan puasa	4	cacing	I-OBAT	B-DIAGNOSIS	I-OBAT	Obat cacing adalah jenis obat antihelmintik.	I-OBAT	final human adjudication from user decision
+79	wajah iritasi setelah menggunakan obat jerawat	3	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+81	kapan boleh minum obat mabuk perjalanan setelah minum obat herbal	5	mabuk	I-OBAT	B-DIAGNOSIS	B-GEJALA	Mabuk perjalanan adalah keluhan/indikasi.	B-GEJALA	final human adjudication from user decision
+81	kapan boleh minum obat mabuk perjalanan setelah minum obat herbal	6	perjalanan	I-OBAT	I-DIAGNOSIS	I-GEJALA	Lanjutan keluhan mabuk perjalanan.	I-GEJALA	final human adjudication from user decision
+81	kapan boleh minum obat mabuk perjalanan setelah minum obat herbal	7	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+82	badan gatalgatal setelah minum obat diabetes	3	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+83	bolehkah konsumsi obat penenang berkepanjangan	5	berkepanjangan	O	B-GEJALA	B-GEJALA		B-GEJALA	satu annotator memberi entitas; perlu cek cepat
+85	apakah aman mengonsumsi obat spiramycin saat hamil	5	spiramycin	I-OBAT	B-OBAT	B-OBAT		B-OBAT	beda B/I pada tipe sama; pilih B agar aman dari I tanpa awal span
+93	nyeri pada jari dan tidak bisa memegang apaapa setelah menggunakan pacar kuku	9	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+93	nyeri pada jari dan tidak bisa memegang apaapa setelah menggunakan pacar kuku	12	kuku	O	B-ANATOMI	B-ANATOMI		B-ANATOMI	satu annotator memberi entitas; perlu cek cepat
+95	setelah menggunakan salep skabies masih gatal apakah wajar	1	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+96	obat yang cocok untuk mengatasi batuk kering dan flu pada orang dewasa	7	kering	I-GEJALA	B-GEJALA	B-GEJALA		B-GEJALA	beda B/I pada tipe sama; pilih B agar aman dari I tanpa awal span
+100	cara mengatasi siku dan lutut bentol pasca konsumsi suplemen	7	pasca	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+102	penyebab mual dan tidak nyaman di perut setelah konsumsi obat batuk	8	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+103	ruam berbentuk garis merah pada kulit setelah konsumsi obat	2	berbentuk	O	I-GEJALA	I-GEJALA		I-GEJALA	satu annotator memberi entitas; perlu cek cepat
+103	ruam berbentuk garis merah pada kulit setelah konsumsi obat	3	garis	O	I-GEJALA	I-GEJALA		I-GEJALA	satu annotator memberi entitas; perlu cek cepat
+103	ruam berbentuk garis merah pada kulit setelah konsumsi obat	4	merah	O	I-GEJALA	I-GEJALA		I-GEJALA	satu annotator memberi entitas; perlu cek cepat
+103	ruam berbentuk garis merah pada kulit setelah konsumsi obat	7	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+105	gatal di seluruh badan setelah minum obat jamur kulit	5	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+106	apakah obat batuk pilek bisa dikonsumsi bayi usia bulan	4	pilek	I-GEJALA	B-GEJALA	B-GEJALA		B-GEJALA	beda B/I pada tipe sama; pilih B agar aman dari I tanpa awal span
+107	nyeri dada mual sakit kepala dan tubuh gatal paska suntik kb bulan	9	paska	O	B-WAKTU_DURASI	B-WAKTU_DURASI		B-WAKTU_DURASI	satu annotator memberi entitas; perlu cek cepat
+107	nyeri dada mual sakit kepala dan tubuh gatal paska suntik kb bulan	11	kb	B-OBAT	I-PROSEDUR	B-PROSEDUR		B-PROSEDUR	suntik/vaksin/kb lebih cocok sebagai prosedur pada fase 9
+110	mual setelah minum obat nyeri dan antibiotik	2	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+111	alergi semakin bertambah di kaki dan telapak tangan setelah minum obat	9	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+123	berapa lama alergi di wajah akibat make up bisa hilang	7	make	O	B-OBAT	B-OBAT		B-OBAT	satu annotator memberi entitas; perlu cek cepat
+123	berapa lama alergi di wajah akibat make up bisa hilang	8	up	O	I-OBAT	I-OBAT		I-OBAT	satu annotator memberi entitas; perlu cek cepat
+126	kenapa sudah beberapa hari minum cetirizine alergi belum sembuh juga	3	beberapa	O	B-WAKTU_DURASI	B-WAKTU_DURASI		B-WAKTU_DURASI	satu annotator memberi entitas; perlu cek cepat
+126	kenapa sudah beberapa hari minum cetirizine alergi belum sembuh juga	4	hari	B-WAKTU_DURASI	I-WAKTU_DURASI	B-WAKTU_DURASI		B-WAKTU_DURASI	beda B/I pada tipe sama; pilih B agar aman dari I tanpa awal span
+129	kulit bayi panas saat pakai minyak telon apakah tanda alergi	6	minyak	O	B-OBAT	B-OBAT		B-OBAT	satu annotator memberi entitas; perlu cek cepat
+129	kulit bayi panas saat pakai minyak telon apakah tanda alergi	7	telon	O	I-OBAT	I-OBAT		I-OBAT	satu annotator memberi entitas; perlu cek cepat
+133	berapa lama tidak boleh kena air hujan setelah cacar air	8	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+134	kenapa siklus haid selalu maju setelah sebelumnya normal	2	siklus	O	B-GEJALA	B-GEJALA		B-GEJALA	satu annotator memberi entitas; perlu cek cepat
+134	kenapa siklus haid selalu maju setelah sebelumnya normal	3	haid	O	I-GEJALA	I-GEJALA		I-GEJALA	satu annotator memberi entitas; perlu cek cepat
+134	kenapa siklus haid selalu maju setelah sebelumnya normal	5	maju	O	B-GEJALA	B-GEJALA		B-GEJALA	satu annotator memberi entitas; perlu cek cepat
+134	kenapa siklus haid selalu maju setelah sebelumnya normal	6	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+134	kenapa siklus haid selalu maju setelah sebelumnya normal	7	sebelumnya	O	B-WAKTU_DURASI	B-WAKTU_DURASI		B-WAKTU_DURASI	satu annotator memberi entitas; perlu cek cepat
+135	mata merah setelah minum obat	3	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+136	obat nebulizer untuk anak tahun	2	nebulizer	I-OBAT	B-PROSEDUR	I-OBAT	Nebulizer adalah alat/terapi, masuk OBAT sesuai kebijakan.	I-OBAT	final human adjudication from user decision
+137	anak usia tahun mengeluh nyeri perut bawah setelah minum obat cacing	8	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+137	anak usia tahun mengeluh nyeri perut bawah setelah minum obat cacing	11	cacing	I-OBAT	B-DIAGNOSIS	I-OBAT	Obat cacing adalah jenis obat antihelmintik.	I-OBAT	final human adjudication from user decision
+140	gatal tak kunjung hilang pasca terkena pasir	5	pasca	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+141	wajah perih dan mengelupas setelah menggunakan krim spc	5	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+142	sering harus menarik nafas panjang dan setiap tidur siang selalu batuk	7	setiap	O	B-WAKTU_DURASI	B-WAKTU_DURASI		B-WAKTU_DURASI	satu annotator memberi entitas; perlu cek cepat
+142	sering harus menarik nafas panjang dan setiap tidur siang selalu batuk	8	tidur	O	I-WAKTU_DURASI	I-WAKTU_DURASI		I-WAKTU_DURASI	satu annotator memberi entitas; perlu cek cepat
+142	sering harus menarik nafas panjang dan setiap tidur siang selalu batuk	9	siang	O	I-WAKTU_DURASI	I-WAKTU_DURASI		I-WAKTU_DURASI	satu annotator memberi entitas; perlu cek cepat
+144	lengan kiri lemah berkeringat disertai telapak tangan dan jari gatal pasca konsumsi udang	2	kiri	O	I-ANATOMI	I-ANATOMI		I-ANATOMI	satu annotator memberi entitas; perlu cek cepat
+144	lengan kiri lemah berkeringat disertai telapak tangan dan jari gatal pasca konsumsi udang	11	pasca	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+145	perlukah konsumsi obat gerd setiap hari meskipun tanpa gejala	5	setiap	O	B-WAKTU_DURASI	B-WAKTU_DURASI		B-WAKTU_DURASI	satu annotator memberi entitas; perlu cek cepat
+145	perlukah konsumsi obat gerd setiap hari meskipun tanpa gejala	6	hari	B-WAKTU_DURASI	I-WAKTU_DURASI	B-WAKTU_DURASI		B-WAKTU_DURASI	beda B/I pada tipe sama; pilih B agar aman dari I tanpa awal span
+145	perlukah konsumsi obat gerd setiap hari meskipun tanpa gejala	8	tanpa	O	B-GEJALA	B-GEJALA		B-GEJALA	satu annotator memberi entitas; perlu cek cepat
+145	perlukah konsumsi obat gerd setiap hari meskipun tanpa gejala	9	gejala	O	I-GEJALA	I-GEJALA		I-GEJALA	satu annotator memberi entitas; perlu cek cepat
+146	siklus menstruasi menjadi lebih pendek pasca operasi kista ovarium	6	pasca	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+149	kulit wajah seperti melepuh terbakar hingga bengkak setelah pakai sabun	5	terbakar	I-GEJALA	B-GEJALA	B-GEJALA		B-GEJALA	beda B/I pada tipe sama; pilih B agar aman dari I tanpa awal span
+149	kulit wajah seperti melepuh terbakar hingga bengkak setelah pakai sabun	8	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+149	kulit wajah seperti melepuh terbakar hingga bengkak setelah pakai sabun	10	sabun	O	B-OBAT	B-OBAT		B-OBAT	satu annotator memberi entitas; perlu cek cepat
+151	cara mengatasi muntahmuntah setelah operasi kelenjar getah bening	4	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+153	penyebab muncul benjolan di perut kanan bawah disertai telat haid bulan	6	kanan	O	I-ANATOMI	I-ANATOMI		I-ANATOMI	satu annotator memberi entitas; perlu cek cepat
+153	penyebab muncul benjolan di perut kanan bawah disertai telat haid bulan	7	bawah	O	I-ANATOMI	I-ANATOMI		I-ANATOMI	satu annotator memberi entitas; perlu cek cepat
+154	cara mengatasi efek samping setelah lepas kb suntik bulan	5	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+154	cara mengatasi efek samping setelah lepas kb suntik bulan	7	kb	B-OBAT	B-PROSEDUR	B-PROSEDUR		B-PROSEDUR	suntik/vaksin/kb lebih cocok sebagai prosedur pada fase 9
+154	cara mengatasi efek samping setelah lepas kb suntik bulan	8	suntik	B-PROSEDUR	I-PROSEDUR	B-PROSEDUR		B-PROSEDUR	beda B/I pada tipe sama; pilih B agar aman dari I tanpa awal span
+155	ruam merah hilang timbul setelah alergi obat	5	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+156	gatal pada kulit setelah vaksin covid dosis kedua	4	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+157	tubuh bentol dan gatal setelah vaksin dosis	5	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+158	apakah boleh minum obat alergi setelah vaksinasi covid	6	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+159	gatal yang kembali muncul setelah konsumsi obat anti alergi	5	setelah	O	B-WAKTU_DURASI	O		O	kata penghubung waktu; label WAKTU_DURASI hanya jika benar-benar waktu/durasi
+159	gatal yang kembali muncul setelah konsumsi obat anti alergi	8	anti	O	I-OBAT	I-OBAT		I-OBAT	satu annotator memberi entitas; perlu cek cepat
+159	gatal yang kembali muncul setelah konsumsi obat anti alergi	9	alergi	B-ALERGI	I-OBAT	B-ALERGI	Merujuk kondisi alergi yang diobati; anti tetap O.	B-ALERGI	final human adjudication from user decision

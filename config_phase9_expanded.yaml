@@ -1,0 +1,73 @@
+project:
+  name: medical-ner-id-phase9-expanded
+  language: id
+  task: token-classification
+
+data:
+  raw_dir: data/raw
+  clean_dir: data/clean
+  annotated_dir: data/annotated
+  source_dataset: iqbalpurba26/health-topic-dataset
+  text_column: topic
+  raw_file: data/raw/health_topic_dataset.jsonl
+  clean_file: data/clean/medical_text_corpus.txt
+  metadata_file: data/clean/medical_text_corpus_metadata.csv
+  train_file: data/phase9_expanded_silver/train.conll
+  validation_file: data/phase9_expanded_silver/val.conll
+  test_file: data/phase9_challenge_set/gold_resolved.conll
+  silver_dir: data/phase9_expanded_silver
+  silver_train_file: data/phase9_expanded_silver/train.conll
+  silver_validation_file: data/phase9_expanded_silver/val.conll
+  silver_test_file: data/phase9_challenge_set/gold_resolved.conll
+  manual_gold_dir: data/phase9_challenge_set
+  manual_gold_file: data/phase9_challenge_set/gold_resolved.conll
+
+labels:
+  - O
+  - B-GEJALA
+  - I-GEJALA
+  - B-OBAT
+  - I-OBAT
+  - B-DOSIS
+  - I-DOSIS
+  - B-DIAGNOSIS
+  - I-DIAGNOSIS
+  - B-ANATOMI
+  - I-ANATOMI
+  - B-PROSEDUR
+  - I-PROSEDUR
+  - B-HASIL_LAB
+  - I-HASIL_LAB
+  - B-NILAI_LAB
+  - I-NILAI_LAB
+  - B-WAKTU_DURASI
+  - I-WAKTU_DURASI
+  - B-ALERGI
+  - I-ALERGI
+  - B-RIWAYAT_PENYAKIT
+  - I-RIWAYAT_PENYAKIT
+
+model:
+  base_model: indobenchmark/indobert-base-p1
+  output_dir: models/indobert-medical-ner-id-phase9-expanded
+
+models:
+  indobert:
+    display_name: IndoBERT base p1 phase9-expanded
+    role: expanded-label
+    base_model: indobenchmark/indobert-base-p1
+    output_dir: models/indobert-medical-ner-id-phase9-expanded
+
+training:
+  train_data_source: silver
+  learning_rate: 0.00002
+  num_train_epochs: 3
+  per_device_train_batch_size: 32
+  per_device_eval_batch_size: 32
+  weight_decay: 0.01
+  seed: 42
+  max_length: 128
+  max_train_samples: null
+  max_eval_samples: 512
+  warmup_ratio: 0.1
+  max_grad_norm: 1.0

@@ -15,16 +15,16 @@ tinggi B-NILAI_LAB
 # text = telat haid testpack negatif pinggang sakit keluar flek coklat dan urine berdarah
 telat B-GEJALA
 haid I-GEJALA
-testpack O
-negatif O
-pinggang O
+testpack B-PROSEDUR
+negatif B-NILAI_LAB
+pinggang B-ANATOMI
 sakit B-GEJALA
 keluar B-GEJALA
 flek I-GEJALA
 coklat I-GEJALA
 dan O
-urine B-HASIL_LAB
-berdarah B-GEJALA
+urine B-GEJALA
+berdarah I-GEJALA
 
 # id = C04916
 # focus = HASIL_LAB, OBAT_DOSIS
@@ -34,7 +34,7 @@ obat B-OBAT
 untuk O
 mengatasi O
 leher B-ANATOMI
-tegang O
+tegang B-GEJALA
 karena O
 kolesterol B-HASIL_LAB
 
@@ -68,7 +68,7 @@ obat B-OBAT
 untuk O
 mengatasi O
 mata B-ANATOMI
-kaki B-ANATOMI
+kaki I-ANATOMI
 bengkak B-GEJALA
 karena O
 asam B-HASIL_LAB
@@ -112,7 +112,7 @@ obat B-OBAT
 untuk O
 mengatasi O
 peningkatan B-NILAI_LAB
-sgpt O
+sgpt B-HASIL_LAB
 dan O
 asam B-HASIL_LAB
 urat I-HASIL_LAB
@@ -124,15 +124,15 @@ bolehkah O
 konsumsi O
 obat B-OBAT
 kolesterol B-HASIL_LAB
-darah O
-tinggi B-NILAI_LAB
+darah B-DIAGNOSIS
+tinggi I-DIAGNOSIS
 dan O
 asam B-HASIL_LAB
 urat I-HASIL_LAB
 bersamaan O
 dengan O
 vitamin B-OBAT
-d O
+d I-OBAT
 
 # id = C10054
 # focus = HASIL_LAB
@@ -151,7 +151,7 @@ apakah O
 boleh O
 minum O
 obat B-OBAT
-kuat O
+kuat I-OBAT
 pada O
 penderita O
 hipertensi B-DIAGNOSIS
@@ -172,7 +172,7 @@ dan O
 badan B-ANATOMI
 sakit B-GEJALA
 bolehkah O
-cek O
+cek B-PROSEDUR
 hb B-HASIL_LAB
 
 # id = C11860
@@ -181,9 +181,9 @@ hb B-HASIL_LAB
 apakah O
 menstruasi O
 mempengaruhi O
-hasil B-HASIL_LAB
-lab I-HASIL_LAB
-prolactin O
+hasil O
+lab B-PROSEDUR
+prolactin B-HASIL_LAB
 
 # id = C06886
 # focus = HASIL_LAB, OBAT_DOSIS
@@ -193,7 +193,7 @@ untuk O
 konsumsi O
 obat B-OBAT
 sebelum O
-cek O
+cek B-PROSEDUR
 gula B-HASIL_LAB
 darah I-HASIL_LAB
 
@@ -205,8 +205,8 @@ yang O
 dapat O
 mempengaruhi O
 hasil O
-tes O
-agregasi O
+tes B-PROSEDUR
+agregasi I-PROSEDUR
 trombosit B-HASIL_LAB
 
 # id = C11797
@@ -229,7 +229,7 @@ asam B-HASIL_LAB
 urat I-HASIL_LAB
 setelah B-WAKTU_DURASI
 vaksin B-PROSEDUR
-corona O
+corona I-PROSEDUR
 
 # id = C05510
 # focus = HASIL_LAB, OBAT_DOSIS
@@ -241,8 +241,8 @@ hipertensi B-DIAGNOSIS
 kolesterol B-HASIL_LAB
 tinggi B-NILAI_LAB
 dan O
-asam O
-lambung B-ANATOMI
+asam B-DIAGNOSIS
+lambung I-DIAGNOSIS
 
 # id = C02431
 # focus = HASIL_LAB
@@ -260,8 +260,8 @@ tinggi B-NILAI_LAB
 kadar B-HASIL_LAB
 eritrosit I-HASIL_LAB
 dan O
-eonosofil O
-tanggi O
+eonosofil B-HASIL_LAB
+tanggi B-NILAI_LAB
 pada O
 hasil O
 pemeriksaan B-PROSEDUR
@@ -270,15 +270,15 @@ darah I-PROSEDUR
 # id = C12989
 # focus = PROSEDUR, WAKTU_DURASI
 # text = gumpalan berwarna putih saat menstruasi dan menggunakan kb suntik bulan
-gumpalan O
-berwarna O
-putih O
+gumpalan B-GEJALA
+berwarna I-GEJALA
+putih I-GEJALA
 saat O
 menstruasi O
 dan O
 menggunakan O
-kb B-OBAT
-suntik B-PROSEDUR
+kb B-PROSEDUR
+suntik I-PROSEDUR
 bulan B-WAKTU_DURASI
 
 # id = C09710
@@ -297,14 +297,14 @@ bulan B-WAKTU_DURASI
 # id = C10631
 # focus = PROSEDUR, WAKTU_DURASI
 # text = keluar banyak darah menstruasi setelah lepas kb suntik
-keluar O
-banyak O
-darah O
-menstruasi O
+keluar B-GEJALA
+banyak I-GEJALA
+darah I-GEJALA
+menstruasi I-GEJALA
 setelah B-WAKTU_DURASI
 lepas O
-kb B-OBAT
-suntik B-PROSEDUR
+kb B-PROSEDUR
+suntik I-PROSEDUR
 
 # id = C11058
 # focus = PROSEDUR
@@ -313,7 +313,7 @@ kemungkinan O
 hamil B-DIAGNOSIS
 saat O
 hasil O
-testpack O
+testpack B-PROSEDUR
 dan O
 usg B-PROSEDUR
 berbeda O
@@ -339,20 +339,20 @@ yang O
 digunakan O
 pasca B-WAKTU_DURASI
 operasi B-PROSEDUR
-wasir O
+wasir I-PROSEDUR
 
 # id = C12008
 # focus = PROSEDUR, WAKTU_DURASI
 # text = mengatasi haid tidak teratur pasca operasi pengangkatan kista ovarium
 mengatasi O
-haid O
-tidak B-GEJALA
+haid B-GEJALA
+tidak I-GEJALA
 teratur I-GEJALA
 pasca B-WAKTU_DURASI
 operasi B-PROSEDUR
-pengangkatan O
-kista O
-ovarium O
+pengangkatan I-PROSEDUR
+kista B-DIAGNOSIS
+ovarium I-DIAGNOSIS
 
 # id = C00829
 # focus = PROSEDUR, WAKTU_DURASI, GEJALA_SULIT
@@ -362,9 +362,9 @@ terasa O
 gatal B-GEJALA
 setelah B-WAKTU_DURASI
 operasi B-PROSEDUR
-cangkoj O
-tulang O
-betis O
+cangkoj I-PROSEDUR
+tulang B-ANATOMI
+betis I-ANATOMI
 
 # id = C08378
 # focus = PROSEDUR, WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
@@ -375,7 +375,7 @@ minum O
 obat B-OBAT
 pasca B-WAKTU_DURASI
 operasi B-PROSEDUR
-selulitis O
+selulitis B-DIAGNOSIS
 
 # id = C10634
 # focus = PROSEDUR, WAKTU_DURASI
@@ -383,22 +383,22 @@ selulitis O
 menstruasi O
 setelah B-WAKTU_DURASI
 hasil O
-test O
-pack O
-samar O
+test B-PROSEDUR
+pack I-PROSEDUR
+samar B-NILAI_LAB
 dan O
 hasil O
 usg B-PROSEDUR
-belum O
-terlihat O
+belum B-NILAI_LAB
+terlihat I-NILAI_LAB
 
 # id = C11108
 # focus = PROSEDUR, WAKTU_DURASI
 # text = bagaimana normalnya siklus haid pasca operasi usus buntu
 bagaimana O
 normalnya O
-siklus O
-haid O
+siklus B-GEJALA
+haid I-GEJALA
 pasca B-WAKTU_DURASI
 operasi B-PROSEDUR
 usus I-PROSEDUR
@@ -412,9 +412,9 @@ yang O
 tidak B-GEJALA
 teratur I-GEJALA
 dengan O
-riwayat O
-pemeriksaan B-PROSEDUR
-usg B-PROSEDUR
+riwayat B-RIWAYAT_PENYAKIT
+pemeriksaan I-RIWAYAT_PENYAKIT
+usg I-RIWAYAT_PENYAKIT
 yang O
 normal B-NILAI_LAB
 
@@ -431,8 +431,8 @@ bulan B-WAKTU_DURASI
 # id = C12937
 # focus = PROSEDUR, WAKTU_DURASI
 # text = haid berkepanjangan setelah ganti suntik kb ke pil kb
-haid O
-berkepanjangan B-GEJALA
+haid B-GEJALA
+berkepanjangan I-GEJALA
 setelah B-WAKTU_DURASI
 ganti O
 suntik B-PROSEDUR
@@ -445,10 +445,10 @@ kb I-OBAT
 # focus = PROSEDUR, WAKTU_DURASI
 # text = penyebab siklus haid yang berubah pasca suntik kb bulan
 penyebab O
-siklus O
-haid O
+siklus B-GEJALA
+haid I-GEJALA
 yang O
-berubah O
+berubah B-GEJALA
 pasca B-WAKTU_DURASI
 suntik B-PROSEDUR
 kb I-PROSEDUR
@@ -461,8 +461,8 @@ kapan O
 bisa O
 pindah O
 dari O
-kb B-OBAT
-suntik B-PROSEDUR
+kb B-PROSEDUR
+suntik I-PROSEDUR
 bulan B-WAKTU_DURASI
 ke O
 pil B-OBAT
@@ -488,7 +488,7 @@ covid I-PROSEDUR
 terhadap O
 haid O
 yang O
-telat O
+telat B-GEJALA
 dan O
 badan B-ANATOMI
 lemas B-GEJALA
@@ -499,7 +499,7 @@ lemas B-GEJALA
 keamanan O
 melakukan O
 suntik B-PROSEDUR
-vaksinasi B-PROSEDUR
+vaksinasi I-PROSEDUR
 covid I-PROSEDUR
 saat O
 sedang O
@@ -515,7 +515,7 @@ alergi B-ALERGI
 kambuh O
 hingga O
 muncul O
-bintikbintik O
+bintikbintik B-GEJALA
 boleh O
 vaksinasi B-PROSEDUR
 covid I-PROSEDUR
@@ -528,42 +528,42 @@ obat B-OBAT
 suntik B-PROSEDUR
 untuk O
 mengatasi O
-pengeroposan O
-dengkul O
+pengeroposan B-DIAGNOSIS
+dengkul B-ANATOMI
 dapat O
 mengancam O
 kesehatan O
-ginjal O
+ginjal B-ANATOMI
 
 # id = C12499
 # focus = PROSEDUR, WAKTU_DURASI, OBAT_DOSIS
 # text = mengatasi haid berkepanjangan setelah suntik keloid dengan menggunakan obat kortikosteroid
 mengatasi O
-haid O
-berkepanjangan B-GEJALA
+haid B-GEJALA
+berkepanjangan I-GEJALA
 setelah B-WAKTU_DURASI
 suntik B-PROSEDUR
-keloid O
+keloid I-PROSEDUR
 dengan O
 menggunakan O
 obat B-OBAT
-kortikosteroid O
+kortikosteroid B-OBAT
 
 # id = C09912
 # focus = WAKTU_DURASI, RIWAYAT_PENYAKIT
 # text = haid tidak teratur dan keluar asi sedikit dengan riwayat kuretase bulan lalu
-haid O
-tidak B-GEJALA
+haid B-GEJALA
+tidak I-GEJALA
 teratur I-GEJALA
 dan O
-keluar O
-asi O
-sedikit O
+keluar B-GEJALA
+asi I-GEJALA
+sedikit I-GEJALA
 dengan O
-riwayat O
-kuretase O
+riwayat B-RIWAYAT_PENYAKIT
+kuretase I-RIWAYAT_PENYAKIT
 bulan B-WAKTU_DURASI
-lalu O
+lalu I-WAKTU_DURASI
 
 # id = C05733
 # focus = RIWAYAT_PENYAKIT, OBAT_DOSIS
@@ -580,28 +580,28 @@ hamil B-DIAGNOSIS
 pada O
 wanita O
 dengan O
-riwayat O
-edema O
-serebri O
+riwayat B-RIWAYAT_PENYAKIT
+edema I-RIWAYAT_PENYAKIT
+serebri I-RIWAYAT_PENYAKIT
 
 # id = C10909
 # focus = RIWAYAT_PENYAKIT
 # text = siklus haid dengan riwayat penyakit kista
-siklus O
-haid O
+siklus B-GEJALA
+haid I-GEJALA
 dengan O
-riwayat O
-penyakit O
-kista O
+riwayat B-RIWAYAT_PENYAKIT
+penyakit I-RIWAYAT_PENYAKIT
+kista I-RIWAYAT_PENYAKIT
 
 # id = C06731
 # focus = RIWAYAT_PENYAKIT, OBAT_DOSIS
 # text = memiliki riwayat pengobatan hipertiroid sebelumnya dan sempat putus obat
 memiliki O
-riwayat O
-pengobatan O
-hipertiroid O
-sebelumnya O
+riwayat B-RIWAYAT_PENYAKIT
+pengobatan I-RIWAYAT_PENYAKIT
+hipertiroid I-RIWAYAT_PENYAKIT
+sebelumnya B-WAKTU_DURASI
 dan O
 sempat O
 putus O
@@ -614,9 +614,9 @@ cara O
 mengatasi O
 anyanganyangan O
 dengan O
-riwayat O
-penyakit O
-paruparu O
+riwayat B-RIWAYAT_PENYAKIT
+penyakit I-RIWAYAT_PENYAKIT
+paruparu I-RIWAYAT_PENYAKIT
 
 # id = C00720
 # focus = ALERGI, RIWAYAT_PENYAKIT, GEJALA_SULIT
@@ -656,17 +656,17 @@ mengatasi O
 rasa O
 nyeri B-GEJALA
 pada O
-riwayat O
-penderita O
-alergi B-ALERGI
+riwayat B-RIWAYAT_PENYAKIT
+penderita I-RIWAYAT_PENYAKIT
+alergi I-RIWAYAT_PENYAKIT
 
 # id = C11490
 # focus = WAKTU_DURASI, RIWAYAT_PENYAKIT
 # text = penyebab tidak pernah haid selama tahun
 penyebab O
-tidak O
-pernah O
-haid O
+tidak B-GEJALA
+pernah I-GEJALA
+haid I-GEJALA
 selama B-WAKTU_DURASI
 tahun B-WAKTU_DURASI
 
@@ -677,27 +677,27 @@ sering O
 telat B-GEJALA
 haid I-GEJALA
 tibatiba O
-pingsan O
+pingsan B-GEJALA
 dan O
 memiliki O
-riwayat O
-asma B-DIAGNOSIS
+riwayat B-RIWAYAT_PENYAKIT
+asma I-RIWAYAT_PENYAKIT
 
 # id = C05876
 # focus = RIWAYAT_PENYAKIT, OBAT_DOSIS
 # text = obat asam lambung yang dapat digunakan pada orang dengan riwayat jantung bocor
 obat B-OBAT
-asam O
-lambung B-ANATOMI
+asam B-DIAGNOSIS
+lambung I-DIAGNOSIS
 yang O
 dapat O
 digunakan O
 pada O
 orang O
 dengan O
-riwayat O
-jantung B-ANATOMI
-bocor O
+riwayat B-RIWAYAT_PENYAKIT
+jantung I-RIWAYAT_PENYAKIT
+bocor I-RIWAYAT_PENYAKIT
 
 # id = C00587
 # focus = ALERGI, PROSEDUR, RIWAYAT_PENYAKIT
@@ -729,14 +729,14 @@ laut O
 # id = C11372
 # focus = RIWAYAT_PENYAKIT
 # text = haid tidak teratur dengan riwayat hormon tidak stabil
-haid O
-tidak B-GEJALA
+haid B-GEJALA
+tidak I-GEJALA
 teratur I-GEJALA
 dengan O
-riwayat O
-hormon O
-tidak O
-stabil O
+riwayat B-RIWAYAT_PENYAKIT
+hormon I-RIWAYAT_PENYAKIT
+tidak I-RIWAYAT_PENYAKIT
+stabil I-RIWAYAT_PENYAKIT
 
 # id = C12705
 # focus = WAKTU_DURASI, RIWAYAT_PENYAKIT, GEJALA_SULIT
@@ -749,9 +749,9 @@ minggu B-WAKTU_DURASI
 disertai O
 pusing B-GEJALA
 mual B-GEJALA
-tidak O
-nafsu O
-makan O
+tidak B-GEJALA
+nafsu I-GEJALA
+makan I-GEJALA
 pada O
 wanita O
 yang O
@@ -765,11 +765,11 @@ intim O
 # focus = PROSEDUR, WAKTU_DURASI, RIWAYAT_PENYAKIT
 # text = ada riwayat kulit bentolbentol usai divaksin apakah sekarang masih boleh vaksinasi covid
 ada O
-riwayat O
-kulit B-ANATOMI
-bentolbentol B-GEJALA
+riwayat B-RIWAYAT_PENYAKIT
+kulit I-RIWAYAT_PENYAKIT
+bentolbentol I-RIWAYAT_PENYAKIT
 usai B-WAKTU_DURASI
-divaksin O
+divaksin B-PROSEDUR
 apakah O
 sekarang O
 masih O
@@ -783,28 +783,28 @@ covid I-PROSEDUR
 pengobatan O
 untuk O
 mengatasi O
-infeksi B-DIAGNOSIS
+infeksi O
 jamur O
 dengan O
-riwayat O
-penderita O
-gerd O
+riwayat B-RIWAYAT_PENYAKIT
+penderita I-RIWAYAT_PENYAKIT
+gerd I-RIWAYAT_PENYAKIT
 
 # id = C05930
 # focus = RIWAYAT_PENYAKIT, OBAT_DOSIS
 # text = pemberian obat antiparasit pada pasien covid dengan riwayat penyakit diabetes dan paruparu
 pemberian O
 obat B-OBAT
-antiparasit O
+antiparasit I-OBAT
 pada O
 pasien O
-covid O
+covid B-DIAGNOSIS
 dengan O
-riwayat O
-penyakit O
-diabetes B-DIAGNOSIS
+riwayat B-RIWAYAT_PENYAKIT
+penyakit I-RIWAYAT_PENYAKIT
+diabetes I-RIWAYAT_PENYAKIT
 dan O
-paruparu O
+paruparu B-DIAGNOSIS
 
 # id = C07104
 # focus = RIWAYAT_PENYAKIT, OBAT_DOSIS
@@ -816,8 +816,8 @@ hormon I-OBAT
 saat O
 hamil B-DIAGNOSIS
 dengan O
-riwayat O
-benjolan B-GEJALA
+riwayat B-RIWAYAT_PENYAKIT
+benjolan I-RIWAYAT_PENYAKIT
 di O
 payudara B-ANATOMI
 
@@ -827,8 +827,8 @@ payudara B-ANATOMI
 telat B-GEJALA
 haid I-GEJALA
 dengan O
-riwayat O
-pcos O
+riwayat B-RIWAYAT_PENYAKIT
+pcos I-RIWAYAT_PENYAKIT
 apakah O
 hamil B-DIAGNOSIS
 
@@ -843,20 +843,20 @@ kandungan B-ANATOMI
 pada O
 wanita O
 dengan O
-riwayat O
-keguguran B-DIAGNOSIS
+riwayat B-RIWAYAT_PENYAKIT
+keguguran I-RIWAYAT_PENYAKIT
 
 # id = C10856
 # focus = RIWAYAT_PENYAKIT
 # text = menstruasi tidak rutin dan memiliki riwayat darah rendah
-menstruasi O
-tidak O
-rutin O
+menstruasi B-GEJALA
+tidak I-GEJALA
+rutin I-GEJALA
 dan O
 memiliki O
-riwayat O
-darah O
-rendah B-NILAI_LAB
+riwayat B-RIWAYAT_PENYAKIT
+darah I-RIWAYAT_PENYAKIT
+rendah I-RIWAYAT_PENYAKIT
 
 # id = C04797
 # focus = PROSEDUR, OBAT_DOSIS
@@ -864,7 +864,7 @@ rendah B-NILAI_LAB
 apakah O
 ada O
 obat B-OBAT
-amandel O
+amandel B-DIAGNOSIS
 tanpa O
 harus O
 operasi B-PROSEDUR
@@ -891,7 +891,7 @@ obat B-OBAT
 untuk O
 mengatasi O
 mata B-ANATOMI
-merah O
+merah B-GEJALA
 
 # id = C04805
 # focus = OBAT_DOSIS
@@ -904,20 +904,20 @@ dari O
 obat B-OBAT
 tbc B-DIAGNOSIS
 yang O
-merah O
+merah B-GEJALA
 
 # id = C06951
 # focus = WAKTU_DURASI, OBAT_DOSIS
 # text = berkeringat berlebih setelah konsumsi obat pada penderita efusi pleura
-berkeringat O
-berlebih O
+berkeringat B-GEJALA
+berlebih I-GEJALA
 setelah B-WAKTU_DURASI
 konsumsi O
 obat B-OBAT
 pada O
 penderita O
-efusi O
-pleura O
+efusi B-DIAGNOSIS
+pleura I-DIAGNOSIS
 
 # id = C08822
 # focus = OBAT_DOSIS
@@ -926,7 +926,7 @@ apakah O
 boleh O
 minum O
 obat B-OBAT
-antasida O
+antasida B-OBAT
 saat O
 sedang O
 pengobatan O
@@ -940,8 +940,8 @@ sengaja O
 konsumsi O
 obat B-OBAT
 golongan O
-ace O
-inhibitor O
+ace B-OBAT
+inhibitor I-OBAT
 hingga O
 kali O
 
@@ -953,7 +953,7 @@ diare B-GEJALA
 setelah B-WAKTU_DURASI
 konsumsi O
 obat B-OBAT
-zinc O
+zinc B-OBAT
 
 # id = C05593
 # focus = OBAT_DOSIS
@@ -961,9 +961,9 @@ zinc O
 keamanan O
 konsumsi O
 obat B-OBAT
-pyrathiazine O
+pyrathiazine B-OBAT
 dan O
-pyridoxine O
+pyridoxine B-OBAT
 pada O
 ibu O
 hamil B-DIAGNOSIS
@@ -979,16 +979,16 @@ herpes B-DIAGNOSIS
 agar O
 mudah O
 cepat O
-kering O
+kering B-GEJALA
 
 # id = C07675
 # focus = WAKTU_DURASI, OBAT_DOSIS
 # text = rasa ngantuk setelah minum diazepam pada orang dengan ketergantungan obat
 rasa O
-ngantuk O
+ngantuk B-GEJALA
 setelah B-WAKTU_DURASI
 minum O
-diazepam O
+diazepam B-OBAT
 pada O
 orang O
 dengan O
@@ -1001,7 +1001,7 @@ obat B-OBAT
 aturan O
 konsumsi O
 obat B-OBAT
-cacing I-OBAT
+cacing B-DIAGNOSIS
 dibulan O
 puasa O
 
@@ -1009,7 +1009,7 @@ puasa O
 # focus = WAKTU_DURASI, OBAT_DOSIS
 # text = wajah iritasi setelah menggunakan obat jerawat
 wajah B-ANATOMI
-iritasi B-DIAGNOSIS
+iritasi B-GEJALA
 setelah B-WAKTU_DURASI
 menggunakan O
 obat B-OBAT
@@ -1032,8 +1032,8 @@ kapan O
 boleh O
 minum O
 obat B-OBAT
-mabuk O
-perjalanan O
+mabuk B-DIAGNOSIS
+perjalanan I-DIAGNOSIS
 setelah B-WAKTU_DURASI
 minum O
 obat B-OBAT
@@ -1055,7 +1055,7 @@ diabetes B-DIAGNOSIS
 bolehkah O
 konsumsi O
 obat B-OBAT
-penenang O
+penenang I-OBAT
 berkepanjangan B-GEJALA
 
 # id = C04456
@@ -1065,8 +1065,8 @@ rekomendasi O
 obat B-OBAT
 untuk O
 menaikkan O
-tekanan O
-darah O
+tekanan B-HASIL_LAB
+darah I-HASIL_LAB
 
 # id = C08274
 # focus = OBAT_DOSIS
@@ -1075,7 +1075,7 @@ apakah O
 aman O
 mengonsumsi O
 obat B-OBAT
-spiramycin O
+spiramycin B-OBAT
 saat O
 hamil B-DIAGNOSIS
 
@@ -1086,7 +1086,7 @@ obat B-OBAT
 untuk O
 mengatasi O
 kaki B-ANATOMI
-keselo O
+keselo B-GEJALA
 dan O
 bengkak B-GEJALA
 
@@ -1096,8 +1096,8 @@ bengkak B-GEJALA
 aturan O
 pakai O
 obat B-OBAT
-anti O
-tuberkulosis O
+anti I-OBAT
+tuberkulosis I-OBAT
 
 # id = C06603
 # focus = OBAT_DOSIS
@@ -1105,18 +1105,18 @@ tuberkulosis O
 konsumsi O
 obat B-OBAT
 golongan O
-antitiroid O
+antitiroid B-OBAT
 bersamaan O
 dengan O
 obat B-OBAT
-hipotiroidisme O
+hipotiroidisme B-DIAGNOSIS
 
 # id = C11487
 # focus = GEJALA_SULIT
 # text = vagina gatal seminggu sebelum menstruasi apakah wajar
 vagina B-ANATOMI
 gatal B-GEJALA
-seminggu O
+seminggu B-WAKTU_DURASI
 sebelum O
 menstruasi O
 apakah O
@@ -1126,8 +1126,8 @@ wajar O
 # focus = GEJALA_SULIT
 # text = timbul bercak kemerahan pada tubuh yang disertai rasa gatal
 timbul O
-bercak O
-kemerahan B-GEJALA
+bercak B-GEJALA
+kemerahan I-GEJALA
 pada O
 tubuh B-ANATOMI
 yang O
@@ -1140,7 +1140,7 @@ gatal B-GEJALA
 # text = konsumsi obat batuk tanpa resep dokter
 konsumsi O
 obat B-OBAT
-batuk I-OBAT
+batuk B-GEJALA
 tanpa O
 resep O
 dokter O
@@ -1153,7 +1153,7 @@ mengatasi O
 hidung B-ANATOMI
 gatal B-GEJALA
 dan O
-bersinbersin O
+bersinbersin B-GEJALA
 karena O
 alergi B-ALERGI
 
@@ -1171,7 +1171,7 @@ apaapa O
 setelah B-WAKTU_DURASI
 menggunakan O
 pacar O
-kuku O
+kuku B-ANATOMI
 
 # id = C00670
 # focus = GEJALA_SULIT
@@ -1192,7 +1192,7 @@ batuk B-GEJALA
 setelah B-WAKTU_DURASI
 menggunakan O
 salep B-OBAT
-skabies O
+skabies B-DIAGNOSIS
 masih O
 gatal B-GEJALA
 apakah O
@@ -1207,7 +1207,7 @@ cocok O
 untuk O
 mengatasi O
 batuk B-GEJALA
-kering I-GEJALA
+kering B-GEJALA
 dan O
 flu B-DIAGNOSIS
 pada O
@@ -1220,7 +1220,7 @@ dewasa O
 penyebab O
 tubuh B-ANATOMI
 terasa O
-ngilu O
+ngilu B-GEJALA
 dan O
 demam B-GEJALA
 saat O
@@ -1231,7 +1231,7 @@ haid O
 # focus = ALERGI, WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
 # text = obat batuk alergi di apotek untuk anak usia tahun
 obat B-OBAT
-batuk I-OBAT
+batuk B-GEJALA
 alergi B-ALERGI
 di O
 apotek O
@@ -1256,11 +1256,11 @@ cara O
 mengatasi O
 siku B-ANATOMI
 dan O
-lutut O
+lutut B-ANATOMI
 bentol B-GEJALA
 pasca B-WAKTU_DURASI
 konsumsi O
-suplemen O
+suplemen B-OBAT
 
 # id = C01241
 # focus = GEJALA_SULIT
@@ -1287,15 +1287,15 @@ perut B-ANATOMI
 setelah B-WAKTU_DURASI
 konsumsi O
 obat B-OBAT
-batuk I-OBAT
+batuk B-GEJALA
 
 # id = C03794
 # focus = WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
 # text = ruam berbentuk garis merah pada kulit setelah konsumsi obat
 ruam B-GEJALA
-berbentuk O
-garis O
-merah O
+berbentuk I-GEJALA
+garis I-GEJALA
+merah I-GEJALA
 pada O
 kulit B-ANATOMI
 setelah B-WAKTU_DURASI
@@ -1305,8 +1305,8 @@ obat B-OBAT
 # id = C01036
 # focus = GEJALA_SULIT
 # text = telapak kaki yang terasa gatal dan berair
-telapak O
-kaki B-ANATOMI
+telapak B-ANATOMI
+kaki I-ANATOMI
 yang O
 terasa O
 gatal B-GEJALA
@@ -1323,15 +1323,15 @@ badan B-ANATOMI
 setelah B-WAKTU_DURASI
 minum O
 obat B-OBAT
-jamur O
-kulit B-ANATOMI
+jamur B-DIAGNOSIS
+kulit I-DIAGNOSIS
 
 # id = C05703
 # focus = WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
 # text = apakah obat batuk pilek bisa dikonsumsi bayi usia bulan
 apakah O
 obat B-OBAT
-batuk I-OBAT
+batuk B-GEJALA
 pilek B-GEJALA
 bisa O
 dikonsumsi O
@@ -1350,7 +1350,7 @@ kepala B-ANATOMI
 dan O
 tubuh B-ANATOMI
 gatal B-GEJALA
-paska O
+paska B-WAKTU_DURASI
 suntik B-PROSEDUR
 kb I-PROSEDUR
 bulan B-WAKTU_DURASI
@@ -1385,7 +1385,7 @@ mual B-GEJALA
 setelah B-WAKTU_DURASI
 minum O
 obat B-OBAT
-nyeri I-OBAT
+nyeri B-GEJALA
 dan O
 antibiotik B-OBAT
 
@@ -1482,8 +1482,8 @@ tahun B-WAKTU_DURASI
 penyebab O
 alergi B-ALERGI
 disertai O
-bntik O
-merah O
+bntik B-GEJALA
+merah I-GEJALA
 dan O
 batuk B-GEJALA
 pada O
@@ -1495,7 +1495,7 @@ tahun B-WAKTU_DURASI
 # text = alergi dan pneumonia pada bayi usia bulan
 alergi B-ALERGI
 dan O
-pneumonia O
+pneumonia B-DIAGNOSIS
 pada O
 bayi O
 usia O
@@ -1508,7 +1508,7 @@ penyebab O
 kulit B-ANATOMI
 alergi B-ALERGI
 tampak O
-merah O
+merah B-GEJALA
 
 # id = C02987
 # focus = ALERGI, GEJALA_SULIT
@@ -1517,7 +1517,7 @@ apa O
 efek O
 samping O
 dari O
-ctm O
+ctm B-OBAT
 pada O
 penderita O
 alergi B-ALERGI
@@ -1527,7 +1527,7 @@ pipi B-ANATOMI
 bengkak B-GEJALA
 dan O
 perut B-ANATOMI
-buncit O
+buncit B-GEJALA
 
 # id = C00242
 # focus = ALERGI
@@ -1538,8 +1538,8 @@ alergi B-ALERGI
 di O
 wajah B-ANATOMI
 akibat O
-make O
-up O
+make B-OBAT
+up I-OBAT
 bisa O
 hilang O
 
@@ -1571,8 +1571,8 @@ telur O
 # text = kenapa sudah beberapa hari minum cetirizine alergi belum sembuh juga
 kenapa O
 sudah O
-beberapa O
-hari B-WAKTU_DURASI
+beberapa B-WAKTU_DURASI
+hari I-WAKTU_DURASI
 minum O
 cetirizine B-OBAT
 alergi B-ALERGI
@@ -1600,7 +1600,7 @@ obat B-OBAT
 untuk O
 mata B-ANATOMI
 gatal B-GEJALA
-bersin O
+bersin B-GEJALA
 dan O
 sesak B-GEJALA
 napas I-GEJALA
@@ -1615,8 +1615,8 @@ bayi O
 panas B-GEJALA
 saat O
 pakai O
-minyak O
-telon O
+minyak B-OBAT
+telon I-OBAT
 apakah O
 tanda O
 alergi B-ALERGI
@@ -1632,7 +1632,7 @@ berkepanjangan B-GEJALA
 dan O
 kaitan O
 dengan O
-corona O
+corona B-DIAGNOSIS
 
 # id = C04342
 # focus = ALERGI, PROSEDUR
@@ -1646,10 +1646,10 @@ alergi B-ALERGI
 # focus = ALERGI, GEJALA_SULIT
 # text = jari kaki bengkak dan bernanah karena alergi
 jari B-ANATOMI
-kaki B-ANATOMI
+kaki I-ANATOMI
 bengkak B-GEJALA
 dan O
-bernanah O
+bernanah B-GEJALA
 karena O
 alergi B-ALERGI
 
@@ -1664,26 +1664,26 @@ kena O
 air O
 hujan O
 setelah B-WAKTU_DURASI
-cacar O
-air O
+cacar B-DIAGNOSIS
+air I-DIAGNOSIS
 
 # id = C09416
 # focus = WAKTU_DURASI
 # text = kenapa siklus haid selalu maju setelah sebelumnya normal
 kenapa O
-siklus O
-haid O
+siklus B-GEJALA
+haid I-GEJALA
 selalu O
-maju O
+maju B-GEJALA
 setelah B-WAKTU_DURASI
-sebelumnya O
-normal B-NILAI_LAB
+sebelumnya B-WAKTU_DURASI
+normal O
 
 # id = C03655
 # focus = WAKTU_DURASI, OBAT_DOSIS
 # text = mata merah setelah minum obat
 mata B-ANATOMI
-merah O
+merah B-GEJALA
 setelah B-WAKTU_DURASI
 minum O
 obat B-OBAT
@@ -1692,7 +1692,7 @@ obat B-OBAT
 # focus = WAKTU_DURASI, OBAT_DOSIS
 # text = obat nebulizer untuk anak tahun
 obat B-OBAT
-nebulizer O
+nebulizer B-PROSEDUR
 untuk O
 anak O
 tahun B-WAKTU_DURASI
@@ -1710,7 +1710,7 @@ bawah I-ANATOMI
 setelah B-WAKTU_DURASI
 minum O
 obat B-OBAT
-cacing I-OBAT
+cacing B-DIAGNOSIS
 
 # id = C07732
 # focus = WAKTU_DURASI, OBAT_DOSIS
@@ -1719,7 +1719,7 @@ obat B-OBAT
 untuk O
 mengatasi O
 mata B-ANATOMI
-merah O
+merah B-GEJALA
 untuk O
 anak O
 tahun B-WAKTU_DURASI
@@ -1731,7 +1731,7 @@ bayi O
 usia O
 bulan B-WAKTU_DURASI
 kelebihan O
-dosis O
+dosis B-DOSIS
 obat B-OBAT
 diare B-GEJALA
 
@@ -1750,26 +1750,26 @@ pasir O
 # focus = WAKTU_DURASI, GEJALA_SULIT
 # text = wajah perih dan mengelupas setelah menggunakan krim spc
 wajah B-ANATOMI
-perih O
+perih B-GEJALA
 dan O
-mengelupas O
+mengelupas B-GEJALA
 setelah B-WAKTU_DURASI
 menggunakan O
 krim B-OBAT
-spc O
+spc I-OBAT
 
 # id = C02786
 # focus = WAKTU_DURASI, GEJALA_SULIT
 # text = sering harus menarik nafas panjang dan setiap tidur siang selalu batuk
 sering O
 harus O
-menarik O
-nafas O
-panjang O
+menarik B-GEJALA
+nafas I-GEJALA
+panjang I-GEJALA
 dan O
-setiap O
-tidur O
-siang O
+setiap B-WAKTU_DURASI
+tidur I-WAKTU_DURASI
+siang I-WAKTU_DURASI
 selalu O
 batuk B-GEJALA
 
@@ -1780,7 +1780,7 @@ gatal B-GEJALA
 pada O
 sekitar O
 daerah O
-kemaluan O
+kemaluan B-ANATOMI
 saat O
 malam B-WAKTU_DURASI
 hari I-WAKTU_DURASI
@@ -1788,10 +1788,10 @@ hari I-WAKTU_DURASI
 # id = C01600
 # focus = WAKTU_DURASI, GEJALA_SULIT
 # text = lengan kiri lemah berkeringat disertai telapak tangan dan jari gatal pasca konsumsi udang
-lengan O
-kiri O
-lemah O
-berkeringat O
+lengan B-ANATOMI
+kiri I-ANATOMI
+lemah B-GEJALA
+berkeringat B-GEJALA
 disertai O
 telapak B-ANATOMI
 tangan I-ANATOMI
@@ -1808,12 +1808,12 @@ udang O
 perlukah O
 konsumsi O
 obat B-OBAT
-gerd O
-setiap O
-hari B-WAKTU_DURASI
+gerd B-DIAGNOSIS
+setiap B-WAKTU_DURASI
+hari I-WAKTU_DURASI
 meskipun O
-tanpa O
-gejala O
+tanpa B-GEJALA
+gejala I-GEJALA
 
 # id = C11107
 # focus = PROSEDUR, WAKTU_DURASI
@@ -1825,8 +1825,8 @@ lebih O
 pendek O
 pasca B-WAKTU_DURASI
 operasi B-PROSEDUR
-kista I-PROSEDUR
-ovarium O
+kista B-DIAGNOSIS
+ovarium I-DIAGNOSIS
 
 # id = C09808
 # focus = WAKTU_DURASI
@@ -1846,7 +1846,7 @@ kehamilan B-DIAGNOSIS
 # text = penyebab nyeri haid hingga hari
 penyebab O
 nyeri B-GEJALA
-haid O
+haid I-GEJALA
 hingga O
 hari B-WAKTU_DURASI
 
@@ -1856,13 +1856,13 @@ hari B-WAKTU_DURASI
 kulit B-ANATOMI
 wajah I-ANATOMI
 seperti O
-melepuh O
-terbakar O
+melepuh B-GEJALA
+terbakar B-GEJALA
 hingga O
 bengkak B-GEJALA
 setelah B-WAKTU_DURASI
 pakai O
-sabun O
+sabun B-OBAT
 
 # id = C12633
 # focus = WAKTU_DURASI
@@ -1879,18 +1879,18 @@ tahun B-WAKTU_DURASI
 # text = cara mengatasi muntahmuntah setelah operasi kelenjar getah bening
 cara O
 mengatasi O
-muntahmuntah O
+muntahmuntah B-GEJALA
 setelah B-WAKTU_DURASI
 operasi B-PROSEDUR
-kelenjar O
-getah O
-bening O
+kelenjar I-PROSEDUR
+getah I-PROSEDUR
+bening I-PROSEDUR
 
 # id = C01405
 # focus = ALERGI, WAKTU_DURASI
 # text = sering bersin karena alergi apakah berbahaya bagi janin usia minggu
 sering O
-bersin O
+bersin B-GEJALA
 karena O
 alergi B-ALERGI
 apakah O
@@ -1908,8 +1908,8 @@ muncul O
 benjolan B-GEJALA
 di O
 perut B-ANATOMI
-kanan O
-bawah O
+kanan I-ANATOMI
+bawah I-ANATOMI
 disertai O
 telat B-GEJALA
 haid I-GEJALA
@@ -1924,8 +1924,8 @@ efek O
 samping O
 setelah B-WAKTU_DURASI
 lepas O
-kb B-OBAT
-suntik B-PROSEDUR
+kb B-PROSEDUR
+suntik I-PROSEDUR
 bulan B-WAKTU_DURASI
 
 # id = C00464
@@ -1937,7 +1937,7 @@ hilang O
 timbul O
 setelah B-WAKTU_DURASI
 alergi B-ALERGI
-obat B-OBAT
+obat I-ALERGI
 
 # id = C00470
 # focus = PROSEDUR, WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
@@ -1948,8 +1948,8 @@ kulit B-ANATOMI
 setelah B-WAKTU_DURASI
 vaksin B-PROSEDUR
 covid I-PROSEDUR
-dosis O
-kedua O
+dosis B-DOSIS
+kedua I-DOSIS
 
 # id = C00610
 # focus = PROSEDUR, WAKTU_DURASI, OBAT_DOSIS, GEJALA_SULIT
@@ -1960,7 +1960,7 @@ dan O
 gatal B-GEJALA
 setelah B-WAKTU_DURASI
 vaksin B-PROSEDUR
-dosis O
+dosis B-DOSIS
 
 # id = C00704
 # focus = ALERGI, PROSEDUR, WAKTU_DURASI, OBAT_DOSIS
@@ -1984,8 +1984,8 @@ muncul O
 setelah B-WAKTU_DURASI
 konsumsi O
 obat B-OBAT
-anti O
-alergi B-ALERGI
+anti I-OBAT
+alergi I-OBAT
 
 # id = C03071
 # focus = PROSEDUR, HASIL_LAB, WAKTU_DURASI, GEJALA_SULIT
@@ -2003,4 +2003,3 @@ pada O
 anak O
 usia O
 tahun B-WAKTU_DURASI
-

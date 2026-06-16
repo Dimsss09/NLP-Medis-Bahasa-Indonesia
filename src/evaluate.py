@@ -175,6 +175,16 @@ def flatten_labels(records: list[PredictionRecord]) -> tuple[list[str], list[str
     return gold, predicted
 
 
+def labels_for_confusion_matrix(records: list[PredictionRecord], configured_labels: list[str]) -> list[str]:
+    """Return configured labels plus labels found in gold or predictions."""
+    gold, predicted = flatten_labels(records)
+    observed = set(gold) | set(predicted)
+    labels = list(configured_labels)
+    configured = set(configured_labels)
+    labels.extend(sorted(label for label in observed if label not in configured))
+    return labels
+
+
 def write_confusion_matrix(records: list[PredictionRecord], labels: list[str], path: Path) -> None:
     """Write token-level confusion matrix as CSV."""
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -257,7 +267,14 @@ def write_markdown_report(
     report = summary["seqeval_report"]
     entity_names = [key for key in report if key not in {"micro avg", "macro avg", "weighted avg"}]
     normalized_test_file = test_file.replace("\\", "/").lower()
-    if "true_gold" in normalized_test_file or "gold_resolved" in normalized_test_file:
+    if "phase9_challenge_set" in normalized_test_file:
+        caveat = (
+            "These metrics evaluate the model against the Phase 9 internal challenge set. "
+            "This set includes expanded labels that older 5-label models were not trained "
+            "to predict, so treat the result as a stress test and schema-gap report, not "
+            "as formal clinical validation."
+        )
+    elif "true_gold" in normalized_test_file or "gold_resolved" in normalized_test_file:
         caveat = (
             "These metrics evaluate the model against a manually adjudicated "
             "human gold set. They are suitable for prototype research reporting, "
@@ -350,7 +367,8 @@ def evaluate_model(
     summary["test_file"] = str(test_path)
 
     write_json_report(summary, Path(f"reports/{prefix}_metrics.json"))
-    write_confusion_matrix(records, config["labels"], Path(f"reports/{prefix}_confusion_matrix.csv"))
+    confusion_labels = labels_for_confusion_matrix(records, config["labels"])
+    write_confusion_matrix(records, confusion_labels, Path(f"reports/{prefix}_confusion_matrix.csv"))
     write_examples(records, Path(f"reports/{prefix}_prediction_examples.jsonl"))
     write_markdown_report(
         summary,

@@ -1,0 +1,42 @@
+labels:
+  - O
+  - B-GEJALA
+  - I-GEJALA
+  - B-OBAT
+  - I-OBAT
+  - B-DOSIS
+  - I-DOSIS
+  - B-DIAGNOSIS
+  - I-DIAGNOSIS
+  - B-ANATOMI
+  - I-ANATOMI
+  - B-PROSEDUR
+  - I-PROSEDUR
+  - B-HASIL_LAB
+  - I-HASIL_LAB
+  - B-NILAI_LAB
+  - I-NILAI_LAB
+  - B-WAKTU_DURASI
+  - I-WAKTU_DURASI
+  - B-ALERGI
+  - I-ALERGI
+  - B-RIWAYAT_PENYAKIT
+  - I-RIWAYAT_PENYAKIT
+
+entity_definitions:
+  GEJALA: Keluhan, tanda, atau temuan klinis pada pasien.
+  OBAT: Nama obat, zat terapi, alat terapi, atau produk perawatan.
+  DOSIS: Jumlah, kekuatan, bentuk, frekuensi, atau aturan pakai obat/terapi.
+  DIAGNOSIS: Nama penyakit atau kondisi medis.
+  ANATOMI: Bagian tubuh atau struktur anatomi.
+  PROSEDUR: Tindakan, pemeriksaan, intervensi, vaksinasi, operasi, atau tes.
+  HASIL_LAB: Nama parameter lab atau pemeriksaan penunjang.
+  NILAI_LAB: Nilai, status, atau interpretasi hasil lab.
+  WAKTU_DURASI: Waktu, tanggal relatif, frekuensi, atau lama kejadian/terapi.
+  ALERGI: Kondisi, reaksi, atau jenis alergi.
+  RIWAYAT_PENYAKIT: Kondisi medis yang secara eksplisit disebut sebagai riwayat pasien.
+
+default_schema: phase9_expanded_11_label
+gold_evaluation_sets:
+  original_5_label: data/true_gold_300/gold_resolved.conll
+  expanded_11_label: data/phase9_challenge_set/gold_resolved.conll

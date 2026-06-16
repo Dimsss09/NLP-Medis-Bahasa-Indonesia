@@ -1,0 +1,147 @@
+{
+  "sentence_count": 160,
+  "token_count": 1366,
+  "token_mismatches": 312,
+  "token_accuracy": 0.7715959004392386,
+  "sentence_exact_match": 0.2,
+  "micro_precision": 0.7422222222222222,
+  "micro_recall": 0.6337760910815939,
+  "micro_f1": 0.6837256908904811,
+  "seqeval_report": {
+    "ALERGI": {
+      "precision": 0.8648648648648649,
+      "recall": 0.9696969696969697,
+      "f1-score": 0.9142857142857143,
+      "support": 33
+    },
+    "ANATOMI": {
+      "precision": 0.8305084745762712,
+      "recall": 0.8032786885245902,
+      "f1-score": 0.8166666666666667,
+      "support": 61
+    },
+    "DIAGNOSIS": {
+      "precision": 0.7727272727272727,
+      "recall": 0.4722222222222222,
+      "f1-score": 0.5862068965517242,
+      "support": 36
+    },
+    "DOSIS": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 3
+    },
+    "GEJALA": {
+      "precision": 0.8842105263157894,
+      "recall": 0.5833333333333334,
+      "f1-score": 0.7029288702928871,
+      "support": 144
+    },
+    "HASIL_LAB": {
+      "precision": 0.8636363636363636,
+      "recall": 0.7307692307692307,
+      "f1-score": 0.7916666666666666,
+      "support": 26
+    },
+    "NILAI_LAB": {
+      "precision": 0.8333333333333334,
+      "recall": 0.7142857142857143,
+      "f1-score": 0.7692307692307692,
+      "support": 14
+    },
+    "OBAT": {
+      "precision": 0.7831325301204819,
+      "recall": 0.7065217391304348,
+      "f1-score": 0.7428571428571429,
+      "support": 92
+    },
+    "PROSEDUR": {
+      "precision": 0.6428571428571429,
+      "recall": 0.46551724137931033,
+      "f1-score": 0.5399999999999999,
+      "support": 58
+    },
+    "RIWAYAT_PENYAKIT": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 21
+    },
+    "WAKTU_DURASI": {
+      "precision": 0.4025974025974026,
+      "recall": 0.7948717948717948,
+      "f1-score": 0.5344827586206897,
+      "support": 39
+    },
+    "micro avg": {
+      "precision": 0.7422222222222222,
+      "recall": 0.6337760910815939,
+      "f1-score": 0.6837256908904811,
+      "support": 527
+    },
+    "macro avg": {
+      "precision": 0.6252607191844476,
+      "recall": 0.5673179031103273,
+      "f1-score": 0.5816659531974783,
+      "support": 527
+    },
+    "weighted avg": {
+      "precision": 0.7466840094433738,
+      "recall": 0.6337760910815939,
+      "f1-score": 0.6720560714758278,
+      "support": 527
+    }
+  },
+  "gold_label_counts": {
+    "B-OBAT": 92,
+    "O": 673,
+    "B-HASIL_LAB": 26,
+    "I-HASIL_LAB": 10,
+    "B-NILAI_LAB": 14,
+    "B-GEJALA": 144,
+    "I-GEJALA": 53,
+    "B-PROSEDUR": 58,
+    "B-ANATOMI": 61,
+    "I-PROSEDUR": 29,
+    "I-ANATOMI": 11,
+    "I-OBAT": 18,
+    "B-DIAGNOSIS": 36,
+    "I-DIAGNOSIS": 8,
+    "B-WAKTU_DURASI": 39,
+    "I-NILAI_LAB": 1,
+    "B-RIWAYAT_PENYAKIT": 20,
+    "B-ALERGI": 33,
+    "I-WAKTU_DURASI": 4,
+    "I-RIWAYAT_PENYAKIT": 30,
+    "I-ALERGI": 2,
+    "B-DOSIS": 3,
+    "I-DOSIS": 1
+  },
+  "predicted_label_counts": {
+    "B-OBAT": 83,
+    "O": 848,
+    "B-HASIL_LAB": 22,
+    "I-HASIL_LAB": 8,
+    "B-NILAI_LAB": 12,
+    "B-GEJALA": 95,
+    "I-GEJALA": 20,
+    "B-ANATOMI": 59,
+    "B-PROSEDUR": 41,
+    "I-PROSEDUR": 24,
+    "B-DIAGNOSIS": 22,
+    "B-WAKTU_DURASI": 77,
+    "I-OBAT": 11,
+    "B-ALERGI": 37,
+    "B-RIWAYAT_PENYAKIT": 1,
+    "I-ANATOMI": 4,
+    "I-ALERGI": 1,
+    "I-WAKTU_DURASI": 1
+  },
+  "model_key": "indobert",
+  "model_name": "IndoBERT base p1 phase9-expanded",
+  "role": "expanded-label",
+  "base_model": "indobenchmark/indobert-base-p1",
+  "model_dir": "models/indobert-medical-ner-id-phase9-expanded",
+  "test_file": "data\\phase9_challenge_set\\gold_resolved.conll"
+}
